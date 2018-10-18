@@ -17,11 +17,11 @@ class App extends Component {
         <BrowserRouter>
           <Switch>
             <Route path="/contact" component={Contact} />
-            <Route path="/home" component={HomePage} />
             <Route path="/organizare" component={Organizare} />
             <Route path="/taxe" component={TaxeTimbru} />
             <Route path="/prezentare" component={Prezentare} />
             <Route path="/organizare#test1" component={Organizare} />
+            <Route path="/" component={HomePage} />
           </Switch>
         </BrowserRouter>
 

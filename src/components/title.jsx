@@ -3,10 +3,7 @@ import Slider from './slider';
 
 const title = () => {
     return (
-        <div>
-            <Slider></Slider>
-        </div>
-
+            <div></div>
     );
 };
 

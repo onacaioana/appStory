@@ -1,28 +1,32 @@
 import React, { Component } from 'react';
-import {Button} from 'reactstrap';
+import { Button } from 'reactstrap';
+import Slider from './slider';
 
 
 class HomePage extends Component {
-    
+
     constructor(props) {
         super(props);
         this.routeChange = this.routeChange.bind(this);
     }
 
-    routeChange(){
+    routeChange() {
         let path = "/taxe";
         this.props.history.push(path);
     }
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col md-4">
-                       <Button onClick={this.routeChange}  className="bg-secondary text-light mx-2">Calculator Taxa Timbru</Button>
+            <React.Fragment>
+                <Slider></Slider>
+                <div className="container">
+                    <div className="row">
+                        <div className="col md-4">
+                            <Button onClick={this.routeChange} className="bg-secondary text-light mx-2">Calculator Taxa Timbru</Button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
