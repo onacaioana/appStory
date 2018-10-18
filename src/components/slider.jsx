@@ -85,7 +85,7 @@ class Slider extends React.Component {
                 <CarouselIndicators
                     items={items}
                     activeIndex={activeIndex}
-                    onClickHandler={this.goToIndex} />
+                    onClickHandler={e => this.goToIndex(e)} />
                 {slides}
                 <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
                 <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
