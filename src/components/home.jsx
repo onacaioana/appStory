@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import Slider from './slider';
-
+import LinksBar from './links';
 
 class HomePage extends Component {
 
@@ -25,7 +25,9 @@ class HomePage extends Component {
                             <Button onClick={this.routeChange} className="bg-secondary text-light mx-2">Calculator Taxa Timbru</Button>
                         </div>
                     </div>
+                    <LinksBar/>
                 </div>
+                
             </React.Fragment>
         );
     }

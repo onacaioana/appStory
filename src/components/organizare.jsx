@@ -26,9 +26,9 @@ class Organizare extends Component {
             <div>
                 <Grid container className=" my-3 bg-light" spacing={16} >
                     {/* Oragnigramă */}
-                    <Grid item xs={2} style={{ backgroundColor: "#CDCDCD" }}>
-
-                        <MenuList className="position-fixed " >
+                    <Grid item xs={2}>
+{/*  className="position-fixed "           Grid style: style={{ backgroundColor: "#CDCDCD" }}*/}
+                        <MenuList >
                             <Link to="/organizare#organigrama" style={{ textDecoration: 'none', display: 'block' }}>
                                 <MenuItem >
                                     <ListItemIcon>
@@ -42,7 +42,7 @@ class Organizare extends Component {
                                     <ListItemIcon>
                                         <ContactIcon />
                                     </ListItemIcon>
-                                    <ListItemText className="d-none d-lg-block d-xl-block" inset primary="Conducerea Intanţei" />
+                                    <ListItemText className="d-none d-lg-block d-xl-block" inset primary="Conducerea" />
                                 </MenuItem>
                             </Link>
                             <Link to="/organizare#organiz" style={{ textDecoration: 'none', display: 'block' }}>
@@ -50,7 +50,7 @@ class Organizare extends Component {
                                     <ListItemIcon>
                                         <PeopleIcon />
                                     </ListItemIcon>
-                                    <ListItemText className="d-none d-lg-block d-xl-block" inset primary="Organizarea Tribunalului Cluj" />
+                                    <ListItemText className="d-none d-lg-block d-xl-block" inset primary="Organizarea" />
                                 </MenuItem>
                             </Link>
                         </MenuList>
