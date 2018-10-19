@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
-import Paper from '@material-ui/core/Paper';
-import { withStyles } from '@material-ui/core/styles';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ContactIcon from '@material-ui/icons/Contacts';
@@ -16,10 +13,6 @@ import Divider from '@material-ui/core/Divider';
 
 
 class Organizare extends Component {
-
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (
@@ -59,7 +52,7 @@ class Organizare extends Component {
                         <div id="organigrama" className="mx-4">
                             <Typography color="primary" className="mx-3" variant="display1">Organigramă</Typography>
                             <Divider className="m-3" />
-                            <img onClick={this.toggle} style={{ width: '98%', borderRadius: '30px' }} src={require("../images/organigrama.png")}></img>
+                            <img onClick={this.toggle} style={{ width: '98%', borderRadius: '30px' }} src={require("../images/organigrama.png")} alt="oragnigrama"></img>
 
                         </div>
                         {/* Conducerea Tribunalului Cluj*/}
