@@ -80,7 +80,7 @@ class InfoUtile extends Component {
         return (
 
             <Grid container spacing={16} alignItems="center" justify="center">
-                <Grid item xs={4} md={4}>
+                <Grid item xs={12} sm={12} md={4} >
                     <Paper style={{backgroundColor: '#e9e9f2'}} className="shadow">
                         <List>
                             {tileData.map((item, index) =>
@@ -98,7 +98,7 @@ class InfoUtile extends Component {
                         </List>
                     </Paper>
                 </Grid>
-                <Grid item xs={4} md={4}>
+                <Grid item xs={12} sm={12} md={4}>
                     <Paper style={{backgroundColor: '#e9e9f2'}} className="shadow">
                         <List>
                             {tileData.map((item, index) =>
@@ -115,7 +115,7 @@ class InfoUtile extends Component {
                         </List>
                     </Paper>
                 </Grid>
-                <Grid item xs={4} md={4}>
+                <Grid item xs={12} sm={12} md={4} wrap="nowrap">
                     <Paper style={{backgroundColor: '#e9e9f2'}} className="shadow">
                         <List>
                             {tileData1.map((item, index) =>
@@ -124,6 +124,7 @@ class InfoUtile extends Component {
                                         <FileCopy />
                                     </ListItemIcon>
                                     <ListItemText
+                                    
                                         onClick={this.routeChange}
                                         primary={item.title}
                                     />  

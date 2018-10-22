@@ -43,8 +43,7 @@ class NavBar extends Component {
         return (
             <Navbar sticky="top" style={{ 'fontSize': '18px', backgroundColor: '#276c90' }} className="navbar-dark text-nowrap bg-dark text-light" expand="md">
                 <NavbarToggler onClick={this.toggleNavbar} className="mr-2"></NavbarToggler>
-                <img style={{ width: '3%' }} className="mx-2 d-none d-lg-block d-xl-block" src={require("../images/ministerul_justitiei.PNG")} alt="mj"></img>
-                <h5 className="mb-1">Tribunalul Cluj</h5>
+                <img style={{ width: '6%',position:'absolute',top:'1px' }} className="mx-2 d-none d-lg-block d-xl-block" src={require("../images/ministerul_justitiei.PNG")} alt="mj"></img>
                 <Collapse isOpen={!this.state.collapsed} navbar className="justify-content-center align-items-center">
                     <Nav className="ml-3" navbar >
                         <NavItem className="mr-4">
@@ -96,7 +95,7 @@ class NavBar extends Component {
                         </NavItem>
                     </Nav>
                 </Collapse>
-                <img style={{ width: '4%' }} className="float-left d-none d-lg-block d-xl-block " src={require("../images/10011.png")} alt="100"></img>
+                <img style={{ width: '4%' }} className=" d-none d-lg-block d-xl-block " src={require("../images/10011.png")} alt="100"></img>
             </Navbar>
         );
     }

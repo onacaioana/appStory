@@ -55,8 +55,8 @@ class CardInstanta extends React.Component {
                     <WhenInView>
                         {({ inView }) =>
                             <Grow in={inView}
-                                style={{ transformOrigin: '0 0 0' }}
-                                {...(inView ? { timeout: 2000 } : {})}>
+                                style={{ transformOrigin: '50% 50% 0' }}
+                                {...(inView ? { timeout: (2000+(index*1000)) } : {})}>
                                 <Card>
                                     <CardActionArea>
                                         {index !== 1 ? <CardMedia
