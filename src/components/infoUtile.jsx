@@ -63,26 +63,54 @@ class InfoUtile extends Component {
     render() {
         return (
             <div>
-      <GridList cellHeight={120} >
-        <GridListTile key="Subheader" cols={3} style={{ height: 'auto' }}>
-          <ListSubheader component="div">December</ListSubheader>
-        </GridListTile>
-        {tileData.map(tile => (
-          <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              subtitle={<span>by: {tile.author}</span>}
-              actionIcon={
-                <IconButton>
-                  <InfoIcon />
-                </IconButton>
-              }
-            />
-          </GridListTile>
-        ))}
-      </GridList>
-    </div>
+
+                <div className="row">
+                    <div className="col" align="center">
+                        <img className="rounded-circle bg-light" style={{ width: '50%' }} src={require("../images/hierarchy.png")}></img>
+                        <h5>Calculator Taxe</h5>
+                    </div>
+                    <div className="col" align="center">
+                        <img className="rounded-circle bg-light" style={{ width: '50%' }} src={require("../images/hierarchy.png")}></img>
+                        <h5>Calculator Taxe</h5>
+                    </div>
+                    <div className="col" align="center">
+                        <img className="rounded-circle bg-light" style={{ width: '50%' }} src={require("../images/hierarchy.png")}></img>
+                        <h5>Calculator Taxe</h5>
+                    </div>
+                    <div className="col" align="center">
+                        <img className="rounded-circle bg-light" style={{ width: '50%' }} src={require("../images/hierarchy.png")}></img>
+                        <h5>Calculator Taxe</h5>
+                    </div>
+                    <div className="col" align="center">
+                        <img className="rounded-circle bg-light" style={{ width: '50%' }} src={require("../images/hierarchy.png")}></img>
+                        <h5>Calculator Taxe</h5>
+                    </div>
+
+                </div>
+                <div className="row">
+                    <div className="col" align="center" style={{cursor:'pointer'}} onClick={this.routeChange}>
+                        <img className="rounded-circle shadow-3 bg-secondary m-2" style={{ width: '50%',opacity:'50%' }} src={require("../images/hierarchy.png")}></img>
+                        <h5>Calculator Taxe</h5>
+                    </div>
+                    <div className="col" align="center">
+                        <img className="rounded-circle bg-dark" style={{ width: '50%' }} src={require("../images/hierarchy.png")}></img>
+                        <h5 >Calculator Taxe</h5>
+                    </div>
+                    <div className="col" align="center">
+                        <img className="rounded-circle bg-light" style={{ width: '50%' }} src={require("../images/hierarchy.png")}></img>
+                        <h5>Calculator Taxe</h5>
+                    </div>
+                    <div className="col" align="center">
+                        <img className="rounded-circle bg-light" style={{ width: '50%' }} src={require("../images/hierarchy.png")}></img>
+                        <h5>Calculator Taxe</h5>
+                    </div>
+                    <div className="col" align="center">
+                        <img className="rounded-circle bg-light" style={{ width: '50%' }} src={require("../images/hierarchy.png")}></img>
+                        <h5>Calculator Taxe</h5>
+                    </div>
+                </div>
+            </div>
+
 
 
 
