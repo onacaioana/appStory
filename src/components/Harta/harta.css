@@ -1,0 +1,31 @@
+.popup_title {
+  text-align: center;
+  color: black;
+  margin: 1rem 1rem 2rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  padding: 0.5rem;
+}
+
+.popup_text {
+  color: black;
+  font-size: 1.2rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+.telefon {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.telefon > li {
+  display: inline-block;
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.telefon > li:last {
+  margin-right: 0;
+}
