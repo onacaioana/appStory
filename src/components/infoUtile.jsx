@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import Paper from '@material-ui/core/Paper';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
-import FolderIcon from '@material-ui/icons/Folder';
-import { Typography } from '@material-ui/core';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import IconButton from '@material-ui/core/IconButton';
+import InfoIcon from '@material-ui/icons/Info';
 
 const tileData = [{
     img: require('../images/jud_dej.jpg'),
@@ -59,14 +62,27 @@ class InfoUtile extends Component {
 
     render() {
         return (
-            <GridList cellHeight={160} cols={3}>
-                {tileData.map(tile => (
-                    <Paper align='center' key={tile.img}>
-                        <FolderIcon/>
-                        <Typography>{tile.title}</Typography>
-                    </Paper>
-                ))}
-            </GridList>
+            <div>
+      <GridList cellHeight={120} >
+        <GridListTile key="Subheader" cols={3} style={{ height: 'auto' }}>
+          <ListSubheader component="div">December</ListSubheader>
+        </GridListTile>
+        {tileData.map(tile => (
+          <GridListTile key={tile.img}>
+            <img src={tile.img} alt={tile.title} />
+            <GridListTileBar
+              title={tile.title}
+              subtitle={<span>by: {tile.author}</span>}
+              actionIcon={
+                <IconButton>
+                  <InfoIcon />
+                </IconButton>
+              }
+            />
+          </GridListTile>
+        ))}
+      </GridList>
+    </div>
 
 
 
