@@ -38,7 +38,7 @@ class Slider extends React.Component {
     /* function to run next slide */
     next = () => {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === items.length -1 ? 0 : this.state.activeIndex + 1;
+        const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
         this.setState({ activeIndex: nextIndex });
     }
     /* function to run previous slide */
@@ -65,12 +65,12 @@ class Slider extends React.Component {
         /* Create each slide with map */
         const slides = items.map((item) => {
             return (
-                <CarouselItem 
+                <CarouselItem
                     onExiting={this.onExiting}
                     onExited={this.onExited}
                     key={item.src}>
                     <img className="d-block w-100" src={item.src} alt={item.altText} />
-                    <CarouselCaption  style={{transition: '0.6s ease-in-out left'}} className="bg-gradient-danger text-white" captionText={item.subcaption} captionHeader={item.caption} />
+                    <CarouselCaption style={{ transition: '0.6s ease-in-out left' }} className="bg-gradient-danger text-white" captionText={item.subcaption} captionHeader={item.caption} />
                 </CarouselItem>
             );
         });
@@ -78,7 +78,7 @@ class Slider extends React.Component {
         /* Create carousel using reactstrap */
         return (
             <Carousel
-            autoPlay={false}
+                autoPlay="false"
                 activeIndex={activeIndex}
                 next={this.next}
                 previous={this.previous}>
