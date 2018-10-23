@@ -24,7 +24,7 @@
   color: white;
 }
 .Example__container__document {
-  margin: 1em 0;
+  margin: 1em auto;
 }
 .Example__container__document .react-pdf__Document {
   display: flex;
