@@ -4,10 +4,10 @@ import Modal from "@material-ui/core/Modal";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "./pdf.css";
 
-const options = {
-  cMapUrl: "cmaps/",
-  cMapPacked: true
-};
+// const options = {
+//   cMapUrl: "cmaps/",
+//   cMapPacked: true
+// };
 
 class Pdf extends Component {
   constructor(props) {
@@ -42,21 +42,12 @@ class Pdf extends Component {
             <label htmlFor="file">Load from file:</label>{" "}
             <input type="file" onChange={this.onFileChange} />
           </div>
-          <Modal open="true" style={{ overflowY: "scroll" }}>
+          <Modal open={true} style={{ overflowY: "scroll" }}>
             <div className="Example__container__document">
-              {/* <h2>dsjakfsajk </h2>
-              <h3>gfdsfgfsdagfads</h3>
-              <h3>gfdsfgfsdagfads</h3>
-              <h3>gfdsfgfsdagfads</h3>
-              <h3>gfdsfgfsdagfads</h3>
-              <h3>gfdsfgfsdagfads</h3>
-              <h3>gfdsfgfsdagfads</h3>
-              <h3>gfdsfgfsdagfads</h3>
-              <h3>gfdsfgfsdagfads</h3> */}
               <Document
                 file={this.props.fileName}
                 onLoadSuccess={this.onDocumentLoadSuccess}
-                options={options}
+                // options={options}
               >
                 {Array.from(new Array(numPages), (el, index) => (
                   <Page
