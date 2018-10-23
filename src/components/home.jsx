@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
 import Slider from './slider';
 import LinksBar from './links';
 import Typography from '@material-ui/core/Typography';
 import InfoUtile from './infoUtile';
-import Paper from '@material-ui/core/Paper';
-import { Divider } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+
 class HomePage extends Component {
 
     constructor(props) {
         super(props);
-        this.routeChange = this.routeChange.bind(this);
+
     }
 
-    routeChange() {
+    routeChange = () => {
         let path = "/taxe";
         this.props.history.push(path);
     }
@@ -23,30 +22,30 @@ class HomePage extends Component {
             <React.Fragment>
                 <Slider></Slider>
 
-                <div className="row d-block mx-5">
-                    <Typography variant="headline" className="my-3" color="primary">INFORMAȚII UTILE</Typography>
-                    <InfoUtile />
-                </div>
-
-                <div className="row my-3 ">
-                    <Divider />
-                    <div className="col text-light" style={{backgroundColor:'#364e80'}}>
-                        <p>bg-secondary</p>
-                        <p>bg-secondary</p>
-                        <p>bg-secondary</p>
+                <div className="row d-block py-5 pl-5" style={{ backgroundColor: "#a4a4a4" }}>
+                    <Typography variant="display1" className="text-dark">INFORMAŢII UTILE</Typography>
+                    <div className="row">
+                        <InfoUtile />
 
                     </div>
-                    <div className="col text-light" style={{backgroundColor:'#98a4bd'}} align="center">
-                        COntact:sdasda
+                </div>
+               
+                <div className="row d-block bg-light py-5 pl-5">
+                    <Typography variant="display1" className="text-dark">LINK-URI UTILE</Typography>
+                    <div className="container">
+                        <LinksBar />
                     </div>
-
                 </div>
 
-                <div className="row mx-5">
-                    <Typography component="h2" variant="title" className="my-1" color="primary">LINK-URI UTILE</Typography>
-                    <LinksBar />
-
-                </div>
+                 <Grid container spacing={16} alignItems="center" justify="center">
+                     <Grid style={{ backgroundColor: "#00457a" }} item xs={12} sm={12} md={12}>
+                        <Typography>Test</Typography>
+                        <Typography>Test</Typography>
+                        <Typography>Test</Typography>
+                        <Typography>Test</Typography>
+                        <Typography>Test</Typography>
+                    </Grid>
+                </Grid>
             </React.Fragment>
         );
     }

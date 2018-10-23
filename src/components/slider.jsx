@@ -78,7 +78,7 @@ class Slider extends React.Component {
         /* Create carousel using reactstrap */
         return (
             <Carousel
-                autoPlay="false"
+                autoPlay='false'
                 activeIndex={activeIndex}
                 next={this.next}
                 previous={this.previous}>
