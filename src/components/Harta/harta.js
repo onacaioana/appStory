@@ -40,12 +40,9 @@ class Harta extends React.Component {
     } else {
       feature = features[0];
       instanta = instante.filter(i => {
-        console.log(i.nume);
-        console.log(feature.properties.name);
         return i.nume === feature.properties.name;
       });
 
-      console.log(instanta);
       if (feature.properties.name.includes("Cluj")) {
         if (this.state.radius !== 0.0005) {
           this.setState({
