@@ -7,7 +7,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Grow from '@material-ui/core/Grow';
+import Collapse from '@material-ui/core/Collapse';
 import WhenInView from './whenInView';
 
 const instanta = [{
@@ -52,44 +52,44 @@ class CardInstanta extends React.Component {
         const cards = instanta.map((item, index) => {
             return (
                 <Grid item md={4} key={index}>
-                    <WhenInView>
-                        {({ inView }) =>
-                            <Grow in={inView}
-                                style={{ transformOrigin: '50% 50% 0' }}
-                                {...(inView ? { timeout: (2000+(index*1000)) } : {})}>
-                                <Card>
-                                    <CardActionArea>
-                                        {index !== 1 ? <CardMedia
-                                            style={{ height: 0, paddingTop: '56.25%' }}
-                                            image={item.src}
-                                            title={item.title} />
-                                            : <p></p>}
+                    <Card>
+                        <CardActionArea>
+                            {index !== 1 ? <CardMedia
+                                style={{ height: 0, paddingTop: '56.25%' }}
+                                image={item.src}
+                                title={item.title} />
+                                : <p></p>}
 
+                            <WhenInView>
+                                {({ inView }) =>
+                                    <Collapse  in={inView}
+                                      
+                                        {...(inView ? { timeout: 2000 } : {})}>
                                         <CardContent>
                                             <Typography align='center' gutterBottom variant="headline">
                                                 {item.title}
                                             </Typography>
                                             <Typography component="p">
                                                 &nbsp;&nbsp;
-                                    {index === 1 ? item.content + item.content1 : item.content}
+                                            {index === 1 ? item.content + item.content1 : item.content}
 
                                             </Typography>
                                         </CardContent>
-                                    </CardActionArea>
-                                    {index !== 1 ? <CardActions>
-                                        <Button href={item.link} size="small" color="primary">
-                                            Află mai multe
+                                    </Collapse >}
+                            </WhenInView>
+                        </CardActionArea>
+
+                        {index !== 1 ? <CardActions>
+                            <Button href={item.link} size="small" color="primary">
+                                Află mai multe
                                             </Button>
-                                    </CardActions> : <p></p>}
-                                </Card>
-                            </Grow>
-                        }
-                    </WhenInView>
-                </Grid>
+                        </CardActions> : <p></p>}
+                    </Card>
+                </Grid >
             )
         });
         return (
-            <Grid container={true} spacing={24} className="py-4" justify="center">
+            <Grid container={true} spacing={24} className="py-4" justify="center" >
                 {cards}
             </Grid>
         );

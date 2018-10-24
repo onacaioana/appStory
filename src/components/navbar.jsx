@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Nav, Collapse, NavbarToggler, Navbar, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
 
 
-class NavBar extends Component {
+class NavBarComp extends Component {
     constructor(props) {
         super(props);
 
@@ -41,18 +41,14 @@ class NavBar extends Component {
     }
     render() {
         return (
-            <Navbar sticky="top" style={{ 'fontSize': '18px', backgroundColor: '#276c90' }} className="navbar-dark text-nowrap bg-dark text-light" expand="md">
-                <NavbarToggler onClick={this.toggleNavbar} className="mr-2"></NavbarToggler>
-                <img style={{ width: '5%',position:'absolute',top:'1px' }} className="mx-2 d-none d-lg-block d-xl-block" src={require("../images/ministerul_justitiei.PNG")} alt="mj"></img>
-                <Collapse isOpen={!this.state.collapsed} navbar className="justify-content-center align-items-center">
-                    <Nav className="ml-3" navbar >
+                    <Nav className="m-auto" navbar >
                         <NavItem className="mr-4">
-                            <NavLink href="/home" >Acasă</NavLink>
+                            <NavLink href="/home" >ACASĂ</NavLink>
                         </NavItem>
 
                         <Dropdown nav isOpen={this.state.dropdownInstanta} toggle={this.toggleInstanta}>
                             <DropdownToggle nav caret>
-                                Despre Instanţă
+                                DESPRE INSTANŢĂ
                                 </DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem href="/prezentare">Prezentare</DropdownItem>
@@ -64,7 +60,7 @@ class NavBar extends Component {
 
                         <Dropdown nav isOpen={this.state.dropdownInformatii} toggle={this.toggleInformatii}>
                             <DropdownToggle nav caret>
-                                Informaţii
+                                INFORMAŢII
                                 </DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem>Concursuri</DropdownItem>
@@ -77,11 +73,11 @@ class NavBar extends Component {
                             </DropdownMenu>
                         </Dropdown>
                         <NavItem className="mr-4">
-                            <NavLink href="https://www.curteadeapelcluj.ro/Dosare_ecris.aspx">InfoDosar</NavLink>
+                            <NavLink href="https://www.curteadeapelcluj.ro/Dosare_ecris.aspx">INFO-DOSAR</NavLink>
                         </NavItem>
 
                         <Dropdown nav isOpen={this.state.dropdownInstante} toggle={this.toggleInstante}>
-                            <DropdownToggle nav caret>Instanţe</DropdownToggle>
+                            <DropdownToggle nav caret>INSTANŢE</DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem href="http://portal.just.ro/211/SitePages/acasa_default.aspx?id_inst=211">Judecătoria Cluj-Napoca</DropdownItem>
                                 <DropdownItem href="http://portal.just.ro/219/SitePages/acasa_default.aspx?id_inst=219">Judecătoria Dej</DropdownItem>
@@ -91,14 +87,11 @@ class NavBar extends Component {
                             </DropdownMenu>
                         </Dropdown>
                         <NavItem className="mr-4">
-                            <NavLink href="/contact">Contact</NavLink>
+                            <NavLink href="/contact">CONTACT</NavLink>
                         </NavItem>
                     </Nav>
-                </Collapse>
-                <img style={{ width: '4%' }} className=" d-none d-lg-block d-xl-block " src={require("../images/10011.png")} alt="100"></img>
-            </Navbar>
         );
     }
 }
 
-export default NavBar;
+export default NavBarComp;

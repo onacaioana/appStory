@@ -4,6 +4,8 @@ import LinksBar from './links';
 import Typography from '@material-ui/core/Typography';
 import InfoUtile from './infoUtile';
 import Grid from '@material-ui/core/Grid';
+import InfoList from './Info/infoList';
+import HeaderFormat from './header';
 
 class HomePage extends Component {
 
@@ -21,7 +23,8 @@ class HomePage extends Component {
         return (
             <React.Fragment>
                 <Slider></Slider>
-
+                <HeaderFormat/>
+                <InfoList/>
                 <div className="row d-block py-5 pl-5" style={{ backgroundColor: "#a4a4a4" }}>
                     <Typography variant="display1" className="text-dark">INFORMAŢII UTILE</Typography>
                     <div className="row">
@@ -36,16 +39,6 @@ class HomePage extends Component {
                         <LinksBar />
                     </div>
                 </div>
-
-                 <Grid container spacing={16} alignItems="center" justify="center">
-                     <Grid style={{ backgroundColor: "#00457a" }} item xs={12} sm={12} md={12}>
-                        <Typography>Test</Typography>
-                        <Typography>Test</Typography>
-                        <Typography>Test</Typography>
-                        <Typography>Test</Typography>
-                        <Typography>Test</Typography>
-                    </Grid>
-                </Grid>
             </React.Fragment>
         );
     }

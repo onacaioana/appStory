@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavBar from './components/navbar'
+import Meniu from './components/meniu'
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Contact from './components/contact';
@@ -8,13 +8,13 @@ import Title from './components/title';
 import HomePage from './components/home';
 import TaxeTimbru from './components/taxe';
 import Organizare from './components/organizare';
-import FooterPage from './components/footer';
+import FooterPage1 from './components/Footer/footer';
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavBar />
-        <Title/>
+        <Meniu />
+        <Title />
         <BrowserRouter>
           <Switch>
             <Route path="/contact" component={Contact} />
@@ -25,7 +25,7 @@ class App extends Component {
             <Route path="/" component={HomePage} />
           </Switch>
         </BrowserRouter>
-<FooterPage></FooterPage>
+        <FooterPage1 />
       </React.Fragment>
     );
   }
