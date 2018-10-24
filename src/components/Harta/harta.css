@@ -1,14 +1,12 @@
 .popup_title {
   text-align: center;
-  color: black;
-  margin: 1rem 1rem 2rem;
+  margin: 1rem 0 2rem;
   font-size: 2.5rem;
   font-weight: 600;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 .popup_text {
-  color: black;
   font-size: 1.2rem;
   margin-top: 0.7rem;
   margin-bottom: 0.7rem;
@@ -20,12 +18,30 @@
   padding: 0;
 }
 
-.telefon > li {
+.telefon>li {
   display: inline-block;
   margin-right: 0.8rem;
   font-size: 1.2rem;
 }
 
-.telefon > li:last {
+.telefon>li:last {
   margin-right: 0;
+}
+
+.blackText {
+  color: black;
+}
+
+@media screen and (max-width: 840px) {
+  .popup_title {
+    font-size: 1.5rem;
+  }
+
+  .popup_text {
+    font-size: 0.8rem;
+  }
+
+  .telefon>li {
+    font-size: 0.8rem;
+  }
 }

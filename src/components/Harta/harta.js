@@ -98,9 +98,10 @@ class Harta extends React.Component {
         onClick={this.handleMapClick}
       >
         {this.state.popup && (
-          <Popup coordinates={this.state.popup.coord} onClick={this.popupClick}>
-            <div className="popup_title">{feature.properties.name}</div>
-            <div className="popup_text">
+          <Popup coordinates={this.state.popup.coord} onClick={this.popupClick}
+            style={{ maxWidth: "90%" }}>
+            <div className="popup_title blackText">{feature.properties.name}</div>
+            <div className="popup_text blackText">
               {instanta[0].adresa.oras}, Strada {instanta[0].adresa.str} Nr.{" "}
               {instanta[0].adresa.nr}
             </div>
