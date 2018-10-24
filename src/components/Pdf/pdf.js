@@ -13,55 +13,52 @@ class Pdf extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      file: "./sample.pdf",
-      numPages: null
+      numPages: null,
+      isModalOpen: true
     };
   }
 
-  onFileChange = event => {
-    this.setState({
-      file: event.target.files[0]
-    });
-  };
+  // onFileChange = event => {
+  //   this.setState({
+  //     file: event.target.files[0]
+  //   });
+  // };
+
+  handleClose = () => {
+    console.log('Closing modal');
+    this.setState({ isModalOpen: false });
+  }
 
   onDocumentLoadSuccess = ({ numPages }) => {
     this.setState({ numPages });
   };
 
   render() {
-    console.log(React.version);
-    const { file, numPages } = this.state;
+    const { numPages, isModalOpen } = this.state;
 
     return (
-      <div className="Example">
-        <header>
-          <h1>react-pdf sample page</h1>
-        </header>
-        <div className="Example__container">
-          <div className="Example__container__load">
-            <label htmlFor="file">Load from file:</label>{" "}
-            <input type="file" onChange={this.onFileChange} />
-          </div>
-          <Modal open={true} style={{ overflowY: "scroll" }}>
-            <div className="Example__container__document">
-              <Document
-                file={this.props.fileName}
-                onLoadSuccess={this.onDocumentLoadSuccess}
-                // options={options}
-              >
-                {Array.from(new Array(numPages), (el, index) => (
-                  <Page
-                    key={`page_${index + 1}`}
-                    pageNumber={index + 1}
-                    // width={100}
-                    scale={1.5}
-                  />
-                ))}
-              </Document>
-            </div>
-          </Modal>
+
+      <Modal open={isModalOpen}
+        style={{ overflowY: "scroll", textAlign: "center" }}
+        onClose={this.handleClose}
+        onClick={this.handleClose}
+      >
+        <div className="container__document">
+          <Document
+            file={this.props.fileName}
+            onLoadSuccess={this.onDocumentLoadSuccess}
+
+          >
+            {Array.from(new Array(numPages), (el, index) => (
+              <Page
+                key={`page_${index + 1}`}
+                pageNumber={index + 1}
+                scale={1.5}
+              />
+            ))}
+          </Document>
         </div>
-      </div>
+      </Modal>
     );
   }
 }
