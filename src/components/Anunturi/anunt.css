@@ -1,0 +1,33 @@
+.anunt {
+  padding: 1rem 0;
+  /* border: 1px solid green; */
+  margin: 0 auto;
+}
+
+.iconPdf {
+  display: inline-block;
+  padding: 5px;
+  margin: 0;
+  border: 1px solid rgb(172, 176, 182);
+  border-radius: 8px;
+}
+
+.inline {
+  display: inline-block;
+}
+.vline {
+  display: inline-block;
+  /* margin-right: 10%; */
+  /* float: right; */
+  /* width: 1px; */
+  box-sizing: border-box;
+  background-color: black;
+  border: 1px solid black;
+  height: 100%;
+}
+
+@media screen and (max-width: 720px) {
+  .anunt {
+    width: 100%;
+  }
+}

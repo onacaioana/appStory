@@ -25,9 +25,9 @@ class Pdf extends Component {
   // };
 
   handleClose = () => {
-    console.log('Closing modal');
+    console.log("Closing modal");
     this.setState({ isModalOpen: false });
-  }
+  };
 
   onDocumentLoadSuccess = ({ numPages }) => {
     this.setState({ numPages });
@@ -37,8 +37,8 @@ class Pdf extends Component {
     const { numPages, isModalOpen } = this.state;
 
     return (
-
-      <Modal open={isModalOpen}
+      <Modal
+        open={isModalOpen}
         style={{ overflowY: "scroll", textAlign: "center" }}
         onClose={this.handleClose}
         onClick={this.handleClose}
@@ -47,15 +47,17 @@ class Pdf extends Component {
           <Document
             file={this.props.fileName}
             onLoadSuccess={this.onDocumentLoadSuccess}
-
           >
-            {Array.from(new Array(numPages), (el, index) => (
-              <Page
-                key={`page_${index + 1}`}
-                pageNumber={index + 1}
-                scale={1.5}
-              />
-            ))}
+            {Array.from(
+              new Array(this.props.pages || numPages), //show first 'this.props.pages' pages or all pages
+              (el, index) => (
+                <Page
+                  key={`page_${index + 1}`}
+                  pageNumber={index + 1}
+                  scale={1.5}
+                />
+              )
+            )}
           </Document>
         </div>
       </Modal>
