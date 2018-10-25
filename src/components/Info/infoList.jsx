@@ -9,7 +9,8 @@ import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
 import { mail } from "react-icons-kit/ikons/mail";
 import Typography from '@material-ui/core/Typography'
 import WhenInView from '../whenInView';
-import Grow from '@material-ui/core/Grow';
+import Fade from '@material-ui/core/Fade';
+import HeaderFormat from '../header';
 const lista = [{
     title: 'Noua legislație penală',
     icon: fax,
@@ -57,33 +58,37 @@ class InfoList extends Component {
 
                     <WhenInView>
                         {({ inView }) =>
-                            <Grow in={inView}
+                            <Fade in={inView}
+
                                 style={{ transformOrigin: '50% 50% 0' }}
                                 {...(inView ? { timeout: 2000 } : {})}>
                                 <div className="single-list-topics-content rounded shadow">
                                     <div className="single-list-topics-icon">
-                                   
-                                        <Icon style={{ color: '#F4A261' }} size={50} icon={item.icon} />
+
+                                        <Icon style={{ color: '#8c7b75' }} size={40} icon={item.icon} />
                                     </div>
-                                    <h5>{item.title}</h5>
+                                    <h6>{item.title}</h6>
                                 </div>
-                            </Grow>
+                            </Fade>
                         }</WhenInView>
-                    </li>)
+                </li>)
         });
 
         return (
-            <section id="list-topics" className="list-topics bg-light py-5">
-                <div className="container">
-                    <div className="list-topics-content">
-                        <ul>
-                            {items}
+            <React.Fragment>
+              <HeaderFormat title="Informaţii utile" bg="bg-light"/>
+                <section id="list-topics" className="list-topics bg-light py-5">
+                    <div className="container">
+                        <div className="list-topics-content" style={{textAlign: '-webkit-center'}}>
+                            <ul>
+                                {items}
 
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
-                </div>
 
-            </section>
+                </section>
+            </React.Fragment>
         );
     }
 }

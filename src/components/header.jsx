@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import'../css/style.css';
 
 class HeaderFormat extends Component {
     render() {
         return (
-            <div class="row section-heading justify-content-center mb-5">
-            <div class="col-md-8 text-center">
-              <h2 class="heading mb-3">Find your best food</h2>
-              <p class="sub-heading mb-5">Free Website Template For Restaurants Made by <a href="#">Free-Template.co</a></p>  
+            <div className={`row section-heading justify-content-center pt-5 ${this.props.bg}`}>
+            <div className="col-md-8 text-center">
+                <h1 className="heading mb-3 " style={{fontWeight:'bold',color: '#146496'}}>{this.props.title}</h1>
             </div>
-          </div>
+        </div>
+
         );
     }
 }
