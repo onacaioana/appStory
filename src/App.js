@@ -11,7 +11,7 @@ import TaxeTimbru from "./components/taxe";
 import Organizare from "./components/organizare";
 import Anunturi from "./components/Anunturi/anunturi";
 import Meniu from './components/meniu';
-
+import Footer from './components/Footer/footer';
 class App extends Component {
   render() {
     return (
@@ -30,8 +30,7 @@ class App extends Component {
             <Route path="/" component={HomePage} />
           </Switch>
         </BrowserRouter>
-
-
+        <Footer />
       </React.Fragment>
     );
   }

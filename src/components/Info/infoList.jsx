@@ -61,20 +61,21 @@ class InfoList extends Component {
                         {({ inView }) =>
                             <Grow in={inView}
                                 style={{ transformOrigin: '50% 50% 0' }}
-                                {...(inView ? { timeout: (2000 + index * 500) } : {})}>
+                                {...(inView ? { timeout: (2000 + index * 100) } : {})}>
                                 <div className="single-list-topics-content rounded shadow">
                                     <div className="single-list-topics-icon">
                                         <Icon style={{ color: '#8c7b75' }} size={40} icon={item.icon} />
                                     </div>
                                     <h6>{item.title}</h6>
-                                    <div>
-                                        <Button className="float-sm-left" href="#text-buttons">
-                                            Deschide
+                                    <div style={{position:'absolute',bottom:0,}}>
+                                        <Button className="float-xs-left" size='small' href="#text-buttons">
+                                           Save
                                         </Button>
-                                        <Button className="float-sm-right" href="#text-buttons" >
+                                        <Button className="float-xs-right " size='small' href="#text-buttons" >
                                             Print
                                         </Button>
                                     </div>
+                                    
                                 </div>
                             </Grow>
                         }</WhenInView>
