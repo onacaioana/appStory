@@ -10,6 +10,7 @@ import HomePage from "./components/home";
 import TaxeTimbru from "./components/taxe";
 import Organizare from "./components/organizare";
 import Anunturi from "./components/Anunturi/anunturi";
+import Meniu from './components/meniu';
 
 class App extends Component {
   render() {
@@ -17,7 +18,6 @@ class App extends Component {
       <React.Fragment>
 
         <Meniu />
-
         <Title />
         <BrowserRouter>
           <Switch>

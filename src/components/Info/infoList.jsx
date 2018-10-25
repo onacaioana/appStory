@@ -9,8 +9,9 @@ import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
 import { mail } from "react-icons-kit/ikons/mail";
 import Typography from '@material-ui/core/Typography'
 import WhenInView from '../whenInView';
-import Fade from '@material-ui/core/Fade';
+import Grow from '@material-ui/core/Grow';
 import HeaderFormat from '../header';
+import Button from '@material-ui/core/Button';
 const lista = [{
     title: 'Noua legislație penală',
     icon: fax,
@@ -58,28 +59,34 @@ class InfoList extends Component {
 
                     <WhenInView>
                         {({ inView }) =>
-                            <Fade in={inView}
-
+                            <Grow in={inView}
                                 style={{ transformOrigin: '50% 50% 0' }}
-                                {...(inView ? { timeout: 2000 } : {})}>
+                                {...(inView ? { timeout: (2000 + index * 500) } : {})}>
                                 <div className="single-list-topics-content rounded shadow">
                                     <div className="single-list-topics-icon">
-
                                         <Icon style={{ color: '#8c7b75' }} size={40} icon={item.icon} />
                                     </div>
                                     <h6>{item.title}</h6>
+                                    <div>
+                                        <Button className="float-sm-left" href="#text-buttons">
+                                            Deschide
+                                        </Button>
+                                        <Button className="float-sm-right" href="#text-buttons" >
+                                            Print
+                                        </Button>
+                                    </div>
                                 </div>
-                            </Fade>
+                            </Grow>
                         }</WhenInView>
                 </li>)
         });
 
         return (
             <React.Fragment>
-              <HeaderFormat title="Informaţii utile" bg="bg-light"/>
+                <HeaderFormat title="Informaţii utile" bg="bg-light" />
                 <section id="list-topics" className="list-topics bg-light py-5">
                     <div className="container">
-                        <div className="list-topics-content" style={{textAlign: '-webkit-center'}}>
+                        <div className="list-topics-content" style={{ textAlign: '-webkit-center' }}>
                             <ul>
                                 {items}
 
