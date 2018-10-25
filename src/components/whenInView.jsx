@@ -10,15 +10,16 @@ class WhenInView extends Component {
         };
     }
 
-    onEnter({ previousPosition }) {
-        if (previousPosition === Waypoint.below) {
+    onEnter(e) {
+        {console.log({e})}
+        if (e.currentPosition === Waypoint.inside ||e.priviousPosition === Waypoint.below)  {
             this.setState({ inView: true });
         }
     }
     render() {
         return (
             <div>
-                <Waypoint onEnter={this.onEnter}></Waypoint>
+                <Waypoint onEnter={e => this.onEnter(e)}></Waypoint>
                 {this.props.children({ inView: this.state.inView })}
             </div>
         );

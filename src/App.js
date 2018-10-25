@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import NavBar from "./components/navbar";
 import "./App.css";
@@ -9,11 +10,14 @@ import HomePage from "./components/home";
 import TaxeTimbru from "./components/taxe";
 import Organizare from "./components/organizare";
 import Anunturi from "./components/Anunturi/anunturi";
+
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavBar />
+
+        <Meniu />
+
         <Title />
         <BrowserRouter>
           <Switch>
@@ -26,6 +30,8 @@ class App extends Component {
             <Route path="/" component={HomePage} />
           </Switch>
         </BrowserRouter>
+
+
       </React.Fragment>
     );
   }
