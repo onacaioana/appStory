@@ -1,19 +1,23 @@
-import React, { Component } from 'react';
-import Meniu from './components/meniu'
-import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Contact from './components/contact';
-import Prezentare from './components/prezentare';
-import Title from './components/title';
-import HomePage from './components/home';
-import TaxeTimbru from './components/taxe';
-import Organizare from './components/organizare';
-import FooterPage1 from './components/Footer/footer';
+
+import React, { Component } from "react";
+import NavBar from "./components/navbar";
+import "./App.css";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Contact from "./components/contact";
+import Prezentare from "./components/prezentare";
+import Title from "./components/title";
+import HomePage from "./components/home";
+import TaxeTimbru from "./components/taxe";
+import Organizare from "./components/organizare";
+import Anunturi from "./components/Anunturi/anunturi";
+
 class App extends Component {
   render() {
     return (
       <React.Fragment>
+
         <Meniu />
+
         <Title />
         <BrowserRouter>
           <Switch>
@@ -22,10 +26,12 @@ class App extends Component {
             <Route path="/taxe" component={TaxeTimbru} />
             <Route path="/prezentare" component={Prezentare} />
             <Route path="/organizare#test1" component={Organizare} />
+            <Route path="/informatii/anunturi" component={Anunturi} />
             <Route path="/" component={HomePage} />
           </Switch>
         </BrowserRouter>
-        <FooterPage1 />
+
+
       </React.Fragment>
     );
   }

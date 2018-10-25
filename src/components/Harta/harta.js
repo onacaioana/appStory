@@ -40,12 +40,9 @@ class Harta extends React.Component {
     } else {
       feature = features[0];
       instanta = instante.filter(i => {
-        console.log(i.nume);
-        console.log(feature.properties.name);
         return i.nume === feature.properties.name;
       });
 
-      console.log(instanta);
       if (feature.properties.name.includes("Cluj")) {
         if (this.state.radius !== 0.0005) {
           this.setState({
@@ -98,9 +95,10 @@ class Harta extends React.Component {
         onClick={this.handleMapClick}
       >
         {this.state.popup && (
-          <Popup coordinates={this.state.popup.coord} onClick={this.popupClick}>
-            <div className="popup_title">{feature.properties.name}</div>
-            <div className="popup_text">
+          <Popup coordinates={this.state.popup.coord} onClick={this.popupClick}
+            style={{ maxWidth: "90%" }}>
+            <div className="popup_title blackText">{feature.properties.name}</div>
+            <div className="popup_text blackText">
               {instanta[0].adresa.oras}, Strada {instanta[0].adresa.str} Nr.{" "}
               {instanta[0].adresa.nr}
             </div>

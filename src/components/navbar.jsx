@@ -1,28 +1,41 @@
-import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import { Nav, Collapse, NavbarToggler, Navbar, NavItem, Dropdown, DropdownItem, DropdownToggle, DropdownMenu, NavLink } from 'reactstrap';
+import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import {
+  Nav,
+  Collapse,
+  NavbarToggler,
+  Navbar,
+  NavItem,
+  Dropdown,
+  DropdownItem,
+  DropdownToggle,
+  DropdownMenu,
+  NavLink
+} from "reactstrap";
 
 
 class NavBarComp extends Component {
     constructor(props) {
         super(props);
 
-        this.toggleInstanta = this.toggleInstanta.bind(this);
-        this.toggleInformatii = this.toggleInformatii.bind(this);
-        this.toggleInstante = this.toggleInstante.bind(this);
-        this.toggleNavbar = this.toggleNavbar.bind(this);
-        this.state = {
-            dropdownInstanta: false,
-            dropdownInformatii: false,
-            dropdownInstante: false,
-            collapsed: true
-        };
-    }
-    toggleNavbar() {
-        this.setState({
-            collapsed: !this.state.collapsed
-        });
-    }
+
+    this.toggleInstanta = this.toggleInstanta.bind(this);
+    this.toggleInformatii = this.toggleInformatii.bind(this);
+    this.toggleInstante = this.toggleInstante.bind(this);
+    this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.state = {
+      dropdownInstanta: false,
+      dropdownInformatii: false,
+      dropdownInstante: false,
+      collapsed: true
+    };
+  }
+  toggleNavbar() {
+    this.setState({
+      collapsed: !this.state.collapsed
+    });
+  }
+
 
     toggleInstanta() {
         this.setState({
@@ -95,3 +108,4 @@ class NavBarComp extends Component {
 }
 
 export default NavBarComp;
+

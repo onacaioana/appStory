@@ -1,73 +1,68 @@
-import React, { Component } from 'react';
-import { Document, Page } from 'react-pdf/dist/entry.webpack';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import './pdf.scss';
+import React, { Component } from "react";
+import { Document, Page } from "react-pdf/dist/entry.webpack";
+import Modal from "@material-ui/core/Modal";
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "./pdf.css";
 
-const options = {
-    cMapUrl: 'cmaps/',
-    cMapPacked: true,
-};
+// const options = {
+//   cMapUrl: "cmaps/",
+//   cMapPacked: true
+// };
 
 class Pdf extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            file: './sample.pdf',
-            numPages: null,
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      numPages: null,
+      isModalOpen: true
+    };
+  }
 
-    onFileChange = (event) => {
-        this.setState({
-            file: event.target.files[0]
-        });
-    }
+  // onFileChange = event => {
+  //   this.setState({
+  //     file: event.target.files[0]
+  //   });
+  // };
 
-    onDocumentLoadSuccess = ({ numPages }) => {
-        this.setState({ numPages });
-    }
+  handleClose = () => {
+    console.log("Closing modal");
+    this.setState({ isModalOpen: false });
+  };
 
-    render() {
-        console.log(React.version)
-        const { file, numPages } = this.state;
+  onDocumentLoadSuccess = ({ numPages }) => {
+    this.setState({ numPages });
+  };
 
-        return (
-            <div className="Example">
-                <header>
-                    <h1>react-pdf sample page</h1>
-                </header>
-                <div className="Example__container">
-                    <div className="Example__container__load">
-                        <label htmlFor="file">Load from file:</label>
-                        {' '}
-                        <input
-                            type="file"
-                            onChange={this.onFileChange}
-                        />
-                    </div>
-                    <div className="Example__container__document">
-                        <Document
-                            file={file}
-                            onLoadSuccess={this.onDocumentLoadSuccess}
-                            options={options}
-                        >
-                            {
-                                Array.from(
-                                    new Array(numPages),
-                                    (el, index) => (
-                                        <Page
-                                            key={`page_${index + 1}`}
-                                            pageNumber={index + 1}
-                                        />
-                                    ),
-                                )
-                            }
-                        </Document>
-                    </div>
-                </div>
-            </div>
-        );
-    }
+  render() {
+    const { numPages, isModalOpen } = this.state;
+
+    return (
+      <Modal
+        open={isModalOpen}
+        style={{ overflowY: "scroll", textAlign: "center" }}
+        onClose={this.handleClose}
+        onClick={this.handleClose}
+      >
+        <div className="container__document">
+          <Document
+            file={this.props.fileName}
+            onLoadSuccess={this.onDocumentLoadSuccess}
+          >
+            {Array.from(
+              new Array(this.props.pages || numPages), //show first 'this.props.pages' pages or all pages
+              (el, index) => (
+                <Page
+                  key={`page_${index + 1}`}
+                  pageNumber={index + 1}
+                  scale={1.5}
+                />
+              )
+            )}
+          </Document>
+        </div>
+      </Modal>
+    );
+  }
 }
 
 export default Pdf;

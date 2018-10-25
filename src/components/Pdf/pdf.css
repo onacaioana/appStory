@@ -1,0 +1,21 @@
+.container__document {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.container__document .react-pdf__Document {
+  display: inline-block;
+}
+
+.container__document .react-pdf__Page {
+  max-width: calc(100% - 2em);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  margin: 1em;
+}
+
+.container__document .react-pdf__Page canvas {
+  max-width: 100%;
+  height: auto !important;
+}

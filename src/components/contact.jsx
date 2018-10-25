@@ -4,7 +4,7 @@ import { fax } from "react-icons-kit/fa/fax";
 import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
 import { mail } from "react-icons-kit/ikons/mail";
 import Harta from "../components/Harta/harta";
-import Pdf from '../components/Pdf/pdf';
+import Pdf from "../components/Pdf/pdf";
 // import 'mapbox-gl/dist/mapbox-gl.css';
 
 class Contact extends Component {
@@ -98,7 +98,7 @@ class Contact extends Component {
         </div>
 
         <Harta />
-        <Pdf />
+        <Pdf fileName="/sample.pdf" />
       </div>
     );
   }
