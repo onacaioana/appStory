@@ -12,6 +12,8 @@ import WhenInView from '../whenInView';
 import Grow from '@material-ui/core/Grow';
 import HeaderFormat from '../header';
 import Button from '@material-ui/core/Button';
+import Pdf from "../Pdf/pdf";
+
 const lista = [{
     title: 'Noua legislație penală',
     icon: fax,
@@ -51,6 +53,17 @@ const lista = [{
 }];
 
 class InfoList extends Component {
+    state={
+        show:false,
+    }
+
+    handlerInfo = (e) => {
+       this.setState({show:true})
+    }
+    closeInfo = (e) => {
+        this.setState({show:false});
+    }
+
     render() {
         let inV = false;
         const items = lista.map((item, index) => {
@@ -66,7 +79,10 @@ class InfoList extends Component {
                                     <div className="single-list-topics-icon">
                                         <Icon style={{ color: '#8c7b75' }} size={40} icon={item.icon} />
                                     </div>
-                                    <h6>{item.title}</h6>
+                                    <h6 key={index} onClick={e => this.handlerInfo(e)} style={{cursor:'pointer'}}>
+                                    {item.title}
+                                    </h6>
+                                    <Pdf close={e => this.closeInfo(e)} fileName="/sample.pdf" open={this.state.show}/>
                                     <div style={{position:'absolute',bottom:0,}}>
                                         <Button className="float-xs-left" size='small' href="#text-buttons">
                                            Save

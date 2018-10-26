@@ -12,6 +12,7 @@ import Organizare from "./components/organizare";
 import Anunturi from "./components/Anunturi/anunturi";
 import Meniu from './components/meniu';
 import Footer from './components/Footer/footer';
+import Rapoarte from './components/rapoarte';
 class App extends Component {
   render() {
     return (
@@ -27,6 +28,7 @@ class App extends Component {
             <Route path="/prezentare" component={Prezentare} />
             <Route path="/organizare#test1" component={Organizare} />
             <Route path="/informatii/anunturi" component={Anunturi} />
+            <Route path="/rapoarte" component={Rapoarte} />
             <Route path="/" component={HomePage} />
           </Switch>
         </BrowserRouter>

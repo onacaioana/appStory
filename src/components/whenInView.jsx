@@ -11,7 +11,6 @@ class WhenInView extends Component {
     }
 
     onEnter(e) {
-        {console.log({e})}
         if (e.currentPosition === Waypoint.inside ||e.priviousPosition === Waypoint.below)  {
             this.setState({ inView: true });
         }

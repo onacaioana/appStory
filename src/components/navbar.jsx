@@ -67,7 +67,7 @@ class NavBarComp extends Component {
                                 <DropdownItem href="/prezentare">Prezentare</DropdownItem>
                                 <DropdownItem href="/organizare">Organizare</DropdownItem>
                                 <DropdownItem>Circumscripţie</DropdownItem>
-                                <DropdownItem>Instaţa în cifre</DropdownItem>
+                                <DropdownItem href="rapoarte">Instaţa în cifre</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
