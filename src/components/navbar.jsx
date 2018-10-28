@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import {
   Nav,
-  Collapse,
-  NavbarToggler,
-  Navbar,
   NavItem,
   Dropdown,
   DropdownItem,
@@ -54,7 +51,7 @@ class NavBarComp extends Component {
     }
     render() {
         return (
-                    <Nav className="m-auto" navbar >
+                    <Nav className="m-auto" navbar style={{fontSize:"14px"}} >
                         <NavItem className="mr-4">
                             <NavLink href="/home" >ACASĂ</NavLink>
                         </NavItem>
@@ -66,8 +63,8 @@ class NavBarComp extends Component {
                             <DropdownMenu>
                                 <DropdownItem href="/prezentare">Prezentare</DropdownItem>
                                 <DropdownItem href="/organizare">Organizare</DropdownItem>
-                                <DropdownItem>Circumscripţie</DropdownItem>
-                                <DropdownItem href="rapoarte">Instaţa în cifre</DropdownItem>
+                                <DropdownItem href="http://portal.just.ro/117/SitePages/Circumscriptii.aspx?id_inst=117">Circumscripţie</DropdownItem>
+                                <DropdownItem href="/rapoarte">Instaţa în cifre</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
@@ -76,13 +73,13 @@ class NavBarComp extends Component {
                                 INFORMAŢII
                                 </DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem>Concursuri</DropdownItem>
-                                <DropdownItem>Informaţii publice</DropdownItem>
+                                <DropdownItem href="/concurs">Concursuri</DropdownItem>
+                                <DropdownItem href="/infoPublice">Informaţii publice</DropdownItem>
                                 <DropdownItem>Anunţuri</DropdownItem>
-                                <DropdownItem>Declaraţii</DropdownItem>
+                                <DropdownItem href="/declaratii">Declaraţii</DropdownItem>
                                 <DropdownItem>Comunicate de presă</DropdownItem>
-                                <DropdownItem>Hotărâri de colegiu</DropdownItem>
-                                <DropdownItem>Jurisprudenţă</DropdownItem>
+                                <DropdownItem href="/hotarari">Hotărâri de colegiu</DropdownItem>
+                                <DropdownItem href="http://portal.just.ro/117/SitePages/jurisprudenta.aspx?id_inst=117">Jurisprudenţă</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
                         <NavItem className="mr-4">

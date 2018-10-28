@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import './infoList.css';
-import ContactIcon from '@material-ui/icons/Contacts';
-import ShareIcon from '@material-ui/icons/Share';
 import { Icon } from "react-icons-kit";
 import { fax } from "react-icons-kit/fa/fax";
 import { notepad_remove } from 'react-icons-kit/ikons/notepad_remove'
 import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
 import { mail } from "react-icons-kit/ikons/mail";
-import Typography from '@material-ui/core/Typography'
 import WhenInView from '../whenInView';
 import Grow from '@material-ui/core/Grow';
 import HeaderFormat from '../header';
@@ -65,7 +62,6 @@ class InfoList extends Component {
     }
 
     render() {
-        let inV = false;
         const items = lista.map((item, index) => {
             return (
                 <li key={index}>
@@ -83,14 +79,14 @@ class InfoList extends Component {
                                     {item.title}
                                     </h6>
                                     <Pdf close={e => this.closeInfo(e)} fileName="/sample.pdf" open={this.state.show}/>
-                                    <div style={{position:'absolute',bottom:0,}}>
+                                  {/*   <div style={{position:'absolute',bottom:0,}}>
                                         <Button className="float-xs-left" size='small' href="#text-buttons">
                                            Save
                                         </Button>
                                         <Button className="float-xs-right " size='small' href="#text-buttons" >
                                             Print
                                         </Button>
-                                    </div>
+                                    </div> */}
                                     
                                 </div>
                             </Grow>
@@ -100,7 +96,7 @@ class InfoList extends Component {
 
         return (
             <React.Fragment>
-                <HeaderFormat title="Informaţii utile" bg="bg-light" />
+                <HeaderFormat title="Informaţii utile" bg="bg-light text-center" />
                 <section id="list-topics" className="list-topics bg-light py-5">
                     <div className="container">
                         <div className="list-topics-content" style={{ textAlign: '-webkit-center' }}>

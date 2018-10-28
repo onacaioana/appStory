@@ -28,6 +28,7 @@ const items = [
         subcaption: 'Nimic nu e mai presus de lege'
     }
 ];
+
 class Slider extends React.Component {
 
     constructor(props) {

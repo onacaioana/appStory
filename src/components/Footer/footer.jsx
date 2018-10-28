@@ -1,8 +1,6 @@
-import React, { Component, Fragment } from 'react';
-
+import React, { Component } from 'react';
 import { Navbar } from 'reactstrap';
 import './footer.css';
-import PropTypes from 'prop-types';
 import NavBarComp from '../navbar';
 
 
