@@ -6,7 +6,7 @@ import Fade from '@material-ui/core/Fade';
 class title extends Component {
     render() {
         return (
-            <div className="site-blocks-cover inner-page overlay mb-1" style={{ backgroundImage: 'url(' + require("../../images/9.jpg") + ')' }} data-aos="fade" data-stellar-background-ratio="0.5">
+            <div className="site-blocks-cover inner-page overlay mb-1" style={{ backgroundImage: 'url(' + require("../../images/4.jpg") + ')' }} data-aos="fade" data-stellar-background-ratio="0.5">
                 <div className="container">
                     <div className="row align-items-center justify-content-center">
                         <div className="col">
