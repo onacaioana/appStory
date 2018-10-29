@@ -121,7 +121,7 @@ class Organizare extends Component {
                         {/* All team */}
                         <ListItem key={index} button onClick={this.handleChange(index)}>
                             <ListItemIcon>
-                                <img src={require("../images/icons/arow2.png")}></img>
+                                <img src={require("../images/icons/arow2.png")} alt={index}></img>
                             </ListItemIcon>
                             <ListItemText
                                 style={{ color: 'red' }}

@@ -95,8 +95,8 @@ class LinksBar extends Component {
 
         const list = items.map((item, index) => {
             return (
-                <div className="item" style={{ textAlign: 'center' }}>
-                    <a href={item.link}><img style={styles} src={item.icon} alt={item.title}></img></a>
+                <div className="item" key={index} style={{ textAlign: 'center' }}>
+                    <a href={item.link}><img style={styles} src={item.icon} alt="links"></img></a>
                     <a href={item.link}>{item.title}</a>
                 </div>
             )

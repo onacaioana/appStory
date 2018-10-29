@@ -18,9 +18,8 @@ const instanta = [{
 },
 {
     title: 'Instanţele din circumscripţia Tribunalului Cluj',
-    content: ' După reorganizarea administrativ-teritorială din 1968 potrivit Legii nr. 58 din 26 decembrie 1968, Tribunalul Regional Cluj este desfiinţat şi înlocuit cu Tribunalul Judeţean Cluj. Prin Legea nr. 92/04.08.1992 pentru organizare judecătorească, se înfiinţează la Cluj, Curtea de Apel Cluj, care are în circumscripţie: Tribunalul Cluj, Tribunalul Bistriţa Năsăud, Tribunalul Maramureş şi Tribunalul Sălaj. Prin aceeaşi lege Tribunalul Cluj are în circumscripţie Judecătoria Cluj-Napoca, Judecătoria Dej, Judecătoria Gherla, Judecătoria Turda şi Judecătoria Huedin. ',
-    content1: 'Prin aceeaşi lege Tribunalul Cluj are în circumscripţie Judecătoria Cluj-Napoca, Judecătoria Dej, Judecătoria Gherla, Judecătoria Turda şi Judecătoria Huedin. ',
-},
+    content: ' După reorganizarea administrativ-teritorială din 1968 potrivit Legii nr. 58 din 26 decembrie 1968, Tribunalul Regional Cluj este desfiinţat şi înlocuit cu Tribunalul Judeţean Cluj. Prin Legea nr. 92/04.08.1992 pentru organizare judecătorească, se înfiinţează Curtea de Apel Cluj, care are în circumscripţie: Tribunalul Cluj, Tribunalul Bistriţa Năsăud, Tribunalul Maramureş şi Tribunalul Sălaj. Prin aceeaşi lege Tribunalul Cluj are în circumscripţie Judecătoria Cluj-Napoca, Judecătoria Dej, Jud. Gherla, Jud. Turda şi Judecătoria Huedin. ',
+   },
 {
     src: require('../images/jud-cluj.jpg'),
     title: 'Judecatoria Cluj',
@@ -69,11 +68,11 @@ class CardInstanta extends React.Component {
                                             <Typography align='center' gutterBottom variant="headline">
                                                 {item.title}
                                             </Typography>
-                                            <Typography component="p">
+                                            <p>
                                                 &nbsp;&nbsp;
-                                            {index === 1 ? item.content + item.content1 : item.content}
+                                            {item.content}
 
-                                            </Typography>
+                                            </p>
                                         </CardContent>
                                     </Collapse >}
                             </WhenInView>

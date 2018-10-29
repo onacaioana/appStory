@@ -77,45 +77,49 @@ class Harta extends React.Component {
 
   render() {
     return (
-      <Map
-        style="mapbox://styles/dryan251/cjngesw1k4bx72rschxaogtec"
-        fitBounds={[
-          [
-            this.state.center[0] - this.state.radius,
-            this.state.center[1] - this.state.radius + 0.0002
-          ],
-          [
-            this.state.center[0] + this.state.radius,
-            this.state.center[1] + this.state.radius + 0.0002
-          ]
-        ]}
-        center={this.state.center}
-        zoom={zoom}
-        containerStyle={{ height: "600px" }}
-        onClick={this.handleMapClick}
-      >
-        {this.state.popup && (
-          <Popup coordinates={this.state.popup.coord} onClick={this.popupClick}
-            style={{ maxWidth: "90%" }}>
-            <div className="popup_title blackText">{feature.properties.name}</div>
-            <div className="popup_text blackText">
-              {instanta[0].adresa.oras}, Strada {instanta[0].adresa.str} Nr.{" "}
-              {instanta[0].adresa.nr}
-            </div>
-            <div className="popup_text">
-              Cod postal: {instanta[0].adresa.cod}
-            </div>
-            <ul className="telefon">
-              <li>Telefon: </li>
-              {instanta[0].tel.map((t, i) => (
-                <li key={i}>{t}</li>
-              ))}
-            </ul>
-            <div className="popup_text">Fax: {instanta[0].fax}</div>
-            <div className="popup_text">E-mail: {instanta[0].email}</div>
-          </Popup>
-        )}
-      </Map>
+      <React.Fragment>
+
+        <Map
+         className="mb-5"
+          style="mapbox://styles/dryan251/cjngesw1k4bx72rschxaogtec"
+          fitBounds={[
+            [
+              this.state.center[0] - this.state.radius,
+              this.state.center[1] - this.state.radius + 0.0002
+            ],
+            [
+              this.state.center[0] + this.state.radius,
+              this.state.center[1] + this.state.radius + 0.0002
+            ]
+          ]}
+          center={this.state.center}
+          zoom={zoom}
+          containerStyle={{ height: "600px" }}
+          onClick={this.handleMapClick}
+        >
+          {this.state.popup && (
+            <Popup coordinates={this.state.popup.coord} onClick={this.popupClick}
+              style={{ maxWidth: "90%" }}>
+              <div className="popup_title blackText">{feature.properties.name}</div>
+              <div className="popup_text blackText">
+                {instanta[0].adresa.oras}, Strada {instanta[0].adresa.str} Nr.{" "}
+                {instanta[0].adresa.nr}
+              </div>
+              <div className="popup_text">
+                Cod postal: {instanta[0].adresa.cod}
+              </div>
+              <ul className="telefon">
+                <li>Telefon: </li>
+                {instanta[0].tel.map((t, i) => (
+                  <li key={i}>{t}</li>
+                ))}
+              </ul>
+              <div className="popup_text">Fax: {instanta[0].fax}</div>
+              <div className="popup_text">E-mail: {instanta[0].email}</div>
+            </Popup>
+          )}
+        </Map>
+      </React.Fragment>
     );
   }
 }

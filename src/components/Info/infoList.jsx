@@ -8,8 +8,6 @@ import { mail } from "react-icons-kit/ikons/mail";
 import WhenInView from '../whenInView';
 import Grow from '@material-ui/core/Grow';
 import HeaderFormat from '../header';
-import Button from '@material-ui/core/Button';
-import Pdf from "../Pdf/pdf";
 
 const lista = [{
     title: 'Noua legislație penală',
@@ -78,7 +76,7 @@ class InfoList extends Component {
                                     <h6 key={index} onClick={e => this.handlerInfo(e)} style={{cursor:'pointer'}}>
                                     {item.title}
                                     </h6>
-                                    <Pdf close={e => this.closeInfo(e)} fileName="/sample.pdf" open={this.state.show}/>
+                                    
                                   {/*   <div style={{position:'absolute',bottom:0,}}>
                                         <Button className="float-xs-left" size='small' href="#text-buttons">
                                            Save

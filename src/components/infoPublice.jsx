@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -106,9 +105,9 @@ class InfoPublice extends Component {
                 peopleToReturn.push(
                     <ListItem key={i} className="mx-5 px-5" button >
 
-                        <img src={require("../images/icons/arow2.png")}></img>
+                        <img src={require("../images/icons/arow2.png")} alt="arow"></img>
 
-                        <ListItemText color="white" inset primary={item.content[i]} />
+                        <ListItemText inset primary={item.content[i]} />
                     </ListItem>
                 );
             }
@@ -117,7 +116,7 @@ class InfoPublice extends Component {
                 <React.Fragment>
                     <ListItem key={index} button onClick={this.handleChange(index)}>
                         <ListItemIcon>
-                            <img src={require("../images/icons/law2.png")}></img>
+                            <img src={require("../images/icons/law2.png")} alt="law"></img>
                         </ListItemIcon>
                         <ListItemText
                             style={{ color: 'red' }}

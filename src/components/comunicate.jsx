@@ -62,7 +62,7 @@ const items = [{
     location: "./simple.pdf",
 },];
 
-class Hotarari extends Component {
+class Comunicate extends Component {
     state = {
         expanded: 0,
     };
@@ -79,7 +79,7 @@ class Hotarari extends Component {
             return (
                 <ListItem key={index} button >
                     <ListItemIcon>
-                        <img src={require("../images/icons/law2.png")} alt="law hotarari"></img>
+                        <img src={require("../images/icons/law2.png")} alt="law comunicate"></img>
                     </ListItemIcon>
                     <ListItemText inset primary={item.content} secondary={item.date} />
                 </ListItem>
@@ -89,17 +89,15 @@ class Hotarari extends Component {
         return (
             <React.Fragment>
                 <Title
-                    title="Hotărâri de colegiu"
-                    page="Hotarâri"
+                    title="Comunicate de presă"
+                    page="Comunicate"
                     subpage="Informații"
                 />
 
                 <div className="my-5 container">
-                    <Typography className="py-3" variant="body1"> Potrivit modificărilor aduse Regulamentului de ordine interioară al instanţelor judecătoreşti, respectiv dispoziţiile art. 22 alin. 3 din Regulamentul de ordine interioară a instanţelor judecătoreşti aprobat prin Hotărârea nr. 387 din 22 septembrie 2005 elaborată de Consiliul Superior al Magistraturii, suntem obligaţi să publicăm pe site-ul instanţei toate hotărârile de colegiu care vizează completele de judecată şi listele de permanenţă.</Typography>
-                    <Divider/>
                     <List
                         component="nav"
-                        subheader={<ListSubheader component="div">Tribunalul Cluj - Colegiu de conducere</ListSubheader>}
+                        subheader={<ListSubheader component="div">Tribunalul Cluj - Comunicate de presă</ListSubheader>}
                     >
                         {listItems}
                     </List>
@@ -109,4 +107,4 @@ class Hotarari extends Component {
     }
 }
 
-export default Hotarari;
+export default Comunicate;

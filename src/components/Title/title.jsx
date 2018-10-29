@@ -18,7 +18,7 @@ class title extends Component {
                                     </Fade>
                                 }
                             </WhenInView>
-                            <div class="breadcrumbs">
+                            <div className="breadcrumbs">
 								<ul>
 									<li><a href="/">Acasă</a></li>
                                     {this.props.subpage ? <li>{this.props.subpage}</li> : '' }

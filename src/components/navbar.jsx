@@ -73,11 +73,10 @@ class NavBarComp extends Component {
                                 INFORMAŢII
                                 </DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem href="/concurs">Concursuri</DropdownItem>
+                                <DropdownItem href="/concurs">Anunţuri / Concursuri</DropdownItem>
                                 <DropdownItem href="/infoPublice">Informaţii publice</DropdownItem>
-                                <DropdownItem>Anunţuri</DropdownItem>
                                 <DropdownItem href="/declaratii">Declaraţii</DropdownItem>
-                                <DropdownItem>Comunicate de presă</DropdownItem>
+                                <DropdownItem href="/comunicate">Comunicate de presă</DropdownItem>
                                 <DropdownItem href="/hotarari">Hotărâri de colegiu</DropdownItem>
                                 <DropdownItem href="http://portal.just.ro/117/SitePages/jurisprudenta.aspx?id_inst=117">Jurisprudenţă</DropdownItem>
                             </DropdownMenu>

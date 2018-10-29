@@ -38,7 +38,7 @@ class Pdf extends Component {
 
     return (
       <Modal
-        open={this.props.open}
+        open={isModalOpen}
         style={{ overflowY: "scroll", textAlign: "center" }}
         onClose={this.props.close}
         onClick={this.handleClose}

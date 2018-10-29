@@ -66,7 +66,7 @@ class Declaratii extends Component {
                 peopleToReturn.push(
                     <ListItem key={i} className="mx-5 px-5" button component="a" href={item.location[i]} >
                       
-                            <img src={require("../images/icons/arow2.png")}></img>
+                            <img src={require("../images/icons/arow2.png")} alt="arow declaratii"></img>
                   
                         <ListItemText color="white" inset primary={item.content[i]} />
                     </ListItem>
@@ -77,7 +77,7 @@ class Declaratii extends Component {
                 <React.Fragment>
                     <ListItem key={index} button onClick={this.handleChange(index)}>
                         <ListItemIcon>
-                            <img src={require("../images/icons/institution.png")}></img>
+                            <img src={require("../images/icons/institution.png")} alt="icon institutie declaratii"></img>
                         </ListItemIcon>
                         <ListItemText style={{color:'red'}} inset primary={item.title} secondary={item.date} />
                         {expanded === index ? <ExpandLess /> : <ExpandMore />}

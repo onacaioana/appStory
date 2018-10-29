@@ -16,12 +16,14 @@ class FooterPage1 extends Component {
                                 <Navbar className="navbar-dark text-light" expand="md">
                                     <NavBarComp />
                                 </Navbar>
-                                <p className="footer-company-name">All Rights Reserved. &copy; 2018. Design By :
-					            <a href="http://www.tribunalulcluj.ro/"><p className="footer-links">Tribunalul Cluj</p></a></p>
+                                <p className="footer-company-name">
+                                    All Rights Reserved. &copy; 2018. Design By :
+					                <a href="http://www.tribunalulcluj.ro/">Tribunalul Cluj</a>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
             </React.Fragment>

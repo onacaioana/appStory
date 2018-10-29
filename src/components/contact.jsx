@@ -4,103 +4,119 @@ import { fax } from "react-icons-kit/fa/fax";
 import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
 import { mail } from "react-icons-kit/ikons/mail";
 import Harta from "../components/Harta/harta";
-import Pdf from "../components/Pdf/pdf";
 import Title from './Title/title';
 // import 'mapbox-gl/dist/mapbox-gl.css';
 
+const program = [{
+  where: "Programul de lucru al instituţiei:",
+  hours: "Luni - Vineri între orele 08:00 - 16:00;"
+},
+{
+  where: "Programul de lucru cu publicul al Registraturii (parter, camera 24A), al Arhivei (parter, camera 24B):",
+  hours: "Luni - Vineri între orele 8:00 - 12:00;"
+}, {
+  where: "Programul de lucru cu publicul pe perioada vacantei judecatoresti (01.07.-31.08.) al Registraturii (parter, camera 24A), al Arhivei (parter, camera 24B):",
+  hours: "Luni Miercuri Joi între orele 09:00 - 11:00;",
+}];
+
+const contacte = [{
+  icon: phoneSquare,
+  name: "Contact",
+  items: [{
+    name: "Telefon Tribunal",
+    item: "0264-596111 ; 0264-431057"
+  }, {
+    name: "Telefon Tribunal",
+    item: "0264-431908 ; 0264-595812",
+  }]
+},
+{
+  icon: mail,
+  name: "Mail",
+  items: [{
+    name: "Registratură",
+    item: "tr-cluj-reg@just.ro",
+  },
+  {
+    name: "Biroul Expertize",
+    item: "tr-cluj-blej@just.ro ",
+  }, {
+    name: "Purtător de cuvânt",
+    item: "simona.sulea@just.ro"
+  }]
+},
+{
+  icon: fax ,
+  name: "Fax",
+  items: [{
+    name: "Cabinet Preşedinte",
+    item: "0264-595844",
+  },
+  {
+    name: "Serviciu Contabilitate",
+    item: "0264-431965",
+  }]
+},]
+
 class Contact extends Component {
+
+
   render() {
+    let orar = program.map((item, index) => {
+      return (
+        <div>
+          <p className="card-text px-2">{item.where}</p>
+          <p className="card-text px-2"><b>{item.hours}</b></p>
+        </div>
+      )
+    });
+
+    let contactUs = contacte.map((cont, index) => {
+      let count = [];
+
+      for (let i = 0; i < cont.items.length; i++) {
+        count.push(
+          <p className="card-text">
+            <b> {cont.items[i].name}: </b>
+            {cont.items[i].item}
+          </p>
+        );
+      }
+      return (
+        <div className="col-md-4" key={index}>
+          <div className="card mb-4 shadow-lg h-md-250">
+            <div className="card-header text-white r bg-secondary  border-0 py-2 d-flex align-items-center">
+              <Icon size={30} icon={cont.icon} />
+              <h5 className="card-text px-3">{cont.name}</h5>
+            </div>
+            <div className="card-body">
+              {count}
+            </div>
+          </div>
+        </div>
+      )
+    });
+
     const style = { marginLeft: "10%", marginRight: "10%", marginTop: "10px" };
     return (
       <React.Fragment>
         <Title title="Contact" page="Contact us" />
         <div style={style}>
-          <div className="card mb-4 bg-light text-dark shadow-lg h-md-250 justify-content-center ">
-            <div className="card-header text-white bg-secondary  border-0 py-2 d-flex align-items-center">
-              <h4 className="text-center">PROGRAM DE FUNCȚIONARE</h4>
+
+          <div className="card my-3 bg-light text-dark shadow-lg h-md-250 justify-content-center text-center">
+            <div className="card-header text-white bg-secondary border-0 py-2 d-flex align-items-center">
+              <h5 className="card-text px-3 justify-content-center">Program de funcţionare</h5>
             </div>
             <div className="card-body">
-              <p className="card-text px-2">Programul de lucru al instituţiei: <br/>Luni - Vineri între orele 08:00 - 16:00;</p>
-              <p className="card-text px-2">Programul de lucru cu publicul al Registraturii (parter, camera 24A), al Arhivei (parter, camera 24B):<br/> Luni - Vineri între orele 8:00 - 12:00; </p>
-              <p className="card-text px-2">Programul de lucru cu publicul pe perioada vacantei judecatoresti (01.07.-31.08.) al Registraturii (parter, camera 24A), al Arhivei (parter, camera 24B):<br/> Luni Miercuri Joi între orele 09:00 - 11:00;</p>
+              {orar}
             </div>
           </div>
+
           <div className="row mb-2">
-            <div className="col-md-4">
-              <div className="card mb-4 shadow-lg h-md-250">
-                <div className="card-header text-white r bg-secondary  border-0 py-2 d-flex align-items-center">
-                  <Icon size={30} icon={phoneSquare} />
-                  <h5 className="card-text px-3">Contact</h5>
-                </div>
-
-                <div className="card-body">
-                  <p className="card-text">
-                    <b> Registratură: </b>
-                    0748 523.258
-                </p>
-                  <p className="card-text">
-                    <b> Arhivă: </b>
-                    0748 523.258
-                </p>
-                  <p className="card-text">
-                    <b>Purtator de cuvant: </b>
-                    0748 523.258
-                </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-4">
-              <div className="card mb-4 shadow-lg h-md-250">
-                <div className="card-header text-white r bg-secondary  border-0 py-2 d-flex align-items-center">
-                  <Icon size={30} icon={fax} />
-                  <h5 className="card-text px-3">Fax</h5>
-                </div>
-
-                <div className="card-body">
-                  <p className="card-text">
-                    <b> Registratură: </b>
-                    0748 523.258
-                </p>
-                  <p className="card-text">
-                    <b> Arhivă: </b>
-                    0748 523.258
-                </p>
-                  <p className="card-text">
-                    <b>Purtator de cuvant: </b>
-                    0748 523.258
-                </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-4">
-              <div className="card mb-4 shadow-lg h-md-250">
-                <div className="card-header text-white r bg-secondary  border-0 py-2 d-flex align-items-center">
-                  <Icon size={30} icon={mail} />
-                  <h5 className="card-text px-3">Mail</h5>
-                </div>
-
-                <div className="card-body">
-                  <p className="card-text">
-                    <b> Registratură: </b>
-                    0748 523.258
-                </p>
-                  <p className="card-text">
-                    <b> Arhivă: </b>
-                    0748 523.258
-                </p>
-                  <p className="card-text">
-                    <b>Purtator de cuvant: </b>
-                    0748 523.258
-                </p>
-                </div>
-              </div>
-            </div>
+            {contactUs}
           </div>
 
           <Harta />
-          <Pdf fileName="/sample.pdf" />
         </div>
       </React.Fragment>
     );
