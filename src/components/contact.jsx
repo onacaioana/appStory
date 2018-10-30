@@ -85,7 +85,7 @@ class Contact extends Component {
       return (
         <div className="col-md-4" key={index}>
           <div className="card mb-4 shadow-lg h-md-250">
-            <div className="card-header text-white r bg-secondary  border-0 py-2 d-flex align-items-center">
+            <div style={{backgroundColor: '#146496'}} className="card-header text-white border-0 py-2 d-flex align-items-center">
               <Icon size={30} icon={cont.icon} />
               <h5 className="card-text px-3">{cont.name}</h5>
             </div>
@@ -103,9 +103,9 @@ class Contact extends Component {
         <Title title="Contact" page="Contact us" />
         <div style={style}>
 
-          <div className="card my-3 bg-light text-dark shadow-lg h-md-250 justify-content-center text-center">
-            <div className="card-header text-white bg-secondary border-0 py-2 d-flex align-items-center">
-              <h5 className="card-text px-3 justify-content-center">Program de funcţionare</h5>
+          <div className="card my-3 bg-light shadow-lg h-md-250 text-center">
+            <div style={{backgroundColor: '#146496'}}  className="card-header text-white border-0 py-2 d-flex ">
+              <h5 className="card-text px-3">Program de funcţionare</h5>
             </div>
             <div className="card-body">
               {orar}

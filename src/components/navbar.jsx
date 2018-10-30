@@ -84,6 +84,9 @@ class NavBarComp extends Component {
                         <NavItem className="mr-4">
                             <NavLink href="https://www.curteadeapelcluj.ro/Dosare_ecris.aspx">INFO-DOSAR</NavLink>
                         </NavItem>
+                        <NavItem className="mr-4">
+                            <NavLink href="https://www.curteadeapelcluj.ro/ListeSedinta.aspx">INFO-ŞEDINŢE</NavLink>
+                        </NavItem>
 
                         <Dropdown nav isOpen={this.state.dropdownInstante} toggle={this.toggleInstante}>
                             <DropdownToggle nav caret>INSTANŢE</DropdownToggle>

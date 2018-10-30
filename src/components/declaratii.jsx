@@ -11,32 +11,26 @@ import Title from './Title/title';
 
 
 const items = [{
-    date: "13 decembrie 2018",
     title: "Tribunalul Cluj",
     content: ["Declarații de avere", "Declarații de interese"],
     location: ["https://www.curteadeapelcluj.ro/DA.aspx?id=TRCJ","https://www.curteadeapelcluj.ro/DI.aspx?id=TRCJ"],
 }, {
-    date: "13 decembrie 2015",
     title: "Judecătoria Cluj-Napoca",
     content: ["Declarații de avere", "Declarații de interese"],
     location: ["https://www.curteadeapelcluj.ro/DA.aspx?id=JCN","https://www.curteadeapelcluj.ro/DI.aspx?id=JCN"],
 }, {
-    date: "13 ianuarie 2017",
     title: "Judecătoria Dej",
     content: ["Declarații de avere", "Declarații de interese"],
     location: ["https://www.curteadeapelcluj.ro/DA.aspx?id=JD","https://www.curteadeapelcluj.ro/DI.aspx?id=JD"],
 }, {
-    date: "13 noiembrie 2015",
     title: "Judecătoria Gherla",
     content: ["Declarații de avere", "Declarații de interese"],
     location: ["https://www.curteadeapelcluj.ro/DA.aspx?id=JG","https://www.curteadeapelcluj.ro/DI.aspx?id=JG"],
 }, {
-    date: "13 noiembrie 2015",
     title: "Judecătoria Huedin",
     content: ["Declarații de avere", "Declarații de interese"],
     location: ["https://www.curteadeapelcluj.ro/DA.aspx?id=JH","https://www.curteadeapelcluj.ro/DI.aspx?id=JH"],
 }, {
-    date: "13 noiembrie 2015",
     title: "Judecătoria Turda",
     content: ["Declarații de avere", "Declarații de interese"],
     location: ["https://www.curteadeapelcluj.ro/DA.aspx?id=JT","https://www.curteadeapelcluj.ro/DI.aspx?id=JT"],
