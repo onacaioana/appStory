@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Navbar } from 'reactstrap';
 import './footer.css';
 import NavBarComp from '../navbar';
 
 
-class FooterPage1 extends Component {
-    render() {
+const FooterPage1  = () => {
         return (
-            <React.Fragment>
                 <div className="copyrights">
                     <div className="container">
                         <div className="footer-distributed">
@@ -23,12 +21,8 @@ class FooterPage1 extends Component {
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-            </React.Fragment>
         );
     }
-}
-
+    
 export default FooterPage1;

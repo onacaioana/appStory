@@ -8,44 +8,75 @@ import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Title from './Title/title';
-
+import ListOfDocs from './listOfDocs';
 
 const items = [{
-    date: "13 decembrie 2018",
-    title: "Concurs grefier de sedinta",
-    content: ["Concurs grefier de sedinta nr 38 din 13 decembrie 2018"],
-    location: "./simple.pdf",
+    data: "13 noiembrie 2015",
+    titlu: "Concurs de promovare grefier sef",
+    listOfDocs: [{
+        titlu: "asdasd",
+        locatie: "adsdas",
+    },
+    {
+        titlu: "asdasd",
+        locatie: "adsdas",
+    }],
 }, {
-    date: "13 decembrie 2015",
-    title: "Concurs specialist IT",
-    content: ["Concurs grefier de sedinta nr 38 din 13 decembrie 2018", "Concurs grefier de sedinta nr 38 din 13 decembrie 2018"],
-    location: "./simple.pdf",
+    data: "13 noiembrie 2015",
+    titlu: "Concurs de promovare grefier sef",
+    listOfDocs: [{
+        titlu: "asdasd",
+        locatie: "adsdas",
+    },
+    {
+        titlu: "asdasd",
+        locatie: "adsdas",
+    }],
 }, {
-    date: "13 ianuarie 2017",
-    title: "Concurs de promovare judecatori",
-    content: ["Concurs grefier de sedinta nr 38 din 13 decembrie 2018", "Concurs grefier de sedinta nr 38 din 13 decembrie 2018"],
-    location: "./simple.pdf",
+    data: "13 noiembrie 2015",
+    titlu: "Concurs de promovare grefier sef",
+    listOfDocs: [{
+        titlu: "asdasd",
+        locatie: "adsdas",
+    },
+    {
+        titlu: "asdasd",
+        locatie: "adsdas",
+    }],
 }, {
-    date: "13 noiembrie 2015",
-    title: "Concurs de promovare grefier sef",
-    content: ["Concurs grefier de sedinta nr 38 din 13 decembrie 2018", "Concurs grefier de sedinta nr 38 din 13 decembrie 2018"],
-    location: "./simple.pdf",
+    data: "13 noiembrie 2015",
+    titlu: "Concurs de promovare grefier sef",
+    listOfDocs: [{
+        titlu: "asdasd",
+        locatie: "adsdas",
+    },
+    {
+        titlu: "asdasd",
+        locatie: "adsdas",
+    }],
 }, {
-    date: "13 noiembrie 2015",
-    title: "Concurs grefier registrator",
-    content: ["Concurs grefier de sedinta nr 38 din 13 decembrie 2018", "Concurs grefier de sedinta nr 38 din 13 decembrie 2018"],
-    location: "./simple.pdf",
+    data: "13 noiembrie 2015",
+    titlu: "Concurs de promovare grefier sef",
+    listOfDocs: [{
+        titlu: "asdasd",
+        locatie: "adsdas",
+    },
+    {
+        titlu: "asdasd",
+        locatie: "adsdas",
+    }],
 }, {
-    date: "13 noiembrie 2015",
-    title: "Concurs grefier registrator",
-    content: ["Concurs grefier de sedinta nr 38 din 13 decembrie 2018", "Concurs grefier de sedinta nr 38 din 13 decembrie 2018"],
-    location: "./simple.pdf",
-}, {
-    date: "13 noiembrie 2015",
-    title: "Concurs grefier registrator",
-    content: ["Concurs grefier de sedinta nr 38 din 13 decembrie 2018", "Concurs grefier de sedinta nr 38 din 13 decembrie 2018"],
-    location: "./simple.pdf",
-}];
+    data: "13 noiembrie 2015",
+    titlu: "Concurs de promovare grefier sef",
+    listOfDocs: [{
+        titlu: "asdasd",
+        locatie: "adsdas",
+    },
+    {
+        titlu: "asdasd",
+        locatie: "adsdas",
+    }],
+},];
 
 class Concursuri extends Component {
 
@@ -66,31 +97,22 @@ class Concursuri extends Component {
         const { expanded } = this.state;
 
         let listItems = items.map((item, index) => {
-            let peopleToReturn = [];
-            for (let i = 0; i < item.content.length; i++) {
-                peopleToReturn.push(
-                    <ListItem key={i} className="mx-5 px-5" button >
-                      
-                            <img src={require("../images/icons/arow2.png")} alt="arow concursuri si anunturi"></img>
-                  
-                        <ListItemText color="white" inset primary={item.content[i]} />
-                    </ListItem>
-                );
-            }
-
             return (
                 <React.Fragment>
                     <ListItem key={index} button onClick={this.handleChange(index)}>
                         <ListItemIcon>
                             <img src={require("../images/icons/list.png")} alt="list concursuri si anunturi"></img>
                         </ListItemIcon>
-                        <ListItemText style={{color:'red'}} inset primary={item.title} secondary={item.date} />
+                        <ListItemText inset primary={item.titlu} secondary={item.data} />
                         {expanded === index ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
                     <Collapse in={expanded === index} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding>
-                            {peopleToReturn}
-                        </List>
+                        <ListOfDocs
+                            list={item.listOfDocs}
+                            button={true}
+                            icon={require("../images/icons/arow2.png")}
+                            component="div"
+                        />
                     </Collapse>
                 </React.Fragment>
             )

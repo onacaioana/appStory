@@ -13,9 +13,8 @@ import Divider from '@material-ui/core/Divider';
 import Title from './Title/title';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
+import ListFromStringsArray from './listFromStringsArray';
 
 const people = [{
     sectia: "Conducere",
@@ -102,14 +101,7 @@ class Organizare extends Component {
         const { expanded } = this.state;
 
         let listItems = people.map((p, index) => {
-            let peopleToReturn = [];
-            for (let i = 0; i < p.team.length; i++) {
-                peopleToReturn.push(
-                    <ListItem key={i} className="mx-5 px-5" >
-                        <ListItemText color="white" inset primary={p.team[i]} />
-                    </ListItem>
-                );
-            }
+
             return (
                 <React.Fragment>
                     <List
@@ -128,12 +120,9 @@ class Organizare extends Component {
                                 inset
                                 primary={<h5 style={{ color: '#146496' }}>{p.title}</h5>}
                             />
-                            {expanded === index ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
                         <Collapse in={true} timeout="auto" unmountOnExit>
-                            <List component="div" disablePadding>
-                                {peopleToReturn}
-                            </List>
+                            <ListFromStringsArray list={p.team} />
                         </Collapse>
                     </List>
                 </React.Fragment>

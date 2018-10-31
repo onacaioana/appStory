@@ -1,66 +1,14 @@
 import React, { Component } from 'react';
 import './infoList.css';
 import { Icon } from "react-icons-kit";
-import { fax } from "react-icons-kit/fa/fax";
-import { notepad_remove } from 'react-icons-kit/ikons/notepad_remove'
-import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
-import { mail } from "react-icons-kit/ikons/mail";
 import WhenInView from '../whenInView';
 import Grow from '@material-ui/core/Grow';
 import HeaderFormat from '../header';
 
-const lista = [{
-    title: 'Noua legislație penală',
-    icon: fax,
-},
-
-{
-    title: ' Asistenţă judiciară',
-    icon: phoneSquare,
-},
-{
-    title: ' Informaţii taxe',
-    icon: mail,
-
-},
-{
-    title: ' Legalizare şi investire',
-    icon: mail,
-},
-{
-
-    title: 'Hotărâri străine',
-    icon: mail,
-
-},
-{
-    title: 'Medierea',
-    icon: notepad_remove,
-
-},
-{
-    title: 'Liste experţi',
-    icon: notepad_remove,
-},
-{
-    title: ' Apostilă',
-    icon: notepad_remove,
-}];
-
 class InfoList extends Component {
-    state={
-        show:false,
-    }
-
-    handlerInfo = (e) => {
-       this.setState({show:true})
-    }
-    closeInfo = (e) => {
-        this.setState({show:false});
-    }
 
     render() {
-        const items = lista.map((item, index) => {
+        const items = this.props.lista.map((item, index) => {
             return (
                 <li key={index}>
 
@@ -75,17 +23,7 @@ class InfoList extends Component {
                                     </div>
                                     <h6 key={index} onClick={e => this.handlerInfo(e)} style={{cursor:'pointer'}}>
                                     {item.title}
-                                    </h6>
-                                    
-                                  {/*   <div style={{position:'absolute',bottom:0,}}>
-                                        <Button className="float-xs-left" size='small' href="#text-buttons">
-                                           Save
-                                        </Button>
-                                        <Button className="float-xs-right " size='small' href="#text-buttons" >
-                                            Print
-                                        </Button>
-                                    </div> */}
-                                    
+                                    </h6>            
                                 </div>
                             </Grow>
                         }</WhenInView>
@@ -104,7 +42,6 @@ class InfoList extends Component {
                             </ul>
                         </div>
                     </div>
-
                 </section>
             </React.Fragment>
         );
