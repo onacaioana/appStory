@@ -210,7 +210,7 @@ class InfoPublice extends Component {
 
                     {/* Lista de documente( <List>) care apartin <ListItem> -ului de mai sus si care se regasesc intr-un collapse */}
                     <Collapse in={expanded === index} timeout="auto" unmountOnExit>
-                        <div className="container px-5  py-2">{item.text}</div>
+                        <div className="container px-5  py-2 text-justify">{item.text}</div>
                         <ListOfDocs
                             list={item.listOfDocs}
                             icon={require("../images/icons/arow2.png")}
