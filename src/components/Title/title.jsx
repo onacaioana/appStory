@@ -17,13 +17,15 @@ const title = (props) => {
                                 </Fade>
                             }
                         </WhenInView>
-                        <div className="breadcrumbs">
-                            <ul>
-                                <li><a href="/">Acasă</a></li>
-                                {props.subpage ? <li>{props.subpage}</li> : ''}
-                                <li> {props.page}</li>
-                            </ul>
-                        </div>
+                        {props.breadcrumbs === true ?
+                            <div className="breadcrumbs">
+                                <ul>
+                                    <li><a href="/">Acasă</a></li>
+                                    {props.subpage ? <li>{props.subpage}</li> : ''}
+                                    <li> {props.page}</li>
+                                </ul>
+                            </div>
+                            : ""}
                     </div>
                 </div>
             </div>

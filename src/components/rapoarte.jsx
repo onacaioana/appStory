@@ -99,6 +99,7 @@ class Rapoarte extends Component {
                     title="Instanța în cifre"
                     page="Instanța în cifre"
                     subpage="Despre instanță"
+                    breadcrumbs={true}
                 />
                 <div className="my-5 container">
                     <List component="nav" >

@@ -7,6 +7,11 @@ import { fax } from "react-icons-kit/fa/fax";
 import { notepad_remove } from 'react-icons-kit/ikons/notepad_remove'
 import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
 import { mail } from "react-icons-kit/ikons/mail";
+import Title from './Title/title';
+import { Modal } from '@material-ui/core';
+const { detect } = require('detect-browser');
+const browser = detect();
+
 
 const listaInformatiiUtile = [{
     title: 'Noua legislație penală',
@@ -52,8 +57,34 @@ class HomePage extends Component {
         let path = "/taxe";
         this.props.history.push(path);
     }
-
     render() {
+        if (browser.name === 'ie' && browser.version.indexOf("10") !== -1) {
+            return this.renderForIE11();
+        }
+        else if (browser.name === 'ie') {
+            return this.renderForNoCompatibility();
+        }
+        else return this.renderForMost();
+    }
+
+    renderForNoCompatibility() {
+        return (
+            <div>
+                <p>Acest site nu suporta aceasta versiune de browser. Va rugam sa updataţi browserul dumneavostră sau să folositi Chorme sau FireFox </p>
+            </div>
+        )
+    }
+    renderForIE11() {
+        return (
+            <div>
+                <Title title="TRIBUNALUL CLUJ" breadcrumbs={false}></Title>
+                <HeaderFormat />
+                <InfoList lista={listaInformatiiUtile} />
+                <LinksBar />
+            </div>
+        );
+    }
+    renderForMost() {
         return (
             <React.Fragment>
                 <Slider></Slider>
@@ -62,6 +93,7 @@ class HomePage extends Component {
                 <LinksBar />
             </React.Fragment>
         );
+
     }
 }
 

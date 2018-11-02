@@ -3,6 +3,7 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import HeaderFormat from './header';
+
 const items = [{
     link: "http://www.just.ro/",
     icon: require("../images/links/ministerul_justitiei.PNG"),
@@ -92,7 +93,7 @@ class LinksBar extends Component {
             marginLeft: 'auto',
             marginRight: 'auto',
         }
-
+      
         const list = items.map((item, index) => {
             return (
                 <div className="item" key={index} style={{ textAlign: 'center' }}>
@@ -111,7 +112,7 @@ class LinksBar extends Component {
                         margin={10}
 
                         autoplay={true}
-                        autoplaySpeed={1000}
+                        autoplayspeed={1000}
                         autoplayTimeout={2000}
                         autoplayHoverPause={true}
                         responsive={{ 0: { items: 2 }, 600: { items: 4 }, 1024: { items: 7 } }}

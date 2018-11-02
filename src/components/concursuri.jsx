@@ -123,6 +123,7 @@ class Concursuri extends Component {
                 <Title
                     title="Anunţuri / Concursuri"
                     page="Anunţuri"
+                    breadcrumbs={true}
                     subpage="Informații"
                 />
 

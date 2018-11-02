@@ -23,7 +23,7 @@ class Prezentare extends Component {
     render() {
         return (
             <React.Fragment>
-                <Title title="Prezentare" page="Prezentare" subpage="Despre Instanță" />
+                <Title title="Prezentare" page="Prezentare" subpage="Despre Instanță" breadcrumbs={true} />
                 <div className="container text-justify" >
                     <HeaderFormat title="Istoric" bg=""></HeaderFormat>
                     <p ><br /> &emsp;&emsp;

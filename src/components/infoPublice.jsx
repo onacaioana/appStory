@@ -228,6 +228,7 @@ class InfoPublice extends Component {
                     title="Informații Publice"
                     page="Informații Publice"
                     subpage="Informații"
+                    breadcrumbs={true}
                 />
 
                 <div className="my-5 container">

@@ -77,6 +77,7 @@ class Hotarari extends Component {
                     title="Hotărâri de colegiu"
                     page="Hotarâri"
                     subpage="Informații"
+                    breadcrumbs={true}
                 />
 
                 <div className="my-5 container">

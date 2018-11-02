@@ -15,11 +15,29 @@ import Concursuri from './components/concursuri';
 import Declaratii from './components/declaratii';
 import InfoPublice from "./components/infoPublice";
 import Comunicate from "./components/comunicate";
+const { detect } = require('detect-browser');
+const browser = detect();
+
 
 class App extends Component {
   render() {
+    if (browser.name === 'ie') {
+      return this.renderForNoCompatibility();
+    }
+    else return this.renderAll();
+  }
+  renderForNoCompatibility() {
+    return (
+      <div>
+        <p>Acest site nu suporta aceasta versiune de browser. Va rugam sa updataţi browserul dumneavostră sau să folositi Chorme sau FireFox </p>
+      </div>
+    )
+  }
+
+  renderAll() {
     return (
       <React.Fragment>
+
         <Meniu />
         <BrowserRouter>
           <Switch>

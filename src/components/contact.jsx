@@ -100,7 +100,7 @@ class Contact extends Component {
     const style = { marginLeft: "10%", marginRight: "10%", marginTop: "10px" };
     return (
       <React.Fragment>
-        <Title title="Contact" page="Contact us" />
+        <Title title="Contact" page="Contact us" breadcrumbs={true} />
         <div style={style}>
 
           <div className="card my-3 bg-light shadow-lg h-md-250 text-center">

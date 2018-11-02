@@ -97,6 +97,7 @@ class Declaratii extends Component {
                     title="Declarații"
                     page="Declarații"
                     subpage="Informații"
+                    breadcrumbs={true}
                 />
 
                 <div className="my-5 container">

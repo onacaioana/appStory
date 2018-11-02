@@ -87,21 +87,10 @@ const people = [{
 ]
 
 class Organizare extends Component {
-    state = {
-        expanded: 0,
-    }
-
-    handleChange = index => (event, expanded) => {
-        this.setState({
-            expanded: index,
-        });
-    };
 
     render() {
-        const { expanded } = this.state;
-
+        
         let listItems = people.map((p, index) => {
-
             return (
                 <React.Fragment>
                     <List
@@ -111,7 +100,7 @@ class Organizare extends Component {
                         <Typography color="primary" className="my-3" variant="display1">{p.sectia}</Typography>
 
                         {/* All team */}
-                        <ListItem key={index} button onClick={this.handleChange(index)}>
+                        <ListItem key={index} button>
                             <ListItemIcon>
                                 <img src={require("../images/icons/arow2.png")} alt={index}></img>
                             </ListItemIcon>
@@ -131,7 +120,12 @@ class Organizare extends Component {
 
         return (
             <React.Fragment>
-                <Title title="Organizare" page="Organizare" subpage="Despre Instanță" />
+                <Title
+                    title="Organizare"
+                    page="Organizare"
+                    subpage="Despre Instanță"
+                    breadcrumbs={true}
+                />
                 <div>
                     <Grid container className=" my-3 bg-light" spacing={16} >
                         {/* Meniu */}

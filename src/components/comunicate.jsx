@@ -66,6 +66,7 @@ class Comunicate extends Component {
                     title="Comunicate de presă"
                     page="Comunicate"
                     subpage="Informații"
+                    breadcrumbs={true}
                 />
 
                 <div className="my-5 container">
