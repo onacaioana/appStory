@@ -1,7 +1,7 @@
 
 import React, { Component } from "react";
 import "./App.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter , Switch, Route } from "react-router-dom";
 import Contact from "./components/contact";
 import Prezentare from "./components/prezentare";
 import HomePage from "./components/home";
@@ -21,7 +21,8 @@ const browser = detect();
 
 class App extends Component {
   render() {
-    if (browser.name === 'ie') {
+    console.log(browser.version.substr(0,2).toString);
+    if (browser.name === 'ie' && browser.version.substr(0,2) ==='9') {
       return this.renderForNoCompatibility();
     }
     else return this.renderAll();
@@ -35,25 +36,27 @@ class App extends Component {
   }
 
   renderAll() {
+    const baseUrl = process.env.PUBLIC_URL;
+    console.log({baseUrl});
     return (
       <React.Fragment>
 
         <Meniu />
-        <BrowserRouter>
+        <HashRouter basename={baseUrl} component={App}>
           <Switch>
-            <Route path="/contact" component={Contact} />
-            <Route path="/organizare" component={Organizare} />
-            <Route path="/taxe" component={TaxeTimbru} />
-            <Route path="/prezentare" component={Prezentare} />
-            <Route path="/rapoarte" component={Rapoarte} />
-            <Route path="/hotarari" component={Hotarari} />
-            <Route path="/concurs" component={Concursuri} />
-            <Route path="/declaratii" component={Declaratii} />
-            <Route path="/infoPublice" component={InfoPublice} />
-            <Route path="/comunicate" component={Comunicate} />
-            <Route path="/" component={HomePage} />
+            <Route exact path={"/organizare"} component={Organizare} />
+            <Route exact path={"/contact"} component={Contact} />
+            <Route exact path={"/taxe"} component={TaxeTimbru} />
+            <Route exact path={"/prezentare"} component={Prezentare} />
+            <Route exact path={"/rapoarte"} component={Rapoarte} />
+            <Route exact path={"/hotarari"} component={Hotarari} />
+            <Route exact path={"/concurs"} component={Concursuri} />
+            <Route exact path={"/declaratii"} component={Declaratii} />
+            <Route exact path={"/infoPublice"} component={InfoPublice} />
+            <Route exact path={"/comunicate"} component={Comunicate} />
+            <Route exact path={"/"} component={HomePage} />
           </Switch>
-        </BrowserRouter>
+        </HashRouter >
         <Footer />
       </React.Fragment>
     );

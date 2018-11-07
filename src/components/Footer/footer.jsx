@@ -11,7 +11,7 @@ const FooterPage1  = () => {
                         <div className="footer-distributed">
                             <a href="/home"> <img style={{ width: '25%' }} src={require("../../images/ministerul_justitiei.PNG")} alt="logo-ministerul-justitiei" /></a>
                             <div className="footer-center">
-                                <Navbar className="navbar-dark text-light" expand="md">
+                                <Navbar className="navbar-dark text-light text-justify" expand="md">
                                     <NavBarComp />
                                 </Navbar>
                                 <p className="footer-company-name">

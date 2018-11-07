@@ -58,7 +58,7 @@ class HomePage extends Component {
         this.props.history.push(path);
     }
     render() {
-        if (browser.name === 'ie' && browser.version.indexOf("10") !== -1) {
+        if (browser.name === 'ie' && browser.version.indexOf("11") !== -1) {
             return this.renderForIE11();
         }
         else if (browser.name === 'ie') {

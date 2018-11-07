@@ -53,7 +53,7 @@ class NavBarComp extends Component {
         return (
                     <Nav className="m-auto" navbar style={{fontSize:"14px"}} >
                         <NavItem className="mr-4">
-                            <NavLink href="/home" >ACASĂ</NavLink>
+                            <NavLink href={`${process.env.PUBLIC_URL}/#/`} >ACASĂ</NavLink>
                         </NavItem>
 
                         <Dropdown nav isOpen={this.state.dropdownInstanta} toggle={this.toggleInstanta}>
@@ -61,10 +61,10 @@ class NavBarComp extends Component {
                                 DESPRE INSTANŢĂ
                                 </DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem href="/prezentare">Prezentare</DropdownItem>
-                                <DropdownItem href="/organizare">Organizare</DropdownItem>
+                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/prezentare`}>Prezentare</DropdownItem>
+                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/organizare`}>Organizare</DropdownItem>
                                 <DropdownItem href="http://portal.just.ro/117/SitePages/Circumscriptii.aspx?id_inst=117">Circumscripţie</DropdownItem>
-                                <DropdownItem href="/rapoarte">Instaţa în cifre</DropdownItem>
+                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/rapoarte`}>Instaţa în cifre</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
@@ -73,11 +73,11 @@ class NavBarComp extends Component {
                                 INFORMAŢII
                                 </DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem href="/concurs">Anunţuri / Concursuri</DropdownItem>
-                                <DropdownItem href="/infoPublice">Informaţii publice</DropdownItem>
-                                <DropdownItem href="/declaratii">Declaraţii</DropdownItem>
-                                <DropdownItem href="/comunicate">Comunicate de presă</DropdownItem>
-                                <DropdownItem href="/hotarari">Hotărâri de colegiu</DropdownItem>
+                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/concurs`}>Anunţuri / Concursuri</DropdownItem>
+                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/infoPublice`}>Informaţii publice</DropdownItem>
+                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/declaratii`}>Declaraţii</DropdownItem>
+                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/comunicate`}>Comunicate de presă</DropdownItem>
+                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/hotarari`}>Hotărâri de colegiu</DropdownItem>
                                 <DropdownItem href="http://portal.just.ro/117/SitePages/jurisprudenta.aspx?id_inst=117">Jurisprudenţă</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
@@ -99,7 +99,7 @@ class NavBarComp extends Component {
                             </DropdownMenu>
                         </Dropdown>
                         <NavItem className="mr-4">
-                            <NavLink href="/contact">CONTACT</NavLink>
+                            <NavLink href={`${process.env.PUBLIC_URL}/#/contact`}>CONTACT</NavLink>
                         </NavItem>
                     </Nav>
         );

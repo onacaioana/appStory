@@ -17,14 +17,14 @@ const items = [{
     {
         titlu: "Bilant Tribunalul Cluj 2017",
         locatie: "adsdas",
-    },{
+    }, {
         titlu: "Bilant Tribunalul Cluj 2018",
         locatie: "adsdas",
     },
     {
         titlu: "Bilant Tribunalul Cluj 2017",
         locatie: "adsdas",
-    },{
+    }, {
         titlu: "Bilant Tribunalul Cluj 2018",
         locatie: "adsdas",
     },
@@ -43,7 +43,7 @@ const items = [{
     {
         titlu: "Statistică privind situaţia...",
         locatie: "adsdas",
-    },{
+    }, {
         titlu: "Statistică privind situaţia...",
         locatie: "adsdas",
     },
@@ -61,7 +61,7 @@ const items = [{
     {
         titlu: "Buget Tribunalul Cluj 2017",
         locatie: "adsdas",
-    },{
+    }, {
         titlu: "Statistică privind situaţia...",
         locatie: "adsdas",
     },
@@ -102,6 +102,7 @@ class Rapoarte extends Component {
                     breadcrumbs={true}
                 />
                 <div className="my-5 container">
+                   
                     <List component="nav" >
                         {listItems}
                     </List>
