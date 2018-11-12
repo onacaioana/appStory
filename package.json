@@ -2,12 +2,13 @@
   "name": "tribunal_web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://tribunalulcluj.ro/build",
   "dependencies": {
     "@material-ui/core": "^3.1.1",
     "@material-ui/icons": "^3.0.1",
+    "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
     "detect-browser": "^3.0.1",
+    "file-saver": "^2.0.0-rc.4",
     "google-maps-react": "^2.0.2",
     "list-react-files": "^0.2.0",
     "mapbox-gl": "^0.50.0",
@@ -30,7 +31,7 @@
     "styled-components": "^4.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start ",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
