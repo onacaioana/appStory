@@ -3,7 +3,14 @@ import { Document, Page } from "react-pdf/dist/entry.webpack";
 import Modal from "@material-ui/core/Modal";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "./pdf.css";
-import { Button } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import SaveIcon from '@material-ui/icons/SaveAlt';
+import PrintIcon from '@material-ui/icons/Print';
+import CloseIcon from '@material-ui/icons/Close';
 
 // const options = {
 //   cMapUrl: "cmaps/",
@@ -31,9 +38,13 @@ class Pdf extends Component {
   };
 
   handleSave = () => {
-    var FileSaver = require('file-saver');
-    var blob = new Blob([this.props.save], { type: "application/pdf" });
-    FileSaver.saveAs(blob, "world.pdf");
+    const linkSource = this.props.fileName;
+    const downloadLink = document.createElement("a");
+    const fileName = "vct_illustration.pdf";
+
+    downloadLink.href = linkSource;
+    downloadLink.download = fileName;
+    downloadLink.click();
 
   }
 
@@ -52,8 +63,19 @@ class Pdf extends Component {
       >
 
         <div className="container__document">
-          <Button onClick={this.handleSave}>Save</Button>
-          <Button>Print</Button>
+          <AppBar className="bg-dark text-light"  >
+            <Toolbar className="ml-auto" >
+              <IconButton href={this.props.fileName} onClick={this.handleSave} color="inherit" aria-label="Save">
+                <PrintIcon />
+              </IconButton>
+              <IconButton href={this.props.fileName} onClick={this.handleSave} color="inherit" aria-label="Save">
+                <SaveIcon />
+              </IconButton>
+              <IconButton href={this.props.fileName} onClick={this.handleClose} color="inherit" className="mx-3">
+                <CloseIcon />
+              </IconButton>
+            </Toolbar>
+          </AppBar>
           <Document
             file={this.props.fileName}
             onLoadSuccess={this.onDocumentLoadSuccess}
