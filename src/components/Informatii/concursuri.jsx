@@ -4,7 +4,7 @@ import List from "@material-ui/core/List";
 
 import Title from "../Title/title";
 
-import Informatie from "./informatie";
+import Anunt from "./anunt";
 
 const items = [
   {
@@ -12,11 +12,11 @@ const items = [
     titlu: "Concurs de promovare grefier sef",
     listOfDocs: [
       {
-        titlu: "asdasd",
+        titlu: "Proces verbal lista candidati",
         locatie: "adsdas"
       },
       {
-        titlu: "asdasd",
+        titlu: "Proces verbal rezultate proba scrisa",
         locatie: "adsdas"
       }
     ]
@@ -117,7 +117,7 @@ class Concursuri extends Component {
 
             {items.map((item, index) => {
               return (
-                <Informatie
+                <Anunt
                   key={index}
                   icon={"../../images/icons/list.png"}
                   altText={"altText"}

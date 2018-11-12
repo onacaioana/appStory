@@ -7,7 +7,7 @@ import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ListOfDocs from "../listOfDocs";
 
-class Informatie extends Component {
+class Anunt extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -51,4 +51,4 @@ class Informatie extends Component {
   }
 }
 
-export default Informatie;
+export default Anunt;
