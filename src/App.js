@@ -9,7 +9,7 @@ import Organizare from "./components/organizare";
 import Meniu from "./components/meniu";
 import Footer from "./components/Footer/footer";
 import Rapoarte from "./components/rapoarte";
-import Hotarari from "./components/hotarari";
+import Hotarari from "./components/Informatii/hotarari";
 import Concursuri from "./components/Informatii/concursuri";
 import Declaratii from "./components/Informatii/declaratii";
 import InfoPublice from "./components/Informatii/infoPublice";
