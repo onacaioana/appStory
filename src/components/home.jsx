@@ -9,6 +9,8 @@ import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
 import { mail } from "react-icons-kit/ikons/mail";
 import Title from './Title/title';
 import axios from 'axios';
+import { Document, Page } from 'react-pdf';
+import Modal from '@material-ui/core/Modal';
 import Pdf from './Pdf/pdf';
 
 const { detect } = require('detect-browser');
@@ -60,24 +62,13 @@ class HomePage extends Component {
     };
 
     componentDidMount() {
-        axios.get(`/ass`)
+        axios.get(`/ass`,{ params: {
+            fileName: "/files/sample.pdf"
+          }})
             .then(res => {
                 this.setState({
                     blob: res.data
                 });
-
-                var data = res.data;
-                var fileName = "your_file_name.pdf";
-                if (window.navigator && window.navigator.msSaveOrOpenBlob) { // IE workaround
-                    var byteCharacters = atob(data);
-                    var byteNumbers = new Array(byteCharacters.length);
-                    for (var i = 0; i < byteCharacters.length; i++) {
-                        byteNumbers[i] = byteCharacters.charCodeAt(i);
-                    }
-                    var byteArray = new Uint8Array(byteNumbers);
-                    var blob1 = new Blob([byteArray], { type: 'application/pdf' });
-                    window.navigator.msSaveOrOpenBlob(blob1, fileName);
-                }
             })
     }
     routeChange = () => {
@@ -85,15 +76,13 @@ class HomePage extends Component {
         this.props.history.push(path);
     }
     render() {
-        /*    if (browser.name === 'ie' && browser.version.indexOf("11") !== -1) {
-               return this.renderForIE11();
-           }
-           else if (browser.name === 'ie') {
-               return this.renderForNoCompatibility();
-           }
-           else 
-    */
-        return this.renderForMost();
+        if (browser.name === 'ie' && browser.version.indexOf("11") !== -1) {
+            return this.renderForIE11();
+        }
+        else if (browser.name === 'ie') {
+            return this.renderForNoCompatibility();
+        }
+        else return this.renderForMost();
     }
     renderForNoCompatibility() {
         return (
@@ -103,11 +92,23 @@ class HomePage extends Component {
         )
     }
     renderForIE11() {
+        var data = this.state.blob;
+        var fileName = "your_file_name.pdf";
+        if (window.navigator && window.navigator.msSaveOrOpenBlob) { // IE workaround
+            var byteCharacters = atob(data);
+            var byteNumbers = new Array(byteCharacters.length);
+            for (var i = 0; i < byteCharacters.length; i++) {
+                byteNumbers[i] = byteCharacters.charCodeAt(i);
+            }
+            var byteArray = new Uint8Array(byteNumbers);
+            var blob1 = new Blob([byteArray], { type: 'application/pdf' });
+            window.navigator.msSaveOrOpenBlob(blob1, fileName);
+        }
         return (
             <div>
                 <Title title="TRIBUNALUL CLUJ" breadcrumbs={false}></Title>
                 <HeaderFormat />
-                <Pdf fileName={`data:application/pdf;base64,${this.state.blob}`}></Pdf>
+                <Pdf data={`data:application/pdf;base64,${this.state.blob}`} print={this.state.blob} fileName="ie.pdf"></Pdf>
                 <InfoList lista={listaInformatiiUtile} />
                 <LinksBar />
             </div>
@@ -118,12 +119,9 @@ class HomePage extends Component {
         /*  */
         return (
             <React.Fragment>
-                {/* <Slider></Slider> */}
+                <Slider></Slider>
                 <HeaderFormat />
-                <div id="someDiv">
-
-                </div>
-                 <Pdf fileName={`data:application/pdf;base64,${this.state.blob}`} ></Pdf>
+                <Pdf data={`data:application/pdf;base64,${this.state.blob}`} print={this.state.blob}  fileName="test.pdf"></Pdf>
                 <InfoList lista={listaInformatiiUtile} />
                 <LinksBar />
             </React.Fragment>

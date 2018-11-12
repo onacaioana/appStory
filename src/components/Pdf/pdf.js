@@ -11,6 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 import SaveIcon from '@material-ui/icons/SaveAlt';
 import PrintIcon from '@material-ui/icons/Print';
 import CloseIcon from '@material-ui/icons/Close';
+import printJS from 'print-js'
 
 // const options = {
 //   cMapUrl: "cmaps/",
@@ -38,14 +39,33 @@ class Pdf extends Component {
   };
 
   handleSave = () => {
-    const linkSource = this.props.fileName;
+    const linkSource = this.props.data;
     const downloadLink = document.createElement("a");
-    const fileName = "vct_illustration.pdf";
+    const fileName = this.props.fileName;
 
     downloadLink.href = linkSource;
     downloadLink.download = fileName;
     downloadLink.click();
 
+  }
+  handlePrint = () => {
+    /*  var mywindow = window.open(this.props.data, '_blank');
+     mywindow.focus(); // necessary for IE >= 10*
+     mywindow.print(); */
+   var data = this.props.print;
+   console.log(data);
+   var byteCharacters = atob(data);
+   var byteNumbers = new Array(byteCharacters.length);
+   for (var i = 0; i < byteCharacters.length; i++) {
+     byteNumbers[i] = byteCharacters.charCodeAt(i);
+   }
+   var byteArray = new Uint8Array(byteNumbers);
+
+   const pdfBlob = new Blob(byteArray, { type: "application/pdf" });
+   console.log(pdfBlob);
+   const url = URL.createObjectURL(pdfBlob);
+   console.log(url); 
+    printJS(url, 'pdf');
   }
 
   onDocumentLoadSuccess = ({ numPages }) => {
@@ -54,7 +74,7 @@ class Pdf extends Component {
 
   render() {
     const { numPages, isModalOpen } = this.state;
-    let downloadLink = this.props.fileName;
+    let downloadLink = this.props.data;
     console.log(downloadLink);
     return (
       <Modal
@@ -65,32 +85,35 @@ class Pdf extends Component {
         <div className="container__document">
           <AppBar className="bg-dark text-light"  >
             <Toolbar className="ml-auto" >
-              <IconButton href={this.props.fileName} onClick={this.handleSave} color="inherit" aria-label="Save">
+              <IconButton href="#" onClick={this.handlePrint} color="inherit" aria-label="Save">
                 <PrintIcon />
               </IconButton>
-              <IconButton href={this.props.fileName} onClick={this.handleSave} color="inherit" aria-label="Save">
+              <IconButton href={this.props.data} onClick={this.handleSave} color="inherit" aria-label="Save">
                 <SaveIcon />
               </IconButton>
-              <IconButton href={this.props.fileName} onClick={this.handleClose} color="inherit" className="mx-3">
+              <IconButton onClick={this.handleClose} color="inherit" className="mx-3">
                 <CloseIcon />
               </IconButton>
             </Toolbar>
           </AppBar>
-          <Document
-            file={this.props.fileName}
-            onLoadSuccess={this.onDocumentLoadSuccess}
-          >
-            {Array.from(
-              new Array(this.props.pages || numPages), //show first 'this.props.pages' pages or all pages
-              (el, index) => (
-                <Page
-                  key={`page_${index + 1}`}
-                  pageNumber={index + 1}
-                  scale={1.5}
-                />
-              )
-            )}
-          </Document>
+          <div id="test">
+            <Document
+
+              file={this.props.data}
+              onLoadSuccess={this.onDocumentLoadSuccess}
+            >
+              {Array.from(
+                new Array(this.props.pages || numPages), //show first 'this.props.pages' pages or all pages
+                (el, index) => (
+                  <Page
+                    key={`page_${index + 1}`}
+                    pageNumber={index + 1}
+                    scale={1.5}
+                  />
+                )
+              )}
+            </Document>
+          </div>
         </div>
       </Modal>
     );

@@ -4,11 +4,10 @@ const path = require('path');
 const app = express();
 const fs = require("fs");
 app.use(express.static(path.join(__dirname, 'build')));
-app.use('/pdf', express.static(__dirname + '/1.pdf'));
 
 app.get('/ass', function (req, res) {
-  var filePath = "/files/1.pdf";
-
+  var fileName1 = req.query.fileName;
+  var filePath = fileName1;
   fs.readFile(__dirname + filePath ,"base64", function (err,data){
       res.contentType("application/pdf");
       res.send(data);
