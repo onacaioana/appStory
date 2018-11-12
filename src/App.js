@@ -22,7 +22,7 @@ const browser = detect();
 
 class App extends Component {
   render() {
-    console.log(browser.version.substr(0, 2).toString);
+
     if (browser.name === 'ie' && browser.version.substr(0, 2) === '9') {
       return this.renderForNoCompatibility();
     }
@@ -38,7 +38,6 @@ class App extends Component {
 
   renderAll() {
     const baseUrl = process.env.PUBLIC_URL;
-    console.log({ baseUrl });
     return (
       <React.Fragment>
 

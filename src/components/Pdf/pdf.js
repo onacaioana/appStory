@@ -3,6 +3,7 @@ import { Document, Page } from "react-pdf/dist/entry.webpack";
 import Modal from "@material-ui/core/Modal";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "./pdf.css";
+import { Button } from "@material-ui/core";
 
 // const options = {
 //   cMapUrl: "cmaps/",
@@ -29,21 +30,30 @@ class Pdf extends Component {
     this.setState({ isModalOpen: false });
   };
 
+  handleSave = () => {
+    var FileSaver = require('file-saver');
+    var blob = new Blob([this.props.save], { type: "application/pdf" });
+    FileSaver.saveAs(blob, "world.pdf");
+
+  }
+
   onDocumentLoadSuccess = ({ numPages }) => {
     this.setState({ numPages });
   };
 
   render() {
     const { numPages, isModalOpen } = this.state;
-
+    let downloadLink = this.props.fileName;
+    console.log(downloadLink);
     return (
       <Modal
         open={isModalOpen}
         style={{ overflowY: "scroll", textAlign: "center" }}
-        onClose={this.props.close}
-        onClick={this.handleClose}
       >
+
         <div className="container__document">
+          <Button onClick={this.handleSave}>Save</Button>
+          <Button>Print</Button>
           <Document
             file={this.props.fileName}
             onLoadSuccess={this.onDocumentLoadSuccess}

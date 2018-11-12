@@ -2,15 +2,16 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const path = require('path');
 const app = express();
+const fs = require("fs");
 app.use(express.static(path.join(__dirname, 'build')));
 app.use('/pdf', express.static(__dirname + '/1.pdf'));
 
-var fs = require("fs");
-app.get('/asset', function(request, response){
-  var tempFile=__dirname + "build/1.pdf";
-  fs.readFile(tempFile, function (err,data){
-     response.contentType("application/pdf");
-     response.send(data);
+app.get('/ass', function (req, res) {
+  var filePath = "/files/1.pdf";
+
+  fs.readFile(__dirname + filePath ,"base64", function (err,data){
+      res.contentType("application/pdf");
+      res.send(data);
   });
 });
 

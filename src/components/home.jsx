@@ -8,7 +8,11 @@ import { notepad_remove } from 'react-icons-kit/ikons/notepad_remove'
 import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
 import { mail } from "react-icons-kit/ikons/mail";
 import Title from './Title/title';
-import { Modal } from '@material-ui/core';
+import axios from 'axios';
+import { Document, Page } from 'react-pdf';
+import Modal from '@material-ui/core/Modal';
+import Pdf from './Pdf/pdf';
+
 const { detect } = require('detect-browser');
 const browser = detect();
 
@@ -53,6 +57,19 @@ const listaInformatiiUtile = [{
 
 class HomePage extends Component {
 
+    state = {
+        blob: []
+    };
+
+    componentDidMount() {
+        console.log('didmount');
+        axios.get(`/ass`)
+            .then(res => {
+                this.setState({
+                    blob: res.data
+                });
+            })
+    }
     routeChange = () => {
         let path = "/taxe";
         this.props.history.push(path);
@@ -66,7 +83,6 @@ class HomePage extends Component {
         }
         else return this.renderForMost();
     }
-
     renderForNoCompatibility() {
         return (
             <div>
@@ -79,16 +95,19 @@ class HomePage extends Component {
             <div>
                 <Title title="TRIBUNALUL CLUJ" breadcrumbs={false}></Title>
                 <HeaderFormat />
+                <Pdf fileName={`data:application/pdf;base64,${this.state.blob}`}  save={this.state.blob}></Pdf>
                 <InfoList lista={listaInformatiiUtile} />
                 <LinksBar />
             </div>
         );
     }
     renderForMost() {
+      /*  */
         return (
             <React.Fragment>
                 <Slider></Slider>
                 <HeaderFormat />
+                <Pdf fileName={`data:application/pdf;base64,${this.state.blob}`} save={this.state.blob}></Pdf>
                 <InfoList lista={listaInformatiiUtile} />
                 <LinksBar />
             </React.Fragment>
