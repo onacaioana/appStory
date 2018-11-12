@@ -6,57 +6,46 @@ import Anunt from './anunt';
 
 const items = [{
     data: "13 decembrie 2018",
-    titlu: "Hotararea de colegiu nr 38 din 13 decembrie 2018",
-    locatie: ["./simple.pdf"],
-}, {
-    data: "13 decembrie 2015",
-    titlu: "Hotararea de colegiu nr 3 din 13 decembrie 2015",
-    locatie: ["./simple.pdf"],
-}, {
-    data: "13 ianuarie 2017",
-    titlu: "Hotararea de colegiu nr 3 din 2 ianuarie 2017",
-    locatie: ["./simple.pdf"],
-}, {
-    data: "13 noiembrie 2015",
-    titlu: "Hotararea de colegiu nr 3 din 13 ian 2015",
-    locatie: ["./simple.pdf"],
-}, {
-    data: "13 noiembrie 2015",
-    titlu: "Hotararea de colegiu nr 3",
-    locatie: ["./simple.pdf"],
-}, {
-    data: "13 noiembrie 2015",
-    titlu: "Hotararea de colegiu nr 3",
-    locatie: ["./simple.pdf"],
-}, {
-    data: "13 noiembrie 2015",
-    titlu: "Hotararea de colegiu nr 3",
-    locatie: ["./simple.pdf"],
-}, {
-    data: "13 noiembrie 2015",
-    titlu: "Hotararea de colegiu nr 3",
-    locatie: ["./simple.pdf"],
-}, {
-    data: "13 noiembrie 2015",
-    titlu: "Hotararea de colegiu nr 3",
-    locatie: ["./simple.pdf"],
-}, {
-    data: "13 iunie 2018",
-    titlu: "Hotararea de colegiu nr 3",
-    locatie: ["./simple.pdf"],
-}, {
-    data: "13 noiembrie 2015",
-    titlu: "Hotararea de colegiu nr 3",
-    locatie: ["./simple.pdf"],
-}, {
-    data: "13 noiembrie 2015",
-    titlu: "Hotararea de colegiu nr 3",
-    locatie: ["./simple.pdf"],
-}, {
-    data: "13 noiembrie 2015",
-    titlu: "Hotararea de colegiu nr 3",
-    locatie: ["./simple.pdf"],
-},];
+    titlu: "Comunicatul Tribunalului Cluj din 13 decembrie 2018",
+    hot: [{
+        titlu: "Comunicatul Tribunalului Cluj din 13 decembrie 2018",
+        locatie: "./simple.pdf"
+    }
+    ]
+},
+{
+    data: "13 decembrie 2018",
+    titlu: "Comunicatul Tribunalului Cluj din 13 decembrie 2018",
+    hot: [{
+        titlu: "Comunicatul Tribunalului Cluj din 13 decembrie 2018",
+        locatie: "./simple.pdf"
+    }]
+},
+{
+    data: "13 decembrie 2018",
+    titlu: "Comunicatul Tribunalului Cluj din 13 decembrie 2018",
+    hot: [{
+        titlu: "Comunicatul Tribunalului Cluj din 13 decembrie 2018",
+        locatie: "./simple.pdf"
+    }]
+},
+{
+    data: "13 decembrie 2018",
+    titlu: "Comunicatul Tribunalului Cluj din 13 decembrie 2018",
+    hot: [{
+        titlu: "Comunicatul Tribunalului Cluj din 13 decembrie 2018",
+        locatie: "./simple.pdf"
+    }]
+},
+{
+    data: "13 decembrie 2018",
+    titlu: "Comunicatul Tribunalului Cluj din 13 decembrie 2018",
+    hot: [{
+        titlu: "Comunicatul Tribunalului Cluj din 13 decembrie 2018",
+        locatie: "./simple.pdf"
+    }]
+},
+];
 
 class Comunicate extends Component {
 
@@ -82,7 +71,7 @@ class Comunicate extends Component {
                                 altText={"altText"}
                                 titlu={item.titlu}
                                 subtitlu={item.data}
-                                docs={[]}
+                                docs={item.hot}
                             />
                         );
                     })}
