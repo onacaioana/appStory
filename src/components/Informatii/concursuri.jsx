@@ -13,11 +13,11 @@ const items = [
     listOfDocs: [
       {
         titlu: "Proces verbal lista candidati",
-        locatie: "adsdas"
+        locatie: "loc1"
       },
       {
         titlu: "Proces verbal rezultate proba scrisa",
-        locatie: "adsdas"
+        locatie: "loc2"
       }
     ]
   },
@@ -27,11 +27,11 @@ const items = [
     listOfDocs: [
       {
         titlu: "asdasd",
-        locatie: "adsdas"
+        locatie: "loc3"
       },
       {
         titlu: "asdasd",
-        locatie: "adsdas"
+        locatie: "loc4"
       }
     ]
   },
