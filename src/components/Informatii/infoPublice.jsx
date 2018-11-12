@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import List from '@material-ui/core/List';
+import ListSubheader from "@material-ui/core/ListSubheader";
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import Title from './Title/title';
-import ListOfDocs from './listOfDocs';
+import Title from '../Title/title';
+import ListOfDocs from '../listOfDocs';
+import Anunt from "./anunt";
 
 
 const items = [{
@@ -179,49 +181,7 @@ const items = [{
 class InfoPublice extends Component {
 
 
-    state = {
-        expanded: null,
-    };
-
-    handleChange = index => (event, expanded) => {
-        this.setState({
-            expanded: index,
-        });
-    };
-
     render() {
-        const { expanded } = this.state;
-
-        let listItems = items.map((item, index) => {
-            return (
-                <React.Fragment>
-                    <ListItem key={index} button onClick={this.handleChange(index)}>
-                        <ListItemIcon>
-                            <img src={require("../images/icons/law2.png")} alt="law"></img>
-                        </ListItemIcon>
-                        <ListItemText
-                            style={{ color: 'red' }}
-                            inset
-                            primary={<h6 style={{ color: '#146496' }}>{item.titlu}</h6>}
-                            secondary={item.data}
-                        />
-                        {expanded === index ? <ExpandLess /> : <ExpandMore />}
-                    </ListItem>
-
-                    {/* Lista de documente( <List>) care apartin <ListItem> -ului de mai sus si care se regasesc intr-un collapse */}
-                    <Collapse in={expanded === index} timeout="auto" unmountOnExit>
-                        <div className="container px-5  py-2 text-justify">{item.text}</div>
-                        <ListOfDocs
-                            list={item.listOfDocs}
-                            icon={require("../images/icons/arow2.png")}
-                            button={true}
-                            component="div"
-                        />
-                    </Collapse>
-                </React.Fragment>
-            )
-        });
-
         return (
             <React.Fragment>
                 <Title
@@ -232,10 +192,26 @@ class InfoPublice extends Component {
                 />
 
                 <div className="my-5 container">
-                    <List
-                        component="nav"
+                    <List component="nav"
+                        subheader={
+                            <ListSubheader component="div">
+                                Tribunalul Cluj - Informații publice
+                            </ListSubheader>
+                        }
                     >
-                        {listItems}
+                        {/* Aici vin informatiile publice */}
+                        {items.map((item, index) => {
+                            return (
+                                <Anunt
+                                    key={index}
+                                    icon={"../../images/icons/law2.png"}
+                                    altText={item.text}
+                                    titlu={item.titlu}
+                                    subtitlu={item.data}
+                                    docs={item.listOfDocs}
+                                />
+                            );
+                        })}
                     </List>
                 </div>
             </React.Fragment>
