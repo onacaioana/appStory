@@ -9,27 +9,58 @@ import axios from 'axios';
 class ListOfDocs extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            items: []
-        }
+       
+    }
+
+    state = {
+        items: [],
+        blob: [],
+        openFile: 12
     }
 
     handleClick = (data) => {
         console.log('I will open a link', data);
     }
 
-    componentDidMount() {
+    handleClickToOpen = (fileName, e, index) => {
+        axios.get(`/ass`, {
+            params: {
+                fileName: fileName
+            }
+        })
+            .then(res => {
+                this.setState({ blob: res.data });
+                this.setState({ openFile: index });
+            })
+    }
+    onCloseModal = (e) =>{
+        console.log("onCloseModal");
+        e.preventDefault()
+        this.setState({
+            openFile: 12
+        })
+    }
+
+    render() {
+        
         const items = this.props.list.map((item, index) => {
             return (
                 <ListItem key={index}
                     className="mx-5 px-5 "
                     button={this.props.button}
-                    onClick={() => this.handleClick(item.locatie)}
+                    onClick={(e) => this.handleClickToOpen(item.locatie, e, index)}
                 >
+                {console.log("openFile: "+this.state.openFile)}
+                {console.log("index:"+ index)}
+                    { this.state.openFile === index ?
+                            <Pdf data={`data:application/pdf;base64,${this.state.blob}`} print={this.state.blob} onCloseModal= {this.onCloseModal} fileName={item.locatie}></Pdf>
+                            : ""
+                    }
+    
                     {
                         this.props.icon
                             ? <ListItemIcon className="mx-1 px-1"
-
+    
                             >
                                 <img src={this.props.icon}
                                     alt="Icon_Lista_De_Documente">
@@ -43,14 +74,10 @@ class ListOfDocs extends Component {
                 </ListItem>
             )
         });
-        this.setState({ items: items });
-    }
-
-    render() {
 
         return (
             <List component={this.props.component} disablePadding subheader={this.props.subheader} >
-                {this.state.items}
+                {items}
             </List>
         )
     }

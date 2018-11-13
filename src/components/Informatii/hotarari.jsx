@@ -13,7 +13,7 @@ const items = [{
     data: "13 noiembrie 2015",
     titlu: "Hotararea de colegiu nr 3",
     locatie: "/files/1.pdf",
-},];
+}];
 
 class Hotarari extends Component {
 
@@ -32,21 +32,13 @@ class Hotarari extends Component {
                     <Divider />
 
                     {/* <h2>Aici vin hotararile de colegiu</h2> */}
-
-                    {items.map((item, index) => {
-                        return (
-                            <Anunt
-                                key={index}
-                                icon={"../../images/icons/law2.png"}
-                                altText={"iconHotarare"}
-                                titlu={item.titlu}
-                                subtitlu={item.data}
-                                docs={item}
-                            />
-                        );
-                    })}
+                    <Anunt
+                        icon={"../../images/icons/law2.png"}
+                        altText={"iconHotarare"}
+                        docs={items}
 
 
+                    />
                 </div>
             </React.Fragment>
         );

@@ -19,3 +19,10 @@
   max-width: 100%;
   height: auto !important;
 }
+#appBar{
+  cursor: pointer;
+  opacity: 0;
+}
+#appBar:hover {
+  opacity: 1;
+}

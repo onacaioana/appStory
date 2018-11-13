@@ -22,30 +22,43 @@ class Anunt extends Component {
   render() {
     return (
       <React.Fragment>
-        <ListItem button onClick={this.handleChange}>
-          <ListItemIcon>
-            <img
-              src={require("../../images/icons/list.png")}
-              alt="list concursuri si anunturi"
-            />
-          </ListItemIcon>
-          <ListItemText
-            inset
-            primary={this.props.titlu}
-            secondary={this.props.subtitlu}
-          />
-          {this.state.open ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
+        {this.props.expanded === true ?
+          <div>
 
-        <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+            <ListItem button onClick={this.handleChange}>
+              <ListItemIcon>
+                <img
+                  src={require("../../images/icons/list.png")}
+                  alt="list concursuri si anunturi"
+                />
+              </ListItemIcon>
+              <ListItemText
+                inset
+                primary={this.props.titlu}
+                secondary={this.props.subtitlu}
+              />
+              {this.state.open ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+
+            <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+              <ListOfDocs
+                // list={item.listOfDocs}
+                list={this.props.docs}
+                button={true}
+                icon={require("../../images/icons/arow2.png")}
+                component="div"
+              />
+            </Collapse>
+          </div>
+          :
           <ListOfDocs
             // list={item.listOfDocs}
             list={this.props.docs}
             button={true}
-            icon={require("../../images/icons/arow2.png")}
+            icon={require("../../images/icons/law2.png")}
             component="div"
           />
-        </Collapse>
+        }
       </React.Fragment>
     );
   }

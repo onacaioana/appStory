@@ -27,11 +27,11 @@ const items = [
     listOfDocs: [
       {
         titlu: "asdasd",
-        locatie: "loc3"
+        locatie: "/files/sample.pdf"
       },
       {
         titlu: "asdasd",
-        locatie: "loc4"
+        locatie: "/files/sample.pdf"
       }
     ]
   },
@@ -41,11 +41,11 @@ const items = [
     listOfDocs: [
       {
         titlu: "asdasd",
-        locatie: "adsdas"
+        locatie: "/files/sample.pdf"
       },
       {
         titlu: "asdasd",
-        locatie: "adsdas"
+        locatie: "/files/sample.pdf"
       }
     ]
   },
@@ -55,11 +55,11 @@ const items = [
     listOfDocs: [
       {
         titlu: "asdasd",
-        locatie: "adsdas"
+        locatie: "/files/sample.pdf"
       },
       {
         titlu: "asdasd",
-        locatie: "adsdas"
+        locatie: "/files/sample.pdf"
       }
     ]
   },
@@ -69,11 +69,11 @@ const items = [
     listOfDocs: [
       {
         titlu: "asdasd",
-        locatie: "adsdas"
+        locatie: "/files/sample.pdf"
       },
       {
         titlu: "asdasd",
-        locatie: "adsdas"
+        locatie: "/files/sample.pdf"
       }
     ]
   },
@@ -83,11 +83,11 @@ const items = [
     listOfDocs: [
       {
         titlu: "asdasd",
-        locatie: "adsdas"
+        locatie: "/files/sample.pdf"
       },
       {
         titlu: "asdasd",
-        locatie: "adsdas"
+        locatie: "/files/sample.pdf"
       }
     ]
   }
@@ -124,6 +124,7 @@ class Concursuri extends Component {
                   titlu={item.titlu}
                   subtitlu={item.data}
                   docs={item.listOfDocs}
+                  expanded={true}
                 />
               );
             })}

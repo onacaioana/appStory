@@ -126,6 +126,7 @@ class Declaratii extends Component {
                                     icon={"../../images/icons/institution.png"}
                                     titlu={item.title}
                                     docs={item.content}
+                                    expanded={true}
                                 />
                             );
                         })}

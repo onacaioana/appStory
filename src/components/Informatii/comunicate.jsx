@@ -72,6 +72,7 @@ class Comunicate extends Component {
                                 titlu={item.titlu}
                                 subtitlu={item.data}
                                 docs={item.hot}
+                                expanded = {true}
                             />
                         );
                     })}

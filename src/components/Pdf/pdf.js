@@ -80,10 +80,11 @@ class Pdf extends Component {
       <Modal
         open={isModalOpen}
         style={{ overflowY: "scroll", textAlign: "center" }}
+        onClose={this.props.onCloseModal}
       >
 
         <div className="container__document">
-          <AppBar className="bg-dark text-light"  >
+          <AppBar id="appBar" className="bg-dark text-light"  >
             <Toolbar className="ml-auto" >
               <IconButton href="#" onClick={this.handlePrint} color="inherit" aria-label="Save">
                 <PrintIcon />

@@ -209,6 +209,7 @@ class InfoPublice extends Component {
                                     titlu={item.titlu}
                                     subtitlu={item.data}
                                     docs={item.listOfDocs}
+                                    expanded={true}
                                 />
                             );
                         })}
