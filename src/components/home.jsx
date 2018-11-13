@@ -9,9 +9,9 @@ import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
 import { mail } from "react-icons-kit/ikons/mail";
 import Title from './Title/title';
 import axios from 'axios';
-import { Document, Page } from 'react-pdf';
-import Modal from '@material-ui/core/Modal';
 import Pdf from './Pdf/pdf';
+
+
 
 const { detect } = require('detect-browser');
 const browser = detect();
@@ -56,33 +56,20 @@ const listaInformatiiUtile = [{
 }];
 
 class HomePage extends Component {
-
-    state = {
-        blob: []
-    };
-
-    componentDidMount() {
-        axios.get(`/ass`,{ params: {
-            fileName: "/files/sample.pdf"
-          }})
-            .then(res => {
-                this.setState({
-                    blob: res.data
-                });
-            })
-    }
     routeChange = () => {
         let path = "/taxe";
         this.props.history.push(path);
     }
     render() {
-        if (browser.name === 'ie' && browser.version.indexOf("11") !== -1) {
-            return this.renderForIE11();
-        }
-        else if (browser.name === 'ie') {
-            return this.renderForNoCompatibility();
-        }
-        else return this.renderForMost();
+        /*    if (browser.name === 'ie' && browser.version.indexOf("11") !== -1) {
+               return this.renderForIE11();
+           }
+           else if (browser.name === 'ie') {
+               return this.renderForNoCompatibility();
+           }
+           else 
+    */
+        return this.renderForMost();
     }
     renderForNoCompatibility() {
         return (
@@ -108,7 +95,6 @@ class HomePage extends Component {
             <div>
                 <Title title="TRIBUNALUL CLUJ" breadcrumbs={false}></Title>
                 <HeaderFormat />
-                <Pdf data={`data:application/pdf;base64,${this.state.blob}`} print={this.state.blob} fileName="ie.pdf"></Pdf>
                 <InfoList lista={listaInformatiiUtile} />
                 <LinksBar />
             </div>
@@ -121,7 +107,6 @@ class HomePage extends Component {
             <React.Fragment>
                 <Slider></Slider>
                 <HeaderFormat />
-                <Pdf data={`data:application/pdf;base64,${this.state.blob}`} print={this.state.blob}  fileName="test.pdf"></Pdf>
                 <InfoList lista={listaInformatiiUtile} />
                 <LinksBar />
             </React.Fragment>
