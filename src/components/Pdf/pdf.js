@@ -65,7 +65,7 @@ class Pdf extends Component {
    console.log(pdfBlob);
    const url = URL.createObjectURL(pdfBlob);
    console.log(url); 
-    printJS(url, 'pdf');
+    printJS(pdfBlob, 'pdf');
   }
 
   onDocumentLoadSuccess = ({ numPages }) => {
