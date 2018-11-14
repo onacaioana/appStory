@@ -47,7 +47,19 @@ class Doc extends Component {
     console.log("Rendering doc.js");
     return (
       <div>
-        <div onClick={this.handleClickToOpen}> VASILE </div>
+        <ListItem
+          className="mx-5 px-5 "
+          button={this.props.button}
+          onClick={this.handleClickToOpen}
+        >
+          <ListItemText
+            color="white"
+            inset
+            primary={this.props.titlu}
+            secondary={this.props.data}
+          />
+        </ListItem>
+
         {this.state.openFile ? (
           <Pdf
             data={`data:application/pdf;base64,${this.state.blob}`}
