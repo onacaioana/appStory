@@ -52,19 +52,19 @@ class Pdf extends Component {
     /*  var mywindow = window.open(this.props.data, '_blank');
      mywindow.focus(); // necessary for IE >= 10*
      mywindow.print(); */
-   var data = this.props.print;
-   console.log(data);
-   var byteCharacters = atob(data);
-   var byteNumbers = new Array(byteCharacters.length);
-   for (var i = 0; i < byteCharacters.length; i++) {
-     byteNumbers[i] = byteCharacters.charCodeAt(i);
-   }
-   var byteArray = new Uint8Array(byteNumbers);
+    var data = this.props.print;
+    //  console.log(data);
+    var byteCharacters = atob(data);
+    var byteNumbers = new Array(byteCharacters.length);
+    for (var i = 0; i < byteCharacters.length; i++) {
+      byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+    var byteArray = new Uint8Array(byteNumbers);
 
-   const pdfBlob = new Blob(byteArray, { type: "application/pdf" });
-   console.log(pdfBlob);
-   const url = URL.createObjectURL(pdfBlob);
-   console.log(url); 
+    const pdfBlob = new Blob(byteArray, { type: "application/pdf" });
+    // console.log(pdfBlob);
+    const url = URL.createObjectURL(pdfBlob);
+    console.log(url);
     printJS(pdfBlob, 'pdf');
   }
 
@@ -75,7 +75,7 @@ class Pdf extends Component {
   render() {
     const { numPages, isModalOpen } = this.state;
     let downloadLink = this.props.data;
-    console.log(downloadLink);
+    // console.log(downloadLink);
     return (
       <Modal
         open={isModalOpen}
