@@ -36,6 +36,7 @@ class Pdf extends Component {
   handleClose = () => {
     console.log("Closing modal");
     this.setState({ isModalOpen: false });
+    console.log('Is Modal Open', this.state.isModalOpen)
   };
 
   handleSave = () => {
@@ -74,7 +75,7 @@ class Pdf extends Component {
 
   render() {
     const { numPages, isModalOpen } = this.state;
-    let downloadLink = this.props.data;
+    // let downloadLink = this.props.data;
     // console.log(downloadLink);
     return (
       <Modal

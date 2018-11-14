@@ -2,59 +2,62 @@ import React, { Component } from "react";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
+import List from "@material-ui/core/List";
+import Doc from './doc'
 import Pdf from "./Pdf/pdf";
 import axios from "axios";
 
-class Doc extends Component {
+class ListOfDocs extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            blob: [],
-            openFile: false
-        }
     }
 
-    handleClickToOpen = () => {
+    state = {
+        items: [],
+        blob: [],
+        openFile: 12
+    };
+
+    // handleClick = data => {
+    //     console.log("I will open a link", data);
+    // };
+
+    handleClickToOpen = (fileName, e, index) => {
         // console.log(fileName);
         axios
             .get(`http://localhost:8080/ass`, {
                 params: {
-                    fileName: this.props.locatie
+                    fileName: fileName
                 }
             })
             .then(res => {
-                console.log('aduc documentul');
                 this.setState({
                     blob: res.data,
-                    openFile: true
+                    openFile: index
                 });
-            })
-            .catch(e => {
-                console.log('error opening file', e)
             });
     };
-    onCloseModal = () => {
+    onCloseModal = e => {
         console.log("onCloseModal");
-        this.setState({ openFile: false });
-        console.log('vasileeee', this.state.openFile);
+
     };
 
-
     render() {
-        return (
-            <div>
+        const items = this.props.list.map((item, index) => {
+            return (
                 <ListItem
+                    key={index}
                     className="mx-5 px-5 "
                     button={this.props.button}
-                    onClick={this.handleClickToOpen}
+                    onClick={e => this.handleClickToOpen(item.locatie, e, index)}
                 >
 
-                    {this.state.openFile ? (
+                    {this.state.openFile === index ? (
                         <Pdf
                             data={`data:application/pdf;base64,${this.state.blob}`}
                             print={this.state.blob}
                             onCloseModal={this.onCloseModal}
-                            fileName={this.props.locatie}
+                            fileName={item.locatie}
                         />
                     ) : (
                             ""
@@ -70,13 +73,23 @@ class Doc extends Component {
                     <ListItemText
                         color="white"
                         inset
-                        primary={this.props.titlu}
-                        secondary={this.props.data}
+                        primary={item.titlu}
+                        secondary={item.data}
                     />
                 </ListItem>
-            </div>
-        )
+            );
+        });
+
+        return (
+            <List
+                component={this.props.component}
+                disablePadding
+                subheader={this.props.subheader}
+            >
+                {items}
+            </List>
+        );
     }
 }
 
-export default Doc;
+export default ListOfDocs;
