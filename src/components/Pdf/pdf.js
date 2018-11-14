@@ -35,7 +35,9 @@ class Pdf extends Component {
 
   handleClose = () => {
     console.log("Closing modal");
-    this.setState({ isModalOpen: false });
+    this.setState({ isModalOpen: false}, () => {
+      this.props.onCloseModal();
+  });
   };
 
   handleSave = () => {
@@ -80,7 +82,6 @@ class Pdf extends Component {
       <Modal
         open={isModalOpen}
         style={{ overflowY: "scroll", textAlign: "center" }}
-        onClose={this.props.onCloseModal}
       >
 
         <div className="container__document">

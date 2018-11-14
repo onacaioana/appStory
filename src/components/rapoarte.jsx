@@ -11,26 +11,24 @@ const items = [{
     titlu: "Rapoarte de activitate a Tribunalului Cluj ",
     icon: require("../images/icons/list.png"),
     listOfDocs: [{
-        titlu: "Bilant Tribunalul Cluj 2018",
-        locatie: "adsdas",
+        titlu: "Bilant Tribunalul Cluj 2017",
+        locatie: "/PDFs/Bilant/Bilant2017.pdf",
     },
     {
-        titlu: "Bilant Tribunalul Cluj 2017",
-        locatie: "adsdas",
-    }, {
-        titlu: "Bilant Tribunalul Cluj 2018",
-        locatie: "adsdas",
+        titlu: "Bilant Tribunalul Cluj 2016",
+        locatie: "/PDFs/Bilant/Bilant2016.pdf",
     },
     {
-        titlu: "Bilant Tribunalul Cluj 2017",
-        locatie: "adsdas",
-    }, {
-        titlu: "Bilant Tribunalul Cluj 2018",
-        locatie: "adsdas",
+        titlu: "Bilant Tribunalul Cluj 2015",
+        locatie: "/PDFs/Bilant/Bilant2015.pdf",
     },
     {
-        titlu: "Bilant Tribunalul Cluj 2017",
-        locatie: "adsdas",
+        titlu: "Bilant Tribunalul Cluj 2014",
+        locatie: "/PDFs/Bilant/Bilant2014.pdf",
+    },
+    {
+        titlu: "Bilant Tribunalul Cluj 2013",
+        locatie: "/PDFs/Bilant/Bilant2013.pdf",
     }],
 
 }, {
@@ -55,19 +53,15 @@ const items = [{
     titlu: "Surse Financiare ",
     icon: require("../images/icons/report.png"),
     listOfDocs: [{
-        titlu: "Buget Tribunalul Cluj 2018",
-        locatie: "adsdas",
-    },
-    {
         titlu: "Buget Tribunalul Cluj 2017",
-        locatie: "adsdas",
-    }, {
-        titlu: "Statistică privind situaţia...",
-        locatie: "adsdas",
+        locatie: "/PDFs/Buget/Buget2017.pdf",
     },
     {
-        titlu: "Statistică privind situaţia...",
-        locatie: "adsdas",
+        titlu: "Buget Tribunalul Cluj 2016",
+        locatie: "/PDFs/Buget/Buget2016.pdf",
+    },{
+        titlu: "Buget Tribunalul Cluj 2015",
+        locatie: "/PDFs/Buget/Buget2015.pdf",
     }],
 },
 ];

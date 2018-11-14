@@ -33,12 +33,9 @@ class ListOfDocs extends Component {
                 this.setState({ openFile: index });
             })
     }
-    onCloseModal = (e) =>{
+    onCloseModal = () =>{
         console.log("onCloseModal");
-        e.preventDefault()
-        this.setState({
-            openFile: 12
-        })
+      
     }
 
     render() {
