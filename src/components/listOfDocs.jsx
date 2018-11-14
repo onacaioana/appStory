@@ -47,8 +47,6 @@ class ListOfDocs extends Component {
                     button={this.props.button}
                     onClick={(e) => this.handleClickToOpen(item.locatie, e, index)}
                 >
-                {console.log("openFile: "+this.state.openFile)}
-                {console.log("index:"+ index)}
                     { this.state.openFile === index ?
                             <Pdf data={`data:application/pdf;base64,${this.state.blob}`} print={this.state.blob} onCloseModal= {this.onCloseModal} fileName={item.locatie}></Pdf>
                             : ""

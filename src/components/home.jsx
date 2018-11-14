@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Slider from './slider';
+import Carousel from './slider';
 import LinksBar from './links';
 import InfoList from './Info/infoList';
 import HeaderFormat from './header';
@@ -8,9 +8,15 @@ import { notepad_remove } from 'react-icons-kit/ikons/notepad_remove'
 import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
 import { mail } from "react-icons-kit/ikons/mail";
 import Title from './Title/title';
-import axios from 'axios';
-import Pdf from './Pdf/pdf';
+import "core-js/modules/es6.promise";
 
+import "core-js/modules/es6.array.iterator.js";
+
+import "core-js/modules/es6.array.from.js";
+
+import "whatwg-fetch";
+
+import "es6-map/implement";
 
 
 const { detect } = require('detect-browser');
@@ -105,7 +111,7 @@ class HomePage extends Component {
         /*  */
         return (
             <React.Fragment>
-                <Slider></Slider>
+                <Carousel></Carousel>
                 <HeaderFormat />
                 <InfoList lista={listaInformatiiUtile} />
                 <LinksBar />
