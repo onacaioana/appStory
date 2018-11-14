@@ -6,77 +6,61 @@ import Pdf from "./Pdf/pdf";
 import axios from "axios";
 
 class Doc extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            blob: [],
-            openFile: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      blob: [],
+      openFile: false
+    };
+  }
+
+  handleClickToOpen = () => {
+    // console.log(fileName);
+    axios
+      .get(`http://localhost:8080/ass`, {
+        params: {
+          fileName: this.props.locatie
         }
-    }
+      })
+      .then(res => {
+        console.log("aduc documentul");
+        this.setState({
+          blob: res.data,
+          openFile: true
+        });
+      })
+      .catch(e => {
+        console.log("error opening file", e);
+      });
+  };
 
-    handleClickToOpen = () => {
-        // console.log(fileName);
-        axios
-            .get(`http://localhost:8080/ass`, {
-                params: {
-                    fileName: this.props.locatie
-                }
-            })
-            .then(res => {
-                console.log('aduc documentul');
-                this.setState({
-                    blob: res.data,
-                    openFile: true
-                });
-            })
-            .catch(e => {
-                console.log('error opening file', e)
-            });
-    };
-    onCloseModal = () => {
-        console.log("onCloseModal");
-        this.setState({ openFile: false });
-        console.log('vasileeee', this.state.openFile);
-    };
+  onCloseModal = () => {
+    console.log("onCloseModal in doc");
+    this.setState({
+      openFile: false,
+      blob: []
+    });
+    console.log("this.state.openFile", this.state.openFile);
+  };
 
-
-    render() {
-        return (
-            <div>
-                <ListItem
-                    className="mx-5 px-5 "
-                    button={this.props.button}
-                    onClick={this.handleClickToOpen}
-                >
-
-                    {this.state.openFile ? (
-                        <Pdf
-                            data={`data:application/pdf;base64,${this.state.blob}`}
-                            print={this.state.blob}
-                            onCloseModal={this.onCloseModal}
-                            fileName={this.props.locatie}
-                        />
-                    ) : (
-                            ""
-                        )}
-
-                    {this.props.icon ? (
-                        <ListItemIcon className="mx-1 px-1">
-                            <img src={this.props.icon} alt="Icon_Lista_De_Documente" />
-                        </ListItemIcon>
-                    ) : (
-                            ""
-                        )}
-                    <ListItemText
-                        color="white"
-                        inset
-                        primary={this.props.titlu}
-                        secondary={this.props.data}
-                    />
-                </ListItem>
-            </div>
-        )
-    }
+  render() {
+    console.log("Rendering doc.js");
+    return (
+      <div>
+        <div onClick={this.handleClickToOpen}> VASILE </div>
+        {this.state.openFile ? (
+          <Pdf
+            data={`data:application/pdf;base64,${this.state.blob}`}
+            print={this.state.blob}
+            handleCloseModal={this.onCloseModal}
+            fileName={this.props.locatie}
+          />
+        ) : (
+          ""
+        )}
+      </div>
+    );
+  }
 }
 
 export default Doc;
