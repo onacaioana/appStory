@@ -3,10 +3,8 @@ import { Document, Page } from "react-pdf/dist/entry.webpack";
 import Modal from "@material-ui/core/Modal";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "./pdf.css";
-import Button from "@material-ui/core/Button";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import SaveIcon from "@material-ui/icons/SaveAlt";
 import PrintIcon from "@material-ui/icons/Print";
@@ -23,12 +21,10 @@ class Pdf extends Component {
   }
 
   handleClose = () => {
-    console.log("Closing modal from pdf.js");
     this.setState({
       isModalOpen: false,
       numPages: null
     });
-    console.log("Is Modal Open", this.state.isModalOpen);
   };
 
   handleSave = () => {

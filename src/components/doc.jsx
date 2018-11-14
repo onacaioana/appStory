@@ -14,8 +14,8 @@ class Doc extends Component {
     };
   }
 
+  //get pdf data when item is clicked
   handleClickToOpen = () => {
-    // console.log(fileName);
     axios
       .get(`http://localhost:8080/ass`, {
         params: {
@@ -23,28 +23,25 @@ class Doc extends Component {
         }
       })
       .then(res => {
-        console.log("aduc documentul");
         this.setState({
           blob: res.data,
           openFile: true
         });
       })
       .catch(e => {
-        console.log("error opening file", e);
+        console.log("Eroare la deschiderea fișierului", e);
       });
   };
 
+  //closing the modal containing pdf file
   onCloseModal = () => {
-    console.log("onCloseModal in doc");
     this.setState({
       openFile: false,
       blob: []
     });
-    console.log("this.state.openFile", this.state.openFile);
   };
 
   render() {
-    console.log("Rendering doc.js");
     return (
       <div>
         <ListItem
