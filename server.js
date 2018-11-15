@@ -1,21 +1,29 @@
-const express = require('express');
-const bodyParser = require('body-parser')
-const path = require('path');
-const app = express();
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("path");
 const fs = require("fs");
-app.use(express.static(path.join(__dirname, 'build')));
+const cors = require("cors");
 
-app.get('/ass', function (req, res) {
+const app = express();
+app.use(cors());
+app.use("/ass", express.static("files"));
+
+app.get("/ass", function (req, res) {
   var fileName1 = req.query.fileName;
-  var filePath = fileName1;
-  fs.readFile(__dirname + filePath ,"base64", function (err,data){
-      res.contentType("application/pdf");
-      res.send(data);
+  var filePath = '/files/' + fileName1;
+  fs.readFile(__dirname + filePath, "base64", function (err, data) {
+    res.contentType("application/pdf");
+    res.send(data);
   });
 });
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.get("/ping", function (req, res) {
+  return res.send("pong");
 });
+
+// app.get("/", function(req, res) {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// }
+//);
 
 app.listen(process.env.PORT || 8080);
