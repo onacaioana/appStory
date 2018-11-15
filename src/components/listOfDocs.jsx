@@ -7,10 +7,6 @@ import Pdf from './Pdf/pdf';
 import axios from 'axios';
 
 class ListOfDocs extends Component {
-    constructor(props) {
-        super(props);
-       
-    }
 
     state = {
         items: [],

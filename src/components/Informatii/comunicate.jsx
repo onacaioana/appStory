@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import Title from '../Title/title';
-import ListOfDocs from '../listOfDocs';
 import Anunt from './anunt';
 
 const items = [{

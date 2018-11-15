@@ -5,7 +5,7 @@ class HeaderFormat extends Component {
         return (
             <div className={`row section-heading justify-content-center ${this.props.bg}`}>
             <div className="col-md-8 ">
-                <h3 className="heading mb-3" style={{fontWeight:'bold',color: '#146496'}}>{this.props.title}</h3>
+                <h3 className="heading" style={{fontWeight:'bold',color: '#146496'}}>{this.props.title}</h3>
             </div>
         </div>
 
