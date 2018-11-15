@@ -12,23 +12,23 @@ const items = [{
     icon: require("../images/icons/list.png"),
     listOfDocs: [{
         titlu: "Bilant Tribunalul Cluj 2017",
-        locatie: "/PDFs/Bilant/Bilant2017.pdf",
+        locatie: "/Bilant/Bilant2017.pdf",
     },
     {
         titlu: "Bilant Tribunalul Cluj 2016",
-        locatie: "/PDFs/Bilant/Bilant2016.pdf",
+        locatie: "/Bilant/Bilant2016.pdf",
     },
     {
         titlu: "Bilant Tribunalul Cluj 2015",
-        locatie: "/PDFs/Bilant/Bilant2015.pdf",
+        locatie: "/Bilant/Bilant2015.pdf",
     },
     {
         titlu: "Bilant Tribunalul Cluj 2014",
-        locatie: "/PDFs/Bilant/Bilant2014.pdf",
+        locatie: "/Bilant/Bilant2014.pdf",
     },
     {
         titlu: "Bilant Tribunalul Cluj 2013",
-        locatie: "/PDFs/Bilant/Bilant2013.pdf",
+        locatie: "/Bilant/Bilant2013.pdf",
     }],
 
 }, {

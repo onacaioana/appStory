@@ -4,8 +4,24 @@ import { Icon } from "react-icons-kit";
 import WhenInView from '../whenInView';
 import Grow from '@material-ui/core/Grow';
 import HeaderFormat from '../header';
+import axios from 'axios';
 
 class InfoList extends Component {
+handlerInfo = (fileName,index) =>{
+        // console.log(fileName);
+        axios
+            .get(`http://localhost:8080/ass`, {
+                params: {
+                    fileName: fileName
+                }
+            })
+            .then(res => {
+                this.setState({
+                    blob: res.data,
+                    openFile: index
+                });
+            });
+}
 
     render() {
         const items = this.props.lista.map((item, index) => {
@@ -21,7 +37,7 @@ class InfoList extends Component {
                                     <div className="single-list-topics-icon">
                                         <Icon style={{ color: '#8c7b75' }} size={40} icon={item.icon} />
                                     </div>
-                                    <h6 key={index} onClick={e => this.handlerInfo(e)} style={{cursor:'pointer'}}>
+                                    <h6 key={index} onClick={() => this.handlerInfo(index,item.locatie)} style={{cursor:'pointer'}}>
                                     {item.title}
                                     </h6>            
                                 </div>

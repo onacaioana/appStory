@@ -72,7 +72,6 @@ class App extends Component {
               <Route exact path={"/declaratii"} component={Declaratii} />
               <Route exact path={"/infoPublice"} component={InfoPublice} />
               <Route exact path={"/comunicate"} component={Comunicate} />
-              <Route exact path={"/carouselExampleIndicators"} component={HomePage} />
               <Route exact path={"/"} component={HomePage} />
               <Route path="*" component={ErrorPage1} status={404} />
             </Switch>

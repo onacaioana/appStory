@@ -6,19 +6,15 @@ const cors = require("cors");
 
 const app = express();
 app.use(cors());
-app.use("/ass", express.static("files"));
+app.use("/ass", express.static("PDFs"));
 
 app.get("/ass", function (req, res) {
   var fileName1 = req.query.fileName;
-  var filePath = '/files/' + fileName1;
+  var filePath = '/PDFs/' + fileName1;
   fs.readFile(__dirname + filePath, "base64", function (err, data) {
     res.contentType("application/pdf");
     res.send(data);
   });
-});
-
-app.get("/ping", function (req, res) {
-  return res.send("pong");
 });
 
 // app.get("/", function(req, res) {
