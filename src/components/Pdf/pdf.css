@@ -19,3 +19,11 @@
   max-width: 100%;
   height: auto !important;
 }
+#appBarPdf{
+  opacity: 0.5;
+}
+#appBarPdf:hover {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s; /* Safari */
+  transition: opacity 0.3s;
+}

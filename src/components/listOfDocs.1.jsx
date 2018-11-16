@@ -43,6 +43,7 @@ class ListOfDocs extends Component {
     };
 
     render() {
+        console.log(this.props.icon);
         const items = this.props.list.map((item, index) => {
             return (
                 <ListItem
@@ -62,7 +63,6 @@ class ListOfDocs extends Component {
                     ) : (
                             ""
                         )}
-
                     {this.props.icon ? (
                         <ListItemIcon className="mx-1 px-1">
                             <img src={this.props.icon} alt="Icon_Lista_De_Documente" />

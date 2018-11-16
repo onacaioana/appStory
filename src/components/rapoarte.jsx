@@ -78,7 +78,7 @@ class Rapoarte extends Component {
                     <Collapse in={true} timeout="auto" unmountOnExit>
                         <ListOfDocs
                             list={item.listOfDocs}
-                            icon={item.icon}
+                            icon1={item.icon}
                             button={true}
                             component="div"
                         />

@@ -28,8 +28,8 @@ class Anunt extends Component {
             <ListItem button onClick={this.handleChange}>
               <ListItemIcon>
                 <img
-                  src={require("../../images/icons/list.png")}
-                  alt="list concursuri si anunturi"
+                  src={this.props.icon}
+                  alt="Lista_concursuri_si_anunturi"
                 />
               </ListItemIcon>
               <ListItemText
@@ -45,7 +45,7 @@ class Anunt extends Component {
                 // list={item.listOfDocs}
                 list={this.props.docs}
                 button={true}
-                icon={require("../../images/icons/arow2.png")}
+                icon1={require("../../images/icons/arow2.png")}
                 component="div"
               />
             </Collapse>
@@ -55,7 +55,7 @@ class Anunt extends Component {
             // list={item.listOfDocs}
             list={this.props.docs}
             button={true}
-            icon={require("../../images/icons/law2.png")}
+            icon1={require("../../images/icons/law2.png")}
             component="div"
           />
         }

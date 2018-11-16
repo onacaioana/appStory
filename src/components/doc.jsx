@@ -10,7 +10,7 @@ class Doc extends Component {
     super(props);
     this.state = {
       blob: [],
-      openFile: false
+      openFile: false,
     };
   }
 
@@ -42,31 +42,65 @@ class Doc extends Component {
   };
 
   render() {
+    const { button, data, icon, titlu, locatie } = this.props;
+    const {  blob } = this.state;
     return (
       <div>
-        <ListItem
-          className="mx-5 px-5 "
-          button={this.props.button}
-          onClick={this.handleClickToOpen}
-        >
-          <ListItemText
-            color="white"
-            inset
-            primary={this.props.titlu}
-            secondary={this.props.data}
-          />
-        </ListItem>
+        {/* If locatie is a href then redirect using component a */}
+        {locatie.startsWith('http') === true
+
+          ? <ListItem
+            className="mx-5 px-5 "
+            button
+            component="a"
+            href={locatie}
+          >
+            {icon ? (
+              <ListItemIcon className="mx-1 px-1">
+                <img src={icon} alt="Icon_Document" />
+              </ListItemIcon>
+            ) : (
+                ""
+              )}
+            <ListItemText
+              color="white"
+              inset
+              primary={titlu}
+              secondary={data}
+            />
+          </ListItem >
+          :
+          <ListItem
+            className="mx-5 px-5 "
+            button={button}
+            onClick={this.handleClickToOpen}
+          >
+            {icon ? (
+              <ListItemIcon className="mx-1 px-1">
+                <img src={icon} alt="Icon_Document" />
+              </ListItemIcon>
+            ) : (
+                ""
+              )}
+            <ListItemText
+              color="white"
+              inset
+              primary={titlu}
+              secondary={data}
+            />
+          </ListItem>
+        }
 
         {this.state.openFile ? (
           <Pdf
-            data={`data:application/pdf;base64,${this.state.blob}`}
-            print={this.state.blob}
+            data={`data:application/pdf;base64,${blob}`}
+            print={blob}
             handleCloseModal={this.onCloseModal}
-            fileName={this.props.locatie}
+            fileName={locatie}
           />
         ) : (
-          ""
-        )}
+            ""
+          )}
       </div>
     );
   }

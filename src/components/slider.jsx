@@ -25,7 +25,7 @@ const items = [
 class Carousel extends React.Component {
     render() {
         return (
-            <Slider  >
+            <Slider  classNames={horizontalCss}>
                 {items.map((item, index) => (
                     <div
                         key={index}

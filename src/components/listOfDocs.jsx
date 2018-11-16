@@ -17,7 +17,7 @@ class ListOfDocs extends Component {
               key={index}
               titlu={item.titlu}
               data={item.data}
-              icon={this.props.icon}
+              icon={this.props.icon1}
               locatie={item.locatie}
               button={this.props.button}
             />

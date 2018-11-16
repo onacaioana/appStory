@@ -80,7 +80,7 @@ class Harta extends React.Component {
       <React.Fragment>
 
         <Map
-         className="mb-5"
+          className="mb-5"
           style="mapbox://styles/dryan251/cjngesw1k4bx72rschxaogtec"
           fitBounds={[
             [

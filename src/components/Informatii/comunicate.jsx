@@ -65,7 +65,7 @@ class Comunicate extends Component {
                         return (
                             <Anunt
                                 key={index}
-                                icon={"../../images/icons/law2.png"}
+                                icon={require("../../images/icons/law2.png")}
                                 altText={"altText"}
                                 titlu={item.titlu}
                                 subtitlu={item.data}

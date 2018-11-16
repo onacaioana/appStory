@@ -119,7 +119,7 @@ class Concursuri extends Component {
               return (
                 <Anunt
                   key={index}
-                  icon={"../../images/icons/list.png"}
+                  icon={require("../../images/icons/list.png")}
                   altText={"altText"}
                   titlu={item.titlu}
                   subtitlu={item.data}

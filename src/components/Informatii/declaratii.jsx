@@ -116,7 +116,7 @@ class Declaratii extends Component {
                             return (
                                 <Anunt
                                     key={index}
-                                    icon={"../../images/icons/institution.png"}
+                                    icon={require("../../images/icons/institution.png")}
                                     titlu={item.title}
                                     docs={item.content}
                                     expanded={true}

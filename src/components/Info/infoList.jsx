@@ -7,7 +7,7 @@ import HeaderFormat from '../header';
 import axios from 'axios';
 
 class InfoList extends Component {
-handlerInfo = (fileName,index) =>{
+    handlerInfo = (fileName, index) => {
         // console.log(fileName);
         axios
             .get(`http://localhost:8080/ass`, {
@@ -21,36 +21,44 @@ handlerInfo = (fileName,index) =>{
                     openFile: index
                 });
             });
-}
+    }
 
     render() {
         const items = this.props.lista.map((item, index) => {
-            return (
+            return(
                 <li key={index}>
-
+                    
+                    {/* WhenInView - used to make a transition when compoment will be in view */}
                     <WhenInView>
                         {({ inView }) =>
-                            <Grow in={inView}
+
+                            /* Create a grow transition of component "cardInfo" */
+                            <Grow
+                                in={inView}
                                 style={{ transformOrigin: '50% 50% 0' }}
-                                {...(inView ? { timeout: (2000 + index * 100) } : {})}>
-                                <div className="single-list-topics-content rounded shadow">
+                                {...(inView ? { timeout: (2000 + index * 100) } : {})}
+                            >
+
+                                <div id="cardInfo" className="single-list-topics-content rounded shadow">
                                     <div className="single-list-topics-icon">
                                         <Icon style={{ color: '#8c7b75' }} size={40} icon={item.icon} />
                                     </div>
-                                    <h6 key={index} onClick={() => this.handlerInfo(index,item.locatie)} style={{cursor:'pointer'}}>
-                                    {item.title}
-                                    </h6>            
+                                    <h6 key={index} onClick={() => this.handlerInfo(index, item.locatie)} style={{ cursor: 'pointer' }}>
+                                        {item.title}
+                                    </h6>
                                 </div>
+
                             </Grow>
                         }</WhenInView>
-                </li>)
+                </li>
+            )
         });
 
         return (
             <React.Fragment>
                 <HeaderFormat title="Informaţii utile" bg="bg-light text-center" />
-                <section id="list-topics" className="list-topics bg-light py-5">
-                    <div className="container">
+                <section id="list-topics" className="list-topics bg-light py-5" >
+                    <div className="container" >
                         <div className="list-topics-content" style={{ textAlign: '-webkit-center' }}>
                             <ul>
                                 {items}

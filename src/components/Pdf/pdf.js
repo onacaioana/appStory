@@ -1,115 +1,110 @@
 import React, { Component } from "react";
-import { Document, Page } from "react-pdf/dist/entry.webpack";
+import { Document, Page, setOptions } from "react-pdf/dist/entry.webpack";
 import Modal from "@material-ui/core/Modal";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "./pdf.css";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import SaveIcon from "@material-ui/icons/SaveAlt";
-import PrintIcon from "@material-ui/icons/Print";
-import CloseIcon from "@material-ui/icons/Close";
-import printJS from "print-js";
+import ViewerBar from './ViewerBar';
+
+/**
+* Loading component
+*
+
+const Loading = () => {
+  return (
+      <div style={styles.loading}>
+          <CircularProgress size={80} thickness={7}/>
+      </div>
+  );
+};*/
+
 
 class Pdf extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       numPages: null,
-      isModalOpen: true
+      isModalOpen: true,
+      scale: 1.5,
     };
+
   }
 
-  handleClose = () => {
-    this.setState({
-      isModalOpen: false,
-      numPages: null
+  componentDidMount() {
+    // add setActivePage for scroll event (after scrolls detect the active page)
+    // document.getElementById('container__document').addEventListener('scroll', this.setActivePage);
+    setOptions({
+      cMapUrl: 'cmaps/',
+      cMapPacked: true,
     });
-  };
+  }
 
-  handleSave = () => {
-    const linkSource = this.props.data;
-    const downloadLink = document.createElement("a");
-    const fileName = this.props.fileName;
 
-    downloadLink.href = linkSource;
-    downloadLink.download = fileName;
-    downloadLink.click();
-  };
-  handlePrint = () => {
-    var data = this.props.print;
-    var byteCharacters = atob(data);
-    var byteNumbers = new Array(byteCharacters.length);
-    for (var i = 0; i < byteCharacters.length; i++) {
-      byteNumbers[i] = byteCharacters.charCodeAt(i);
-    }
-    var byteArray = new Uint8Array(byteNumbers);
-
-    const pdfBlob = new Blob(byteArray, { type: "application/pdf" });
-    const url = URL.createObjectURL(pdfBlob);
-    printJS(pdfBlob, "pdf");
-  };
-
+  /**
+   * When the document is loaded save page count in state
+   *
+   * @param numPages - count of pages
+   */
   onDocumentLoadSuccess = ({ numPages }) => {
     this.setState({ numPages });
   };
 
+
+  /**
+    *Function for parent-child components communication
+    * @param field - state property
+    * @param value - state value for field property
+    */
+  setDataToParent = (field, value) => {
+    this.setState({
+      [field]: value,
+    });
+  };
   render() {
-    const { numPages, isModalOpen } = this.state;
+    const { numPages, isModalOpen, scale } = this.state;
+    const { data, pages, handleCloseModal,fileName } = this.props;
 
     return (
+      /**
+       * Open pdf file in Modal 
+       */
       <Modal
         open={isModalOpen}
         style={{ overflowY: "scroll", textAlign: "center" }}
-        onClose={this.props.handleCloseModal}
+        onClose={handleCloseModal}
       >
+
         <div className="container__document">
-          <AppBar id="appBar" className="bg-dark text-light">
-            <Toolbar className="ml-auto">
-              <IconButton
-                href="#"
-                onClick={this.handlePrint}
-                color="inherit"
-                aria-label="Save"
-              >
-                <PrintIcon />
-              </IconButton>
-              <IconButton
-                href={this.props.data}
-                onClick={this.handleSave}
-                color="inherit"
-                aria-label="Save"
-              >
-                <SaveIcon />
-              </IconButton>
-              <IconButton
-                onClick={this.props.handleCloseModal}
-                color="inherit"
-                className="mx-3"
-              >
-                <CloseIcon />
-              </IconButton>
-            </Toolbar>
-          </AppBar>
-          <div id="test">
-            <Document
-              file={this.props.data}
-              onLoadSuccess={this.onDocumentLoadSuccess}
-            >
-              {Array.from(
-                new Array(this.props.pages || numPages), //show first 'this.props.pages' pages or all pages
-                (el, index) => (
-                  <Page
-                    key={`page_${index + 1}`}
-                    pageNumber={index + 1}
-                    scale={1.5}
-                  />
-                )
-              )}
-            </Document>
-          </div>
+
+          {/* AppBar for all PDF actions: donwload, print, zoom  */}
+          <ViewerBar
+            data={data}
+            fileName={fileName}
+            closeFile={handleCloseModal}
+            setDataToParent={this.setDataToParent}
+            numPages={numPages}
+            scale={scale}
+          />
+
+          {/* Open pdf file using react-pdf library */}
+          <Document
+            file={data}
+            onLoadSuccess={this.onDocumentLoadSuccess}
+          >
+            {/* Show first 'this.props.pages' pages or all pages */}
+            {Array.from(
+              new Array(pages || numPages),
+              (el, index) => (
+                <Page
+                  key={`page_${index + 1}`}
+                  pageNumber={index + 1}
+                  scale={scale}
+                />
+              )
+            )}
+          </Document>
         </div>
-      </Modal>
+      </Modal >
     );
   }
 }
