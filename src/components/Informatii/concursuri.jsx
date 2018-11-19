@@ -94,6 +94,14 @@ const items = [
 ];
 
 class Concursuri extends Component {
+  state = {
+    files: [{
+      data: "",
+      titlu: "",
+
+    }]
+  }
+
   componentDidMount = () => {
     axios
       .get(`http://localhost:8080/getFiles`, {
@@ -102,7 +110,17 @@ class Concursuri extends Component {
         }
       })
       .then(res => {
-        console.log(res);
+        console.log(res.data.length);
+        console.log(res.data[0]);
+        var stateCopy = Object.assign({}, this.state);
+        let i=0;
+        for (i = 0; i < res.data.length; i++) {
+         console.log(res.data[0])
+          stateCopy.items[i].titlu = res.data[i];
+          this.setState(stateCopy);
+          console.log(stateCopy);
+        }
+
       })
       .catch(e => {
         console.log("Eroare la deschiderea fișierului", e);
