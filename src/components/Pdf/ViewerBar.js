@@ -56,7 +56,7 @@ class ViewerBar extends Component {
 
         return (
             <AppBar id="appBarPdf" className="bg-dark text-light" >
-                <Toolbar >
+                <Toolbar style={{minHeight:'30px'}}>
                     <div className="mr-auto d-none d-lg-block d-xl-block">
                         {`${fileName}`}
                     </div>

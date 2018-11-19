@@ -22,53 +22,6 @@ import "es6-map/implement";
 const { detect } = require('detect-browser');
 const browser = detect();
 
-
-const listaInformatiiUtile = [{
-    title: 'Noua legislație penală',
-    icon: fax,
-    locatie: "",
-},
-
-{
-    title: ' Asistenţă judiciară',
-    icon: phoneSquare,
-    locatie: "",
-},
-{
-    title: ' Informaţii taxe',
-    icon: mail,
-    locatie: "",
-
-},
-{
-    title: ' Legalizare şi investire',
-    icon: mail,
-    locatie: "",
-},
-{
-
-    title: 'Hotărâri străine',
-    icon: mail,
-    locatie: "",
-
-},
-{
-    title: 'Medierea',
-    icon: notepad_remove,
-    locatie: "",
-
-},
-{
-    title: 'Liste experţi',
-    icon: notepad_remove,
-    locatie: "",
-},
-{
-    title: ' Apostilă',
-    icon: notepad_remove,
-    locatie: "",
-}];
-
 class HomePage extends Component {
     routeChange = () => {
         let path = "/taxe";
@@ -109,7 +62,7 @@ class HomePage extends Component {
             <div>
                 <Title title="TRIBUNALUL CLUJ" breadcrumbs={false}></Title>
                 <HeaderFormat />
-                <InfoList lista={listaInformatiiUtile} />
+                <InfoList />
                 <LinksBar />
             </div>
         );
@@ -121,7 +74,7 @@ class HomePage extends Component {
             <React.Fragment>
                 <Carousel></Carousel>
                 <HeaderFormat />
-                <InfoList lista={listaInformatiiUtile} />
+                <InfoList />
                 <LinksBar />
             </React.Fragment>
         );
