@@ -95,11 +95,9 @@ const items = [
 
 class Concursuri extends Component {
   state = {
-    files: [{
-      data: "",
-      titlu: "",
-
-    }]
+    files: [
+      
+    ]
   }
 
   componentDidMount = () => {
@@ -112,13 +110,16 @@ class Concursuri extends Component {
       .then(res => {
         console.log(res.data.length);
         console.log(res.data[0]);
-        var stateCopy = Object.assign({}, this.state);
-        let i=0;
+
+        let i = 0;
         for (i = 0; i < res.data.length; i++) {
-         console.log(res.data[0])
-          stateCopy.items[i].titlu = res.data[i];
-          this.setState(stateCopy);
-          console.log(stateCopy);
+          const object3 = Object.assign({ titlu: res.data[i], locatie: "/Anunturi/"+ res.data[i], });
+          const list = [];
+          list.push(object3);
+          const object2 = Object.assign({ titlu: res.data[i], data: res.data[i], listOfDocs: list});
+          console.log(object2);
+          this.setState({ files: [...this.state.files, object2] })
+          console.log(this.state.files);
         }
 
       })
@@ -148,7 +149,7 @@ class Concursuri extends Component {
           >
             {/* <h2>Aici vin concursurile</h2> */}
 
-            {items.map((item, index) => {
+            {this.state.files.map((item, index) => {
               return (
                 <Anunt
                   key={index}
