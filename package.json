@@ -11,6 +11,7 @@
     "detect-browser": "^3.0.1",
     "google-maps-react": "^2.0.2",
     "mapbox-gl": "^0.50.0",
+    "pdfjs-dist": "^2.0.943",
     "react": "^16.4.2",
     "react-animated-slider": "^1.1.4",
     "react-dom": "^16.4.2",
