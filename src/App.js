@@ -15,6 +15,8 @@ import Declaratii from "./components/Informatii/declaratii";
 import InfoPublice from "./components/Informatii/infoPublice";
 import Comunicate from "./components/Informatii/comunicate";
 import ErrorPage1 from "./components/errorPage";
+import Pdf from "./components/Pdf/pdf";
+import PdfViewerIE from "./components/Pdf/PdfViewerIE";
 const { detect } = require("detect-browser");
 const browser = detect();
 
@@ -72,6 +74,7 @@ class App extends Component {
               <Route exact path={"/declaratii"} component={Declaratii} />
               <Route exact path={"/infoPublice"} component={InfoPublice} />
               <Route exact path={"/comunicate"} component={Comunicate} />
+              <Route exact path={"/pdf"} component={PdfViewerIE}/>
               <Route exact path={"/"} component={HomePage} />
               <Route path="*" component={ErrorPage1} status={404} />
             </Switch>

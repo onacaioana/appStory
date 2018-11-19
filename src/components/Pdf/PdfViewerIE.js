@@ -5,6 +5,7 @@ import "./pdf.css";
 import ViewerBar from './ViewerBar';
 import PDFJS from 'pdfjs-dist';
 import axios from 'axios';
+import NewWindow from 'react-new-window';
 
 let pdf1 = null;
 class PdfViewerIE extends Component {
@@ -21,11 +22,11 @@ class PdfViewerIE extends Component {
 
 
 
-    componentDidMount(){
+    componentDidMount() {
         axios
             .get(`http://localhost:8080/ass`, {
                 params: {
-                    fileName: "InfoUtile/1.pdf"
+                    fileName: "Bilant/Bilant2017.pdf"
                 }
             })
             .then(res => {
@@ -35,38 +36,15 @@ class PdfViewerIE extends Component {
                 for (let i = 0; i < pdfData.length; i++) {
                     uint8ArrayPdf[i] = pdfData.charCodeAt(i)
                 }
-                pdf1 = uint8ArrayPdf;
-            })
-            .catch(e => {
-                console.log("Eroare la deschiderea fișierului", e);
-            });
-    }
-    componentDidUpdate(prevProps, prevState){
-        console.log('prevState',prevState);
-        PDFJS.getDocument(pdf1).then(function (pdf) {
-            // Using promise to fetch the page
-            pdf.getPage(1).then(function (page) {
-                var viewport = page.getViewport(prevState.scale);
-    
-                //
-                // Prepare canvas using PDF page dimensions
-                //
-                var canvas = document.getElementById('canvas');
-                var context = canvas.getContext('2d');
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-    
-                //
-                // Render PDF page into canvas context
-                //
-                var renderContext = {
-                    canvasContext: context,
-                    viewport: viewport
+                var pdfjsframe = document.getElementById('pdfViewer');
+                pdfjsframe.onload = function () {
+                    pdfjsframe.contentWindow.PDFViewerApplication.open(uint8ArrayPdf);
                 };
-                page.render(renderContext);
-            });
-        });
+
+            }
+            )
     }
+
     /**
      * When the document is loaded save page count in state
      *
@@ -87,42 +65,45 @@ class PdfViewerIE extends Component {
             [field]: value,
         });
     };
-    
-  //closing the modal containing pdf file
-  onCloseModal = () => {
-    this.setState({
-      openFile: false
-    });
-  };
+
+    //closing the modal containing pdf file
+    onCloseModal = () => {
+        this.setState({
+            openFile: false
+        });
+    };
     render() {
         const { numPages, isModalOpen, scale } = this.state;
         const { data, pages, handleCloseModal, fileName, base64 } = this.props;
 
+        /*   PDFJS.getDocument(pdf1).then(function (pdf) {
+              // Using promise to fetch the page
+              
+              pdf.getPage(1).then(function (page) {
+                  var viewport = page.getViewport(scale);
+      
+                  //
+                  // Prepare canvas using PDF page dimensions
+                  //
+                  var canvas = document.getElementById('canvas');
+                  var context = canvas.getContext('2d');
+                  canvas.height = viewport.height;
+                  canvas.width = viewport.width;
+      
+                  //
+                  // Render PDF page into canvas context
+                  //
+                  var renderContext = {
+                      canvasContext: context,
+                      viewport: viewport
+                  };
+                  page.render(renderContext);
+              });
+          }); */
         return (
-            /**
-             * Open pdf file in Modal 
-             */
-            <Modal
-                open={isModalOpen}
-                style={{ overflowY: "scroll", textAlign: "center" }}
-                onClose={this.onCloseModal}
-            >
-
-                <div className="container__document">
-
-                    {/* AppBar for all PDF actions: donwload, print, zoom  */}
-                    <ViewerBar
-                        data={data}
-                        fileName={fileName}
-                        closeFile={this.onCloseModal}
-                        setDataToParent={this.setDataToParent}
-                        numPages={numPages}
-                        scale={scale}
-                    />
-                    {/* Open pdf file using react-pdf library */}
-                    <canvas id="canvas"></canvas>
-                </div>
-            </Modal>
+            <div>
+                <iframe id="pdfViewer" src="web/viewer.html" style={{ width: '100%', height: '700px' }} allowfullscreen="" webkitallowfullscreen=""></iframe>
+            </div>
         );
     }
 }

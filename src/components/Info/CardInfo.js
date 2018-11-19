@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Button } from 'reactstrap';
 import Pdf from '../Pdf/pdf';
 import { Icon } from "react-icons-kit";
+import PdfViewerIE from '../Pdf/PdfViewerIE';
 
 class CardInfo extends Component {
     state = {
@@ -20,21 +21,7 @@ class CardInfo extends Component {
 
 
     handlerInfo = (fileName, index) => {
-        console.log("aici");
-        console.log({ fileName });
-        console.log({ index });
-        axios
-            .get(`http://localhost:8080/ass`, {
-                params: {
-                    fileName: fileName
-                }
-            })
-            .then(res => {
-                this.setState({
-                    blob: res.data,
-                    openFile: true
-                });
-            });
+        window.open(PdfViewerIE, '_blank');
     }
 
     render() {
@@ -46,11 +33,11 @@ class CardInfo extends Component {
                 <Button
                     key={index}
                     onClick={() => this.handlerInfo(locatie, index)}
-                    style={{ outline:'0', backgroundColor: 'transparent',borderColor:'transparent', color: '#8c7b75'}}
+                    style={{ outline: '0', backgroundColor: 'transparent', borderColor: 'transparent', color: '#8c7b75' }}
                 >
-                <div className="single-list-topics-icon">
-                    <Icon style={{ color: '#8c7b75' }} size={40} icon={icon} />
-                </div>
+                    <div className="single-list-topics-icon">
+                        <Icon style={{ color: '#8c7b75' }} size={40} icon={icon} />
+                    </div>
 
                     {title}
                 </Button>
