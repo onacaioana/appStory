@@ -17,6 +17,24 @@ app.get("/ass", function (req, res) {
   });
 });
 
+
+
+function getDirectoryContent(req, res, next) {
+  var imagePath = path.join(path.resolve(__dirname), req.query.folderName);
+  fs.readdir(imagePath, function (err, images) {
+    if (err) { return next(err); }
+    res.locals.filenames = images;
+    next();
+  });
+}
+
+app.get('/getFiles', getDirectoryContent, function (req, res) {
+  // build a response using res.locals.filenames here.
+  // just sending the names is silly, and so for demonstration only
+  res.send(res.locals.filenames);
+});
+
+
 // app.get("/", function(req, res) {
 //   res.sendFile(path.join(__dirname, "build", "index.html"));
 // }

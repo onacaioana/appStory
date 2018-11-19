@@ -5,6 +5,9 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import Pdf from "./Pdf/pdf";
 import axios from "axios";
 
+const { detect } = require('detect-browser');
+const browser = detect();
+
 class Doc extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +26,23 @@ class Doc extends Component {
         }
       })
       .then(res => {
-        this.setState({
+        /* Check browser version and name */
+        if (browser.name === "ie" && browser.version.indexOf('11') !== -1) {
+          let pdfData = atob(res.data);
+          let uint8ArrayPdf = new Uint8Array(pdfData.length)
+          for (let i = 0; i < pdfData.length; i++) {
+            uint8ArrayPdf[i] = pdfData.charCodeAt(i)
+          }
+
+          var url = 'pdfViewer/web/viewer.html?file=';
+
+          var binaryData = [];
+          binaryData.push(uint8ArrayPdf);
+          var dataPdf = window.URL.createObjectURL(new Blob(binaryData, { type: "application/pdf" }));
+
+          window.open(url + encodeURIComponent(dataPdf), '_blank');
+        }
+        else this.setState({
           blob: res.data,
           openFile: true
         });
@@ -43,11 +62,11 @@ class Doc extends Component {
 
   render() {
     const { button, data, icon, titlu, locatie } = this.props;
-    const {  blob } = this.state;
+    const { blob } = this.state;
     return (
       <div>
         {/* If locatie is a href then redirect using component a */}
-        {locatie.startsWith('http') === true
+        {locatie.indexOf('http') === 0
 
           ? <ListItem
             className="mx-5 px-5 "

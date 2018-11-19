@@ -54,14 +54,16 @@ const items = [{
     icon: require("../images/icons/report.png"),
     listOfDocs: [{
         titlu: "Buget Tribunalul Cluj 2017",
-        locatie: "/PDFs/Buget/Buget2017.pdf",
-    },
-    {
+        locatie: "/Buget/Buget2017.pdf",
+    },{
         titlu: "Buget Tribunalul Cluj 2016",
-        locatie: "/PDFs/Buget/Buget2016.pdf",
+        locatie: "/Buget/Buget2016.pdf",
     },{
         titlu: "Buget Tribunalul Cluj 2015",
-        locatie: "/PDFs/Buget/Buget2015.pdf",
+        locatie: "/Buget/Buget2015.pdf",
+    },{
+        titlu: "Buget Tribunalul Cluj 2008",
+        locatie: "/Buget/Buget2008.pdf",
     }],
 },
 ];

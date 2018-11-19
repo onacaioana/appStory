@@ -12,13 +12,13 @@ import { mail } from "react-icons-kit/ikons/mail";
 const lista = [{
     title: 'Noua legislație penală',
     icon: fax,
-    locatie: "/InfoUtile/1.pdf",
+    locatie: "InfoUtile/1.pdf",
 },
 
 {
     title: ' Asistenţă judiciară',
     icon: phoneSquare,
-    locatie: "",
+    locatie: "Bilant/Bilant2009.pdf",
 },
 {
     title: ' Informaţii taxe',
@@ -59,7 +59,7 @@ const lista = [{
 class InfoList extends Component {
 
     render() {
-    
+        const { browserName, browserVersion } = this.props;
         const items = lista.map((item, index) => {
             return (
                 <li key={index}>
@@ -78,7 +78,9 @@ class InfoList extends Component {
                                     locatie={item.locatie}
                                     icon={item.icon}
                                     title={item.title}
-                                    index = {index}
+                                    index={index}
+                                    browserName={browserName}
+                                    browserVersion={browserVersion}
                                 />
 
 

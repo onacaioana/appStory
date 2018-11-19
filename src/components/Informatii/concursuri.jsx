@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import List from "@material-ui/core/List";
-
+import axios from 'axios';
 import Title from "../Title/title";
 
 import Anunt from "./anunt";
@@ -94,6 +94,21 @@ const items = [
 ];
 
 class Concursuri extends Component {
+  componentDidMount = () => {
+    axios
+      .get(`http://localhost:8080/getFiles`, {
+        params: {
+          folderName: "PDFs/Anunturi"
+        }
+      })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(e => {
+        console.log("Eroare la deschiderea fișierului", e);
+      });
+  }
+
   render() {
     return (
       <React.Fragment>
