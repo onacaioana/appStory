@@ -35,6 +35,42 @@ app.get('/getFiles', getDirectoryContent, function (req, res) {
 });
 
 
+var walk = function (dir, done) {
+  var results = [];
+var j=0;
+  fs.readdir(dir, function (err, list) {
+    if (err) return done(err);
+    var i = 0;
+    var j=0;
+    (function next() {
+      var file = list[i++];
+      if (!file) return done(null, results);
+      file1 = dir + '/' + file;
+      fs.stat(file1, function (err, stat) {
+        if (stat && stat.isDirectory()) {
+
+          walk(file1, function (err, res) {
+            results.push([res]);
+            next();
+          });
+        } else {
+          results.push(file);
+          next();
+        }
+      });
+    })();
+  });
+};
+
+app.get("/getFilesRecursive", function (req, res) {
+  var imagePath = path.join(path.resolve(__dirname), req.query.folderName);
+  walk(imagePath, function (err, results) {
+    if (err) throw err;
+   res.send(results);
+  });
+});
+
+
 // app.get("/", function(req, res) {
 //   res.sendFile(path.join(__dirname, "build", "index.html"));
 // }

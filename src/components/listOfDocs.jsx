@@ -10,8 +10,8 @@ class ListOfDocs extends Component {
         disablePadding
         subheader={this.props.subheader}
       >
+      
         {this.props.list.map((item, index) => {
-          console.log(item);
           return (
             <Doc
               key={index}

@@ -5,102 +5,16 @@ import axios from 'axios';
 import Title from "../Title/title";
 
 import Anunt from "./anunt";
-
-const items = [
-  {
-    data: "13 noiembrie 2015",
-    titlu: "Concurs de promovare grefier sef",
-    listOfDocs: [
-      {
-        titlu: "Proces verbal lista candidati",
-        locatie: "loc1"
-      },
-      {
-        titlu: "Proces verbal rezultate proba scrisa",
-        locatie: "loc2"
-      }
-    ]
-  },
-  {
-    data: "13 noiembrie 2015",
-    titlu: "Concurs de promovare grefier sef",
-    listOfDocs: [
-      {
-        titlu: "asdasd",
-        locatie: "/files/sample.pdf"
-      },
-      {
-        titlu: "asdasd",
-        locatie: "/files/sample.pdf"
-      }
-    ]
-  },
-  {
-    data: "13 noiembrie 2015",
-    titlu: "Concurs de promovare grefier sef",
-    listOfDocs: [
-      {
-        titlu: "asdasd",
-        locatie: "/files/sample.pdf"
-      },
-      {
-        titlu: "asdasd",
-        locatie: "/files/sample.pdf"
-      }
-    ]
-  },
-  {
-    data: "13 noiembrie 2015",
-    titlu: "Concurs de promovare grefier sef",
-    listOfDocs: [
-      {
-        titlu: "asdasd",
-        locatie: "/files/sample.pdf"
-      },
-      {
-        titlu: "asdasd",
-        locatie: "/files/sample.pdf"
-      }
-    ]
-  },
-  {
-    data: "13 noiembrie 2015",
-    titlu: "Concurs de promovare grefier sef",
-    listOfDocs: [
-      {
-        titlu: "asdasd",
-        locatie: "/files/sample.pdf"
-      },
-      {
-        titlu: "asdasd",
-        locatie: "/files/sample.pdf"
-      }
-    ]
-  },
-  {
-    data: "13 noiembrie 2015",
-    titlu: "Concurs de promovare grefier sef",
-    listOfDocs: [
-      {
-        titlu: "asdasd",
-        locatie: "/files/sample.pdf"
-      },
-      {
-        titlu: "asdasd",
-        locatie: "/files/sample.pdf"
-      }
-    ]
-  }
-];
+const itemss = [];
 
 class Concursuri extends Component {
   state = {
-    files: [
-      
-    ]
-  }
-
+    items: [],
+  };
   componentDidMount = () => {
+    /**
+     * Get all files from a folder and create an array of objects
+     */
     axios
       .get(`http://localhost:8080/getFiles`, {
         params: {
@@ -108,18 +22,17 @@ class Concursuri extends Component {
         }
       })
       .then(res => {
-        console.log(res.data.length);
-        console.log(res.data[0]);
 
         let i = 0;
         for (i = 0; i < res.data.length; i++) {
-          const object3 = Object.assign({ titlu: res.data[i], locatie: "/Anunturi/"+ res.data[i], });
+          const object3 = Object.assign({ titlu: res.data[i], locatie: "/Anunturi/" + res.data[i], });
           const list = [];
           list.push(object3);
-          const object2 = Object.assign({ titlu: res.data[i], data: res.data[i], listOfDocs: list});
-          console.log(object2);
-          this.setState({ files: [...this.state.files, object2] })
-          console.log(this.state.files);
+          const object2 = Object.assign({ titlu: res.data[i], data: res.data[i], listOfDocs: list });
+
+          /* No rerender if state not changed - TO DO!! */
+         this.setState({ items: [...this.state.items, object2] });
+          itemss.push(object2);
         }
 
       })
@@ -149,7 +62,7 @@ class Concursuri extends Component {
           >
             {/* <h2>Aici vin concursurile</h2> */}
 
-            {this.state.files.map((item, index) => {
+            {itemss.map((item, index) => {
               return (
                 <Anunt
                   key={index}

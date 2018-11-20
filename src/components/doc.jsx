@@ -66,7 +66,8 @@ class Doc extends Component {
     return (
       <div>
         {/* If locatie is a href then redirect using component a */}
-        {locatie.indexOf('http') === 0
+       
+        {locatie.substring(0,4) === "http"
 
           ? <ListItem
             className="mx-5 px-5 "
