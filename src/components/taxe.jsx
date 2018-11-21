@@ -19,6 +19,10 @@ class TaxeTimbru extends Component {
         suma: '',
     };
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+    
     onChangeSum = (e) => {
         this.setState({suma: e.target.value});
         console.log(e.target.value);

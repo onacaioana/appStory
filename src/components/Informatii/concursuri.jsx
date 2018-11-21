@@ -9,32 +9,60 @@ const itemss = [];
 
 class Concursuri extends Component {
   state = {
-    items: [],
-  };
+    items: []
+  }
+
   componentDidMount = () => {
     /**
-     * Get all files from a folder and create an array of objects
-     */
+    * Get all files from a folder and create an array of objects
+    * 
+    * This request return folders and fubfoders from PDFs/Rapoarte
+    */
+    window.scrollTo(0, 0);
+
     axios
       .get(`http://localhost:8080/getFiles`, {
         params: {
           folderName: "PDFs/Anunturi"
         }
       })
-      .then(res => {
+      .then(res1 => {
+        /* Foreach folder returned -> request all files */
+        res1.data.map((folder) => {
+          return (
 
-        let i = 0;
-        for (i = 0; i < res.data.length; i++) {
-          const object3 = Object.assign({ titlu: res.data[i], locatie: "/Anunturi/" + res.data[i], });
-          const list = [];
-          list.push(object3);
-          const object2 = Object.assign({ titlu: res.data[i], data: res.data[i], listOfDocs: list });
+            axios
+              .get(`http://localhost:8080/getFiles`, {
+                params: {
+                  folderName: "PDFs/Anunturi/" + folder
+                }
+              })
+              .then(res => {
 
-          /* No rerender if state not changed - TO DO!! */
-         this.setState({ items: [...this.state.items, object2] });
-          itemss.push(object2);
-        }
+                let indexStart = folder.indexOf('An');
+                let dataFolder = folder.substring(0, indexStart);
+                let folderTitle = folder.substring(indexStart);
+                /* Foreach file will create the state docs and final objects */
+                var list = [];
+                res.data.map((file) => {
 
+                  /* Extract title filed from pdf name */
+                  let indexStop = file.indexOf('.pdf');
+                  let title = file.substring(0, indexStop);
+
+                  /* Create a doc file type object with 2 params: {titlu, locatie} */
+                  const docObject = Object.assign({ titlu: title, locatie: "Anunturi/" + folder + "/" + file });
+                  list.push(docObject);
+                  
+                });
+
+                /* Create an item from state array and append to state */
+                const itemObject = Object.assign({ titlu: folderTitle, data: dataFolder, listOfDocs: list });
+                this.setState({ items: [...this.state.items, itemObject] });
+
+              })
+          )
+        });
       })
       .catch(e => {
         console.log("Eroare la deschiderea fișierului", e);
@@ -62,7 +90,7 @@ class Concursuri extends Component {
           >
             {/* <h2>Aici vin concursurile</h2> */}
 
-            {itemss.map((item, index) => {
+            {this.state.items.map((item, index) => {
               return (
                 <Anunt
                   key={index}

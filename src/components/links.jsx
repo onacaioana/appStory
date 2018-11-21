@@ -20,6 +20,11 @@ const items = [{
     title: "Preşedintele României"
 },
 {
+    link: "http://old.just.ro/MinisterulJusti%C8%9Biei/Listapersoanelorautorizate/Expertijudiciari/tabid/160/Default.aspx",
+    icon: require("../images/icons/info.png"),
+    title: "LISTĂ EXPERȚI"
+},
+{
     link: "http://www.guv.ro/",
     icon: require("../images/links/GuvernulRomaniei_link.png"),
     title: "Guvernul României"
@@ -93,7 +98,7 @@ class LinksBar extends Component {
             marginLeft: 'auto',
             marginRight: 'auto',
         }
-      
+
         const list = items.map((item, index) => {
             return (
                 <div className="item" key={index} style={{ textAlign: 'center' }}>

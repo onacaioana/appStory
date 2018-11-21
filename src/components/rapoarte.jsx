@@ -7,30 +7,25 @@ import Title from './Title/title';
 import ListOfDocs from './listOfDocs';
 import axios from 'axios';
 
+/**
+ *  Define icons for each category from this page:
+ *  Bilant  -----   Statistica ----   Buget */
+const icons = [require("../images/icons/list.png"), require("../images/icons/report.png"), require("../images/icons/finance.png")];
+
 class Rapoarte extends Component {
     state = {
-        items: [{
-            titlu: "Rapoarte de activitate a Tribunalului Cluj ",
-            icon: require("../images/icons/list.png"),
-            listOfDocs: [],
-
-        }, {
-
-            titlu: "Informații Statistice ",
-            icon: require("../images/icons/report.png"),
-            listOfDocs: [],
-        }, {
-            titlu: "Surse Financiare ",
-            icon: require("../images/icons/report.png"),
-            listOfDocs: [],
-        }
-        ]
+        items: []
     }
 
     componentDidMount = () => {
         /**
         * Get all files from a folder and create an array of objects
+        * 
+        * This request return folders and fubfoders from PDFs/Rapoarte
         */
+
+        window.scrollTo(0, 0);
+    
         axios
             .get(`http://localhost:8080/getFiles`, {
                 params: {
@@ -38,17 +33,37 @@ class Rapoarte extends Component {
                 }
             })
             .then(res1 => {
-                const items = this.state.items;
-                var i = 0;
-                for (i = 0; i < res1.data.length; i++) {
-                    let list = [];
-                    list = this.readSubfolders(res1.data[i]);
-                    items[i].listOfDocs = list;
+                /* Foreach folder returned -> request all files */
+                res1.data.map((folder, index) => {
+                    return (
 
-                }
+                        axios
+                            .get(`http://localhost:8080/getFiles`, {
+                                params: {
+                                    folderName: "PDFs/Rapoarte/" + folder
+                                }
+                            })
+                            .then(res => {
 
-                this.setState({
-                    items
+                                /* Foreach file will create the state docs and final objects */
+                                var list = [];
+                                res.data.map((file) => {
+
+                                    /* Extract title filed from pdf name */
+                                    let indexStop = file.indexOf('.pdf');
+                                    let title = file.substring(0, indexStop);
+
+                                    /* Create a doc file type object with 2 params: {titlu, locatie} */
+                                    const docObject = Object.assign({ titlu: title, locatie: "Rapoarte/" + folder + "/" + file });
+                                    
+                                    list.push(docObject);
+                                });
+
+                                /* Create an item from state array and append to state */
+                                const itemObject = Object.assign({ titlu: folder, icon: icons[index], listOfDocs: list });
+                                this.setState({ items: [...this.state.items, itemObject] });
+                            })
+                    )
                 });
             })
             .catch(e => {
@@ -56,24 +71,6 @@ class Rapoarte extends Component {
             });
     }
 
-    readSubfolders = (folder) => {
-        const list = [];
-        axios
-            .get(`http://localhost:8080/getFiles`, {
-                params: {
-                    folderName: "PDFs/Rapoarte/" + folder
-                }
-            })
-            .then(res => {
-
-                let j = 0;
-                for (j = 0; j < res.data.length; j++) {
-                    const object3 = Object.assign({ titlu: res.data[j], locatie: folder +"/"+ res.data[j], });
-                    list.push(object3);
-                }
-            })
-        return list;
-    }
 
     render() {
         let listItems = this.state.items.map((item, index) => {

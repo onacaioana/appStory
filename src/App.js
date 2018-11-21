@@ -15,6 +15,7 @@ import Declaratii from "./components/Informatii/declaratii";
 import InfoPublice from "./components/Informatii/infoPublice";
 import Comunicate from "./components/Informatii/comunicate";
 import ErrorPage1 from "./components/errorPage";
+import NavBarComp from "./components/navbar";
 const { detect } = require("detect-browser");
 const browser = detect();
 
@@ -57,7 +58,7 @@ class App extends Component {
                   "/comunicate",
                   "/"
                 ]}
-                component={Meniu}
+                component={NavBarComp}
               />
             </Switch>
 

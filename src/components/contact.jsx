@@ -59,7 +59,9 @@ const contacte = [{
 },]
 
 class Contact extends Component {
-
+  componentDidMount() {
+    window.scrollTo(0, 0);
+}
 
   render() {
     let orar = program.map((item, index) => {

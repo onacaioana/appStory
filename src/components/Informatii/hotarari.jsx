@@ -43,6 +43,7 @@ class Hotarari extends Component {
     /**
      * Get all files from a folder and create an array of objects
      */
+
     axios
       .get(`http://localhost:8080/getFiles`, {
         params: {
@@ -55,7 +56,7 @@ class Hotarari extends Component {
 
         for (i = 0; i < res.data.length; i++) {
 
-          /* Extract data filed from pdf name */
+          /* Extract data field from pdf name */
           let indexStart = res.data[i].indexOf('-');
           let indexStop = res.data[i].indexOf('.pdf');
           let dataDoc = res.data[i].substring(indexStart + 1, indexStop);
@@ -68,6 +69,7 @@ class Hotarari extends Component {
       .catch(e => {
         console.log("Eroare la deschiderea fișierului", e);
       });
+    window.scrollTo(0, 0);
   }
 
   render() {

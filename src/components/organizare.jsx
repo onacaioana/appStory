@@ -16,6 +16,7 @@ import ListItem from '@material-ui/core/ListItem';
 import Collapse from '@material-ui/core/Collapse';
 import ListFromStringsArray from './listFromStringsArray';
 
+
 const people = [{
     sectia: "Conducere",
     title: "Preşedinte",
@@ -87,34 +88,36 @@ const people = [{
 ]
 
 class Organizare extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
 
     render() {
-        
+
         let listItems = people.map((p, index) => {
             return (
-                <React.Fragment>
-                    <List
-                        component="nav"
-                    >
-                        {/* Title of list */}
-                        <Typography color="primary" className="my-3" variant="display1">{p.sectia}</Typography>
 
-                        {/* All team */}
-                        <ListItem key={index} button>
-                            <ListItemIcon>
-                                <img src={require("../images/icons/arow2.png")} alt={index}></img>
-                            </ListItemIcon>
-                            <ListItemText
-                                style={{ color: 'red' }}
-                                inset
-                                primary={<h5 style={{ color: '#146496' }}>{p.title}</h5>}
-                            />
-                        </ListItem>
-                        <Collapse in={true} timeout="auto" unmountOnExit>
-                            <ListFromStringsArray list={p.team} />
-                        </Collapse>
-                    </List>
-                </React.Fragment>
+                <List
+                    component="nav"
+                >
+                    {/* Title of list */}
+                    <Typography color="primary" className="my-3" variant="display1">{p.sectia}</Typography>
+
+                    {/* All team */}
+                    <ListItem key={index} button>
+                        <ListItemIcon>
+                            <img src={require("../images/icons/arow2.png")} alt={index}></img>
+                        </ListItemIcon>
+                        <ListItemText
+                            style={{ color: 'red' }}
+                            inset
+                            primary={<h5 style={{ color: '#146496' }}>{p.title}</h5>}
+                        />
+                    </ListItem>
+                    <Collapse in={true} timeout="auto" unmountOnExit>
+                        <ListFromStringsArray list={p.team} />
+                    </Collapse>
+                </List>
             )
         });
 
@@ -164,7 +167,7 @@ class Organizare extends Component {
                             <div id="organigrama" className="mx-4">
                                 <Typography color="primary" className="mx-3" variant="display1">Organigramă</Typography>
                                 <Divider className="m-3" />
-                                <img onClick={this.toggle} style={{ width: '98%', borderRadius: '30px' }} src={require("../images/organigrama.png")} alt="oragnigrama"></img>
+                                <img onClick={this.toggle} style={{ width: '98%',maxWidth:'100%', borderRadius: '30px' }} src={require("../images/organigrama.png")} alt="oragnigrama"></img>
 
                             </div>
 

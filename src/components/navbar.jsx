@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import {
-  Nav,
-  NavItem,
-  Dropdown,
-  DropdownItem,
-  DropdownToggle,
-  DropdownMenu,
-  NavLink
+    Nav,
+    NavItem,
+    Dropdown,
+    DropdownItem,
+    DropdownToggle,
+    DropdownMenu,
+    NavLink,
+    NavbarBrand,
+    Collapse,
+    NavbarToggler,
+    Navbar
 } from "reactstrap";
 
 
@@ -16,23 +20,18 @@ class NavBarComp extends Component {
         super(props);
 
 
-    this.toggleInstanta = this.toggleInstanta.bind(this);
-    this.toggleInformatii = this.toggleInformatii.bind(this);
-    this.toggleInstante = this.toggleInstante.bind(this);
-    this.toggleNavbar = this.toggleNavbar.bind(this);
-    this.state = {
-      dropdownInstanta: false,
-      dropdownInformatii: false,
-      dropdownInstante: false,
-      collapsed: true
-    };
-  }
-  toggleNavbar() {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
-
+        this.toggleInstanta = this.toggleInstanta.bind(this);
+        this.toggleInformatii = this.toggleInformatii.bind(this);
+        this.toggleInstante = this.toggleInstante.bind(this);
+        this.closeNavbar = this.closeNavbar.bind(this);
+        this.toggleNavbar = this.toggleNavbar.bind(this);
+        this.state = {
+            dropdownInstanta: false,
+            dropdownInformatii: false,
+            dropdownInstante: false,
+            collapsed: true,
+        };
+    }
 
     toggleInstanta() {
         this.setState({
@@ -49,11 +48,29 @@ class NavBarComp extends Component {
             dropdownInstante: !this.state.dropdownInstante
         });
     }
+
+    toggleNavbar() {
+        console.log("::::");
+        this.setState({
+            collapsed: !this.state.collapsed
+        });
+    }
+    closeNavbar() {
+        if (this.state.collapsed !== true) {
+            this.toggleNavbar();
+        }
+    }
     render() {
         return (
-                    <Nav className="m-auto" navbar style={{fontSize:"14px"}} >
+            <Navbar style={{paddingTop:3,paddingBottom:3}} className="navbar-dark text-nowrap m-auto bg-dark text-light" expand="md">
+                <NavbarBrand href="/" className="mr-auto"></NavbarBrand>
+                <NavbarToggler onClick={this.toggleNavbar} className="mr-2"></NavbarToggler>
+                <a href={`${process.env.PUBLIC_URL}/#/`}><img className="mx-2 d-none d-lg-block d-xl-block" src={require("../images/mjLogo.png")} alt="mj" /></a>
+                <Collapse  className="m-auto" isOpen={!this.state.collapsed} navbar >
+
+                    <Nav className="m-auto" navbar style={{ fontSize: "14px" }} >
                         <NavItem className="mr-4">
-                            <NavLink href={`${process.env.PUBLIC_URL}/#/`} >ACASĂ</NavLink>
+                            <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/`} >ACASĂ</NavLink>
                         </NavItem>
 
                         <Dropdown nav isOpen={this.state.dropdownInstanta} toggle={this.toggleInstanta}>
@@ -61,10 +78,10 @@ class NavBarComp extends Component {
                                 DESPRE INSTANŢĂ
                                 </DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/prezentare`}>Prezentare</DropdownItem>
-                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/organizare`}>Organizare</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/prezentare`}>Prezentare</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/organizare`}>Organizare</DropdownItem>
                                 <DropdownItem href="http://portal.just.ro/117/SitePages/Circumscriptii.aspx?id_inst=117">Circumscripţie</DropdownItem>
-                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/rapoarte`}>Instaţa în cifre</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/rapoarte`}>Instaţa în cifre</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
@@ -73,12 +90,12 @@ class NavBarComp extends Component {
                                 INFORMAŢII
                                 </DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/concurs`}>Anunţuri / Concursuri</DropdownItem>
-                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/infoPublice`}>Informaţii publice</DropdownItem>
-                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/declaratii`}>Declaraţii</DropdownItem>
-                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/comunicate`}>Comunicate de presă</DropdownItem>
-                                <DropdownItem href={`${process.env.PUBLIC_URL}/#/hotarari`}>Hotărâri de colegiu</DropdownItem>
-                                <DropdownItem href="http://portal.just.ro/117/SitePages/jurisprudenta.aspx?id_inst=117">Jurisprudenţă</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/concurs`}>Anunţuri / Concursuri</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/infoPublice`}>Informaţii publice</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/declaratii`}>Declaraţii</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/comunicate`}>Comunicate de presă</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/hotarari`}>Hotărâri de colegiu</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href="http://portal.just.ro/117/SitePages/jurisprudenta.aspx?id_inst=117">Jurisprudenţă</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
                         <NavItem className="mr-4">
@@ -99,9 +116,12 @@ class NavBarComp extends Component {
                             </DropdownMenu>
                         </Dropdown>
                         <NavItem className="mr-4">
-                            <NavLink href={`${process.env.PUBLIC_URL}/#/contact`}>CONTACT</NavLink>
+                            <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/contact`}>CONTACT</NavLink>
                         </NavItem>
                     </Nav>
+                </Collapse>
+                <img style={{ width: '4%' }} className=" d-none d-lg-block d-xl-block " src={require("../images/10011.png")} alt="100"></img>
+            </Navbar>
         );
     }
 }

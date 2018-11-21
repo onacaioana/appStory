@@ -10,6 +10,8 @@ class Comunicate extends Component {
         /**
          * Get all files from a folder and create an array of objects
          */
+        window.scrollTo(0, 0);
+
         axios
             .get(`http://localhost:8080/getFiles`, {
                 params: {

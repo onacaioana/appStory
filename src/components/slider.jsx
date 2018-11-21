@@ -1,6 +1,9 @@
 import React from 'react';
 import Slider from 'react-animated-slider';
 import horizontalCss from 'react-animated-slider/build/horizontal.css';
+import { Icon } from "react-icons-kit";
+import {androidArrowDropleftCircle} from 'react-icons-kit/ionicons/androidArrowDropleftCircle'
+import {androidArrowDroprightCircle} from 'react-icons-kit/ionicons/androidArrowDroprightCircle'
 const items = [
     {
         src: require('../images/5.jpg'),
@@ -25,7 +28,12 @@ const items = [
 class Carousel extends React.Component {
     render() {
         return (
-            <Slider  classNames={horizontalCss}>
+            <Slider 
+             classNames={horizontalCss}
+             touchDisabled={true}
+             previousButton={<Icon size={40} icon={androidArrowDropleftCircle} style={{color:"white"}} />}
+             nextButton={<Icon size={40} icon={androidArrowDroprightCircle}  style={{color:"white"}} />}
+             >
                 {items.map((item, index) => (
                     <div
                         key={index}
@@ -34,7 +42,7 @@ class Carousel extends React.Component {
                         backgroundPosition: 'center center',
                         backgroundRepeat: 'no-repeat',}}
                     >
-                        <div className="text-light ">
+                        <div className="text-light">
                             <h1 className="d-flex justify-content-center align-self-center mt-4">{item.caption}</h1>
                             <p className="d-flex justify-content-center align-self-center mt-5">{item.subcaption}</p>
 

@@ -14,7 +14,9 @@ const { detect } = require('detect-browser');
 const browser = detect();
 
 class HomePage extends Component {
-
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
     render() {
         /**
          *  Check browser compatibility
@@ -39,7 +41,7 @@ class HomePage extends Component {
             <React.Fragment>
                 <Carousel></Carousel>
                 <HeaderFormat />
-                <InfoList browserName={browser.name} browserVersion={browser.version}/>
+                <InfoList browserName={browser.name} browserVersion={browser.version} />
                 <LinksBar />
             </React.Fragment>
         );
