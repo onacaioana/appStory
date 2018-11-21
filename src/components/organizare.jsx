@@ -104,7 +104,7 @@ class Organizare extends Component {
                     <Typography color="primary" className="my-3" variant="display1">{p.sectia}</Typography>
 
                     {/* All team */}
-                    <ListItem key={index} button>
+                    <ListItem key={index}>
                         <ListItemIcon>
                             <img src={require("../images/icons/arow2.png")} alt={index}></img>
                         </ListItemIcon>
@@ -131,32 +131,24 @@ class Organizare extends Component {
                 />
                 <div>
                     <Grid container className=" my-3 bg-light" spacing={16} >
-                        {/* Meniu */}
-                        <Grid item xs={2}>
-                            {/*  className="position-fixed "           Grid style: style={{ backgroundColor: "#CDCDCD" }}*/}
-                            <MenuList >
-                                <Link to="/organizare#organigrama" style={{ textDecoration: 'none', display: 'block' }}>
-                                    <MenuItem >
+
+                        {/*            Grid style: style={{ backgroundColor: "#CDCDCD" }}*/}
+                        <Grid  item xs={2} className="d-none d-lg-block d-xl-block" >
+                            <MenuList className="position-fixed "  >
+                                <Link to="/organizare#idOrganigrama" style={{ textDecoration: 'none', display: 'block' }}>
+                                    <MenuItem style={{ backgroundColor: 'transparent' }}>
                                         <ListItemIcon>
                                             <ShareIcon />
                                         </ListItemIcon>
-                                        <ListItemText className="d-none d-lg-block d-xl-block" inset primary="Organigramă" />
+                                        <ListItemText inset primary="Organigramă" />
                                     </MenuItem>
                                 </Link>
-                                <Link to="/organizare#conducere" style={{ textDecoration: 'none', display: 'block' }}>
-                                    <MenuItem>
-                                        <ListItemIcon>
-                                            <ContactIcon />
-                                        </ListItemIcon>
-                                        <ListItemText className="d-none d-lg-block d-xl-block" inset primary="Conducerea" />
-                                    </MenuItem>
-                                </Link>
-                                <Link to="/organizare#organiz" style={{ textDecoration: 'none', display: 'block' }}>
-                                    <MenuItem>
+                                <Link to="/organizare#idOrganizare" style={{ textDecoration: 'none', display: 'block' }}>
+                                    <MenuItem  style={{ backgroundColor: 'transparent' }}>
                                         <ListItemIcon>
                                             <PeopleIcon />
                                         </ListItemIcon>
-                                        <ListItemText className="d-none d-lg-block d-xl-block" inset primary="Organizarea" />
+                                        <ListItemText inset primary="Organizarea" />
                                     </MenuItem>
                                 </Link>
                             </MenuList>
@@ -164,16 +156,16 @@ class Organizare extends Component {
 
                         <Grid item xs={10} >
                             {/* Organigrama */}
-                            <div id="organigrama" className="mx-4">
+                            <div id="idOrganigrama" className="mx-4">
                                 <Typography color="primary" className="mx-3" variant="display1">Organigramă</Typography>
                                 <Divider className="m-3" />
-                                <img onClick={this.toggle} style={{ width: '98%',maxWidth:'100%', borderRadius: '30px' }} src={require("../images/organigrama.png")} alt="oragnigrama"></img>
+                                <img onClick={this.toggle} style={{ width: '98%', maxWidth: '100%', borderRadius: '30px' }} src={require("../images/organigrama.png")} alt="oragnigrama"></img>
 
                             </div>
 
 
                             {/* Organizarea Tribunalului Cluj*/}
-                            <div id="organiz" className="mx-4">
+                            <div id="idOrganizare" className="mx-4">
                                 {listItems}
                             </div>
                         </Grid>

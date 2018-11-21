@@ -3,7 +3,7 @@ import Carousel from './slider';
 import LinksBar from './links';
 import InfoList from './Info/infoList';
 import HeaderFormat from './header';
-
+import ScrollToTop from 'react-scroll-up';
 import "core-js/modules/es6.promise";
 import "core-js/modules/es6.array.iterator.js";
 import "core-js/modules/es6.array.from.js";
@@ -39,6 +39,7 @@ class HomePage extends Component {
     renderForAll() {
         return (
             <React.Fragment>
+              
                 <Carousel></Carousel>
                 <HeaderFormat />
                 <InfoList browserName={browser.name} browserVersion={browser.version} />

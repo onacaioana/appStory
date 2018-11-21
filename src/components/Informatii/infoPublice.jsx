@@ -144,7 +144,7 @@ class InfoPublice extends Component {
                                     </ListItem>
 
                                     <Collapse in={true} timeout="auto" unmountOnExit>
-                                        <p>{item.text}</p>
+                                        <p className="text-justify">{item.text}</p>
                                     </Collapse>
                                 </React.Fragment>
                             );

@@ -14,9 +14,13 @@ import Declaratii from "./components/Informatii/declaratii";
 import InfoPublice from "./components/Informatii/infoPublice";
 import Comunicate from "./components/Informatii/comunicate";
 import ProtectiaDatelor from './components/Informatii/protectiaDatelor';
-
+import ScrollToTop from 'react-scroll-up';
 import ErrorPage1 from "./components/errorPage";
 import NavBarComp from "./components/navbar";
+import { Icon } from "react-icons-kit";
+import { circleTop } from 'react-icons-kit/iconic/circleTop'
+import Tooltip from '@material-ui/core/Tooltip';
+
 const { detect } = require("detect-browser");
 const browser = detect();
 
@@ -41,6 +45,12 @@ class App extends Component {
     const baseUrl = process.env.PUBLIC_URL;
     return (
       <React.Fragment>
+        <ScrollToTop showUnder={160}>
+          <Tooltip title="Back to top">
+
+            <Icon style={{ color: '#8c7b75' }} size={40} icon={circleTop} />
+          </Tooltip>
+        </ScrollToTop>
         <HashRouter basename={baseUrl} component={App}>
           <div>
             <Switch>
