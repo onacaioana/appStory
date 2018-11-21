@@ -18,7 +18,7 @@ class Concursuri extends Component {
     * 
     * This request return folders and fubfoders from PDFs/Rapoarte
     */
-    window.scrollTo(0, 0);
+
 
     axios
       .get(`http://localhost:8080/getFiles`, {
@@ -28,8 +28,7 @@ class Concursuri extends Component {
       })
       .then(res1 => {
         /* Foreach folder returned -> request all files */
-        res1.data.map((folder) => {
-          return (
+        res1.data.map((folder,index) => {
 
             axios
               .get(`http://localhost:8080/getFiles`, {
@@ -61,12 +60,13 @@ class Concursuri extends Component {
                 this.setState({ items: [...this.state.items, itemObject] });
 
               })
-          )
+          
         });
       })
       .catch(e => {
         console.log("Eroare la deschiderea fișierului", e);
       });
+      window.scrollTo(0, 0);
   }
 
   render() {

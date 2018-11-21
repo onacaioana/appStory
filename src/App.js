@@ -6,7 +6,6 @@ import Prezentare from "./components/prezentare";
 import HomePage from "./components/home";
 import TaxeTimbru from "./components/taxe";
 import Organizare from "./components/organizare";
-import Meniu from "./components/meniu";
 import Footer from "./components/Footer/footer";
 import Rapoarte from "./components/rapoarte";
 import Hotarari from "./components/Informatii/hotarari";
@@ -14,6 +13,8 @@ import Concursuri from "./components/Informatii/concursuri";
 import Declaratii from "./components/Informatii/declaratii";
 import InfoPublice from "./components/Informatii/infoPublice";
 import Comunicate from "./components/Informatii/comunicate";
+import ProtectiaDatelor from './components/Informatii/protectiaDatelor';
+
 import ErrorPage1 from "./components/errorPage";
 import NavBarComp from "./components/navbar";
 const { detect } = require("detect-browser");
@@ -56,6 +57,7 @@ class App extends Component {
                   "/declaratii",
                   "/infoPublice",
                   "/comunicate",
+                  "/gdpr",
                   "/"
                 ]}
                 component={NavBarComp}
@@ -73,6 +75,7 @@ class App extends Component {
               <Route exact path={"/declaratii"} component={Declaratii} />
               <Route exact path={"/infoPublice"} component={InfoPublice} />
               <Route exact path={"/comunicate"} component={Comunicate} />
+              <Route exact path={"/gdpr"} component={ProtectiaDatelor} />
               <Route exact path={"/"} component={HomePage} />
               <Route path="*" component={ErrorPage1} status={404} />
             </Switch>
@@ -91,6 +94,7 @@ class App extends Component {
                   "/declaratii",
                   "/infoPublice",
                   "/comunicate",
+                  "/gdpr",
                   "/"
                 ]}
                 component={Footer}

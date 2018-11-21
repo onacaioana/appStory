@@ -5,6 +5,7 @@ import Pdf from '../Pdf/pdf';
 import { Icon } from "react-icons-kit";
 import WhenInView from '../whenInView';
 import Grow from '@material-ui/core/Grow';
+import { withRouter } from 'react-router-dom';
 
 class CardInfo extends Component {
     state = {
@@ -20,44 +21,50 @@ class CardInfo extends Component {
         });
     };
 
-
+    routeChange =() => {
+        let path = this.props.locatie;
+        this.props.history.push(path);
+    }
     openPdf = () => {
-        const { locatie, browserName, browserVersion } = this.props;
-
-        axios
-            .get(`http://localhost:8080/ass`, {
-                params: {
-                    fileName: locatie
-                }
-            })
-            .then(res => {
-                /* Check browser version and name */
-                if (browserName === "ie" && browserVersion.indexOf('11') !== -1) {
-                    let pdfData = atob(res.data);
-                    let uint8ArrayPdf = new Uint8Array(pdfData.length)
-                    for (let i = 0; i < pdfData.length; i++) {
-                        uint8ArrayPdf[i] = pdfData.charCodeAt(i)
+        const { locatie, index, browserName, browserVersion } = this.props;
+        if (index == 0 || index === 2) {
+            this.routeChange();
+        }else{
+            axios
+                .get(`http://localhost:8080/ass`, {
+                    params: {
+                        fileName: locatie
                     }
-
-                    var url = 'pdfViewer/web/viewer.html?file=';
-
-                    var binaryData = [];
-                    binaryData.push(uint8ArrayPdf);
-                    var dataPdf = window.URL.createObjectURL(new Blob(binaryData, { type: "application/pdf" }));
-
-                    window.open(url + encodeURIComponent(dataPdf), '_blank');
-                }
-                else this.setState({
-                    blob: res.data,
-                    openFile: true
                 })
-            })
-            .catch(e => {
-                console.log("Eroare la deschiderea fișierului", e);
-            });
+                .then(res => {
+                    /* Check browser version and name */
+                    if (browserName === "ie" && browserVersion.indexOf('11') !== -1) {
+                        let pdfData = atob(res.data);
+                        let uint8ArrayPdf = new Uint8Array(pdfData.length)
+                        for (let i = 0; i < pdfData.length; i++) {
+                            uint8ArrayPdf[i] = pdfData.charCodeAt(i)
+                        }
+
+                        var url = 'pdfViewer/web/viewer.html?file=';
+
+                        var binaryData = [];
+                        binaryData.push(uint8ArrayPdf);
+                        var dataPdf = window.URL.createObjectURL(new Blob(binaryData, { type: "application/pdf" }));
+
+                        window.open(url + encodeURIComponent(dataPdf), '_blank');
+                    }
+                    else this.setState({
+                        blob: res.data,
+                        openFile: true
+                    })
+                })
+                .catch(e => {
+                    console.log("Eroare la deschiderea fișierului", e);
+                });
+
+        }
 
     }
-
 
     render() {
         const { blob, openFile } = this.state;
@@ -76,6 +83,7 @@ class CardInfo extends Component {
                             {...(inView ? { timeout: (2000 + index * 100) } : {})}
                         >
                             <div className="single-list-topics-content rounded shadow">
+
                                 <Button
                                     key={index}
                                     onClick={() => this.openPdf()}
@@ -108,4 +116,4 @@ class CardInfo extends Component {
     }
 }
 
-export default CardInfo;
+export default withRouter(CardInfo);

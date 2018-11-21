@@ -13,7 +13,7 @@ const lista = [
     {
         title: 'Protecția datelor',
         icon: notepad_remove,
-        locatie: "",
+        locatie: "/gdpr",
     },
     {
         title: ' Asistenţă judiciară',
@@ -23,7 +23,7 @@ const lista = [
     {
         title: ' Informaţii taxe',
         icon: mail,
-        locatie: "",
+        locatie: "/taxe",
 
     },
     {
