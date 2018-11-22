@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Title from '../Title/title';
+import Title from '../components/Header/HeaderTitlePage';
 import Divider from '@material-ui/core/Divider';
-import Anunt from './anunt';
+import Anunt from '../components/anunt';
 import axios from 'axios';
 
 class ProtectiaDatelor extends Component {
@@ -57,7 +57,7 @@ class ProtectiaDatelor extends Component {
 
           {/* <h2>Aici vin hotararile de colegiu</h2> */}
           <Anunt
-            icon={require("../../images/icons/law2.png")}
+            icon={require("../images/icons/law2.png")}
             altText={"iconGDPR"}
             docs={this.state.items}
           />

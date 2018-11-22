@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import List from "@material-ui/core/List";
 import axios from 'axios';
-import Title from "../Title/title";
-
-import Anunt from "./anunt";
-const itemss = [];
+import Title from "../components/Header/HeaderTitlePage";
+import Anunt from "../components/anunt";
 
 class Concursuri extends Component {
   state = {
@@ -18,7 +16,7 @@ class Concursuri extends Component {
     * 
     * This request return folders and fubfoders from PDFs/Rapoarte
     */
-
+   var list=[];
 
     axios
       .get(`http://localhost:8080/getFiles`, {
@@ -42,7 +40,7 @@ class Concursuri extends Component {
                 let dataFolder = folder.substring(0, indexStart);
                 let folderTitle = folder.substring(indexStart);
                 /* Foreach file will create the state docs and final objects */
-                var list = [];
+                list = [];
                 res.data.map((file) => {
 
                   /* Extract title filed from pdf name */
@@ -94,7 +92,7 @@ class Concursuri extends Component {
               return (
                 <Anunt
                   key={index}
-                  icon={require("../../images/icons/list.png")}
+                  icon={require("../images/icons/list.png")}
                   altText={"altText"}
                   titlu={item.titlu}
                   subtitlu={item.data}

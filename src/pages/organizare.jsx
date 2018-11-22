@@ -3,89 +3,19 @@ import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import ContactIcon from '@material-ui/icons/Contacts';
 import ShareIcon from '@material-ui/icons/Share';
 import PeopleIcon from '@material-ui/icons/People';
 import Grid from '@material-ui/core/Grid';
 import { HashLink as Link } from 'react-router-hash-link';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import Title from './Title/title';
+import Title from '../components/Header/HeaderTitlePage';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Collapse from '@material-ui/core/Collapse';
-import ListFromStringsArray from './listFromStringsArray';
+import ListFromStringsArray from '../components/listFromStringsArray';
+import {personalTribunal} from '../utils/constants';
 
-
-const people = [{
-    sectia: "Conducere",
-    title: "Preşedinte",
-    team: ["SELEȘIU Ana Sorina"],
-},
-{
-    title: "Vicepreşedinţi",
-    team: ["FĂRCAŞ-Hîngan Georgiana Rodica", "GUZU Rodica Elisabeta"]
-},
-{
-    title: "Colegiul de Conducere",
-    team: ["SELEŞIU Ana Sorina - Președinte – membru ales",
-        "DANILEŢ Cristi Vasilică - Judecator – membru ales",
-        "GAGA Ioan - Judecator – membru ales",
-        "GUZU Rodica - Judecător– membru ales",
-        "JACOTĂ Cătălin - Judecător – membru ales",
-        "ONEŢ Georgeta - Judecător – membru ales",
-        "TRESTIAN Simona - Judecător – membru ales"],
-}, {
-    title: "Prim grefier",
-    team: ["KOZMA Daniela"],
-}, {
-    sectia: "Secția Civilă",
-    title: "Judecatori:",
-    team: ["Boiciuc Ioana Nora",
-        "Cociş Liliana-Anişoara",
-        "Danileţ Vasilică Cristi",
-        "Fărcaş-Hîngan Georgiana Rodica",
-        "Ilieş Ariana",
-        "Lupea Ioan-Marius",
-        "Mornăilă Ramona",
-        "Trestian Simona",
-        "Ţopan Alina"],
-},
-{
-    title: "Grefieri",
-    team: ["Blăjan Camelia-Luminiţa",
-        "Brie Alina",
-        "Borbely Malvin",
-        "Burnete Daiana-Andra",
-        "Dan Andreea",
-        "Doboş Maria",
-        "Miron Carmen-Gabriela",
-        "Moldovan Briciu Maria Cristina",
-        "Oneş Dan Paul",
-        "Parv Fabia",
-        "Stîngaci Mirela"]
-}, {
-    sectia: "Secţia Penală",
-    title: "Judecători",
-    team: ["Balint Camelia",
-        "Bolchiş Florina-Sanda",
-        "Cimbrudean Corina-Anca",
-        "Guzu Rodica",
-        "Doica Alin-Florin",
-        "Ghişoiu Oana Raluca",
-        "Jacotă Cătălin",
-        "Luca Emeşe",
-        "Taşcă Dan-Ioan ",
-        "Tatu Claudia-Oana",
-        "Tatu Dorin ",
-        "Oncică Sanislav Marcela",
-        "Seleşiu Ana Sorina "],
-}, {
-    sectie: "",
-    title: "Grefieri",
-    team: ["Andresi Olimpia", "Bărăian Ioana Maria", "Boţioc Alina-Pompilia", "Ciceu Oana Raluca", "Coman Livia", "Curuţiu Elvira", "Deac Aniela", "Duma Ioana Daniela", "Herişanu Claudia", "Miclea Laura", "Petruş Gabriela", "Pop Alina", "Ţifrea Cristina", "Șofron Claudia", "Voila Andreea"]
-}
-]
 
 class Organizare extends Component {
     componentDidMount() {
@@ -94,7 +24,7 @@ class Organizare extends Component {
 
     render() {
 
-        let listItems = people.map((p, index) => {
+        let listItems = personalTribunal.map((p, index) => {
             return (
 
                 <List

@@ -1,7 +1,7 @@
 import React from "react";
-import { instante } from "./instante";
+import { detaliiInstante } from "../../utils/constants";
 import ReactMapboxGl, { Popup } from "react-mapbox-gl";
-import "./harta.css";
+import "./Harta.css";
 
 const Map = ReactMapboxGl({
   accessToken:
@@ -39,7 +39,7 @@ class Harta extends React.Component {
       }
     } else {
       feature = features[0];
-      instanta = instante.filter(i => {
+      instanta = detaliiInstante.filter(i => {
         return i.nume === feature.properties.name;
       });
 
@@ -81,7 +81,7 @@ class Harta extends React.Component {
 
         <Map
           className="mb-5"
-          style="mapbox://styles/dryan251/cjngesw1k4bx72rschxaogtec"
+          style={`mapbox://styles/dryan251/cjngesw1k4bx72rschxaogtec` }
           fitBounds={[
             [
               this.state.center[0] - this.state.radius,

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import List from '@material-ui/core/List';
 import ListSubheader from "@material-ui/core/ListSubheader";
-import Title from '../Title/title';
-import Anunt from "./anunt";
+import Title from '../components/Header/HeaderTitlePage';
+import Anunt from "../components/anunt";
 import axios from 'axios';
 
 import ListItem from "@material-ui/core/ListItem";
@@ -76,7 +76,6 @@ class InfoPublice extends Component {
                 for (i = 0; i < res.data.length; i++) {
 
                     /* Extract data field from pdf name */
-                    let indexStart = res.data[i].indexOf('-');
                     let indexStop = res.data[i].indexOf('.pdf');
                     let titluDoc = res.data[i].substring(0, indexStop);
                     const object = Object.assign({ titlu: titluDoc, locatie: "Informatii publice/Birou de informare si relaţii publice/" + res.data[i] });
@@ -117,7 +116,7 @@ class InfoPublice extends Component {
                             return (
                                 <Anunt
                                     key={index}
-                                    icon={require("../../images/icons/law2.png")}
+                                    icon={require("../images/icons/law2.png")}
                                     altText={item.text}
                                     titlu={item.titlu}
                                     docs={item.listOfDocs}
@@ -132,7 +131,7 @@ class InfoPublice extends Component {
                                     <ListItem button onClick={this.handleChange}>
                                         <ListItemIcon>
                                             <img
-                                                src={require("../../images/icons/law2.png")}
+                                                src={require("../images/icons/law2.png")}
                                                 alt="Lista_concursuri_si_anunturi"
                                             />
                                         </ListItemIcon>

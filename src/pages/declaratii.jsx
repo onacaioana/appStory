@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
-import Title from '../Title/title';
-import Anunt from "./anunt";
+import Title from '../components/Header/HeaderTitlePage';
+import Anunt from "../components/anunt";
 
 
 const items = [
@@ -118,7 +118,7 @@ class Declaratii extends Component {
                             return (
                                 <Anunt
                                     key={index}
-                                    icon={require("../../images/icons/institution.png")}
+                                    icon={require("../images/icons/institution.png")}
                                     titlu={item.title}
                                     docs={item.content}
                                     expanded={true}

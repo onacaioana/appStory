@@ -3,8 +3,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
-import Title from './Title/title';
-import ListOfDocs from './listOfDocs';
+import Title from '../components/Header/HeaderTitlePage';
+import ListOfDocs from '../components/listOfDocs';
 import axios from 'axios';
 
 /**
@@ -23,9 +23,7 @@ class Rapoarte extends Component {
         * 
         * This request return folders and fubfoders from PDFs/Rapoarte
         */
-
-        window.scrollTo(0, 0);
-    
+        
         axios
             .get(`http://localhost:8080/getFiles`, {
                 params: {
@@ -46,7 +44,7 @@ class Rapoarte extends Component {
                             .then(res => {
 
                                 /* Foreach file will create the state docs and final objects */
-                                var list = [];
+                                let list = [];
                                 res.data.map((file) => {
 
                                     /* Extract title filed from pdf name */
@@ -55,7 +53,7 @@ class Rapoarte extends Component {
 
                                     /* Create a doc file type object with 2 params: {titlu, locatie} */
                                     const docObject = Object.assign({ titlu: title, locatie: "Rapoarte/" + folder + "/" + file });
-                                    
+
                                     list.push(docObject);
                                 });
 
@@ -69,6 +67,7 @@ class Rapoarte extends Component {
             .catch(e => {
                 console.log("Eroare la deschiderea fișierului", e);
             });
+        window.scrollTo(0, 0);
     }
 
 

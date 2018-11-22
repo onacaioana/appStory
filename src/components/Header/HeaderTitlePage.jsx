@@ -1,6 +1,6 @@
-import './style.css';
+import './TitleStyle.css';
 import React from 'react';
-import WhenInView from '../whenInView';
+import WhenInView from '../../utils/whenInView';
 import Fade from '@material-ui/core/Fade';
 
 const title = (props) => {

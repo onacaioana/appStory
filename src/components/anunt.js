@@ -5,7 +5,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Collapse from "@material-ui/core/Collapse";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
-import ListOfDocs from "../listOfDocs";
+import ListOfDocs from "./listOfDocs";
 
 class Anunt extends Component {
   constructor(props) {
@@ -45,7 +45,7 @@ class Anunt extends Component {
                 // list={item.listOfDocs}
                 list={this.props.docs}
                 button={true}
-                icon1={require("../../images/icons/arow2.png")}
+                icon1={require("../images/icons/arow2.png")}
                 component="div"
               />
             </Collapse>
@@ -55,7 +55,7 @@ class Anunt extends Component {
             // list={item.listOfDocs}
             list={this.props.docs}
             button={true}
-            icon1={require("../../images/icons/law2.png")}
+            icon1={require("../images/icons/law2.png")}
             component="div"
           />
         }

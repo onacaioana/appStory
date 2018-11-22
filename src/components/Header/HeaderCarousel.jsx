@@ -5,26 +5,7 @@ import { Icon } from "react-icons-kit";
 import { androidArrowDropleftCircle } from 'react-icons-kit/ionicons/androidArrowDropleftCircle'
 import { androidArrowDroprightCircle } from 'react-icons-kit/ionicons/androidArrowDroprightCircle'
 import Typography from '@material-ui/core/Typography';
-const items = [
-    {
-        src: require('../images/trcj.jpg'),
-        altText: 'TRIBUNALUL CLUJ',
-        caption: 'TRIBUNALUL CLUJ',
-        subcaption: '"Nimic nu e mai presus de lege"'
-    },
-    {
-        src: require('../images/5.jpg'),
-        altText: 'TRIBUNALUL CLUJ',
-        caption: 'TRIBUNALUL CLUJ',
-        subcaption: 'Nimic nu e mai presus de lege'
-    },
-    {
-        src: require('../images/11.jpg'),
-        altText: 'TRIBUNALUL CLUJ',
-        caption: 'TRIBUNALUL CLUJ',
-        subcaption: 'Nimic nu e mai presus de lege'
-    }
-];
+import {carouselImages} from '../../utils/constants';
 
 class Carousel extends React.Component {
     render() {
@@ -35,7 +16,7 @@ class Carousel extends React.Component {
                 previousButton={<Icon size={40} icon={androidArrowDropleftCircle} style={{ color: "white" }} />}
                 nextButton={<Icon size={40} icon={androidArrowDroprightCircle} style={{ color: "white" }} />}
             >
-                {items.map((item, index) => (
+                {carouselImages.map((item, index) => (
                     <div
                         key={index}
                         style={{

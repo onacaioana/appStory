@@ -65,7 +65,7 @@ class NavBarComp extends Component {
             <Navbar style={{paddingTop:3,paddingBottom:3}} className="navbar-dark text-nowrap m-auto bg-dark text-light" expand="md">
                 <NavbarBrand href="/" className="mr-auto"></NavbarBrand>
                 <NavbarToggler onClick={this.toggleNavbar} className="mr-2"></NavbarToggler>
-                <a href={`${process.env.PUBLIC_URL}/#/`}><img className="mx-2 d-none d-lg-block d-xl-block" src={require("../images/mjLogo.png")} alt="mj" /></a>
+                <a href={`${process.env.PUBLIC_URL}/#/`}><img className="mx-2 d-none d-lg-block d-xl-block" src={require("../../images/mjLogo.png")} alt="mj" /></a>
                 <Collapse  className="m-auto" isOpen={!this.state.collapsed} navbar >
 
                     <Nav className="m-auto" navbar style={{ fontSize: "14px" }} >
@@ -120,7 +120,7 @@ class NavBarComp extends Component {
                         </NavItem>
                     </Nav>
                 </Collapse>
-                <img style={{ width: '4%' }} className=" d-none d-lg-block d-xl-block " src={require("../images/10011.png")} alt="100"></img>
+                <img style={{ width: '4%' }} className=" d-none d-lg-block d-xl-block " src={require("../../images/10011.png")} alt="100"></img>
             </Navbar>
         );
     }

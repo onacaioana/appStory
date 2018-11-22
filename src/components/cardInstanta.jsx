@@ -7,71 +7,35 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Collapse from '@material-ui/core/Collapse';
-import WhenInView from './whenInView';
-
-const instanta = [{
-    src: require('../images/jud_dej.jpg'),
-    title: 'Judecatoria Dej',
-    content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej.',
-    link: "http://portal.just.ro/219/SitePages/acasa_default.aspx?id_inst=219",
-},
-{
-    title: 'Instanţele din circumscripţia Tribunalului Cluj',
-    content: ' După reorganizarea administrativ-teritorială din 1968 potrivit Legii nr. 58 din 26 decembrie 1968, Tribunalul Regional Cluj este desfiinţat şi înlocuit cu Tribunalul Judeţean Cluj. Prin Legea nr. 92/04.08.1992 pentru organizare judecătorească, se înfiinţează Curtea de Apel Cluj, care are în circumscripţie: Tribunalul Cluj, Tribunalul Bistriţa Năsăud, Tribunalul Maramureş şi Tribunalul Sălaj. Prin aceeaşi lege Tribunalul Cluj are în circumscripţie Judecătoria Cluj-Napoca, Judecătoria Dej, Jud. Gherla, Jud. Turda şi Judecătoria Huedin. ',
-},
-{
-    src: require('../images/jud-cluj.jpg'),
-    title: 'Judecatoria Cluj',
-    content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej.',
-    link: "http://portal.just.ro/211/SitePages/acasa_default.aspx?id_inst=211"
-},
-{
-    src: require('../images/jud-gherla.jpg'),
-    title: 'Judecatoria Gherla',
-    content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej.',
-    link: "http://portal.just.ro/235/SitePages/acasa_default.aspx?id_inst=235"
-},
-{
-    src: require('../images/jud-huedin.jpg'),
-    title: 'Judecatoria Huedin',
-    content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej.',
-    link: "http://portal.just.ro/242/SitePages/acasa_default.aspx?id_inst=242"
-},
-{
-    src: require('../images/jud-turda.jpg'),
-    title: 'Judecatoria Turda',
-    content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej.',
-    link: "http://portal.just.ro/328/SitePages/acasa_default.aspx?id_inst=328"
-}];
+import {prezentareInstante} from '../utils/constants';
 
 class CardInstanta extends React.Component {
 
     render() {
-        const cards = instanta.map((item, index) => {
+        const cards = prezentareInstante.map((instanta, index) => {
             return (
                 <Grid item md={4} key={index}>
                     <Card className="bg-light">
                         <CardActionArea>
                             {index !== 1 ? <CardMedia
                                 style={{ height: 0, paddingTop: '56.25%' }}
-                                image={item.src}
-                                title={item.title} />
+                                image={instanta.src}
+                                title={instanta.title} />
                                 : <p></p>}
                             <CardContent>
                                 <Typography align='center' gutterBottom variant="headline">
-                                    {item.title}
+                                    {instanta.title}
                                 </Typography>
                                 <p>
                                     &nbsp;&nbsp;
-                                            {item.content}
+                                            {instanta.content}
 
                                 </p>
                             </CardContent>
                         </CardActionArea>
 
                         {index !== 1 ? <CardActions>
-                            <Button href={item.link} size="small" color="primary">
+                            <Button href={instanta.link} size="small" color="primary">
                                 Află mai multe
                                             </Button>
                         </CardActions> : <p></p>}

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Carousel from './slider';
-import LinksBar from './links';
-import InfoList from './Info/infoList';
-import HeaderFormat from './header';
-import ScrollToTop from 'react-scroll-up';
+import Carousel from '../components/Header/HeaderCarousel';
+import LinksBar from '../components/links';
+import InfoLista from '../components/InfoUtile/InfoUtileList';
+import HeaderFormat from '../components/Header/Header';
 import "core-js/modules/es6.promise";
 import "core-js/modules/es6.array.iterator.js";
 import "core-js/modules/es6.array.from.js";
@@ -42,7 +41,7 @@ class HomePage extends Component {
               
                 <Carousel></Carousel>
                 <HeaderFormat />
-                <InfoList browserName={browser.name} browserVersion={browser.version} />
+                <InfoLista browserName={browser.name} browserVersion={browser.version} />
                 <LinksBar />
             </React.Fragment>
         );

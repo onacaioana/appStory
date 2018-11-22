@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
-import CardInstanta from './cardInstanta';
-import HeaderFormat from './header';
-import Title from './Title/title';
+import CardInstanta from '../components/cardInstanta';
+import HeaderFormat from '../components/Header/Header';
+import Title from '../components/Header/HeaderTitlePage';
 
 class Prezentare extends Component {
     state = {

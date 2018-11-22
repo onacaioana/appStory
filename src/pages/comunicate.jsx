@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Title from '../Title/title';
-import Anunt from './anunt';
+import Title from '../components/Header/HeaderTitlePage';
+import Anunt from '../components/anunt';
 import axios from 'axios';
 class Comunicate extends Component {
     state = {
@@ -50,7 +50,7 @@ class Comunicate extends Component {
 
                 <div className="my-5 container">
                     <Anunt
-                        icon={require("../../images/icons/law2.png")}
+                        icon={require("../images/icons/law2.png")}
                         altText={"altText"}
                         docs={this.state.items}
                         expanded={false}

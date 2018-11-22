@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import './infoList.css';
-import WhenInView from '../whenInView';
-import Grow from '@material-ui/core/Grow';
-import HeaderFormat from '../header';
-import CardInfo from './CardInfo';
+import './InfoUtileStyle.css';
+import HeaderFormat from '../Header/Header';
+import CardInfo from './InfoUtileCard';
 import { fax } from "react-icons-kit/fa/fax";
 import { notepad_remove } from 'react-icons-kit/ikons/notepad_remove'
 import { phoneSquare } from "react-icons-kit/fa/phoneSquare";

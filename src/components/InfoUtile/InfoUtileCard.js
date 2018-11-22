@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Button } from 'reactstrap';
 import Pdf from '../Pdf/pdf';
 import { Icon } from "react-icons-kit";
-import WhenInView from '../whenInView';
+import WhenInView from '../../utils/whenInView';
 import Grow from '@material-ui/core/Grow';
 import { withRouter } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ class CardInfo extends Component {
     }
     openPdf = () => {
         const { locatie, index, browserName, browserVersion } = this.props;
-        if (index == 0 || index === 2) {
+        if (index === 0 || index === 2) {
             this.routeChange();
         }else{
             axios
@@ -37,20 +37,22 @@ class CardInfo extends Component {
                     }
                 })
                 .then(res => {
-                    /* Check browser version and name */
+                    /* Check if browser in Internet Explorer*/
                     if (browserName === "ie" && browserVersion.indexOf('11') !== -1) {
+                       
+                        var binaryData = [];
+                        var url = 'pdfViewer/web/viewer.html?file=';
+                       
+                        /* Convert Base 64 to Blob */
                         let pdfData = atob(res.data);
                         let uint8ArrayPdf = new Uint8Array(pdfData.length)
                         for (let i = 0; i < pdfData.length; i++) {
                             uint8ArrayPdf[i] = pdfData.charCodeAt(i)
                         }
 
-                        var url = 'pdfViewer/web/viewer.html?file=';
-
-                        var binaryData = [];
+                        /* Open PDF file using PDF.js library*/
                         binaryData.push(uint8ArrayPdf);
                         var dataPdf = window.URL.createObjectURL(new Blob(binaryData, { type: "application/pdf" }));
-
                         window.open(url + encodeURIComponent(dataPdf), '_blank');
                     }
                     else this.setState({
