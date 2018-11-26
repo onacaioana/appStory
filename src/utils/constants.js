@@ -1,69 +1,69 @@
 export const detaliiInstante = [
     {
-      nume: "Tribunalul Cluj",
-      adresa: {
-        oras: "Cluj-Napoca",
-        str: "Calea Dorobantilor",
-        nr: "2-4",
-        cod: "400117"
-      },
-      tel: ["0264-596.111", "0264-431.057", "0264-431.908", "0264-595.812"],
-      fax: "0264-595.844",
-      email: "tr-cluj@just.ro"
+        nume: "Tribunalul Cluj",
+        adresa: {
+            oras: "Cluj-Napoca",
+            str: "Calea Dorobantilor",
+            nr: "2-4",
+            cod: "400117"
+        },
+        tel: ["0264-596.111", "0264-431.057", "0264-431.908", "0264-595.812"],
+        fax: "0264-595.844",
+        email: "tr-cluj@just.ro"
     },
     {
-      nume: "Tribunalul Specializat Cluj",
-      adresa: {
-        oras: "Cluj-Napoca",
-        str: "Calea Dorobantilor",
-        nr: "2-4",
-        cod: "400117"
-      },
-      tel: ["0264-596.110", "0264-596.111"],
-      fax: "0264-504.366",
-      email: "tr-comercial-cluj@just.ro"
+        nume: "Tribunalul Specializat Cluj",
+        adresa: {
+            oras: "Cluj-Napoca",
+            str: "Calea Dorobantilor",
+            nr: "2-4",
+            cod: "400117"
+        },
+        tel: ["0264-596.110", "0264-596.111"],
+        fax: "0264-504.366",
+        email: "tr-comercial-cluj@just.ro"
     },
     {
-      nume: "Judecatoria Cluj-Napoca",
-      adresa: {
-        oras: "Cluj-Napoca",
-        str: "Calea Dorobantilor",
-        nr: "2",
-        cod: "400117"
-      },
-      tel: ["0264-596.111", "0264-431.057", "0264-431.908", "0264-595.812"],
-      fax: "0264-431.033",
-      email: "jud-cluj@just.ro"
+        nume: "Judecatoria Cluj-Napoca",
+        adresa: {
+            oras: "Cluj-Napoca",
+            str: "Calea Dorobantilor",
+            nr: "2",
+            cod: "400117"
+        },
+        tel: ["0264-596.111", "0264-431.057", "0264-431.908", "0264-595.812"],
+        fax: "0264-431.033",
+        email: "jud-cluj@just.ro"
     },
     {
-      nume: "Judecatoria Dej",
-      adresa: { oras: "Dej", str: "16 Februarie", nr: "2-4", cod: "405200" },
-      tel: ["0264-212.110"],
-      fax: "0264-213.015",
-      email: "jud-dej@just.ro"
+        nume: "Judecatoria Dej",
+        adresa: { oras: "Dej", str: "16 Februarie", nr: "2-4", cod: "405200" },
+        tel: ["0264-212.110"],
+        fax: "0264-213.015",
+        email: "jud-dej@just.ro"
     },
     {
-      nume: "Judecatoria Gherla",
-      adresa: { oras: "Gherla", str: "Bobalna", nr: "55", cod: "405300" },
-      tel: ["0264 - 243.854", "0264 - 243.251"],
-      fax: "0264-243.773; 0264-243.701",
-      email: "jud-gherla@just.ro"
+        nume: "Judecatoria Gherla",
+        adresa: { oras: "Gherla", str: "Bobalna", nr: "55", cod: "405300" },
+        tel: ["0264 - 243.854", "0264 - 243.251"],
+        fax: "0264-243.773; 0264-243.701",
+        email: "jud-gherla@just.ro"
     },
     {
-      nume: "Judecatoria Huedin",
-      adresa: { oras: "Huedin", str: "Avram Iancu", nr: "2", cod: "405400" },
-      tel: ["0264-351.788"],
-      fax: "0264-353.160",
-      email: "jud-huedin@just.ro"
+        nume: "Judecatoria Huedin",
+        adresa: { oras: "Huedin", str: "Avram Iancu", nr: "2", cod: "405400" },
+        tel: ["0264-351.788"],
+        fax: "0264-353.160",
+        email: "jud-huedin@just.ro"
     },
     {
-      nume: "Judecatoria Turda",
-      adresa: { oras: "Turda", str: "Piata Romana", nr: "12", cod: "401139" },
-      tel: ["0264-311.985"],
-      fax: "0264-311.851",
-      email: "jud-turda@just.ro"
+        nume: "Judecatoria Turda",
+        adresa: { oras: "Turda", str: "Piata Romana", nr: "12", cod: "401139" },
+        tel: ["0264-311.985"],
+        fax: "0264-311.851",
+        email: "jud-turda@just.ro"
     }
-  ];
+];
 export const carouselImages = [
     {
         src: require('../images/trcj.jpg'),
@@ -270,5 +270,285 @@ export const personalTribunal = [{
 }, {
     sectie: "",
     title: "Grefieri",
-    team: ["Andresi Olimpia", "Bărăian Ioana Maria", "Boţioc Alina-Pompilia", "Ciceu Oana Raluca", "Coman Livia", "Curuţiu Elvira", "Deac Aniela", "Duma Ioana Daniela", "Herişanu Claudia", "Miclea Laura", "Petruş Gabriela", "Pop Alina", "Ţifrea Cristina", "Șofron Claudia", "Voila Andreea"]
+    team: ["Andresi Olimpia",
+        "Bărăian Ioana Maria",
+        "Boţioc Alina-Pompilia",
+        "Ciceu Oana Raluca",
+        "Coman Livia",
+        "Curuţiu Elvira",
+        "Deac Aniela",
+        "Duma Ioana Daniela",
+        "Herişanu Claudia",
+        "Miclea Laura",
+        "Petruş Gabriela",
+        "Pop Alina",
+        "Ţifrea Cristina",
+        "Șofron Claudia",
+        "Voila Andreea"]
 }];
+export const personalTribunal1 = [
+    {
+        sectia: "Conducerea Tribunalul Cluj",
+        personal: [
+            {
+                title: "Preşedinte",
+                team: ["SELEȘIU Ana Sorina"],
+            },
+            {
+                title: "Vicepreşedinţi",
+                team: ["FĂRCAŞ-Hîngan Georgiana Rodica", "GUZU Rodica Elisabeta"]
+            },
+            {
+                title: "Colegiul de Conducere",
+                team: ["SELEŞIU Ana Sorina - Președinte – membru ales",
+                    "DANILEŢ Cristi Vasilică - Judecator – membru ales",
+                    "GAGA Ioan - Judecator – membru ales",
+                    "GUZU Rodica - Judecător– membru ales",
+                    "JACOTĂ Cătălin - Judecător – membru ales",
+                    "ONEŢ Georgeta - Judecător – membru ales",
+                    "TRESTIAN Simona - Judecător – membru ales"],
+            },
+            {
+                title: "Prim grefier",
+                team: ["KOZMA Daniela"],
+            }
+        ]
+    },
+    {
+        sectia: "Secția Civilă",
+        personal: [
+            {
+
+                title: "Judecatori:",
+                sef:"Preşedinte secţie: Luca Emeşe - delegaţie",
+                team: ["Boiciuc Ioana Nora",
+                    "Cociş Liliana-Anişoara",
+                    "Danileţ Vasilică Cristi",
+                    "Fărcaş-Hîngan Georgiana Rodica",
+                    "Ilieş Ariana",
+                    "Lupea Ioan-Marius",
+                    "Mornăilă Ramona",
+                    "Trestian Simona",
+                    "Ţopan Alina"],
+            },
+            {
+                title: "Grefieri",
+                sef:"Grefier şef secţie: Şofron Simona",
+                team: ["Blăjan Camelia-Luminiţa",
+                    "Brie Alina",
+                    "Borbely Malvin",
+                    "Burnete Daiana-Andra",
+                    "Dan Andreea",
+                    "Doboş Maria",
+                    "Miron Carmen-Gabriela",
+                    "Moldovan Briciu Maria Cristina",
+                    "Oneş Dan Paul",
+                    "Parv Fabia",
+                    "Stîngaci Mirela"]
+            }]
+    },
+
+    {
+        sectia: "Secţia Penală",
+        personal: [
+            {
+                title: "Judecători",
+                sef:"Preşedinte secţie : Ţopan Alina Camelia",
+                team: ["Balint Camelia",
+                    "Bolchiş Florina-Sanda",
+                    "Cimbrudean Corina-Anca",
+                    "Guzu Rodica",
+                    "Doica Alin-Florin",
+                    "Ghişoiu Oana Raluca",
+                    "Jacotă Cătălin",
+                    "Luca Emeşe",
+                    "Taşcă Dan-Ioan ",
+                    "Tatu Claudia-Oana",
+                    "Tatu Dorin ",
+                    "Oncică Sanislav Marcela",
+                    "Seleşiu Ana Sorina "],
+            },
+            {
+
+                title: "Grefieri",
+                sef:"Grefier şef secţie: Călugăr Maria-Diana",
+                team: ["Andresi Olimpia",
+                    "Bărăian Ioana Maria",
+                    "Boţioc Alina-Pompilia",
+                    "Ciceu Oana Raluca",
+                    "Coman Livia",
+                    "Curuţiu Elvira",
+                    "Deac Aniela",
+                    "Duma Ioana Daniela",
+                    "Herişanu Claudia",
+                    "Miclea Laura",
+                    "Petruş Gabriela",
+                    "Pop Alina",
+                    "Ţifrea Cristina",
+                    "Șofron Claudia",
+                    "Voila Andreea"]
+            }]
+
+    }, {
+        sectia: "Secţia mixtă de contencios administrativ, conflicte de muncă şi asigurări sociale",
+        personal: [
+            {
+                title: "Judecători",
+                sef:"Preşedinte secţie: Botiş Vasile Marius",
+                team: [
+                    "Aldea Ana",
+                    "Belean Emil",
+                    "Bujor Maria Francesca",
+                    "Cătuna Daniela",
+                    "Gaga Ioan",
+                    "Groza Anca Maria",
+                    "Nan Alexandrina Ioana",
+                    "Noja Carmen-Simona",
+                    "Oneţ Georgeta Olimpia",
+                    "Păcurar Victoriţa-Paula",
+                    "Ramirez-Molina Ioana Liliana ",
+                    "Tanţău Rodica",
+                    "Trofin Monica",
+                    "Urs Petru",
+                ]
+            },
+            {
+                title: "Asistenţi judiciari",
+                team: [
+                    "Câmpean Barbu-Alin",
+                    "Popa Carmen Ecaterina",
+                    "Roşu Ioan",
+                    "Şter Adrian",
+                ]
+            },
+            {
+                title: "Grefieri",
+                sef:"Grefier şef secţie:Lung Oana-Maria",
+                team: [
+                    "Câmpean Liliana",
+                    "Chiş Ani Letiţia",
+                    "Cioban Lucian",
+                    "Clapa Mariana ",
+                    "Dascăl Roxana Simona",
+                    "Dediu Mariana",
+                    "Fracea Roxana-Ioana",
+                    "Lungu Oana Raluca",
+                    "Matyaş Gabriela",
+                    "Pintican Gabriela",
+                    "Popa Ioana",
+                    "Stana Cristina",
+                    "Tişe Anamaria Dorina - detaşat de la Judecătoria Turda",
+                    "Tripon Corina",
+                    "Turc Corina",
+                    "Vinczeller Anamaria",
+
+                ]
+            }
+        ]
+    }, {
+        sectia: "Alte compartimente",
+        personal: [
+            {
+                title: "Grefier statistician",
+                team: ["Pop Adina"]
+            },
+            {
+                title: "Grefier cu atribuţii de aplicare a apostilei",
+                team: ["Gherman Adriana"]
+            },
+            {
+                title: "Grefieri arhivari şi registratori:",
+                sef:"Arhivar şef: Manea Nicoleta",
+                team: [
+                    "Bumar Ionela Aurora",
+                    "Ciurdar Radu-Adrian - detaşat de la Judecătoria Turda",
+                    "Crişan Rodica-Claudia",
+                    "Dărăban Gabriela-Ioana",
+                    "Ziman Marin",
+                ]
+            },
+            {
+                title: "Agent procedural",
+                team: ["Babaş Laurenţiu"]
+            },
+            {
+                title: "Personal specialitate informatică",
+                sef:"Specialist IT şef - Tămaş Daniel-Riian",
+                team: [
+                    " Miron Cristian",
+                    " Murariu Ioana Mariana",
+                    "Pop Ciprian Isaia",
+                    "Popa Dorin Octavian",
+                    "Traica Adina Mihaela",
+                ]
+            },
+            {
+                title: "Birou expertize judiciare",
+                team: ["Oprea Raluca"]
+            },
+            {
+                title: "Birou de informare şi relaţii cu publicul",
+                team: ["Birău Verginica Maria"]
+            },
+            {
+                title: "Conducători auto",
+                team: ["Felecan Ioan",
+                    "Lung Horatiu",
+                    "Mureşan Alexandru",
+                ]
+            },
+            {
+                title: "Aprod",
+                team: [
+                    "Hanuschi Violeta",
+                    "Iancu Marta",
+                    "Mureşan Ioana-Delia",
+                    "Şerban Victoria",
+                ]
+            },
+            {
+                title: "Serviciu de probaţiune",
+                sef:"Şef serviciu probaţiune - Docolina Doina Mihaela",
+                team: [
+                    "Ardelean Ileana",
+                    "Cherecheş Elena",
+                    "Docolina Doina Mihaela",
+                    "Gheorghe Maria Cristina",
+                    "Mariş Irina",
+                    "Mihăilescu Luiza Maria",
+                    "Stoica Dorina"
+                ]
+            },
+            {
+                title: "Manager Economic",
+                team: ["Coța Gabriela"]
+            },
+            {
+                title: "Compartimentul economic, financiar și adminstrativ",
+                team: [
+                    "Alb Luminița",
+                    "Dinea Ancuţa",
+                    "Drăgan Ioana",
+                    "Dumitrescu Mihaela",
+                    "Ferenţ Marcela Ofelia",
+                    "Nica Claudia",
+                    "Păran Giulia"
+                ]
+            },
+            {
+                title: "Compartiment administrativ",
+                team: [
+                    "Ţar Voicu Stelian - merciolog",
+                    "Rus Ovidiu"
+                ]
+            },
+            {
+                title: "Muncitori întreţinere",
+                team: [
+                    "Dumitraş Lucian Ioan",
+                    "Roman Dănuţ"
+                ]
+            }
+        ]
+    }
+];

@@ -10,11 +10,8 @@ import { HashLink as Link } from 'react-router-hash-link';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Title from '../components/Header/HeaderTitlePage';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Collapse from '@material-ui/core/Collapse';
-import ListFromStringsArray from '../components/listFromStringsArray';
-import {personalTribunal} from '../utils/constants';
+import { personalTribunal1 } from '../utils/constants';
+import ListaPersonal from '../components/Personal/ListaSectii';
 
 
 class Organizare extends Component {
@@ -23,33 +20,6 @@ class Organizare extends Component {
     }
 
     render() {
-
-        let listItems = personalTribunal.map((p, index) => {
-            return (
-
-                <List
-                    component="nav"
-                >
-                    {/* Title of list */}
-                    <Typography color="primary" className="my-3" variant="display1">{p.sectia}</Typography>
-
-                    {/* All team */}
-                    <ListItem key={index}>
-                        <ListItemIcon>
-                            <img src={require("../images/icons/arow2.png")} alt={index}></img>
-                        </ListItemIcon>
-                        <ListItemText
-                            style={{ color: 'red' }}
-                            inset
-                            primary={<h5 style={{ color: '#146496' }}>{p.title}</h5>}
-                        />
-                    </ListItem>
-                    <Collapse in={true} timeout="auto" unmountOnExit>
-                        <ListFromStringsArray list={p.team} />
-                    </Collapse>
-                </List>
-            )
-        });
 
         return (
             <React.Fragment>
@@ -63,7 +33,7 @@ class Organizare extends Component {
                     <Grid container className=" my-3 bg-light" spacing={16} >
 
                         {/*            Grid style: style={{ backgroundColor: "#CDCDCD" }}*/}
-                        <Grid  item xs={2} className="d-none d-lg-block d-xl-block" >
+                        <Grid item xs={2} className="d-none d-lg-block d-xl-block" >
                             <MenuList className="position-fixed "  >
                                 <Link to="/organizare#idOrganigrama" style={{ textDecoration: 'none', display: 'block' }}>
                                     <MenuItem style={{ backgroundColor: 'transparent' }}>
@@ -74,7 +44,7 @@ class Organizare extends Component {
                                     </MenuItem>
                                 </Link>
                                 <Link to="/organizare#idOrganizare" style={{ textDecoration: 'none', display: 'block' }}>
-                                    <MenuItem  style={{ backgroundColor: 'transparent' }}>
+                                    <MenuItem style={{ backgroundColor: 'transparent' }}>
                                         <ListItemIcon>
                                             <PeopleIcon />
                                         </ListItemIcon>
@@ -94,9 +64,21 @@ class Organizare extends Component {
                             </div>
 
 
-                            {/* Organizarea Tribunalului Cluj*/}
+                            {/* ORGANIZARE - Personalul Tribunalului Cluj*/}
                             <div id="idOrganizare" className="mx-4">
-                                {listItems}
+                                
+                                {/* Title of section - "Organizare" */}
+                                <Divider className="m-3" />
+                                <Typography
+                                    color="primary"
+                                    className="mx-1 py-2"
+                                    variant="display1"
+                                >
+                                    Organizare
+                                </Typography>
+
+                                {/* List of employees of Tribunalul Cluj */}
+                                <ListaPersonal list={personalTribunal1} />
                             </div>
                         </Grid>
                     </Grid>
