@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import List from "@material-ui/core/List";
-import Personal from './personal';
+import Personal from './Employee';
 
 class ListaPersonal extends Component {
     state = { open: true };

@@ -80,7 +80,7 @@ class NavBarComp extends Component {
                             <DropdownMenu>
                                 <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/prezentare`}>Prezentare</DropdownItem>
                                 <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/organizare`}>Organizare</DropdownItem>
-                                <DropdownItem href="http://portal.just.ro/117/SitePages/Circumscriptii.aspx?id_inst=117">Circumscripţie</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href="http://portal.just.ro/117/SitePages/Circumscriptii.aspx?id_inst=117">Circumscripţie</DropdownItem>
                                 <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/rapoarte`}>Instaţa în cifre</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
@@ -90,7 +90,7 @@ class NavBarComp extends Component {
                                 INFORMAŢII
                                 </DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/concurs`}>Anunţuri / Concursuri</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href="https://www.curteadeapelcluj.ro/anunturi.html">Anunţuri / Concursuri</DropdownItem>
                                 <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/infoPublice`}>Informaţii publice</DropdownItem>
                                 <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/declaratii`}>Declaraţii</DropdownItem>
                                 <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/comunicate`}>Comunicate de presă</DropdownItem>

@@ -5,7 +5,7 @@ import { Icon } from "react-icons-kit";
 import { androidArrowDropleftCircle } from 'react-icons-kit/ionicons/androidArrowDropleftCircle'
 import { androidArrowDroprightCircle } from 'react-icons-kit/ionicons/androidArrowDroprightCircle'
 import Typography from '@material-ui/core/Typography';
-import {carouselImages} from '../../utils/constants';
+import { carouselImages } from '../../utils/constants';
 
 class Carousel extends React.Component {
     render() {
@@ -13,8 +13,10 @@ class Carousel extends React.Component {
             <Slider
                 classNames={horizontalCss}
                 touchDisabled={true}
-                previousButton={<Icon size={40} icon={androidArrowDropleftCircle} style={{ color: "white" }} />}
-                nextButton={<Icon size={40} icon={androidArrowDroprightCircle} style={{ color: "white" }} />}
+                autoPlay={30}
+                infinite={true}
+                previousButton={<Icon size={40} icon={androidArrowDropleftCircle} style={{ color: "white", opacity: 0.6 }} />}
+                nextButton={<Icon size={40} icon={androidArrowDroprightCircle} style={{ color: "white", opacity: 0.6 }} />}
             >
                 {carouselImages.map((item, index) => (
                     <div

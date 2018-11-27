@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import List from "@material-ui/core/List";
-import Sectie from './sectie';
+import Sectie from './Department';
 class ListaSectii extends Component {
     render() {
         let sectii = this.props.list.map((item, index) => {

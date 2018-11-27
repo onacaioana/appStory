@@ -29,7 +29,10 @@ class CardInfo extends Component {
         const { locatie, index, browserName, browserVersion } = this.props;
         if (index === 0 || index === 2) {
             this.routeChange();
-        }else{
+        }else if(locatie.substring(0,4) === "http"){
+            window.open(locatie)
+        }
+        else{
             axios
                 .get(`http://localhost:8080/ass`, {
                     params: {
