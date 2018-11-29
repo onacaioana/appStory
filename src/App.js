@@ -10,6 +10,7 @@ import Footer from "./components/Footer/FooterComponent";
 import Rapoarte from "./pages/rapoarte";
 import Hotarari from "./pages/hotarari";
 import Concursuri from "./pages/concursuri";
+import Competente from "./pages/competente";
 import Declaratii from "./pages/declaratii";
 import InfoPublice from "./pages/infoPublice";
 import Comunicate from "./pages/comunicate";
@@ -67,6 +68,7 @@ class App extends Component {
                   "/declaratii",
                   "/infoPublice",
                   "/comunicate",
+                  "/competente",
                   "/gdpr",
                   "/"
                 ]}
@@ -85,6 +87,7 @@ class App extends Component {
               <Route exact path={"/declaratii"} component={Declaratii} />
               <Route exact path={"/infoPublice"} component={InfoPublice} />
               <Route exact path={"/comunicate"} component={Comunicate} />
+              <Route exact path={"/competente"} component={Competente} />
               <Route exact path={"/gdpr"} component={ProtectiaDatelor} />
               <Route exact path={"/"} component={HomePage} />
               <Route path="*" component={ErrorPage1} status={404} />
@@ -104,6 +107,8 @@ class App extends Component {
                   "/declaratii",
                   "/infoPublice",
                   "/comunicate",
+                  "/comunicate",
+                  "/competente",
                   "/gdpr",
                   "/"
                 ]}
