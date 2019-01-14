@@ -4,7 +4,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import Pdf from "./Pdf/pdf";
 import axios from "axios";
-
 const { detect } = require('detect-browser');
 const browser = detect();
 
@@ -20,27 +19,27 @@ class Doc extends Component {
   //get pdf data when item is clicked
   handleClickToOpen = () => {
     axios
-      .get(`http://localhost:8080/ass`, {
+      .get(`/ass`, {
         params: {
           fileName: this.props.locatie
         }
       })
       .then(res => {
         /* Check browser version and name */
-        if (browser.name === "ie" && browser.version.indexOf('11') !== -1) {
-          let pdfData = atob(res.data);
-          let uint8ArrayPdf = new Uint8Array(pdfData.length)
-          for (let i = 0; i < pdfData.length; i++) {
-            uint8ArrayPdf[i] = pdfData.charCodeAt(i)
-          }
+        if (browser.name === "ie" && browser.version.indexOf('9') !== -1) {
+        //  let pdfData = atob(res.data);
+        //  let uint8ArrayPdf = new Uint8Array(200)
+        //  for (let i = 0; i < pdfData.length; i++) {
+         //   uint8ArrayPdf[i] = pdfData.charCodeAt(i)
+         // }
 
-          var url = 'pdfViewer/web/viewer.html?file=';
+       //   var url = 'pdfViewer/web/viewer.html?file=';
 
-          var binaryData = [];
-          binaryData.push(uint8ArrayPdf);
-          var dataPdf = window.URL.createObjectURL(new Blob(binaryData, { type: "application/pdf" }));
+        //  var binaryData = [];
+        //  binaryData.push(uint8ArrayPdf);
+       //   var dataPdf = window.URL.createObjectURL(new Blob(binaryData, { type: "application/pdf" }));
 
-          window.open(url + encodeURIComponent(dataPdf), '_blank');
+        //  window.open(url + encodeURIComponent(dataPdf), '_blank');
         }
         else this.setState({
           blob: res.data,

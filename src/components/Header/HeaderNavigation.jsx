@@ -121,7 +121,7 @@ class NavBarComp extends Component {
                         </NavItem>
                     </Nav>
                 </Collapse>
-                <img style={{ width: '4%' }} className=" d-none d-lg-block d-xl-block " src={require("../../images/10011.png")} alt="100"></img>
+                <img style={{ width: '5%' }} className=" d-none d-lg-block d-xl-block " src={require("../../images/10011.png")} alt="100"></img>
             </Navbar>
         );
     }

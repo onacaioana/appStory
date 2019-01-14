@@ -14,7 +14,7 @@ class Hotarari extends Component {
      */
 
     axios
-      .get(`http://localhost:8080/getFiles`, {
+      .get(`/getFiles`, {
         params: {
           folderName: "PDFs/Hotarari"
         }

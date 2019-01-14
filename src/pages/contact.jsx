@@ -3,7 +3,7 @@ import { Icon } from "react-icons-kit";
 import { fax } from "react-icons-kit/fa/fax";
 import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
 import { mail } from "react-icons-kit/ikons/mail";
-import Harta from "../components/Harta/Harta";
+import Harta from "../components/Harta/harta";
 import Title from '../components/Header/HeaderTitlePage';
 // import 'mapbox-gl/dist/mapbox-gl.css';
 

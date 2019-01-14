@@ -10,11 +10,11 @@ export const detaliiInstante = [
             oras: "Cluj-Napoca",
             str: "Calea Dorobantilor",
             nr: "2-4",
-            cod: "400117"
+            cod: "400117",
         },
         tel: ["0264-596.111", "0264-431.057", "0264-431.908", "0264-595.812"],
         fax: "0264-595.844",
-        email: "tr-cluj@just.ro"
+        email: "tr-cluj@just.ro",
     },
     {
         nume: "Tribunalul Specializat Cluj",
@@ -22,11 +22,11 @@ export const detaliiInstante = [
             oras: "Cluj-Napoca",
             str: "Calea Dorobantilor",
             nr: "2-4",
-            cod: "400117"
+            cod: "400117",
         },
         tel: ["0264-596.110", "0264-596.111"],
         fax: "0264-504.366",
-        email: "tr-comercial-cluj@just.ro"
+        email: "tr-comercial-cluj@just.ro",
     },
     {
         nume: "Judecatoria Cluj-Napoca",
@@ -34,61 +34,61 @@ export const detaliiInstante = [
             oras: "Cluj-Napoca",
             str: "Calea Dorobantilor",
             nr: "2",
-            cod: "400117"
+            cod: "400117",
         },
         tel: ["0264-596.111", "0264-431.057", "0264-431.908", "0264-595.812"],
         fax: "0264-431.033",
-        email: "jud-cluj@just.ro"
+        email: "jud-cluj@just.ro",
     },
     {
         nume: "Judecatoria Dej",
         adresa: { oras: "Dej", str: "16 Februarie", nr: "2-4", cod: "405200" },
         tel: ["0264-212.110"],
         fax: "0264-213.015",
-        email: "jud-dej@just.ro"
+        email: "jud-dej@just.ro",
     },
     {
         nume: "Judecatoria Gherla",
         adresa: { oras: "Gherla", str: "Bobalna", nr: "55", cod: "405300" },
         tel: ["0264 - 243.854", "0264 - 243.251"],
         fax: "0264-243.773; 0264-243.701",
-        email: "jud-gherla@just.ro"
+        email: "jud-gherla@just.ro",
     },
     {
         nume: "Judecatoria Huedin",
         adresa: { oras: "Huedin", str: "Avram Iancu", nr: "2", cod: "405400" },
         tel: ["0264-351.788"],
         fax: "0264-353.160",
-        email: "jud-huedin@just.ro"
+        email: "jud-huedin@just.ro",
     },
     {
         nume: "Judecatoria Turda",
         adresa: { oras: "Turda", str: "Piata Romana", nr: "12", cod: "401139" },
         tel: ["0264-311.985"],
         fax: "0264-311.851",
-        email: "jud-turda@just.ro"
-    }
+        email: "jud-turda@just.ro",
+    },
 ];
 
 export const carouselImages = [
     {
-        src: require('../images/trcj.jpg'),
-        altText: 'TRIBUNALUL CLUJ',
-        caption: 'TRIBUNALUL CLUJ',
-        subcaption: '"Nimic nu e mai presus de lege"'
-    },
-    {
         src: require('../images/5.jpg'),
         altText: 'TRIBUNALUL CLUJ',
         caption: 'TRIBUNALUL CLUJ',
-        subcaption: 'Nimic nu e mai presus de lege'
+        subcaption: 'Nimic nu e mai presus de lege',
     },
     {
-        src: require('../images/11.jpg'),
+        src: require('../images/ss.png'),
         altText: 'TRIBUNALUL CLUJ',
         caption: 'TRIBUNALUL CLUJ',
-        subcaption: 'Nimic nu e mai presus de lege'
-    }
+        subcaption: 'Nimic nu e mai presus de lege',
+    },
+    {
+        src: require('../images/trcj.jpg'),
+        altText: 'TRIBUNALUL CLUJ',
+        caption: 'TRIBUNALUL CLUJ',
+        subcaption: 'Nimic nu e mai presus de lege',
+    },
 ];
 
 export const prezentareInstante = [
@@ -106,112 +106,112 @@ export const prezentareInstante = [
         src: require('../images/jud-cluj.jpg'),
         title: 'Judecatoria Cluj',
         content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej.',
-        link: "http://portal.just.ro/211/SitePages/acasa_default.aspx?id_inst=211"
+        link: "http://portal.just.ro/211/SitePages/acasa_default.aspx?id_inst=211",
     },
     {
         src: require('../images/jud-gherla.jpg'),
         title: 'Judecatoria Gherla',
         content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej.',
-        link: "http://portal.just.ro/235/SitePages/acasa_default.aspx?id_inst=235"
+        link: "http://portal.just.ro/235/SitePages/acasa_default.aspx?id_inst=235",
     },
     {
         src: require('../images/jud-huedin.jpg'),
         title: 'Judecatoria Huedin',
         content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej.',
-        link: "http://portal.just.ro/242/SitePages/acasa_default.aspx?id_inst=242"
+        link: "http://portal.just.ro/242/SitePages/acasa_default.aspx?id_inst=242",
     },
     {
         src: require('../images/jud-turda.jpg'),
         title: 'Judecatoria Turda',
         content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej.',
-        link: "http://portal.just.ro/328/SitePages/acasa_default.aspx?id_inst=328"
-    }
+        link: "http://portal.just.ro/328/SitePages/acasa_default.aspx?id_inst=328",
+    },
 ];
 
 export const linksImages = [{
     link: "http://www.just.ro/",
     icon: require("../images/links/ministerul_justitiei.PNG"),
-    title: "Ministerul Justiţiei"
+    title: "Ministerul Justiţiei",
 },
 {
     link: "http://www.mpublic.ro/",
     icon: require("../images/links/ministerulPublic_link.png"),
-    title: "Ministerul Public"
+    title: "Ministerul Public",
 },
 {
     link: "http://www.presidency.ro/",
     icon: require("../images/links/presedinteleRomaniei_link.png"),
-    title: "Preşedintele României"
+    title: "Preşedintele României",
 },
 {
     link: "http://old.just.ro/MinisterulJusti%C8%9Biei/Listapersoanelorautorizate/Expertijudiciari/tabid/160/Default.aspx",
     icon: require("../images/icons/info.png"),
-    title: "LISTĂ EXPERȚI"
+    title: "LISTĂ EXPERȚI",
 },
 {
     link: "http://www.guv.ro/",
     icon: require("../images/links/GuvernulRomaniei_link.png"),
-    title: "Guvernul României"
+    title: "Guvernul României",
 },
 {
     link: "https://www.csm1909.ro/",
     icon: require("../images/links/csm_link.jpg"),
-    title: "Consiliul Superior al Magistraturii"
+    title: "Consiliul Superior al Magistraturii",
 },
 {
     link: "https://www.ccr.ro/",
     icon: require("../images/links/ccr_link.png"),
-    title: "Curtea Constituţională (CCR)"
+    title: "Curtea Constituţională (CCR)",
 },
 {
     link: "http://www.baroul-cluj.ro/",
     icon: require("../images/links/BaroulCluj_link.jpg"),
-    title: "Baroul Cluj"
+    title: "Baroul Cluj",
 },
 {
     link: "https://www.icj-cij.org/",
     icon: require("../images/links/cij_link.png"),
-    title: "Curtea Internaţională de Justiţiei"
+    title: "Curtea Internaţională de Justiţiei",
 },
 {
     link: "http://www.echr.coe.int/",
     icon: require("../images/links/cedo_link.jpg"),
-    title: "Curtea Europeană a Drepturilor Omului"
+    title: "Curtea Europeană a Drepturilor Omului",
 },
 {
     link: "http://www.clr.ro/",
     icon: require("../images/links/CL_link.bmp"),
-    title: "Consiliul Legislativ"
+    title: "Consiliul Legislativ",
 },
 {
     link: "https://www.cmediere.ro/",
     icon: require("../images/links/Consiliuldemediere_link.JPG"),
-    title: "Consiliul de Mediere"
+    title: "Consiliul de Mediere",
 },
 {
     link: "http://www.scj.ro/",
     icon: require("../images/links/ministerul_justitiei.PNG"),
-    title: "Înalta Curte de Casaţie şi Justiţie"
+    title: "Înalta Curte de Casaţie şi Justiţie",
 
 },
 {
     link: "http://www.inm-lex.ro/",
     icon: require("../images/links/inm_link.jpg"),
-    title: "Institutul Naţional de Magistratură"
+    title: "Institutul Naţional de Magistratură",
 
 },
 {
     link: "http://www.grefieri.ro/",
     icon: require("../images/links/sng_link.png"),
-    title: "Şcoala Naţională de Grefieri"
+    title: "Şcoala Naţională de Grefieri",
 
 },
 {
     link: "https://curia.europa.eu/jcms/jcms/j_6/ro/",
     icon: require("../images/links/CVRIA_link.png"),
-    title: "C.V.R.I.A."
+    title: "C.V.R.I.A.",
 
-}];
+},];
 
 export const informatiiPublice = [
     {
@@ -237,7 +237,6 @@ export const informatiiPublice = [
     {
         titlu: "Informaţiile privind activitatea specifică a Tribunalul Cluj",
         text: " În principiu, toate documentele produse şi/sau gestionate de Tribunal sunt de interes public, cu excepţia registrului de evidenţă a sesizărilor privind confirmarea şi autorizarea interceptărilor şi înregistrărilor pe bandă magnetică sau pe orice alt tip de suport, precum şi cu excepţia acelora care conţin informaţii exceptate de la liberul acces, cum sunt cele prevăzute de art.12 din Legea nr.544/2001 privind liberul acces la informaţiile de interes public.",
-    
         listOfDocs: [],
     },
     {
@@ -257,7 +256,7 @@ export const informatiiPublice = [
         text: " Atribuţii jurisdicţionale: de a soluţiona cauzele aflate în competenţa de judecată a Tribunalului Cluj. Atribuţii administrative: acelea care, potrivit legii, vizează buna desfăşurare a activităţii administrative a instanţei (executări penale şi civile, analiza practicii judiciare, relaţia cu mass-media şi relaţiile publice, etc). Preşedintele, vicepreşedinţii şi Colegiul de conducere al tribunalului exercită atribuţiile de conducere a Tribunalului Cluj, iar preşedinţii de secţie asigură conducerea celor 3 secţii ale Tribunalului - a Secţiei civile, a Secţiei Mixte de contencios administrativ şi fiscal, litigii de muncă şi asigurări sociale şi a Secţiei penale şi de minori. De asemenea, preşedintele şi vicepreşedinţii au, după caz, atribuţii de coordonare sau de control a activităţii instanţelor aflate în raza de competenţă a Tribunalului Cluj.",
     
         listOfDocs: [],
-    }];
+    },];
 
 export const personalTribunal1 = [
     {
@@ -269,7 +268,7 @@ export const personalTribunal1 = [
             },
             {
                 title: "Vicepreşedinţi",
-                team: ["FĂRCAŞ-Hîngan Georgiana Rodica", "GUZU Rodica Elisabeta"]
+                team: ["FĂRCAŞ-Hîngan Georgiana Rodica", "GUZU Rodica Elisabeta"],
             },
             {
                 title: "Colegiul de Conducere",
@@ -302,7 +301,7 @@ export const personalTribunal1 = [
                     "Lupea Ioan-Marius",
                     "Mornăilă Ramona",
                     "Trestian Simona",
-                    "Ţopan Alina"],
+                    "Ţopan Alina",],
             },
             {
                 title: "Grefieri",
@@ -317,7 +316,7 @@ export const personalTribunal1 = [
                     "Moldovan Briciu Maria Cristina",
                     "Oneş Dan Paul",
                     "Parv Fabia",
-                    "Stîngaci Mirela"]
+                    "Stîngaci Mirela",],
             }]
     },
 
@@ -339,7 +338,7 @@ export const personalTribunal1 = [
                     "Tatu Claudia-Oana",
                     "Tatu Dorin ",
                     "Oncică Sanislav Marcela",
-                    "Seleşiu Ana Sorina "],
+                    "Seleşiu Ana Sorina ",],
             },
             {
 
@@ -359,7 +358,7 @@ export const personalTribunal1 = [
                     "Pop Alina",
                     "Ţifrea Cristina",
                     "Șofron Claudia",
-                    "Voila Andreea"]
+                    "Voila Andreea",],
             }]
 
     }, {
@@ -383,7 +382,7 @@ export const personalTribunal1 = [
                     "Tanţău Rodica",
                     "Trofin Monica",
                     "Urs Petru",
-                ]
+                ],
             },
             {
                 title: "Asistenţi judiciari",
@@ -392,7 +391,7 @@ export const personalTribunal1 = [
                     "Popa Carmen Ecaterina",
                     "Roşu Ioan",
                     "Şter Adrian",
-                ]
+                ],
             },
             {
                 title: "Grefieri",
@@ -414,8 +413,7 @@ export const personalTribunal1 = [
                     "Tripon Corina",
                     "Turc Corina",
                     "Vinczeller Anamaria",
-
-                ]
+                ],
             }
         ]
     }, {
@@ -438,11 +436,11 @@ export const personalTribunal1 = [
                     "Crişan Rodica-Claudia",
                     "Dărăban Gabriela-Ioana",
                     "Ziman Marin",
-                ]
+                ],
             },
             {
                 title: "Agent procedural",
-                team: ["Babaş Laurenţiu"]
+                team: ["Babaş Laurenţiu"],
             },
             {
                 title: "Personal specialitate informatică",
@@ -457,11 +455,11 @@ export const personalTribunal1 = [
             },
             {
                 title: "Birou expertize judiciare",
-                team: ["Oprea Raluca"]
+                team: ["Oprea Raluca",],
             },
             {
                 title: "Birou de informare şi relaţii cu publicul",
-                team: ["Birău Verginica Maria"]
+                team: ["Birău Verginica Maria",],
             },
             {
                 title: "Conducători auto",
@@ -477,7 +475,7 @@ export const personalTribunal1 = [
                     "Iancu Marta",
                     "Mureşan Ioana-Delia",
                     "Şerban Victoria",
-                ]
+                ],
             },
             {
                 title: "Serviciu de probaţiune",
@@ -489,12 +487,12 @@ export const personalTribunal1 = [
                     "Gheorghe Maria Cristina",
                     "Mariş Irina",
                     "Mihăilescu Luiza Maria",
-                    "Stoica Dorina"
-                ]
+                    "Stoica Dorina",
+                ],
             },
             {
                 title: "Manager Economic",
-                team: ["Coța Gabriela"]
+                team: ["Coța Gabriela",],
             },
             {
                 title: "Compartimentul economic, financiar și adminstrativ",
@@ -505,67 +503,67 @@ export const personalTribunal1 = [
                     "Dumitrescu Mihaela",
                     "Ferenţ Marcela Ofelia",
                     "Nica Claudia",
-                    "Păran Giulia"
-                ]
+                    "Păran Giulia",
+                ],
             },
             {
                 title: "Compartiment administrativ",
                 team: [
                     "Ţar Voicu Stelian - merciolog",
-                    "Rus Ovidiu"
-                ]
+                    "Rus Ovidiu",
+                ],
             },
             {
                 title: "Muncitori întreţinere",
                 team: [
                     "Dumitraş Lucian Ioan",
-                    "Roman Dănuţ"
-                ]
-            }
-        ]
+                    "Roman Dănuţ",
+                ],
+            },
+        ],
     }
 ];
 
 export const infoUtile = [
     {
         title: 'Protecția datelor',
-        icon: notepad_remove,
+        icon: require("../images/icons/gdpr1.png"),
         locatie: "/gdpr",
     },
     {
         title: ' Asistenţă judiciară',
-        icon: phoneSquare,
+        icon: require("../images/icons/seo-expert.png"),
         locatie: "InfoUtile/Asistenta judiciara.pdf",
     },
     {
         title: ' Calculator taxe',
-        icon: mail,
+        icon: require("../images/icons/calculator.png"),
         locatie: "/taxe",
 
     },
     {
         title: ' Legalizare şi definitivare',
-        icon: mail,
+        icon: require("../images/icons/notary.png"),
         locatie: "InfoUtile/Legalizare si investire.pdf",
     },
     {
         title: 'Medierea',
-        icon: notepad_remove,
+        icon: require("../images/icons/book.png"),
         locatie: "InfoUtile/medierea.pdf",
 
     },
     {
         title: ' Apostilă',
-        icon: notepad_remove,
+        icon: require("../images/icons/writing.png"),
         locatie: "InfoUtile/apostila.pdf",
     },
     {
         title: ' Traducători autorizaţi',
-        icon: notepad_remove,
+        icon: require("../images/icons/language.png"),
         locatie: "http://old.just.ro/MinisterulJusti%C8%9Biei/Listapersoanelorautorizate/Interpretisitraducatoriautorizati/tabid/129/Default.aspx",
     },
     {
         title: 'Liste experţi',
-        icon: notepad_remove,
+        icon: require("../images/icons/asistenti.png"),
         locatie: "http://old.just.ro/MinisterulJusti%C8%9Biei/Listapersoanelorautorizate/Expertijudiciari/tabid/160/Default.aspx",
-    }];
+    },];

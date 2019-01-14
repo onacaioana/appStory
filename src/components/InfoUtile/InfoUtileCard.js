@@ -21,7 +21,7 @@ class CardInfo extends Component {
         });
     };
 
-    routeChange =() => {
+    routeChange = () => {
         let path = this.props.locatie;
         this.props.history.push(path);
     }
@@ -29,34 +29,34 @@ class CardInfo extends Component {
         const { locatie, index, browserName, browserVersion } = this.props;
         if (index === 0 || index === 2) {
             this.routeChange();
-        }else if(locatie.substring(0,4) === "http"){
+        } else if (locatie.substring(0, 4) === "http") {
             window.open(locatie)
         }
-        else{
+        else {
             axios
-                .get(`http://localhost:8080/ass`, {
+                .get(`/ass`, {
                     params: {
                         fileName: locatie
                     }
                 })
                 .then(res => {
                     /* Check if browser in Internet Explorer*/
-                    if (browserName === "ie" && browserVersion.indexOf('11') !== -1) {
-                       
+                    if (browserName === "ie" && browserVersion.indexOf('9') !== -1) {
+                        console.log("InfoUtileCards");
                         var binaryData = [];
-                        var url = 'pdfViewer/web/viewer.html?file=';
-                       
+                        //   var url = 'pdfViewer/web/viewer.html?file=';
+
                         /* Convert Base 64 to Blob */
-                        let pdfData = atob(res.data);
-                        let uint8ArrayPdf = new Uint8Array(pdfData.length)
-                        for (let i = 0; i < pdfData.length; i++) {
-                            uint8ArrayPdf[i] = pdfData.charCodeAt(i)
-                        }
+                        //     let pdfData = atob(res.data);
+                        //    let uint8ArrayPdf = new Uint8Array(pdfData.length)
+                        //    for (let i = 0; i < pdfData.length; i++) {
+                        //        uint8ArrayPdf[i] = pdfData.charCodeAt(i)
+                        //    }
 
                         /* Open PDF file using PDF.js library*/
-                        binaryData.push(uint8ArrayPdf);
-                        var dataPdf = window.URL.createObjectURL(new Blob(binaryData, { type: "application/pdf" }));
-                        window.open(url + encodeURIComponent(dataPdf), '_blank');
+                        //    binaryData.push(uint8ArrayPdf);
+                        //   var dataPdf = window.URL.createObjectURL(new Blob(binaryData, { type: "application/pdf" }));
+                        //   window.open(url + encodeURIComponent(dataPdf), '_blank');
                     }
                     else this.setState({
                         blob: res.data,
@@ -87,32 +87,32 @@ class CardInfo extends Component {
                             style={{ transformOrigin: '50% 50% 0' }}
                             {...(inView ? { timeout: (2000 + index * 100) } : {})}
                         >
-                            <div className="single-list-topics-content rounded shadow">
+                            <Button
+                                key={index}
+                                onClick={() => this.openPdf()}
+                                style={{ outline: '0', backgroundColor: 'transparent', borderColor: 'transparent', color: '#122034', fontWeight: 'bold' }}
+                            >
+                                <div className="single-list-topics-content rounded shadow">
 
-                                <Button
-                                    key={index}
-                                    onClick={() => this.openPdf()}
-                                    style={{ outline: '0', backgroundColor: 'transparent', borderColor: 'transparent', color: '#8c7b75' }}
-                                >
-
+                                    {/* Icons used from constants (infoUtile) */}
                                     <div className="single-list-topics-icon">
-                                        <Icon style={{ color: '#8c7b75' }} size={40} icon={icon} />
+                                        <img style={{ color: '#122034' }} className="mb-2" src={icon} alt="Icon_Document" />
                                     </div>
 
+                                    {/*Text shown on infoUtile 's card and open document for each of them */}
                                     {title}
-                                </Button>
+                                    {openFile
+                                        ? <Pdf
+                                            data={`data:application/pdf;base64,${blob}`}
+                                            print={blob}
+                                            handleCloseModal={this.onCloseModal}
+                                            fileName={locatie}
+                                        />
 
-                                {openFile
-                                    ? <Pdf
-                                        data={`data:application/pdf;base64,${blob}`}
-                                        print={blob}
-                                        handleCloseModal={this.onCloseModal}
-                                        fileName={locatie}
-                                    />
-
-                                    : ""
-                                }
-                            </div>
+                                        : ""
+                                    }
+                                </div>
+                            </Button>
 
                         </Grow>
                     }</WhenInView>

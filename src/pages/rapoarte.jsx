@@ -25,7 +25,7 @@ class Rapoarte extends Component {
         */
         
         axios
-            .get(`http://localhost:8080/getFiles`, {
+            .get(`/getFiles`, {
                 params: {
                     folderName: "PDFs/Rapoarte"
                 }
@@ -36,7 +36,7 @@ class Rapoarte extends Component {
                     return (
 
                         axios
-                            .get(`http://localhost:8080/getFiles`, {
+                            .get(`/getFiles`, {
                                 params: {
                                     folderName: "PDFs/Rapoarte/" + folder
                                 }

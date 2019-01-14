@@ -4,8 +4,9 @@ const path = require("path");
 const fs = require("fs");
 const cors = require("cors");
 
-const app = express();
+ const app = express();
 app.use(cors());
+
 app.use("/ass", express.static("PDFs"));
 
 app.get("/ass", function (req, res) {
@@ -76,4 +77,4 @@ app.get("/getFilesRecursive", function (req, res) {
 // }
 //);
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8081);

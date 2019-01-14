@@ -19,7 +19,7 @@ import ScrollToTop from 'react-scroll-up';
 import ErrorPage1 from "./pages/errorPage";
 import NavBarComp from "./components/Header/HeaderNavigation";
 import { Icon } from "react-icons-kit";
-import { circleTop } from 'react-icons-kit/iconic/circleTop'
+import { circleTop } from 'react-icons-kit/iconic/circleTop';
 import Tooltip from '@material-ui/core/Tooltip';
 
 const { detect } = require("detect-browser");
@@ -27,9 +27,10 @@ const browser = detect();
 
 class App extends Component {
   render() {
-    if (browser.name === 'ie' && browser.version.substr(0, 2) === '9') {
+/*     if (browser.name === 'ie' && browser.version.substr(0, 2) === '9') {
       return this.renderForNoCompatibility();
-    } else return this.renderAll();
+    } else */ 
+    return this.renderAll();
   }
   renderForNoCompatibility() {
     return (
@@ -70,7 +71,7 @@ class App extends Component {
                   "/comunicate",
                   "/competente",
                   "/gdpr",
-                  "/"
+                  "/",
                 ]}
                 component={NavBarComp}
               />
@@ -110,7 +111,7 @@ class App extends Component {
                   "/comunicate",
                   "/competente",
                   "/gdpr",
-                  "/"
+                  "/",
                 ]}
                 component={Footer}
               />

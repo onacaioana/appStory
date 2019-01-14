@@ -19,7 +19,7 @@ class Concursuri extends Component {
    var list=[];
 
     axios
-      .get(`http://localhost:8080/getFiles`, {
+      .get(`/getFiles`, {
         params: {
           folderName: "PDFs/Anunturi"
         }
@@ -29,7 +29,7 @@ class Concursuri extends Component {
         res1.data.map((folder,index) => {
 
             axios
-              .get(`http://localhost:8080/getFiles`, {
+              .get(`/getFiles`, {
                 params: {
                   folderName: "PDFs/Anunturi/" + folder
                 }

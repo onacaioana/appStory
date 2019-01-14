@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <!--
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-     <!-- Latest compiled and minified CSS -->
+  <!-- Latest compiled and minified CSS -->
 
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="../src/images/ministerul_justitiei.PNG">
-    <link href='https://fonts.googleapis.com/css?family=PT Serif Caption' rel='stylesheet'>
-    <title>Tribunalul Cluj</title>
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="Shortcut Icon" type="image/ico" href="favicon.ico">
+  <link href='https://fonts.googleapis.com/css?family=PT Serif Caption' rel='stylesheet'>
+  <title>Tribunalul Cluj</title>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <style>
-      * {font-family: 'PT Serif Caption';}
-      </style>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+  <script>
+    document.write('<' + 'script src="//cdn.polyfill.io/v1/polyfill.min.js?ua=ie/' + document.documentMode + '"></' + 'script>');
+  </script>
+  
+  <script type="text/javascript" src="../src/utils/typedarray.js"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+  <style>
+    * {
+      font-family: 'PT Serif Caption';
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
 </html>

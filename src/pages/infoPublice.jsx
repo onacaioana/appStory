@@ -13,7 +13,7 @@ class InfoPublice extends Component {
     }
     componentDidMount() {
         axios
-            .get(`http://localhost:8080/getFiles`, {
+            .get(`/getFiles`, {
                 params: {
                     folderName: "PDFs/Informatii publice/Birou de informare si relaţii publice"
                 }

@@ -20,10 +20,10 @@ class HomePage extends Component {
         /**
          *  Check browser compatibility
          * All IE browser besides IE 11 will render => renderForIE */
-        if (browser.name === 'ie' && browser.version.indexOf("11") === -1) {
+/*         if (browser.name === 'ie' && browser.version.indexOf("11") === -1) {
             return this.renderForIE();
         }
-        else
+        else */
             return this.renderForAll();
     }
 

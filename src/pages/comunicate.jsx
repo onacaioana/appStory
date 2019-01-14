@@ -13,7 +13,7 @@ class Comunicate extends Component {
         window.scrollTo(0, 0);
 
         axios
-            .get(`http://localhost:8080/getFiles`, {
+            .get(`/getFiles`, {
                 params: {
                     folderName: "PDFs/Comunicate"
                 }
