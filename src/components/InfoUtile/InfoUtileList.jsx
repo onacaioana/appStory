@@ -26,8 +26,7 @@ class InfoList extends Component {
 
         return (
             <React.Fragment>
-                <HeaderFormat title="Informaţii utile" bg="bg-light text-center" />
-                <section id="list-topics" className="list-topics bg-light py-5" >
+                <section id="list-topics" className="list-topics bg-light py-2" >
                     <div className="container" >
                         <div className="list-topics-content text-wrap" style={{ textAlign: '-webkit-center' }}>
                             <ul>

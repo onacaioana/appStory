@@ -28,11 +28,7 @@ class Carousel extends React.Component {
                             backgroundRepeat: 'no-repeat',
                         }}
                     >
-                        <div className="text-light">
-                            <Typography variant="display3" color="inherit" className="d-flex justify-content-center align-self-center mt-4">{item.caption} </Typography>
-                            <p className="d-flex justify-content-center align-self-center mt-5">{item.subcaption}</p>
-
-                        </div>
+                       
                     </div>
                 ))}
             </Slider>

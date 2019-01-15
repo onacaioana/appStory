@@ -15,7 +15,7 @@ class CardInstanta extends React.Component {
         const cards = prezentareInstante.map((instanta, index) => {
             return (
                 <Grid item md={4} key={index}>
-                    <Card className="bg-light">
+                    <Card >
                         <CardActionArea>
                             {index !== 1 ? <CardMedia
                                 style={{ height: 0, paddingTop: '56.25%' }}
@@ -23,9 +23,9 @@ class CardInstanta extends React.Component {
                                 title={instanta.title} />
                                 : <p></p>}
                             <CardContent>
-                                <Typography align='center' gutterBottom variant="headline">
-                                    {instanta.title}
-                                </Typography>
+                            <h4 className=" text-center" style={{ color: '#39b3ff' }}>{instanta.title}</h4>
+                                    
+                               
                                 <p>
                                     &nbsp;&nbsp;
                                             {instanta.content}

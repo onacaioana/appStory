@@ -26,7 +26,7 @@ class LinksBar extends Component {
         });
         return (
             <React.Fragment>
-                <HeaderFormat title="Link-uri utile" bg="text-center" />
+               <h2 className="pt-5 text-center" style={{ color: '#164164', fontWeight: 'bold' }}>Link-uri utile</h2>
                 <div className="container py-5 pl-5">
                     <OwlCarousel
                         className="owl-theme"

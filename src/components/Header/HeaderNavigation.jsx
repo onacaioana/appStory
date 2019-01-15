@@ -62,13 +62,13 @@ class NavBarComp extends Component {
     }
     render() {
         return (
-            <Navbar style={{paddingTop:3,paddingBottom:3}} className="navbar-dark text-nowrap m-auto bg-dark text-light" expand="md">
+            <Navbar style={{paddingTop:3,paddingBottom:3, color:'#2196f3'}} className="navbar-light text-nowrap m-auto " expand="md">
                 <NavbarBrand href="/" className="mr-auto"></NavbarBrand>
                 <NavbarToggler onClick={this.toggleNavbar} className="mr-2"></NavbarToggler>
                 <a href={`${process.env.PUBLIC_URL}/#/`}><img className="mx-2 d-none d-lg-block d-xl-block" src={require("../../images/mjLogo.png")} alt="mj" /></a>
                 <Collapse  className="m-auto" isOpen={!this.state.collapsed} navbar >
 
-                    <Nav className="m-auto" navbar style={{ fontSize: "14px" }} >
+                    <Nav className="m-auto" navbar style={{ fontSize: "16px" }} >
                         <NavItem className="mr-4">
                             <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/`} >ACASĂ</NavLink>
                         </NavItem>
@@ -121,7 +121,7 @@ class NavBarComp extends Component {
                         </NavItem>
                     </Nav>
                 </Collapse>
-                <img style={{ width: '5%' }} className=" d-none d-lg-block d-xl-block " src={require("../../images/10011.png")} alt="100"></img>
+                <img style={{ width: '5%' }} className=" d-none d-lg-block d-xl-block " src={require("../../images/100.png")} alt="100"></img>
             </Navbar>
         );
     }

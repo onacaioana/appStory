@@ -95,7 +95,7 @@ export const prezentareInstante = [
     {
         src: require('../images/jud_dej.jpg'),
         title: 'Judecatoria Dej',
-        content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej.',
+        content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej. ',
         link: "http://portal.just.ro/219/SitePages/acasa_default.aspx?id_inst=219",
     },
     {
@@ -105,25 +105,25 @@ export const prezentareInstante = [
     {
         src: require('../images/jud-cluj.jpg'),
         title: 'Judecatoria Cluj',
-        content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej.',
+        content: ' Judecătoria Cluj-Napoca îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Cluj-Napoca are sediul în Cluj-Napoca, str. Dorobanţilor, nr. 2 în clădirea Palatului de Justiţie Cluj.',
         link: "http://portal.just.ro/211/SitePages/acasa_default.aspx?id_inst=211",
     },
     {
         src: require('../images/jud-gherla.jpg'),
         title: 'Judecatoria Gherla',
-        content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej.',
+        content: '​Judecătoria Gherla îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Gherla are sediul în municipiul Gherla, str. Bobâlna, nr. 55. Activitatea economică, financiară şi administrativă a Judecătoria Gherla este asigurată de departamentul economico-financiar şi administrativ din cadrul Tribunalului Cluj.',
         link: "http://portal.just.ro/235/SitePages/acasa_default.aspx?id_inst=235",
     },
     {
         src: require('../images/jud-huedin.jpg'),
         title: 'Judecatoria Huedin',
-        content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej.',
+        content: 'Judecătoria Huedin îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Huedin are sediul în Huedin, str. Avram Iancu, nr. 2. Activitatea economică, financiară şi administrativă a Judecătoria Huedin este asigurată de departamentul economico-financiar şi administrativ din cadrul Tribunalului Cluj.',
         link: "http://portal.just.ro/242/SitePages/acasa_default.aspx?id_inst=242",
     },
     {
         src: require('../images/jud-turda.jpg'),
         title: 'Judecatoria Turda',
-        content: 'Judecătoria Dej îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Dej are sediul în municipiul Dej, P-ţa 16 Februarie, nr. 4 în clădirea Palatului de Justiţie Dej.',
+        content: ' Judecătoria Turda îşi desfăşoară activitatea conform Legii 304/2004 privind organizarea judiciară, în baza Legii 303/2004 privind statutul magistraţilor, ambele modificate prin Legea 247/2005 privind reforma în domeniul proprietăţii şi justiţiei, Regulamentul de ordine interioară a instanţelor judecătoreşti aprobat prin Hotărârea nr. 159/24.09.2004 a CSM.',
         link: "http://portal.just.ro/328/SitePages/acasa_default.aspx?id_inst=328",
     },
 ];
@@ -142,11 +142,6 @@ export const linksImages = [{
     link: "http://www.presidency.ro/",
     icon: require("../images/links/presedinteleRomaniei_link.png"),
     title: "Preşedintele României",
-},
-{
-    link: "http://old.just.ro/MinisterulJusti%C8%9Biei/Listapersoanelorautorizate/Expertijudiciari/tabid/160/Default.aspx",
-    icon: require("../images/icons/info.png"),
-    title: "LISTĂ EXPERȚI",
 },
 {
     link: "http://www.guv.ro/",
