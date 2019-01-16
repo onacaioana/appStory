@@ -26,7 +26,7 @@ class InfoList extends Component {
 
         return (
             <React.Fragment>
-                <section id="list-topics" className="list-topics bg-light py-2" >
+                <section id="list-topics" className="list-topics bg-light py-4" >
                     <div className="container" >
                         <div className="list-topics-content text-wrap" style={{ textAlign: '-webkit-center' }}>
                             <ul>

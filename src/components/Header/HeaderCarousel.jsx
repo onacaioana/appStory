@@ -6,6 +6,7 @@ import { androidArrowDropleftCircle } from 'react-icons-kit/ionicons/androidArro
 import { androidArrowDroprightCircle } from 'react-icons-kit/ionicons/androidArrowDroprightCircle'
 import Typography from '@material-ui/core/Typography';
 import { carouselImages } from '../../utils/constants';
+import '../../css/prezentare.css';
 
 class Carousel extends React.Component {
     render() {
@@ -28,7 +29,18 @@ class Carousel extends React.Component {
                             backgroundRepeat: 'no-repeat',
                         }}
                     >
+                         {/* Istoricul Palatului de justitie */}
+
                        
+                        <div class="row text-center my-auto ">
+                            <div class="col-md-12 col-sm-6">
+                                <div class="skill-item1 px-5">
+                                <h2 style={{ fontWeight: 'bold' }}>TRIBUNALUL CLUJ</h2>
+                               
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 ))}
             </Slider>

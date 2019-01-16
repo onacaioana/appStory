@@ -47,15 +47,41 @@
     margin-top: 0;
 }
 
+
+
+.skill-item1 {
+    padding: 20px 0;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.skill-item1 i {
+    color: #2196f3;
+}
+
+.skill-item1 h2 {
+    color: #fff;
+    font-size: "hind", sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    margin-top: 65px;
+    margin-bottom: 1000px;
+}
+
+.skill-item1 p {
+    color: #fff;
+    font-family: "hind", sans-serif;
+    /*text-transform: uppercase;*/
+    font-weight: 300;
+    margin-top: 0;
+}
+
 /*====================================================
                       ISTORIC
 ======================================================*/
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+ {
     font-family: 'Saira Extra Condensed', serif;
     font-weight: 700;
     text-transform: uppercase;

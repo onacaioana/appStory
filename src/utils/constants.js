@@ -78,13 +78,13 @@ export const carouselImages = [
         subcaption: 'Nimic nu e mai presus de lege',
     },
     {
-        src: require('../images/ss.png'),
+        src: require('../images/trcj.jpg'),
         altText: 'TRIBUNALUL CLUJ',
         caption: 'TRIBUNALUL CLUJ',
         subcaption: 'Nimic nu e mai presus de lege',
     },
     {
-        src: require('../images/trcj.jpg'),
+        src: require('../images/jud-cluj.jpg'),
         altText: 'TRIBUNALUL CLUJ',
         caption: 'TRIBUNALUL CLUJ',
         subcaption: 'Nimic nu e mai presus de lege',
@@ -226,7 +226,7 @@ export const informatiiPublice = [
     {
         titlu: "Lista documentelor de interes public",
         text: " În principiu, toate documentele produse şi/sau gestionate de Tribunal sunt de interes public, cu excepţia registrului de evidenţă a sesizărilor privind confirmarea şi autorizarea interceptărilor şi înregistrărilor pe bandă magnetică sau pe orice alt tip de suport, precum şi cu excepţia acelora care conţin informaţii exceptate de la liberul acces, cum sunt cele prevăzute de art.12 din Legea nr.544/2001 privind liberul acces la informaţiile de interes public.",
-    
+
         listOfDocs: [],
     },
     {
@@ -237,19 +237,19 @@ export const informatiiPublice = [
     {
         titlu: "Atribuţiile judecătorilor",
         text: " Atribuţii jurisdicţionale: de a soluţiona cauzele aflate în competenţa de judecată a Tribunalului Cluj. Atribuţii administrative: acelea care, potrivit legii, vizează buna desfăşurare a activităţii administrative a instanţei (executări penale şi civile, analiza practicii judiciare, relaţia cu mass-media şi relaţiile publice, etc). Preşedintele, vicepreşedinţii şi Colegiul de conducere al tribunalului exercită atribuţiile de conducere a Tribunalului Cluj, iar preşedinţii de secţie asigură conducerea celor 3 secţii ale Tribunalului - a Secţiei civile, a Secţiei Mixte de contencios administrativ şi fiscal, litigii de muncă şi asigurări sociale şi a Secţiei penale şi de minori. De asemenea, preşedintele şi vicepreşedinţii au, după caz, atribuţii de coordonare sau de control a activităţii instanţelor aflate în raza de competenţă a Tribunalului Cluj.",
-    
+
         listOfDocs: [],
     },
     {
         titlu: "Atribuţiile compartimentelor din cadrul Tribunalul Cluj",
         text: " Atribuţii jurisdicţionale: de a soluţiona cauzele aflate în competenţa de judecată a Tribunalului Cluj. Atribuţii administrative: acelea care, potrivit legii, vizează buna desfăşurare a activităţii administrative a instanţei (executări penale şi civile, analiza practicii judiciare, relaţia cu mass-media şi relaţiile publice, etc). Preşedintele, vicepreşedinţii şi Colegiul de conducere al tribunalului exercită atribuţiile de conducere a Tribunalului Cluj, iar preşedinţii de secţie asigură conducerea celor 3 secţii ale Tribunalului - a Secţiei civile, a Secţiei Mixte de contencios administrativ şi fiscal, litigii de muncă şi asigurări sociale şi a Secţiei penale şi de minori. De asemenea, preşedintele şi vicepreşedinţii au, după caz, atribuţii de coordonare sau de control a activităţii instanţelor aflate în raza de competenţă a Tribunalului Cluj.",
-    
+
         listOfDocs: [],
     },
     {
         titlu: "Documentele produse şi/sau gestionate de Tribunalul Cluj",
         text: " Atribuţii jurisdicţionale: de a soluţiona cauzele aflate în competenţa de judecată a Tribunalului Cluj. Atribuţii administrative: acelea care, potrivit legii, vizează buna desfăşurare a activităţii administrative a instanţei (executări penale şi civile, analiza practicii judiciare, relaţia cu mass-media şi relaţiile publice, etc). Preşedintele, vicepreşedinţii şi Colegiul de conducere al tribunalului exercită atribuţiile de conducere a Tribunalului Cluj, iar preşedinţii de secţie asigură conducerea celor 3 secţii ale Tribunalului - a Secţiei civile, a Secţiei Mixte de contencios administrativ şi fiscal, litigii de muncă şi asigurări sociale şi a Secţiei penale şi de minori. De asemenea, preşedintele şi vicepreşedinţii au, după caz, atribuţii de coordonare sau de control a activităţii instanţelor aflate în raza de competenţă a Tribunalului Cluj.",
-    
+
         listOfDocs: [],
     },];
 
@@ -287,40 +287,7 @@ export const personalTribunal1 = [
             {
 
                 title: "Judecatori:",
-                sef:"Preşedinte secţie: Luca Emeşe - delegaţie",
-                team: ["Boiciuc Ioana Nora",
-                    "Cociş Liliana-Anişoara",
-                    "Danileţ Vasilică Cristi",
-                    "Fărcaş-Hîngan Georgiana Rodica",
-                    "Ilieş Ariana",
-                    "Lupea Ioan-Marius",
-                    "Mornăilă Ramona",
-                    "Trestian Simona",
-                    "Ţopan Alina",],
-            },
-            {
-                title: "Grefieri",
-                sef:"Grefier şef secţie: Şofron Simona",
-                team: ["Blăjan Camelia-Luminiţa",
-                    "Brie Alina",
-                    "Borbely Malvin",
-                    "Burnete Daiana-Andra",
-                    "Dan Andreea",
-                    "Doboş Maria",
-                    "Miron Carmen-Gabriela",
-                    "Moldovan Briciu Maria Cristina",
-                    "Oneş Dan Paul",
-                    "Parv Fabia",
-                    "Stîngaci Mirela",],
-            }]
-    },
-
-    {
-        sectia: "Secţia Penală",
-        personal: [
-            {
-                title: "Judecători",
-                sef:"Preşedinte secţie : Ţopan Alina Camelia",
+                sef: "Preşedinte secţie: Luca Emeşe - delegaţie",
                 team: ["Balint Camelia",
                     "Bolchiş Florina-Sanda",
                     "Cimbrudean Corina-Anca",
@@ -336,24 +303,57 @@ export const personalTribunal1 = [
                     "Seleşiu Ana Sorina ",],
             },
             {
+                title: "Grefieri",
+                sef: "Grefier şef secţie: Şofron Simona",
+                team: ["Andresi Olimpia",
+                "Bărăian Ioana Maria",
+                "Boţioc Alina-Pompilia",
+                "Ciceu Oana Raluca",
+                "Coman Livia",
+                "Curuţiu Elvira",
+                "Deac Aniela",
+                "Duma Ioana Daniela",
+                "Herişanu Claudia",
+                "Miclea Laura",
+                "Petruş Gabriela",
+                "Pop Alina",
+                "Ţifrea Cristina",
+                "Șofron Claudia",
+                "Voila Andreea",],
+            }]
+    },
+
+    {
+        sectia: "Secţia Penală",
+        personal: [
+            {
+                title: "Judecători",
+                sef: "Preşedinte secţie : Ţopan Alina Camelia",
+                team: ["Boiciuc Ioana Nora",
+                    "Cociş Liliana-Anişoara",
+                    "Danileţ Vasilică Cristi",
+                    "Fărcaş-Hîngan Georgiana Rodica",
+                    "Firicel Lumniniţa Maria",
+                    "Ilieş Ariana",
+                    "Lupea Ioan-Marius",
+                    "Mornăilă Ramona",
+                    "Trestian Simona",
+                    "Ţopan Alina",],
+            },
+            {
 
                 title: "Grefieri",
-                sef:"Grefier şef secţie: Călugăr Maria-Diana",
-                team: ["Andresi Olimpia",
-                    "Bărăian Ioana Maria",
-                    "Boţioc Alina-Pompilia",
-                    "Ciceu Oana Raluca",
-                    "Coman Livia",
-                    "Curuţiu Elvira",
-                    "Deac Aniela",
-                    "Duma Ioana Daniela",
-                    "Herişanu Claudia",
-                    "Miclea Laura",
-                    "Petruş Gabriela",
-                    "Pop Alina",
-                    "Ţifrea Cristina",
-                    "Șofron Claudia",
-                    "Voila Andreea",],
+                sef: "Grefier şef secţie: Călugăr Maria-Diana",
+                team: ["Blăjan Camelia-Luminiţa",
+                "Brie Alina",
+                "Borbely Malvin",
+                "Burnete Daiana-Andra",
+                "Dan Andreea",
+                "Doboş Maria",
+                "Miron Carmen-Gabriela",
+                "Moldovan Briciu Maria Cristina",
+                "Oneş Dan Paul",
+                "Stîngaci Mirela",],
             }]
 
     }, {
@@ -361,7 +361,7 @@ export const personalTribunal1 = [
         personal: [
             {
                 title: "Judecători",
-                sef:"Preşedinte secţie: Botiş Vasile Marius",
+                sef: "Preşedinte secţie: Botiş Vasile Marius",
                 team: [
                     "Aldea Ana",
                     "Belean Emil",
@@ -373,6 +373,7 @@ export const personalTribunal1 = [
                     "Noja Carmen-Simona",
                     "Oneţ Georgeta Olimpia",
                     "Păcurar Victoriţa-Paula",
+                    "Rad Anca",
                     "Ramirez-Molina Ioana Liliana ",
                     "Tanţău Rodica",
                     "Trofin Monica",
@@ -390,7 +391,7 @@ export const personalTribunal1 = [
             },
             {
                 title: "Grefieri",
-                sef:"Grefier şef secţie:Lung Oana-Maria",
+                sef: "Grefier şef secţie:Lung Oana-Maria",
                 team: [
                     "Câmpean Liliana",
                     "Chiş Ani Letiţia",
@@ -399,15 +400,16 @@ export const personalTribunal1 = [
                     "Dascăl Roxana Simona",
                     "Dediu Mariana",
                     "Fracea Roxana-Ioana",
-                    "Lungu Oana Raluca",
+                    "Lung Oana Raluca",
                     "Matyaş Gabriela",
                     "Pintican Gabriela",
                     "Popa Ioana",
                     "Stana Cristina",
-                    "Tişe Anamaria Dorina - detaşat de la Judecătoria Turda",
+                    "Tişe Anamaria Dorina",
                     "Tripon Corina",
                     "Turc Corina",
                     "Vinczeller Anamaria",
+                    "Pârv Fabia",
                 ],
             }
         ]
@@ -424,7 +426,7 @@ export const personalTribunal1 = [
             },
             {
                 title: "Grefieri arhivari şi registratori:",
-                sef:"Arhivar şef: Manea Nicoleta",
+                sef: "Arhivar şef: Manea Nicoleta",
                 team: [
                     "Bumar Ionela Aurora",
                     "Ciurdar Radu-Adrian - detaşat de la Judecătoria Turda",
@@ -439,7 +441,7 @@ export const personalTribunal1 = [
             },
             {
                 title: "Personal specialitate informatică",
-                sef:"Specialist IT şef - Tămaş Daniel-Riian",
+                sef: "Specialist IT şef - Tămaş Daniel-Riian",
                 team: [
                     " Miron Cristian",
                     " Murariu Ioana Mariana",
@@ -473,19 +475,6 @@ export const personalTribunal1 = [
                 ],
             },
             {
-                title: "Serviciu de probaţiune",
-                sef:"Şef serviciu probaţiune - Docolina Doina Mihaela",
-                team: [
-                    "Ardelean Ileana",
-                    "Cherecheş Elena",
-                    "Docolina Doina Mihaela",
-                    "Gheorghe Maria Cristina",
-                    "Mariş Irina",
-                    "Mihăilescu Luiza Maria",
-                    "Stoica Dorina",
-                ],
-            },
-            {
                 title: "Manager Economic",
                 team: ["Coța Gabriela",],
             },
@@ -499,6 +488,7 @@ export const personalTribunal1 = [
                     "Ferenţ Marcela Ofelia",
                     "Nica Claudia",
                     "Păran Giulia",
+                    "Oprea Raluca",
                 ],
             },
             {
