@@ -75,7 +75,7 @@ class NavBarComp extends Component {
 
                         <Dropdown nav isOpen={this.state.dropdownInstanta} toggle={this.toggleInstanta}>
                             <DropdownToggle nav caret>
-                                DESPRE INSTANŢĂ
+                                DESPRE INSTITUŢIE
                                 </DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/prezentare`}>Prezentare</DropdownItem>
