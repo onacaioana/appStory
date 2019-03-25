@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './InfoUtileStyle.css';
 import HeaderFormat from '../Header/Header';
-import CardInfo from './InfoUtileCard';
+import InfoUtileCard from './InfoUtileCard';
 import {infoUtile} from '../../utils/constants';
 //icon: require('../../images/icons/gdpr.png'),
 
@@ -12,7 +12,7 @@ class InfoList extends Component {
         const items = infoUtile.map((item, index) => {
             return (
                 <li key={index}>
-                    <CardInfo
+                    <InfoUtileCard
                         locatie={item.locatie}
                         icon={item.icon}
                         title={item.title}

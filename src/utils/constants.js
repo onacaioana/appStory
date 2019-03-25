@@ -72,13 +72,13 @@ export const detaliiInstante = [
 
 export const carouselImages = [
     {
-        src: require('../images/5.jpg'),
+        src: require('../images/trcj1.jpeg'),
         altText: 'TRIBUNALUL CLUJ',
         caption: 'TRIBUNALUL CLUJ',
         subcaption: 'Nimic nu e mai presus de lege',
     },
     {
-        src: require('../images/trcj.jpg'),
+        src: require('../images/5.jpg'),
         altText: 'TRIBUNALUL CLUJ',
         caption: 'TRIBUNALUL CLUJ',
         subcaption: 'Nimic nu e mai presus de lege',

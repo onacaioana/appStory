@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { Button } from 'reactstrap';
+import axios from 'axios';/* 
+import { Button } from 'reactstrap'; */
+import Button from '@material-ui/core/Button';
 import Pdf from '../Pdf/pdf';
 import { Icon } from "react-icons-kit";
 import WhenInView from '../../utils/whenInView';
@@ -8,9 +9,12 @@ import Grow from '@material-ui/core/Grow';
 import { withRouter } from 'react-router-dom';
 
 class CardInfo extends Component {
-    state = {
-        openFile: false,
-        blob: []
+    constructor(props) {
+        super(props);
+        this.state = {
+            blob: [],
+            openFile: false,
+        };
     }
 
     /* Closing the modal containing pdf file */
@@ -25,7 +29,8 @@ class CardInfo extends Component {
         let path = this.props.locatie;
         this.props.history.push(path);
     }
-    openPdf = () => {
+
+    handleClickToOpen = () => {
         const { locatie, index, browserName, browserVersion } = this.props;
         if (index === 0 || index === 2) {
             this.routeChange();
@@ -42,7 +47,6 @@ class CardInfo extends Component {
                 .then(res => {
                     /* Check if browser in Internet Explorer*/
                     if (browserName === "ie" && browserVersion.indexOf('9') !== -1) {
-                        console.log("InfoUtileCards");
                         var binaryData = [];
                         //   var url = 'pdfViewer/web/viewer.html?file=';
 
@@ -77,45 +81,35 @@ class CardInfo extends Component {
 
         return (
             <React.Fragment>
-                {/* WhenInView - used to make a transition when compoment will be in view */}
-                <WhenInView>
-                    {({ inView }) =>
+                <Button
+                    key={index}
+                    onClick={() => this.handleClickToOpen()}
+                    style={{ outline: 'none', backgroundColor: 'transparent', border: '0px', borderColor: 'transparent', color: '#122034', fontWeight: 'bold' }}
+                >
+                    <div className="single-list-topics-content rounded shadow">
 
-                        /* Create a grow transition of component "cardInfo" */
-                        <Grow
-                            in={inView}
-                            style={{ transformOrigin: '50% 50% 0' }}
-                            {...(inView ? { timeout: (2000 + index * 100) } : {})}
-                        >
-                            <Button
-                                key={index}
-                                onClick={() => this.openPdf()}
-                                style={{ outline: '0', backgroundColor: 'transparent', borderColor: 'transparent', color: '#122034', fontWeight: 'bold' }}
-                            >
-                                <div className="single-list-topics-content rounded shadow">
+                        {/* Icon comes from utils/constants.js file
+                          * using props
+                          * Titlu - text shown on infoUtile's card
+                          * and open document for each of them 
+                          */}
+                        <div className="single-list-topics-icon">
+                            <img style={{ color: '#122034' }} className="mb-2" src={icon} alt="Icon_Document" />
+                        </div>
 
-                                    {/* Icons used from constants (infoUtile) */}
-                                    <div className="single-list-topics-icon">
-                                        <img style={{ color: '#122034' }} className="mb-2" src={icon} alt="Icon_Document" />
-                                    </div>
+                        {title}
+                    </div>
+                </Button>
+                {this.state.openFile
+                    ? <Pdf
+                        data={`data:application/pdf;base64,${blob}`}
+                        print={blob}
+                        handleCloseModal={this.onCloseModal}
+                        fileName={locatie}
+                    />
 
-                                    {/*Text shown on infoUtile 's card and open document for each of them */}
-                                    {title}
-                                    {openFile
-                                        ? <Pdf
-                                            data={`data:application/pdf;base64,${blob}`}
-                                            print={blob}
-                                            handleCloseModal={this.onCloseModal}
-                                            fileName={locatie}
-                                        />
-
-                                        : ""
-                                    }
-                                </div>
-                            </Button>
-
-                        </Grow>
-                    }</WhenInView>
+                    : ""
+                }
             </React.Fragment>
         );
     }

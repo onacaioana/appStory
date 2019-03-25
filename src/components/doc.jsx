@@ -27,19 +27,19 @@ class Doc extends Component {
       .then(res => {
         /* Check browser version and name */
         if (browser.name === "ie" && browser.version.indexOf('9') !== -1) {
-        //  let pdfData = atob(res.data);
-        //  let uint8ArrayPdf = new Uint8Array(200)
-        //  for (let i = 0; i < pdfData.length; i++) {
-         //   uint8ArrayPdf[i] = pdfData.charCodeAt(i)
-         // }
+          //  let pdfData = atob(res.data);
+          //  let uint8ArrayPdf = new Uint8Array(200)
+          //  for (let i = 0; i < pdfData.length; i++) {
+          //   uint8ArrayPdf[i] = pdfData.charCodeAt(i)
+          // }
 
-       //   var url = 'pdfViewer/web/viewer.html?file=';
+          //   var url = 'pdfViewer/web/viewer.html?file=';
 
-        //  var binaryData = [];
-        //  binaryData.push(uint8ArrayPdf);
-       //   var dataPdf = window.URL.createObjectURL(new Blob(binaryData, { type: "application/pdf" }));
+          //  var binaryData = [];
+          //  binaryData.push(uint8ArrayPdf);
+          //   var dataPdf = window.URL.createObjectURL(new Blob(binaryData, { type: "application/pdf" }));
 
-        //  window.open(url + encodeURIComponent(dataPdf), '_blank');
+          //  window.open(url + encodeURIComponent(dataPdf), '_blank');
         }
         else this.setState({
           blob: res.data,
@@ -65,8 +65,8 @@ class Doc extends Component {
     return (
       <div>
         {/* If locatie is a href then redirect using component a */}
-       
-        {locatie.substring(0,4) === "http"
+
+        {locatie.substring(0, 4) === "http"
 
           ? <ListItem
             className="mx-5 px-5 "
@@ -81,6 +81,7 @@ class Doc extends Component {
             ) : (
                 ""
               )}
+
             <ListItemText
               color="white"
               inset

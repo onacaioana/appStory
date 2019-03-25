@@ -4,9 +4,9 @@ const path = require("path");
 const fs = require("fs");
 const cors = require("cors");
 
- const app = express();
+const app = express();
 app.use(cors());
-
+app.use(express.static(path.join(__dirname, 'build')));
 app.use("/ass", express.static("PDFs"));
 
 app.get("/ass", function (req, res) {
@@ -17,8 +17,6 @@ app.get("/ass", function (req, res) {
     res.send(data);
   });
 });
-
-
 
 function getDirectoryContent(req, res, next) {
   var imagePath = path.join(path.resolve(__dirname), req.query.folderName);

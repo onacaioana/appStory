@@ -28,7 +28,7 @@ class Organizare extends Component {
                 <Grid container className=" my-3 bg-light" spacing={16} >
 
                     {/*
-                    * Left menu for go to "Organigrama" and "Organizare" 
+                    * Left menu go to "Organigrama" and "Organizare" 
                     */}
                     <Grid item xs={2} className="d-none d-lg-block d-xl-block" >
                         <Meniu />

@@ -32,11 +32,7 @@ class Anunt extends Component {
                   alt="Lista_concursuri_si_anunturi"
                 />
               </ListItemIcon>
-              <ListItemText
-                inset
-                primary={this.props.titlu}
-                secondary={this.props.subtitlu}
-              />
+              <ListItemText inset primary={this.props.titlu} secondary={this.props.subtitlu}/>
               {this.state.open ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
 

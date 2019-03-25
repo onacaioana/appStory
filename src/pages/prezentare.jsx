@@ -144,10 +144,10 @@ class Prezentare extends Component {
                 {/* Istoricul Palatului de justitie */}
                 <section class=" d-flex flex-column" id="skills">
                     <div class="p-lg-5 p-3 skill-cover ">
-                        <h2 className=" text-center" style={{ color: '#39b3ff', fontWeight: 'bold' }}>Istoricul palatului de justiţie</h2>
                         <div class="row text-center my-auto ">
                             <div class="col-md-12 col-sm-6">
                                 <div class="skill-item text-justify px-5">
+                                    <h2 className=" text-center" style={{ color: 'white', fontWeight: 'bold' }}>Istoricul palatului de justiţie</h2>
                                     <p>
                                         <br /> &emsp;&emsp;&emsp;
                                             Palatul Justiţiei Cluj, imobil proprietate a Ministerului Justiţiei, a fost  construit între anii 1898–1902. Clădirea are o deosebită valoare arhitectonică, fiind monument istoric şi de arhitectură catalogat.

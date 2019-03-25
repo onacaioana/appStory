@@ -22,14 +22,17 @@ import { Icon } from "react-icons-kit";
 import { circleTop } from 'react-icons-kit/iconic/circleTop';
 import Tooltip from '@material-ui/core/Tooltip';
 
+
 const { detect } = require("detect-browser");
 const browser = detect();
 
+
 class App extends Component {
+
   render() {
-/*     if (browser.name === 'ie' && browser.version.substr(0, 2) === '9') {
-      return this.renderForNoCompatibility();
-    } else */ 
+    /*     if (browser.name === 'ie' && browser.version.substr(0, 2) === '9') {
+          return this.renderForNoCompatibility();
+        } else */
     return this.renderAll();
   }
   renderForNoCompatibility() {
