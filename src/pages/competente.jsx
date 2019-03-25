@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import Title from '../components/Header/HeaderTitlePage';
 import Anunt from '../components/anunt';
 import axios from 'axios';
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+
 class Competente extends Component {
     state = {
         items: [],
@@ -42,13 +46,14 @@ class Competente extends Component {
         return (
             <React.Fragment>
                 <Title
-                    title="Compentenţă materială şi teritoriala"
-                    page="Competenţe"
-                    subpage="Despre instanţă"
+                    title="Competenţe şi Circumscripţie"
+                    page="Competenţe şi Circumscripţie"
+                    subpage="Despre instituţie"
                     breadcrumbs={true}
                 />
 
                 <div className="my-5 container">
+                    <h2 className="pt-5 " style={{ color: '#164164', fontWeight: 'bold' }}>Competenţă materială şi teritorială</h2>
                     <Anunt
                         icon={require("../images/icons/law2.png")}
                         altText={"altText"}
@@ -57,6 +62,29 @@ class Competente extends Component {
                     />
 
                 </div>
+
+                <div className="my-5 container">
+                    <h2 className="pt-5 " style={{ color: '#164164', fontWeight: 'bold' }}>Circumscripţie</h2>
+                    <ListItem
+                        className="mx-5 px-5 "
+                        button
+                        component="a"
+                        href="http://portal.just.ro/117/SitePages/Circumscriptii.aspx?id_inst=117"
+                    >
+
+                        <ListItemIcon className="mx-1 px-1">
+                            <img src={require("../images/icons/list.png")} alt="Icon_Document" />
+                        </ListItemIcon> 
+
+                        <ListItemText
+                            color="white"
+                            inset
+                            primary="Circumscripţii în raza Tribunalului Cluj"
+                        />
+                    </ListItem >
+                </div>
+
+
             </React.Fragment>
         );
     }

@@ -11,7 +11,7 @@ class Anunt extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: true
     };
   }
 
@@ -24,7 +24,6 @@ class Anunt extends Component {
       <React.Fragment>
         {this.props.expanded === true ?
           <div>
-
             <ListItem button onClick={this.handleChange}>
               <ListItemIcon>
                 <img
@@ -41,7 +40,7 @@ class Anunt extends Component {
                 // list={item.listOfDocs}
                 list={this.props.docs}
                 button={true}
-                icon1={require("../images/icons/arow2.png")}
+                icon1={require("../images/icons/list.png")}
                 component="div"
               />
             </Collapse>

@@ -146,7 +146,7 @@ class NavBarComp extends Component {
 
                     <Nav className="m-auto" navbar style={{ fontSize: "16px" }} >
                         <NavItem className="mr-4">
-                            <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/`} >ACASĂ</NavLink>
+                            <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/`} >Acasă</NavLink>
                         </NavItem>
 
                         <Dropdown
@@ -154,12 +154,11 @@ class NavBarComp extends Component {
                             /* onMouseOver={this.onMouseEnterInstanta} onMouseLeave={this.onMouseLeaveInstanta} */
                             toggle={this.toggleInstanta}>
 
-                            <DropdownToggle nav caret> DESPRE INSTITUŢIE </DropdownToggle>
+                            <DropdownToggle nav caret> Despre Instituţie</DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/prezentare`}>Prezentare</DropdownItem>
-                                <DropdownItem>
-
                                     <Dropdown
+                                        className="px-4"
                                         nav
                                         direction='right'
                                         isOpen={this.state.dropdownOrganizare}
@@ -175,10 +174,8 @@ class NavBarComp extends Component {
                                             <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/comunicate`}>Legislatie - organizarea instanței</DropdownItem>
                                         </DropdownMenu>
                                     </Dropdown>
-                                </DropdownItem>
 
-                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/competente`}>Competenţe</DropdownItem>
-                                <DropdownItem onClick={this.closeNavbar} href="http://portal.just.ro/117/SitePages/Circumscriptii.aspx?id_inst=117">Circumscripţie</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/competente`}>Competenţe şi Circumscripţie</DropdownItem>
                                 <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/rapoarte`}>Instaţa în cifre</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
@@ -189,7 +186,7 @@ class NavBarComp extends Component {
                            /*  onMouseOver={this.onMouseEnterInformatii} onMouseLeave={this.onMouseLeaveInformatii} */
                         >
                             <DropdownToggle nav caret>
-                                INFORMAŢII
+                                Informaţii
                                 </DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem onClick={this.closeNavbar} href="https://www.curteadeapelcluj.ro/anunturi.html">Anunţuri / Concursuri</DropdownItem>
@@ -201,10 +198,10 @@ class NavBarComp extends Component {
                             </DropdownMenu>
                         </Dropdown>
                         <NavItem className="mr-4">
-                            <NavLink href="https://www.curteadeapelcluj.ro/Dosare_ecris.aspx">INFO-DOSAR</NavLink>
+                            <NavLink href="https://www.curteadeapelcluj.ro/Dosare_ecris.aspx">Info-Dosar</NavLink>
                         </NavItem>
                         <NavItem className="mr-4">
-                            <NavLink href="https://www.curteadeapelcluj.ro/ListeSedinta.aspx">INFO-ŞEDINŢE</NavLink>
+                            <NavLink href="https://www.curteadeapelcluj.ro/ListeSedinta.aspx">Info-Şedinţe</NavLink>
                         </NavItem>
 
                         <Dropdown nav
@@ -212,7 +209,7 @@ class NavBarComp extends Component {
                             toggle={this.toggleInstante}
                            /*  onMouseOver={this.onMouseEnterInstante} onMouseLeave={this.onMouseLeaveInstante} */
                         >
-                            <DropdownToggle nav caret>INSTANŢE</DropdownToggle>
+                            <DropdownToggle nav caret>Instanţe</DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem href="http://portal.just.ro/211/SitePages/acasa_default.aspx?id_inst=211">Judecătoria Cluj-Napoca</DropdownItem>
                                 <DropdownItem href="http://portal.just.ro/219/SitePages/acasa_default.aspx?id_inst=219">Judecătoria Dej</DropdownItem>
@@ -222,7 +219,7 @@ class NavBarComp extends Component {
                             </DropdownMenu>
                         </Dropdown>
                         <NavItem className="mr-4">
-                            <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/contact`}>CONTACT</NavLink>
+                            <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/contact`}>Contact</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
