@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import List from "@material-ui/core/List";
-import Personal from './Employee';
+import Employee from './Employee';
 
 class ListaPersonal extends Component {
     state = { open: true };
@@ -9,11 +9,12 @@ class ListaPersonal extends Component {
 
         let lista = this.props.personal.map((item, index) => {
             return (
-                <Personal
+                <Employee
                     key={index}
                     title={item.title}
                     sef={item.sef}
                     team={item.team}
+                    expended={this.props.expended}
                 />
             )
         })

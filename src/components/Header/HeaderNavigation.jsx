@@ -55,10 +55,10 @@ class NavBarComp extends Component {
         this.setState({ dropdownInstanta: true });
     }
     onMouseLeaveInstanta() {
-        setTimeout(function() { //Start the timer
+        setTimeout(function () { //Start the timer
             this.setState({ dropdownInstanta: false });
         }.bind(this), 500);
-      
+
     }
     toggleInstanta() {
         this.setState({
@@ -75,11 +75,11 @@ class NavBarComp extends Component {
         this.setState({ dropdownInformatii: true });
     }
     onMouseLeaveInformatii() {
-        setTimeout(function() { //Start the timer
+        setTimeout(function () { //Start the timer
             this.setState({ dropdownInformatii: false });
         }.bind(this), 500);
-      
-       
+
+
     }
     toggleInformatii() {
         this.setState({
@@ -96,7 +96,7 @@ class NavBarComp extends Component {
         this.setState({ dropdownInstante: true });
     }
     onMouseLeaveInstante() {
-        setTimeout(function() { //Start the timer
+        setTimeout(function () { //Start the timer
             this.setState({ dropdownInstante: false });
         }.bind(this), 500);
     }
@@ -115,7 +115,7 @@ class NavBarComp extends Component {
         this.setState({ dropdownOrganizare: true });
     }
     onMouseLeaveOrganizare() {
-        setTimeout(function() { //Start the timer
+        setTimeout(function () { //Start the timer
             this.setState({ dropdownOrganizare: false });
         }.bind(this), 500);
     }
@@ -157,23 +157,21 @@ class NavBarComp extends Component {
                             <DropdownToggle nav caret> Despre Instituţie</DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/prezentare`}>Prezentare</DropdownItem>
-                                    <Dropdown
-                                        className="px-4"
-                                        nav
-                                        direction='right'
-                                        isOpen={this.state.dropdownOrganizare}
-                                        toggle={this.toggleOrganizare}
+                                <Dropdown
+                                    className="px-4"
+                                    nav
+                                    direction='right'
+                                    isOpen={this.state.dropdownOrganizare}
+                                    toggle={this.toggleOrganizare}
                                         /* onMouseOver={this.onMouseEnterOrganizare} onMouseLeave={this.onMouseLeaveOrganizare} */>
 
-                                        <DropdownToggle nav caret style={{color:'black', mrgin:'0px', padding:'0px'}}>Organizare</DropdownToggle>
+                                    <DropdownToggle nav caret style={{ color: 'black', mrgin: '0px', padding: '0px' }}>Organizare</DropdownToggle>
 
-                                        <DropdownMenu style={{border:0}}>
-                                        <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/organizare`}>Conducere</DropdownItem>
-                                            <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/infoPublice`}>Structură organizatorică</DropdownItem>
-                                            <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/declaratii`}>Organigramă</DropdownItem>
-                                            <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/comunicate`}>Legislatie - organizarea instanței</DropdownItem>
-                                        </DropdownMenu>
-                                    </Dropdown>
+                                    <DropdownMenu style={{ border: 0 }}>
+                                        <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/conducere`}>Conducere</DropdownItem>
+                                        <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/organizare`}>Structură organizatorică</DropdownItem>
+                                    </DropdownMenu>
+                                </Dropdown>
 
                                 <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/competente`}>Competenţe şi Circumscripţie</DropdownItem>
                                 <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/rapoarte`}>Instaţa în cifre</DropdownItem>
@@ -183,7 +181,7 @@ class NavBarComp extends Component {
                         <Dropdown nav
                             isOpen={this.state.dropdownInformatii}
                             toggle={this.toggleInformatii}
-                           /*  onMouseOver={this.onMouseEnterInformatii} onMouseLeave={this.onMouseLeaveInformatii} */
+                        /*  onMouseOver={this.onMouseEnterInformatii} onMouseLeave={this.onMouseLeaveInformatii} */
                         >
                             <DropdownToggle nav caret>
                                 Informaţii
@@ -207,7 +205,7 @@ class NavBarComp extends Component {
                         <Dropdown nav
                             isOpen={this.state.dropdownInstante}
                             toggle={this.toggleInstante}
-                           /*  onMouseOver={this.onMouseEnterInstante} onMouseLeave={this.onMouseLeaveInstante} */
+                        /*  onMouseOver={this.onMouseEnterInstante} onMouseLeave={this.onMouseLeaveInstante} */
                         >
                             <DropdownToggle nav caret>Instanţe</DropdownToggle>
                             <DropdownMenu>

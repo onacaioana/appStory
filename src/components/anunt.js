@@ -11,7 +11,7 @@ class Anunt extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: true
+      open: false
     };
   }
 
@@ -36,6 +36,7 @@ class Anunt extends Component {
             </ListItem>
 
             <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+            {this.props.text ? <p className="text-justify">{this.props.text}</p> : ""}
               <ListOfDocs
                 // list={item.listOfDocs}
                 list={this.props.docs}

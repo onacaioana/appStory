@@ -6,12 +6,16 @@ import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ListaPersonal from './EmployeesList';
+
 class Sectie extends Component {
-    state = { open: false };
+    state = {
+        open: true
+    };
 
     handleChange = () => {
         this.setState({ open: !this.state.open });
     };
+
     render() {
         const { sectia, personal } = this.props;
         return (
@@ -20,7 +24,7 @@ class Sectie extends Component {
                     <ListItemText
                         primary={
                             <Typography
-                                color="secondary"
+                                color="primary"
                                 className="mx-1 py-2"
                                 variant="headline"
                             >
@@ -36,6 +40,7 @@ class Sectie extends Component {
                 <Collapse in={this.state.open} timeout="auto" unmountOnExit>
                     <ListaPersonal
                         personal={personal}
+                        expended={this.props.expended}
                     />
                 </Collapse>
             </div>

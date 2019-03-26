@@ -10,19 +10,15 @@ class Team extends Component {
             return (
                 <ListItem className="mx-2" key={index} >
                     <ListItemText
-                        color="white"
                         inset
-                        primary={item}
+                        primary={<p style={{color:'gray'}}>{item}</p>}
                     />
                 </ListItem >
             )
         })
 
         return (
-            <List
-                component="div"
-                disablePadding
-            >
+            <List component="div" disablePadding>
                 {persoana}
             </List>
         );

@@ -34,7 +34,7 @@ class Prezentare extends Component {
                     <div className="container text-justify" >
                         <div className="row my-auto">
                             <div className="col-12">
-                                <h2 className=" text-center" style={{ color: '#39b3ff', fontWeight: 'bold' }}>Istoric</h2>
+                                <h2 className=" text-center" style={{ color: '#39b3ff', fontWeight: 'bold' }}>Istoricul Tribunalului Cluj</h2>
                                 <div className="mb-5 heading-border"></div>
                             </div>
                             <div className="main-award" style={{ margin: 'auto' }} id="award-box">
@@ -68,7 +68,7 @@ class Prezentare extends Component {
                                     <div className="award-icon"></div>
                                     <div className="award-content">
                                         <span className="date">27 septembrie 2004</span>
-                                        <h5 className="title">Înfiinţarea Tribunalului Comercial Cluj </h5>
+                                        <h5 className="title">Restructurarea secţiilor</h5>
                                         <p className="description">
                                             Până la data de 27 septembrie 2004 Tribunalul Cluj a fost organizat pe 3 secţii: Secţia Penală; Secţia Civilă şi Litigii de muncă; Secţia comercială şi de contencios administrativ. Din 27 septembrie 2004, după înfiinţarea Tribunalului Comercial Cluj, care a preluat atribuţiile secţiei comerciale, Tribunalul Cluj a funcţionat doar cu două secţii.
                                         </p>

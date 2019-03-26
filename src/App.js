@@ -5,7 +5,8 @@ import Contact from "./pages/contact";
 import Prezentare from "./pages/prezentare";
 import HomePage from "./pages/home";
 import TaxeTimbru from "./pages/CalculatorTaxe";
-import Organizare from "./pages/organizare";
+import Organizare from "./pages/Organizare/organizare";
+import Conducere from "./pages/Organizare/conducere";
 import Footer from "./components/Footer/FooterComponent";
 import Rapoarte from "./pages/rapoarte";
 import Hotarari from "./pages/hotarari";
@@ -63,6 +64,7 @@ class App extends Component {
                 exact
                 path={[
                   "/organizare",
+                  "/conducere",
                   "/contact",
                   "/taxe",
                   "/prezentare",
@@ -82,6 +84,7 @@ class App extends Component {
 
             <Switch>
               <Route exact path={"/organizare"} component={Organizare} />
+              <Route exact path={"/conducere"} component={Conducere} />
               <Route exact path={"/contact"} component={Contact} />
               <Route exact path={"/taxe"} component={TaxeTimbru} />
               <Route exact path={"/prezentare"} component={Prezentare} />
@@ -102,6 +105,7 @@ class App extends Component {
                 exact
                 path={[
                   "/organizare",
+                  "/conducere",
                   "/contact",
                   "/taxe",
                   "/prezentare",

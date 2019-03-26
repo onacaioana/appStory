@@ -7,12 +7,17 @@ import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import Team from './Team';
 
-class ListOfDocs extends Component {
-  state = { open: false };
+class Employee extends Component {
+  state = { open: false};
 
   handleChange = () => {
     this.setState({ open: !this.state.open });
   };
+
+  componentWillMount(){
+    this.setState({open: this.props.expended});
+    console.log("expended:", this.props.expended);
+  }
 
   render() {
     const { title, team, sef } = this.props;
@@ -27,7 +32,7 @@ class ListOfDocs extends Component {
           </ListItemIcon>
           <ListItemText
             inset
-            primary={title}
+            primary={<h5>{title}</h5>}
             secondary={sef}
           />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
@@ -41,4 +46,4 @@ class ListOfDocs extends Component {
   }
 }
 
-export default ListOfDocs;
+export default Employee;

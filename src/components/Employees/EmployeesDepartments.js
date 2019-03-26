@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import List from "@material-ui/core/List";
-import Sectie from './Department';
+import Department from './Department';
 class ListaSectii extends Component {
     render() {
-        let sectii = this.props.list.map((item, index) => {
+        let departamente = this.props.list.map((item, index) => {
             return (
-                <Sectie
+                <Department
                     key={index}
                     sectia={item.sectia}
                     personal={item.personal}
                     index={index}
+                    expended={this.props.expended}
                 />
             )
         })
@@ -17,7 +18,7 @@ class ListaSectii extends Component {
         return (
             <React.Fragment>
                 <List component="div" disablePadding >
-                    {sectii}
+                    {departamente}
                 </List>
             </React.Fragment >
 

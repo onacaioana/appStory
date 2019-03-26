@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import TextFiled from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Title from '../components/Header/HeaderTitlePage';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 class TaxeTimbru extends Component {
     constructor(props) {
@@ -10,6 +16,8 @@ class TaxeTimbru extends Component {
     }
 
     state = {
+        open: false,
+        scroll: 'paper',
         taxaJudiciaraFond: '0.00',
         taxaJudiciaraApel: '0.00',
         taxaAchizitiiFond: '0.00',
@@ -19,13 +27,20 @@ class TaxeTimbru extends Component {
         suma: '',
     };
 
+    handleClickOpen = scroll => () => {
+        this.setState({ open: true, scroll });
+    };
+
+    handleClose = () => {
+        this.setState({ open: false });
+    };
+
     componentDidMount() {
         window.scrollTo(0, 0);
     }
 
     onChangeSum = (e) => {
         this.setState({ suma: e.target.value });
-        console.log(e.target.value);
         const sum = e.target.value;
 
         switch (true) {
@@ -77,7 +92,7 @@ class TaxeTimbru extends Component {
             <React.Fragment>
 
                 <Title
-                    title="InfoUtile / Calcuator "
+                    title="Informaţii Utile / Calculator "
                     page="Calculator taxe "
                     breadcrumbs={true}
                     subpage="Calculator taxe"
@@ -86,14 +101,14 @@ class TaxeTimbru extends Component {
                     <Grid container className="bg-light" justify="center" spacing={16} >
                         {/* Title */}
                         <Grid item align="center" xs={12} md={12} className=" rounded bg-secondary text-light" >
-                            <h3>Calculator taxa </h3>
+                            <h3>Calculator informativ taxe</h3>
                         </Grid>
 
                         {/* First line */}
-                        <Grid item xs={3} >
+                        <Grid item xs={4} >
                             <p>Suma:</p>
                         </Grid>
-                        <Grid item xs={9}>
+                        <Grid item xs={8}>
                             <TextFiled
                                 value={this.state.suma}
                                 onChange={this.onChangeSum}
@@ -107,7 +122,7 @@ class TaxeTimbru extends Component {
                             />
                         </Grid>
                         {/* Second line*/}
-                        <Grid item xs={3}>
+                        <Grid item xs={4}>
 
                         </Grid>
                         <Grid item xs={4}>
@@ -116,11 +131,9 @@ class TaxeTimbru extends Component {
                         <Grid item xs={4}>
                             <p>Apel</p>
                         </Grid>
-                        <Grid item xs={1}>
 
-                        </Grid>
                         {/* 3th line */}
-                        <Grid item xs={3}>
+                        <Grid item xs={4}>
                             <p>Taxa judiciară de timbru</p>
                         </Grid>
                         <Grid item xs={4}>
@@ -141,12 +154,10 @@ class TaxeTimbru extends Component {
                                 fullWidth
                             />
                         </Grid>
-                        <Grid item xs={1}>
-                            <p>Info</p>
-                        </Grid>
+
 
                         {/* 4th line */}
-                        <Grid item xs={3}>
+                        <Grid item xs={4}>
                             <p>Taxa de timbru achiziţii</p>
                         </Grid>
                         <Grid item xs={4}>
@@ -167,11 +178,9 @@ class TaxeTimbru extends Component {
                                 fullWidth
                             />
                         </Grid>
-                        <Grid item xs={1}>
-                            <p>Info</p>
-                        </Grid>
+
                         {/* 5th line */}
-                        <Grid item xs={3} >
+                        <Grid item xs={4} >
                             <p>Cauţiune</p>
                         </Grid>
                         <Grid item xs={4} >
@@ -192,11 +201,17 @@ class TaxeTimbru extends Component {
                                 fullWidth
                             />
                         </Grid>
-                        <Grid item xs={1} >
-                            <p>Info</p>
-                        </Grid>
                     </Grid>
                 </div>
+
+                <div>
+        <Button onClick={this.handleClickOpen('paper')}>Temei legal
+        
+        </Button>
+        <Button onClick={this.handleClickOpen('paper')}>Modalitate şi loc de plată</Button>
+        <Button onClick={this.handleClickOpen('paper')}>Alte informaţii</Button>
+       
+      </div>
             </React.Fragment>
         );
     }

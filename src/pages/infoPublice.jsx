@@ -13,11 +13,9 @@ class InfoPublice extends Component {
         folders: [],
     }
 
-    componentDidMount(){
-        window.scrollTo(0, 0);
-    }
-
     componentWillMount() {
+        window.scrollTo(0, 0);
+        let result;
         axios
             .get(`/getFiles`, {
                 params: {
@@ -25,10 +23,12 @@ class InfoPublice extends Component {
                 }
             })
             .then(res => {
-                /* Foreach folder from res, requeat all pdf files  */
                 let i = 0;
+                
+                /* Foreach folder from res, requeat all pdf files  */
                 for (i = 0; i < res.data.length; i++) {
                     let year = res.data[i];
+
                     axios
                         .get(`/getFiles`, {
                             params: {
@@ -36,7 +36,6 @@ class InfoPublice extends Component {
                             }
                         })
                         .then(res2 => {
-                            console.log("year:",year);
                             let m = res2.data.length - 1;
                             let object2;
                             let object3 = [];
@@ -56,10 +55,20 @@ class InfoPublice extends Component {
                              *  
                              * Add created object to {this.state.folders}
                              */
-                            console.log(year);
-                            const object = Object.assign({ folder: year, docs: object3 });
-                            this.setState({ folders: [...this.state.folders, object] });
-                            console.log("this.state.folders:",this.state.folders);
+                             
+                            informatiiPublice.map((item)=>{
+                                
+                                if(item.folder === year){
+                                    item.listOfDocs.push.apply(item.listOfDocs,object3);
+/*                                     const object = Object.assign({ folder: year, text:item.text,titlu:item.titlu, docs: object3 });
+                                    console.log("Obiect creat:",object);
+                                    this.setState({ folders: [...this.state.folders, object] }); */
+                                }
+                                console.log("lista de documente:",item.listOfDocs);
+                            })
+                            this.setState({folders: []});
+                            
+                            
                         })
                         .catch(e => {
                             console.log("Eroare la deschiderea fișierului", e);
@@ -69,9 +78,70 @@ class InfoPublice extends Component {
             .catch(e => {
                 console.log("Eroare la deschiderea fișierului", e);
             });
+    }
 
+    componentWillUnmount(){
+        informatiiPublice.map((item,index)=>{
+            item.listOfDocs = [];
+        })
+    }
+    render() {
+        let infoList = informatiiPublice.map((item,index)=>{
+            return (
+                <InfoList index={index}
+                    titlu={item.titlu}
+                    text={item.text}
+                />
+            )
 
+        })
 
+        return (
+            <React.Fragment>
+                <Title
+                    title="Informații Publice"
+                    page="Informații Publice"
+                    subpage="Informații"
+                    breadcrumbs={true}
+                />
+
+                <div className="my-5 container">
+                    <List component="nav">
+
+                    {informatiiPublice.map((item, index) => {
+                        if(item.folder !== "")
+                        {
+                            return (
+                                <Anunt
+                                key={index}
+                                icon={require("../images/icons/law2.png")}
+                                altText={"hotarari"}
+                                titlu={item.titlu}
+                                text={item.text}
+                                docs={item.listOfDocs}
+                                expanded={true}
+                                />
+                            );
+
+                        }
+                        else{
+                            return (
+                                <InfoList index={index}
+                                    titlu={item.titlu}
+                                    text={item.text}
+                                />
+                            )
+                        }
+                       
+                        })}
+                    </List>
+                </div>
+            </React.Fragment>
+        );
+    }
+}
+
+export default InfoPublice;
 
 
         /* Create an object and append to state */
@@ -91,87 +161,31 @@ class InfoPublice extends Component {
                             const itemObject = Object.assign({ titlu: "Birou de Informare și Relații publice", listOfDocs: list });
                             this.setState({ items: [...this.state.items, itemObject] }); */
 
-    }
-
-    render() {
-
-        let infoList = informatiiPublice.map((item, index) => {
-            if (item.folder === "") {
-                return (
-                    <InfoList index={index}
-                        titlu={item.titlu}
-                        text={item.text}
-                    />
-                )
-            }
-        })
-
-        let result = informatiiPublice.map((item, index) => {
-          /*   console.log("item.folder: ",item.folder);
-            console.log("state.folders: ",this.state.folders); */
-            if (item.folder !== "") {
-                let stateFolder = this.state.folders.find(x => x.folder === item.folder);
-                console.log("stateFolder: ",stateFolder);
-                return (
-                    <Anunt
-                        key={index}
-                        icon={require("../images/icons/law2.png")}
-                        altText={item.text}
-                        titlu={item.titlu}
-                        docs={item.listOfDocs}
-                        expanded={true}
-                    />
-                )
-            }
-            else {
-                console.log("Else: ",item.titlu);
-                return (
-                    <InfoList index={index}
-                        titlu={item.titlu}
-                        text={item.text}
-                    />
-                )
-            }
-        });
-
-        return (
-            <React.Fragment>
-                <Title
-                    title="Informații Publice"
-                    page="Informații Publice"
-                    subpage="Informații"
-                    breadcrumbs={true}
+/*  {informatiiPublice.map((item, index) => {
+        if (item.folder !== "") {
+            console.log("Folderul nu e null:(din contants) ", item.folder);
+            this.state.folders.map((dir, index) => {
+                if (dir.folder === item.folder) {
+                    console.log("Folderele sunt egale:(din state) ", dir.folder);
+                    return (
+                        <Anunt
+                            key={index}
+                            icon={require("../images/icons/law2.png")}
+                            altText={item.text}
+                            titlu={item.titlu}
+                            docs={dir.docs}
+                            expanded={true}
+                        />
+                    )
+                }
+            })
+        }
+        else {
+            return (
+                <InfoList index={index}
+                    titlu={item.titlu}
+                    text={item.text}
                 />
-
-                <div className="my-5 container">
-
-                    {/* List of ListItems :
-                      * 1. case when ListItem component contains pdf files and text
-                      * 2. case when ListItem component contains only text 
-                      */}
-                    <List component="nav">
-
-                        {/* Case 1 */}
-                       {/*  {this.state.items.map((item, index) => {
-                            return (
-                                <Anunt
-                                    key={index}
-                                    icon={require("../images/icons/law2.png")}
-                                    altText={item.text}
-                                    titlu={item.titlu}
-                                    docs={item.listOfDocs}
-                                    expanded={true}
-                                />
-                            );
-                        })} */}
-
-                        {/* Case 2 */}
-                        {result}
-                    </List>
-                </div>
-            </React.Fragment>
-        );
-    }
-}
-
-export default InfoPublice;
+            )
+        }
+})} */
