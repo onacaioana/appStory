@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import Title from '../../components/Header/HeaderTitlePage';
 import { conducere } from '../../utils/constants';
 import ListaPersonal from '../../components/Employees/EmployeesDepartments';

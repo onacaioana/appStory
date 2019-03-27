@@ -1,7 +1,7 @@
-import { fax } from "react-icons-kit/fa/fax";
+/* import { fax } from "react-icons-kit/fa/fax";
 import { notepad_remove } from 'react-icons-kit/ikons/notepad_remove'
 import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
-import { mail } from "react-icons-kit/ikons/mail";
+import { mail } from "react-icons-kit/ikons/mail"; */
 
 export const detaliiInstante = [
     {
@@ -128,85 +128,86 @@ export const prezentareInstante = [
     },
 ];
 
-export const linksImages = [{
-    link: "http://www.just.ro/",
-    icon: require("../images/links/ministerul_justitiei.PNG"),
-    title: "Ministerul Justiţiei",
-},
-{
-    link: "http://www.mpublic.ro/",
-    icon: require("../images/links/ministerulPublic_link.png"),
-    title: "Ministerul Public",
-},
-{
-    link: "http://www.presidency.ro/",
-    icon: require("../images/links/presedinteleRomaniei_link.png"),
-    title: "Preşedintele României",
-},
-{
-    link: "http://www.guv.ro/",
-    icon: require("../images/links/GuvernulRomaniei_link.png"),
-    title: "Guvernul României",
-},
-{
-    link: "https://www.csm1909.ro/",
-    icon: require("../images/links/csm_link.jpg"),
-    title: "Consiliul Superior al Magistraturii",
-},
-{
-    link: "https://www.ccr.ro/",
-    icon: require("../images/links/ccr_link.png"),
-    title: "Curtea Constituţională (CCR)",
-},
-{
-    link: "http://www.baroul-cluj.ro/",
-    icon: require("../images/links/BaroulCluj_link.jpg"),
-    title: "Baroul Cluj",
-},
-{
-    link: "https://www.icj-cij.org/",
-    icon: require("../images/links/cij_link.png"),
-    title: "Curtea Internaţională de Justiţiei",
-},
-{
-    link: "http://www.echr.coe.int/",
-    icon: require("../images/links/cedo_link.jpg"),
-    title: "Curtea Europeană a Drepturilor Omului",
-},
-{
-    link: "http://www.clr.ro/",
-    icon: require("../images/links/CL_link.bmp"),
-    title: "Consiliul Legislativ",
-},
-{
-    link: "https://www.cmediere.ro/",
-    icon: require("../images/links/Consiliuldemediere_link.JPG"),
-    title: "Consiliul de Mediere",
-},
-{
-    link: "http://www.scj.ro/",
-    icon: require("../images/links/ministerul_justitiei.PNG"),
-    title: "Înalta Curte de Casaţie şi Justiţie",
+export const linksImages = [
+    {
+        link: "http://www.just.ro/",
+        icon: require("../images/links/ministerul_justitiei.PNG"),
+        title: "Ministerul Justiţiei",
+    },
+    {
+        link: "http://www.mpublic.ro/",
+        icon: require("../images/links/ministerulPublic_link.png"),
+        title: "Ministerul Public",
+    },
+    {
+        link: "http://www.presidency.ro/",
+        icon: require("../images/links/presedinteleRomaniei_link.png"),
+        title: "Preşedintele României",
+    },
+    {
+        link: "http://www.guv.ro/",
+        icon: require("../images/links/GuvernulRomaniei_link.png"),
+        title: "Guvernul României",
+    },
+    {
+        link: "https://www.csm1909.ro/",
+        icon: require("../images/links/csm_link.jpg"),
+        title: "Consiliul Superior al Magistraturii",
+    },
+    {
+        link: "https://www.ccr.ro/",
+        icon: require("../images/links/ccr_link.png"),
+        title: "Curtea Constituţională (CCR)",
+    },
+    {
+        link: "http://www.baroul-cluj.ro/",
+        icon: require("../images/links/BaroulCluj_link.jpg"),
+        title: "Baroul Cluj",
+    },
+    {
+        link: "https://www.icj-cij.org/",
+        icon: require("../images/links/cij_link.png"),
+        title: "Curtea Internaţională de Justiţiei",
+    },
+    {
+        link: "http://www.echr.coe.int/",
+        icon: require("../images/links/cedo_link.jpg"),
+        title: "Curtea Europeană a Drepturilor Omului",
+    },
+    {
+        link: "http://www.clr.ro/",
+        icon: require("../images/links/CL_link.bmp"),
+        title: "Consiliul Legislativ",
+    },
+    {
+        link: "https://www.cmediere.ro/",
+        icon: require("../images/links/Consiliuldemediere_link.JPG"),
+        title: "Consiliul de Mediere",
+    },
+    {
+        link: "http://www.scj.ro/",
+        icon: require("../images/links/ministerul_justitiei.PNG"),
+        title: "Înalta Curte de Casaţie şi Justiţie",
 
-},
-{
-    link: "http://www.inm-lex.ro/",
-    icon: require("../images/links/inm_link.jpg"),
-    title: "Institutul Naţional de Magistratură",
+    },
+    {
+        link: "http://www.inm-lex.ro/",
+        icon: require("../images/links/inm_link.jpg"),
+        title: "Institutul Naţional de Magistratură",
 
-},
-{
-    link: "http://www.grefieri.ro/",
-    icon: require("../images/links/sng_link.png"),
-    title: "Şcoala Naţională de Grefieri",
+    },
+    {
+        link: "http://www.grefieri.ro/",
+        icon: require("../images/links/sng_link.png"),
+        title: "Şcoala Naţională de Grefieri",
 
-},
-{
-    link: "https://curia.europa.eu/jcms/jcms/j_6/ro/",
-    icon: require("../images/links/CVRIA_link.png"),
-    title: "C.V.R.I.A.",
+    },
+    {
+        link: "https://curia.europa.eu/jcms/jcms/j_6/ro/",
+        icon: require("../images/links/CVRIA_link.png"),
+        title: "C.V.R.I.A.",
 
-},];
+    },];
 
 export const informatiiPublice = [
     {
@@ -527,6 +528,46 @@ export const personalTribunal1 = [
     }
 ];
 
+export const program = [{
+    where: "Programul de lucru al instituţiei:",
+    hours: "Luni - Vineri între orele 08:00 - 16:00;"
+},
+{
+    where: "Registratură(parter, camera 24A) şi Arhivă(parter, camera 24B):",
+    hours: "Luni - Vineri între orele 8:00 - 12:00;"
+}, {
+    where: "În perioada vacantei judecatoresti (01.07.-31.08.) program Registratura şi Arhiva:",
+    hours: "Luni, Miercuri şi Joi între orele 09:00 - 11:00;",
+}];
+
+export const massMedia = [
+    {
+        functie: "Purtător de cuvânt:",
+        nume: "Judecător SIMONA TRESTIAN",
+        email: "simona.sulea@just.ro",
+        phone: "0264596110"
+    }];
+
+export const email = [
+    {
+        locatie: "Registratură:",
+        adresa: "tr-cluj-reg@just.ro"
+    },
+    {
+        locatie: "Biroul Expertize:",
+        adresa: "tr-cluj-blej@just.ro "
+    }];
+
+export const faxuri = [
+    {
+        locatie: "Cabinet Preşedinte:",
+        adresa: "0264-595844"
+    },
+    {
+        locatie: "Serviciu Contabilitate:",
+        adresa: "0264-431965",
+    }];
+
 export const infoUtile = [
     {
         title: 'Protecția datelor',
@@ -569,7 +610,7 @@ export const infoUtile = [
         title: 'Liste experţi',
         icon: require("../images/icons/asistenti.png"),
         locatie: "http://old.just.ro/MinisterulJusti%C8%9Biei/Listapersoanelorautorizate/Expertijudiciari/tabid/160/Default.aspx",
-    },    
+    },
     {
         title: 'Tabloul Avocaţilor',
         icon: require("../images/icons/asistenti.png"),

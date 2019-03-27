@@ -3,9 +3,6 @@ import axios from 'axios';/*
 import { Button } from 'reactstrap'; */
 import Button from '@material-ui/core/Button';
 import Pdf from '../Pdf/pdf';
-import { Icon } from "react-icons-kit";
-import WhenInView from '../../utils/whenInView';
-import Grow from '@material-ui/core/Grow';
 import { withRouter } from 'react-router-dom';
 
 class CardInfo extends Component {
@@ -47,7 +44,7 @@ class CardInfo extends Component {
                 .then(res => {
                     /* Check if browser in Internet Explorer*/
                     if (browserName === "ie" && browserVersion.indexOf('9') !== -1) {
-                        var binaryData = [];
+                        //var binaryData = [];
                         //   var url = 'pdfViewer/web/viewer.html?file=';
 
                         /* Convert Base 64 to Blob */
@@ -76,7 +73,7 @@ class CardInfo extends Component {
     }
 
     render() {
-        const { blob, openFile } = this.state;
+        const { blob} = this.state;
         const { locatie, index, icon, title } = this.props;
 
         return (

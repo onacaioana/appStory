@@ -31,10 +31,10 @@ const browser = detect();
 class App extends Component {
 
   render() {
-    /*     if (browser.name === 'ie' && browser.version.substr(0, 2) === '9') {
-          return this.renderForNoCompatibility();
-        } else */
-    return this.renderAll();
+    if (browser.name === 'ie' && browser.version.substr(0, 2) === '9') {
+      return this.renderForNoCompatibility();
+    }
+    else return this.renderAll();
   }
   renderForNoCompatibility() {
     return (

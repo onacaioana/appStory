@@ -55,6 +55,7 @@ class Rapoarte extends Component {
                                     const docObject = Object.assign({ titlu: title, locatie: "Rapoarte/" + folder + "/" + file });
 
                                     list.push(docObject);
+                                    return true;
                                 });
 
                                 /* Create an item from state array and append to state */

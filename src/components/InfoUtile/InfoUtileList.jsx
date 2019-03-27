@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './InfoUtileStyle.css';
-import HeaderFormat from '../Header/Header';
 import InfoUtileCard from './InfoUtileCard';
 import {infoUtile} from '../../utils/constants';
 //icon: require('../../images/icons/gdpr.png'),

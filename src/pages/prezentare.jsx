@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
-import Divider from '@material-ui/core/Divider';
 import CardInstanta from '../components/cardInstanta';
-import HeaderFormat from '../components/Header/Header';
 import Title from '../components/Header/HeaderTitlePage';
 import '../css/prezentare.css';
 class Prezentare extends Component {

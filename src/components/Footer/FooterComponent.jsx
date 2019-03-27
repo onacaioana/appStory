@@ -1,11 +1,5 @@
 import React from 'react';
 import './Footer.css';
-import {
-    Nav,
-    NavItem,
-    NavLink,
-    Navbar
-} from "reactstrap";
 
 const FooterPage1 = () => {
     return (

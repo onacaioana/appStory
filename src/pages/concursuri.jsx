@@ -26,7 +26,7 @@ class Concursuri extends Component {
       })
       .then(res1 => {
         /* Foreach folder returned -> request all files */
-        res1.data.map((folder,index) => {
+        res1.data.map((folder) => {
 
             axios
               .get(`/getFiles`, {
@@ -50,7 +50,7 @@ class Concursuri extends Component {
                   /* Create a doc file type object with 2 params: {titlu, locatie} */
                   const docObject = Object.assign({ titlu: title, locatie: "Anunturi/" + folder + "/" + file });
                   list.push(docObject);
-                  
+                  return true;
                 });
 
                 /* Create an item from state array and append to state */
@@ -58,7 +58,7 @@ class Concursuri extends Component {
                 this.setState({ items: [...this.state.items, itemObject] });
 
               })
-          
+              return true;
         });
       })
       .catch(e => {

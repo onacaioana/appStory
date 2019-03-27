@@ -13,13 +13,6 @@ import "es6-map/implement";
 const { detect } = require('detect-browser');
 const browser = detect();
   
-  const linkHanlder = (link) => {
-    window.open(link, '_blank');
-  }
-  const toggleHandler = (id, value) => {
-    console.log(id, value)
-  }
-
 class HomePage extends Component {
     componentDidMount() {
         window.scrollTo(0, 0);

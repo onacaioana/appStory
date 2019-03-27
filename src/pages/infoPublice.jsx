@@ -15,7 +15,6 @@ class InfoPublice extends Component {
 
     componentWillMount() {
         window.scrollTo(0, 0);
-        let result;
         axios
             .get(`/getFiles`, {
                 params: {
@@ -64,7 +63,7 @@ class InfoPublice extends Component {
                                     console.log("Obiect creat:",object);
                                     this.setState({ folders: [...this.state.folders, object] }); */
                                 }
-                                console.log("lista de documente:",item.listOfDocs);
+                                return true;
                             })
                             this.setState({folders: []});
                             
@@ -83,10 +82,11 @@ class InfoPublice extends Component {
     componentWillUnmount(){
         informatiiPublice.map((item,index)=>{
             item.listOfDocs = [];
+            return true;
         })
     }
     render() {
-        let infoList = informatiiPublice.map((item,index)=>{
+      /*   let infoList = informatiiPublice.map((item,index)=>{
             return (
                 <InfoList index={index}
                     titlu={item.titlu}
@@ -95,7 +95,7 @@ class InfoPublice extends Component {
             )
 
         })
-
+ */
         return (
             <React.Fragment>
                 <Title

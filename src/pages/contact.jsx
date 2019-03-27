@@ -5,55 +5,20 @@ import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
 import { mail } from "react-icons-kit/ikons/mail";
 import Harta from "../components/Harta/harta";
 import Title from '../components/Header/HeaderTitlePage';
+import {massMedia, faxuri, email, program} from '../utils/constants';
 import PhoneNumber from 'react-phone-number';
+
 // import 'mapbox-gl/dist/mapbox-gl.css';
 
-const program = [{
-  where: "Programul de lucru al instituţiei:",
-  hours: "Luni - Vineri între orele 08:00 - 16:00;"
-},
-{
-  where: "Registratură(parter, camera 24A) şi Arhivă(parter, camera 24B):",
-  hours: "Luni - Vineri între orele 8:00 - 12:00;"
-}, {
-  where: "În perioada vacantei judecatoresti (01.07.-31.08.) program Registratura şi Arhiva:",
-  hours: "Luni, Miercuri şi Joi între orele 09:00 - 11:00;",
-}];
-
-const massMedia = [{
-  functie: "Purtător de cuvânt:",
-  nume: "Judecător SIMONA ŞULEA",
-  email: "simona.sulea@just.ro",
-  phone: "0264596110"
-}];
-
-const telefon = [{
-  phone1: <PhoneNumber number="0264596111" isLinked="true" />,
-  phone2: <PhoneNumber number="0264431057" isLinked="true" />
-},
-{
-  phone1: <PhoneNumber number="0264431908" isLinked="true" />,
-  phone2: <PhoneNumber number="0264595812" isLinked="true" />
-}];
-
-const email = [{
-  locatie: "Registratură:",
-  adresa: "tr-cluj-reg@just.ro"
-},
-{
-  locatie: "Biroul Expertize:",
-  adresa: "tr-cluj-blej@just.ro "
-}];
-
-const faxuri = [{
-  locatie: "Cabinet Preşedinte:",
-  adresa: "0264-595844",
-},
-{
-  locatie: "Serviciu Contabilitate:",
-  adresa: "0264-431965",
-}];
-
+const telefon = [
+  {
+      phone1: <PhoneNumber number="0264596111" isLinked="true" />,
+      phone2: <PhoneNumber number="0264431057" isLinked="true" />
+  },
+  {
+      phone1: <PhoneNumber number="0264431908" isLinked="true" />,
+      phone2: <PhoneNumber number="0264595812" isLinked="true" />
+  }];
 
 class Contact extends Component {
   componentDidMount() {
