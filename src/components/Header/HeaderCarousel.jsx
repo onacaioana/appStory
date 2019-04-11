@@ -73,7 +73,7 @@ class Carousel extends React.Component {
                                         <li><a style={{ color: 'white', fontSize: '18px' }} href="https://www.curteadeapelcluj.ro/Dosare_ecris.aspx">INFO DOSAR</a></li>
                                         <li>
                                             <Link style={{ color: 'black', fontSize: '18px', backgroundColor: 'white' }} to="#idLinkuriUtile" >
-                                                LINKURI UTILE
+                                                Legături utile
                                             </Link>
                                         </li>
                                     </ul>

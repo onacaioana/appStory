@@ -18,9 +18,6 @@ class infoDialogCalculatorTaxe extends Component {
 
     handleClickOpen = scroll => () => {
         this.setState({ open: true, scroll });
-        <div>
-            <p>Ioana</p>
-        </div>
     };
 
     handleClose = () => {

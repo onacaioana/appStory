@@ -280,11 +280,15 @@ export const conducere = [
             },
             {
                 title: "Vicepreşedinţi",
-                team: ["FĂRCAŞ-Hîngan Georgiana Rodica", "GUZU Rodica Elisabeta"],
+                team: [
+                    "FĂRCAŞ-HÎNGAN Georgiana Rodica", 
+                    "GUZU Rodica Elisabeta"
+                ],
             },
             {
                 title: "Colegiul de Conducere",
-                team: ["SELEŞIU Ana Sorina - Președinte – membru ales",
+                team: [
+                    "SELEŞIU Ana Sorina - Președinte",
                     "DANILEŢ Cristi Vasilică - Judecator – membru ales",
                     "GAGA Ioan - Judecator – membru ales",
                     "GUZU Rodica - Judecător– membru ales",
@@ -306,39 +310,42 @@ export const personalTribunal1 = [
             {
 
                 title: "Judecatori:",
-                sef: "Preşedinte secţie: Luca Emeşe - delegaţie",
-                team: ["Balint Camelia",
+                sef: "Preşedinte secţie: Luca Emeşe",
+                team: [
+                    "Balint Camelia",
                     "Bolchiş Florina-Sanda",
                     "Cimbrudean Corina-Anca",
-                    "Guzu Rodica",
+                    "Guzu Rodica Elisabeta - Vicepreşedinte",
                     "Doica Alin-Florin",
                     "Ghişoiu Oana Raluca",
                     "Jacotă Cătălin",
-                    "Luca Emeşe",
-                    "Taşcă Dan-Ioan ",
+                    "Oncică Sanislav Marcela",
+                    "Seleşiu Ana Sorina -Preşedinte instanţă",
+                    "Taşcă Dan-Ioan",
                     "Tatu Claudia-Oana",
                     "Tatu Dorin ",
-                    "Oncică Sanislav Marcela",
-                    "Seleşiu Ana Sorina ",],
+                    ],
             },
             {
                 title: "Grefieri",
-                sef: "Grefier şef secţie: Şofron Simona",
-                team: ["Andresi Olimpia",
-                    "Bărăian Ioana Maria",
+                sef: "Grefier şef secţie: Şofron Simona - Ioana",
+                team: [
+                    "Andresi Olimpia",
+                    "Bărăian Ioana Maria - detaşată de la Judecătoria Turda",
                     "Boţioc Alina-Pompilia",
                     "Ciceu Oana Raluca",
-                    "Coman Livia",
+                    "Coman Livia - suspendare, la cerere",
                     "Curuţiu Elvira",
-                    "Deac Aniela",
-                    "Duma Ioana Daniela",
+                    "Deac Aniela - suspendare, la cerere",
+                    "Duma Ioana Daniela - suspendare, la cerere",
                     "Herişanu Claudia",
+                    "Iepan Alina-Alexandrina - perioadă determinată",
                     "Miclea Laura",
                     "Petruş Gabriela",
                     "Pop Alina",
                     "Ţifrea Cristina",
                     "Șofron Claudia",
-                    "Voila Andreea",],
+                    "Voila Andreea Roxana",],
             }]
     },
 
@@ -348,30 +355,34 @@ export const personalTribunal1 = [
             {
                 title: "Judecători",
                 sef: "Preşedinte secţie : Ţopan Alina Camelia",
-                team: ["Boiciuc Ioana Nora",
+                team: [
+                    "Boiciuc Ioana Nora",
                     "Cociş Liliana-Anişoara",
                     "Danileţ Vasilică Cristi",
-                    "Fărcaş-Hîngan Georgiana Rodica",
-                    "Firicel Lumniniţa Maria",
-                    "Ilieş Ariana",
+                    "Fărcaş-Hîngan Georgiana Rodica - Vicepresedinte",
+                    "Ilieş Ariana-Lăcrimioara",
                     "Lupea Ioan-Marius",
                     "Mornăilă Ramona",
                     "Trestian Simona",
-                    "Ţopan Alina",],
+                    ],
             },
             {
 
                 title: "Grefieri",
                 sef: "Grefier şef secţie: Călugăr Maria-Diana",
-                team: ["Blăjan Camelia-Luminiţa",
+                team: [
+                    "Babaş Lidia",
+                    "Blăjan Camelia-Luminiţa",
                     "Brie Alina",
-                    "Borbely Malvin",
-                    "Burnete Daiana-Andra",
+                    "Borbely Malvin - suspendare, de drept",
+                    "Burnete Daiana-Andra - suspendare, de drept",
                     "Dan Andreea",
                     "Doboş Maria",
+                    "Dumitru Dana-Maria - perioadă determinată",
                     "Miron Carmen-Gabriela",
-                    "Moldovan Briciu Maria Cristina",
+                    "Moldovan-Briciu Maria Cristina",
                     "Oneş Dan Paul",
+                    "Opriș Anamaria-Rodica – perioadă determinată",
                     "Stîngaci Mirela",],
             }]
 
@@ -392,7 +403,7 @@ export const personalTribunal1 = [
                     "Noja Carmen-Simona",
                     "Oneţ Georgeta Olimpia",
                     "Păcurar Victoriţa-Paula",
-                    "Rad Anca",
+                    "Rad Anca Maria",
                     "Ramirez-Molina Ioana Liliana ",
                     "Tanţău Rodica",
                     "Trofin Monica",
@@ -410,25 +421,25 @@ export const personalTribunal1 = [
             },
             {
                 title: "Grefieri",
-                sef: "Grefier şef secţie:Lung Oana-Maria",
+                sef: "Grefier şef secţie:Lung Oana-Raluca",
                 team: [
                     "Câmpean Liliana",
-                    "Chiş Ani Letiţia",
                     "Cioban Lucian",
                     "Clapa Mariana ",
-                    "Dascăl Roxana Simona",
+                    "Dascăl (Oltean) Roxana Simona",
                     "Dediu Mariana",
                     "Fracea Roxana-Ioana",
-                    "Lung Oana Raluca",
                     "Matyaş Gabriela",
                     "Pintican Gabriela",
-                    "Popa Ioana",
+                    "Pârv Fabia",
+                    "Popa Ioana - Marinela",
+                    "Raț Larisa – detașată la Tribunalul Specializat Cluj",
                     "Stana Cristina",
                     "Tişe Anamaria Dorina",
                     "Tripon Corina",
                     "Turc Corina",
+                    "Ţăruş Alina Mădălina",
                     "Vinczeller Anamaria",
-                    "Pârv Fabia",
                 ],
             }
         ]
@@ -437,7 +448,7 @@ export const personalTribunal1 = [
         personal: [
             {
                 title: "Grefier statistician",
-                team: ["Pop Adina"]
+                team: ["Pop Adina Crina"]
             },
             {
                 title: "Grefier cu atribuţii de aplicare a apostilei",
@@ -448,9 +459,9 @@ export const personalTribunal1 = [
                 sef: "Arhivar şef: Manea Nicoleta",
                 team: [
                     "Bumar Ionela Aurora",
-                    "Ciurdar Radu-Adrian - detaşat de la Judecătoria Turda",
                     "Crişan Rodica-Claudia",
                     "Dărăban Gabriela-Ioana",
+                    "Felecan Ana-Camelia - detașată la Curtea de Apel Cluj",
                     "Ziman Marin",
                 ],
             },
@@ -462,7 +473,7 @@ export const personalTribunal1 = [
                 title: "Personal specialitate informatică",
                 sef: "Specialist IT şef - Popa Dorin Octavian",
                 team: [
-                    "Tămaş Daniel-Riian",
+                    " Tămaş Daniel-Riian",
                     " Miron Cristian",
                     " Murariu Ioana Mariana",
                     " Pop Ciprian Isaia",
@@ -479,9 +490,11 @@ export const personalTribunal1 = [
             },
             {
                 title: "Conducători auto",
-                team: ["Felecan Ioan",
-                    "Lung Horatiu",
+                team: [
+                    "Felecan Ioan",
+                    "Lung Horatiu Mihai",
                     "Mureşan Alexandru",
+                    "Rus Ovidiu Nelu",
                 ]
             },
             {
@@ -492,6 +505,15 @@ export const personalTribunal1 = [
                     "Mureşan Ioana-Delia",
                     "Şerban Victoria",
                 ],
+            },
+            {
+                title: "Grefier documentarist ",
+                team: ["Birău Verginica Maria – cu atribuţii la Biroul de Informare şi Relaţii cu Publicul",],
+            },
+           
+            {
+                title: " Birou de informare şi relaţii cu publicul",
+                team: ["Păran Olivia Giulia – cu atribuţii la D.E.F.A",],
             },
             {
                 title: "Manager Economic",
@@ -505,20 +527,24 @@ export const personalTribunal1 = [
                     "Drăgan Ioana",
                     "Dumitrescu Mihaela",
                     "Ferenţ Marcela Ofelia",
-                    "Nica Claudia",
-                    "Păran Giulia",
-                    "Oprea Raluca",
+                    "Nica Claudia-Adela",
                 ],
             },
             {
-                title: "Compartiment administrativ",
+                title: "Birou expertize judiciare",
                 team: [
-                    "Ţar Voicu Stelian - merciolog",
-                    "Rus Ovidiu",
+                    "Rus Cristina Andreea– suspendare, la cerere",
+                    "Oprea Raluca Anamaria",
+                ]
+            },
+            {
+                title: "Personal contractual - Merceolog",
+                team: [
+                    "Ţar Voicu Stelian",
                 ],
             },
             {
-                title: "Muncitori întreţinere",
+                title: "Personal contractual - Muncitori întreţinere",
                 team: [
                     "Dumitraş Lucian Ioan",
                     "Roman Dănuţ",
