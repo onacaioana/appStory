@@ -28,11 +28,11 @@ class Prezentare extends Component {
                 <Title title="Istoric şi prezentare" page="Prezentare" subpage="Despre Instanță" breadcrumbs={true} />
 
                 {/* ISTORIC */}
-                <section className="resume-section p-3 p-lg-5 d-flex flex-column" id="istoric">
+                <section className="resume-section p-lg-5 d-flex flex-column" id="istoric">
                     <div className="container text-justify" >
                         <div className="row my-auto">
                             <div className="col-12">
-                                <h2 className=" text-center" style={{ color: '#39b3ff', fontWeight: 'bold' }}>Istoricul Tribunalului Cluj</h2>
+                                <h2 className=" text-center">Istoricul Tribunalului Cluj</h2>
                                 <div className="mb-5 heading-border"></div>
                             </div>
                             <div className="main-award" style={{ margin: 'auto' }} id="award-box">
@@ -141,11 +141,11 @@ class Prezentare extends Component {
 
                 {/* Istoricul Palatului de justitie */}
                 <section class=" d-flex flex-column" id="skills">
-                    <div class="p-lg-5 p-3 skill-cover ">
+                    <div class="p-lg-3 p-3 skill-cover ">
                         <div class="row text-center my-auto ">
                             <div class="col-md-12 col-sm-6">
-                                <div class="skill-item text-justify px-5">
-                                    <h2 className=" text-center" style={{ color: 'white', fontWeight: 'bold' }}>Istoricul palatului de justiţie</h2>
+                                <div class="skill-item text-justify px-3">
+                                    <h2 className=" text-center" style={{ color: 'white'}}>Istoricul palatului de justiţie</h2>
                                     <p>
                                         <br /> &emsp;&emsp;&emsp;
                                             Palatul Justiţiei Cluj, imobil proprietate a Ministerului Justiţiei, a fost  construit între anii 1898–1902. Clădirea are o deosebită valoare arhitectonică, fiind monument istoric şi de arhitectură catalogat.

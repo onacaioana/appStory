@@ -138,13 +138,16 @@ class NavBarComp extends Component {
     }
     render() {
         return (
-            <Navbar color="red" className=" bg-light navbar-light text-black text-nowrap m-auto " expand="md">
-                <NavbarBrand href="/" className="mr-auto"></NavbarBrand>
-                <NavbarToggler onClick={this.toggleNavbar} className="mr-2"></NavbarToggler>
-                <a href={`${process.env.PUBLIC_URL}/#/`}><img className="mx-2 d-none d-lg-block d-xl-block" src={require("../../images/mjLogo.png")} alt="mj" /></a>
-                <Collapse className="m-auto" isOpen={!this.state.collapsed} navbar >
+            <Navbar className="bg-light navbar-light text-black text-nowrap m-auto" expand="lg">
+                <NavbarBrand href={`${process.env.PUBLIC_URL}/#/`}>
+                    <img src={require("../../images/mjLogo.png")} alt="mj" />
+                </NavbarBrand>
 
-                    <Nav className="m-auto" navbar style={{ fontSize: "16px" }} >
+                <NavbarToggler onClick={this.toggleNavbar} ></NavbarToggler>
+
+                <Collapse isOpen={!this.state.collapsed} navbar >
+
+                    <Nav className="m-auto" navbar >
                         <NavItem className="mr-4">
                             <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/`} >Acasă</NavLink>
                         </NavItem>

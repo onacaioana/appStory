@@ -53,7 +53,6 @@ class App extends Component {
       <React.Fragment>
         <ScrollToTop showUnder={160}>
           <Tooltip title="Back to top">
-
             <Icon style={{ color: '#8c7b75' }} size={40} icon={circleTop} />
           </Tooltip>
         </ScrollToTop>

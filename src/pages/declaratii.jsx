@@ -88,6 +88,20 @@ const items = [
                 locatie: "https://www.curteadeapelcluj.ro/DI.aspx?id=JT"
             }
         ]
+    },
+
+    {
+        title: "Declaraţii de avere şi interese judecători",
+        content: [
+            {
+                titlu: "Declaratii de avere",
+                locatie: "https://www.csm1909.ro/Statements.aspx"
+            },
+            {
+                titlu: "Declaratii de interese",
+                locatie: "https://www.csm1909.ro/Statements.aspx"
+            }
+        ]
     }
 
 ];
@@ -125,7 +139,9 @@ class Declaratii extends Component {
                                 />
                             );
                         })}
+                       
                     </List>
+
                 </div>
             </React.Fragment>
         );

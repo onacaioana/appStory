@@ -33,8 +33,7 @@
 .skill-item h2 {
     color: #fff;
     font-size: "hind", sans-serif;
-    font-size: 35px;
-    font-weight: 700;
+    font-size: calc(14px + (39 - 14) * ((100vw - 300px) / (1600 - 300)));
     margin-top: 15px;
     margin-bottom: 1px;
 }
@@ -43,7 +42,7 @@
     color: #fff;
     font-family: "hind", sans-serif;
     /*text-transform: uppercase;*/
-    font-weight: 300;
+    font-size: calc(10px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
     margin-top: 0;
 }
 
@@ -79,15 +78,6 @@
 /*====================================================
                       ISTORIC
 ======================================================*/
-h1,
-h2,
- {
-    font-family: 'Saira Extra Condensed', serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #343a40;
-}
-
 
 h1 {
     font-size: 6rem;
@@ -96,6 +86,7 @@ h1 {
 
 h2 {
     font-size: 3.5rem;
+    color: #164164;
 }
 
 a {

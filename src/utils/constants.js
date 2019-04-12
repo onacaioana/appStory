@@ -601,15 +601,9 @@ export const infoUtile = [
         locatie: "/gdpr",
     },
     {
-        title: 'Asistenţă judiciară',
-        icon: require("../images/icons/seo-expert.png"),
-        locatie: "InfoUtile/Asistenta judiciara.pdf",
-    },
-    {
         title: ' Calculator taxe',
         icon: require("../images/icons/calculator.png"),
         locatie: "/taxe",
-
     },
     {
         title: ' Legalizare şi definitivare',
@@ -617,9 +611,15 @@ export const infoUtile = [
         locatie: "InfoUtile/Legalizare si investire.pdf",
     },
     {
-        title: 'Medierea',
+        title: 'Asistenţă judiciară',
+        icon: require("../images/icons/asistenti.png"),
+        locatie: "https://curteadeapelcluj.ro/asistenta%20judciara.html",
+
+    },
+    {
+        title: 'Medierea şi Tabloul mediatorilor',
         icon: require("../images/icons/book.png"),
-        locatie: "InfoUtile/medierea.pdf",
+        locatie: "https://curteadeapelcluj.ro/Informatii%20utile/Medierea.pdf",
 
     },
     {
@@ -634,7 +634,7 @@ export const infoUtile = [
     },
     {
         title: 'Liste experţi',
-        icon: require("../images/icons/asistenti.png"),
+        icon: require("../images/icons/seo-expert.png"),
         locatie: "http://old.just.ro/MinisterulJusti%C8%9Biei/Listapersoanelorautorizate/Expertijudiciari/tabid/160/Default.aspx",
     },
     {
