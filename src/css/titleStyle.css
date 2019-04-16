@@ -1,0 +1,72 @@
+/*used for:  Info utile & Legaturi utile */
+.titleClass{
+    font-size: calc(22px + (28 - 22) * ((100vw - 300px) / (1600 - 300)));
+    color: #164164;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+}
+
+/*used for:  Every page has a header-title component*/
+.col h1{
+    font-size: calc(20px + (27 - 20) * ((100vw - 300px) / (1600 - 300)));
+  }
+  .breadcrumbs ul li,
+  .breadcrumbs ul li a{
+    font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (1600 - 300)));
+    color: #978783;
+  }
+  /*  Image and title */
+  .site-blocks-cover {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top; }
+    .site-blocks-cover.overlay {
+      position: relative; }
+      .site-blocks-cover.overlay:before {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.4); }
+    .site-blocks-cover, .site-blocks-cover .row {
+      min-height: 200px;
+      height: calc(50vh); }
+    .site-blocks-cover.inner-page, .site-blocks-cover.inner-page .row {
+      min-height: 200px;
+      height: calc(40vh); }
+    .site-blocks-cover .sub-text {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: .2em; }
+   
+    .site-blocks-cover p {
+      color: #fff;
+      font-size: 1.5rem;
+      line-height: 1.5; }
+    .site-blocks-cover .intro-text {
+      font-size: 16px;
+      line-height: 1.5; }
+  
+      /* Breadcrumbs */
+      .breadcrumbs
+      {
+        margin-top: -2px;
+      }
+      .breadcrumbs ul li
+      {
+        display: inline-block;
+        position: relative;
+      }
+      .breadcrumbs ul li:not(:last-child)::after
+      {
+        display: inline-block;
+        position: relative;
+        content: '/';
+        margin-left: 7px;
+        margin-right: 2px;
+      }
+      

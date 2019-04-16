@@ -8,10 +8,11 @@ class Team extends Component {
     render() {
         let persoana = this.props.team.map((item, index) => {
             return (
-                <ListItem className="mx-2" key={index} >
+                <ListItem key={index} >
                     <ListItemText
+                        className="personalAngajat"
                         inset
-                        primary={<p style={{color:'gray'}}>{item}</p>}
+                        primary={item}
                     />
                 </ListItem >
             )

@@ -5,14 +5,15 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
+import "../css/listStyle.css";
 
 class InfoList extends Component {
-    state = { open: false };
+    state = { open: true };
 
     handleChange = () => {
-      this.setState({ open: !this.state.open });
+        this.setState({ open: !this.state.open });
     };
-  
+
     render() {
         const { index, titlu, text } = this.props;
 
@@ -27,6 +28,8 @@ class InfoList extends Component {
                         />
                     </ListItemIcon>
                     <ListItemText
+                        style={{padding:0}}
+                        className="ListItemText"
                         inset
                         primary={titlu}
                     />
@@ -34,7 +37,7 @@ class InfoList extends Component {
                 </ListItem>
 
                 <Collapse in={this.state.open} timeout="auto" unmountOnExit>
-                    <p className="text-justify">{text}</p>
+                    <p className="TextCollapse">{text}</p>
                 </Collapse>
             </React.Fragment>
         );

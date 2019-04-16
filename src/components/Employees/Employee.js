@@ -6,6 +6,7 @@ import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import Team from './Team';
+import "../../css/organizare.css";
 
 class Employee extends Component {
   state = { open: false};
@@ -27,12 +28,12 @@ class Employee extends Component {
           <ListItemIcon>
             <img
               src={require("../../images/icons/arow2.png")}
-              alt="Lista_concursuri_si_anunturi"
+              alt="Icon_lista_personal_subsectii"
             />
           </ListItemIcon>
           <ListItemText
-            inset
-            primary={<h5>{title}</h5>}
+          className="personalSubsectii"
+            primary={title}
             secondary={sef}
           />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}

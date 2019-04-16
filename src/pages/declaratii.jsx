@@ -115,7 +115,7 @@ class Declaratii extends Component {
         return (
             <React.Fragment>
                 <Title
-                    title="Declarații"
+                    title="Declarații de avere şi interese"
                     page="Declarații"
                     subpage="Informații"
                     breadcrumbs={true}

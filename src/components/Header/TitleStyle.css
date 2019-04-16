@@ -1,3 +1,11 @@
+.col h1{
+  font-size: calc(20px + (27 - 20) * ((100vw - 300px) / (1600 - 300)));
+}
+.breadcrumbs ul li,
+.breadcrumbs ul li a{
+  font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (1600 - 300)));
+  color: #978783;
+}
 /*  Image and title */
 .site-blocks-cover {
   background-size: cover;
@@ -51,10 +59,4 @@
       margin-left: 7px;
       margin-right: 2px;
     }
-    .breadcrumbs ul li,
-    .breadcrumbs ul li a
-    {
-      font-size: 16px;
-      font-weight: 800;
-      color: #8c7b75;
-    }
+    

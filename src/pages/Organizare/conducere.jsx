@@ -13,10 +13,10 @@ class Conducere extends Component {
 
         return (
             <React.Fragment>
-                <Title title="Conducere" page="Conducere" subpage="Despre Instanță / Organizare" breadcrumbs={true}/>
+                <Title title="Conducerea instanţei" page="Conducere" subpage="Despre Instanță / Organizare" breadcrumbs={true}/>
 
                 {/* Management team*/}
-                <div id="idOrganizare" className="my-5 container">
+                <div className="container">
                     <ListaPersonal list={conducere} expended={true} />
                 </div>
             </React.Fragment>

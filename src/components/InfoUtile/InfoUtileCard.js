@@ -29,7 +29,7 @@ class CardInfo extends Component {
 
     handleClickToOpen = () => {
         const { locatie, index, browserName, browserVersion } = this.props;
-        if (index === 0 || index === 2) {
+        if (index === 0 || index === 1) {
             this.routeChange();
         } else if (locatie.substring(0, 4) === "http") {
             window.open(locatie)

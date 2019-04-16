@@ -4,6 +4,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import Pdf from "./Pdf/pdf";
 import axios from "axios";
+import "../css/listStyle.css";
+
 const { detect } = require('detect-browser');
 const browser = detect();
 
@@ -83,6 +85,8 @@ class Doc extends Component {
               )}
 
             <ListItemText
+              className="TextCollapse"
+              style={{ padding: 0 }}
               color="white"
               inset
               primary={titlu}
@@ -91,7 +95,7 @@ class Doc extends Component {
           </ListItem >
           :
           <ListItem
-            className="mx-5 px-5 "
+            className="mx-5 px-2 "
             button={button}
             onClick={this.handleClickToOpen}
           >
@@ -103,6 +107,8 @@ class Doc extends Component {
                 ""
               )}
             <ListItemText
+              style={{ padding: 0 }}
+              className="TextCollapse"
               color="white"
               inset
               primary={titlu}

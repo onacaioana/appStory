@@ -6,6 +6,7 @@ import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ListaPersonal from './EmployeesList';
+import "../../css/organizare.css";
 
 class Sectie extends Component {
     state = {
@@ -20,18 +21,8 @@ class Sectie extends Component {
         const { sectia, personal } = this.props;
         return (
             <div>
-                <ListItem className="h2 text-primary" style={{ color: "red" }} button onClick={this.handleChange} >
-                    <ListItemText
-                        primary={
-                            <Typography
-                                color="primary"
-                                className="mx-1 py-2"
-                                variant="headline"
-                            >
-                                {sectia}
-                            </Typography>
-                        }
-                    />
+                <ListItem button onClick={this.handleChange} >
+                    <ListItemText primary={sectia} className="personalSectie"/>
                     {/* Select which Expand icon to use  */}
                     {this.state.open ? <ExpandLess /> : <ExpandMore />}
 

@@ -6,6 +6,7 @@ class ListOfDocs extends Component {
   render() {
     return (
       <List
+      style={{padding:0}}
         component={this.props.component}
         disablePadding
         subheader={this.props.subheader}

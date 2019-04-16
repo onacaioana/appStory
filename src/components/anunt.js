@@ -6,6 +6,7 @@ import Collapse from "@material-ui/core/Collapse";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import ListOfDocs from "./listOfDocs";
+import "../css/listStyle.css"
 
 class Anunt extends Component {
   constructor(props) {
@@ -31,12 +32,12 @@ class Anunt extends Component {
                   alt="Lista_concursuri_si_anunturi"
                 />
               </ListItemIcon>
-              <ListItemText inset primary={this.props.titlu} secondary={this.props.subtitlu}/>
+              <ListItemText style={{padding:0}} className="ListItemText" inset primary={this.props.titlu} secondary={this.props.subtitlu}/>
               {this.state.open ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
 
             <Collapse in={this.state.open} timeout="auto" unmountOnExit>
-            {this.props.text ? <p className="text-justify">{this.props.text}</p> : ""}
+            {this.props.text ? <p className="TextCollapse">{this.props.text}</p> : ""}
               <ListOfDocs
                 // list={item.listOfDocs}
                 list={this.props.docs}

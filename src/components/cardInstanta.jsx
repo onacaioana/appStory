@@ -6,7 +6,8 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import {prezentareInstante} from '../utils/constants';
+import { prezentareInstante } from '../utils/constants';
+import '../css/prezentare.css';
 
 class CardInstanta extends React.Component {
 
@@ -21,13 +22,11 @@ class CardInstanta extends React.Component {
                                 image={instanta.src}
                                 title={instanta.title} />
                                 : <p></p>}
-                            <CardContent>
-                            <h4 className=" text-center" style={{ color: '#39b3ff' }}>{instanta.title}</h4>
-                                    
-                               
+                            <CardContent className="cardContent">
+                                <h4 className=" text-center" >{instanta.title}</h4>
                                 <p>
                                     &nbsp;&nbsp;
-                                            {instanta.content}
+                                    {instanta.content}
 
                                 </p>
                             </CardContent>

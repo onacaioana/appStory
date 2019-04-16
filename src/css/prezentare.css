@@ -1,6 +1,19 @@
 
 /*====================================================
-                      ISTORICUL PALATULUI DE JUSTITIE
+            CARD INSTANTA
+======================================================*/
+
+.cardContent h4{
+    font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+    color: #39b3ff;
+}
+.cardContent p{
+    font-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300)));
+}
+
+
+/*====================================================
+            ISTORICUL PALATULUI DE JUSTITIE
 ======================================================*/
 
 #skills {
@@ -33,7 +46,7 @@
 .skill-item h2 {
     color: #fff;
     font-size: "hind", sans-serif;
-    font-size: calc(14px + (39 - 14) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(16px + (30 - 16) * ((100vw - 300px) / (1600 - 300)));
     margin-top: 15px;
     margin-bottom: 1px;
 }
@@ -42,7 +55,7 @@
     color: #fff;
     font-family: "hind", sans-serif;
     /*text-transform: uppercase;*/
-    font-size: calc(10px + (16 - 10) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
     margin-top: 0;
 }
 
@@ -169,7 +182,7 @@ a:active {
 #award-box .award-icon {
     width: 24px;
     height: 24px;
-    background: #fff;
+    background: rgb(169, 180, 182);
     border: 1px solid #cfcdcd;
     position: absolute;
     top: 17px;
@@ -215,7 +228,7 @@ a:active {
     display: block;
     width: 14px;
     height: 14px;
-    background: #fff;
+    background: rgb(170, 214, 243);
     border: 1px solid #cfcdcd;
     position: absolute;
     top: 21px;
@@ -253,7 +266,7 @@ a:active {
 }
 
 #award-box .title {
-    font-size: 18px;
+    font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
     color: #444;
     margin-top: 0;
     transition: all 0.3s ease 0s;
@@ -264,10 +277,11 @@ a:active {
 }
 
 #award-box .description {
-    font-size: 16px;
+    font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
     color: #777;
     line-height: 28px;
     margin-top: 8px;
+    text-align: justify;
 }
 
 #award-box .award:nth-child(2n),

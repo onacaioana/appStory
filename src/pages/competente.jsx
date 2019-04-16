@@ -5,6 +5,7 @@ import axios from 'axios';
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
+import "../css/listStyle.css";
 
 class Competente extends Component {
     state = {
@@ -53,7 +54,7 @@ class Competente extends Component {
                 />
 
                 <div className="my-5 container">
-                    <h2 className="pt-5 " style={{ color: '#164164', fontWeight: 'bold' }}>Competenţă materială şi teritorială</h2>
+                    <h2 className="titleListCompetente">Competenţă materială şi teritorială</h2>
                     <Anunt
                         icon={require("../images/icons/law2.png")}
                         altText={"altText"}
@@ -64,9 +65,9 @@ class Competente extends Component {
                 </div>
 
                 <div className="my-5 container">
-                    <h2 className="pt-5 " style={{ color: '#164164', fontWeight: 'bold' }}>Circumscripţie</h2>
+                    <h2 className="titleListCompetente">Circumscripţie</h2>
                     <ListItem
-                        className="mx-5 px-5 "
+                        className="mx-5 px-2"
                         button
                         component="a"
                         href="http://portal.just.ro/117/SitePages/Circumscriptii.aspx?id_inst=117"
@@ -77,6 +78,7 @@ class Competente extends Component {
                         </ListItemIcon> 
 
                         <ListItemText
+                            className="ListItemText"
                             color="white"
                             inset
                             primary="Circumscripţii în raza Tribunalului Cluj"

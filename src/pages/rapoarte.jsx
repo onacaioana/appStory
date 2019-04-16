@@ -5,6 +5,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 import Title from '../components/Header/HeaderTitlePage';
 import ListOfDocs from '../components/listOfDocs';
+import "../css/listStyle.css";
 import axios from 'axios';
 
 /**
@@ -77,7 +78,7 @@ class Rapoarte extends Component {
             return (
                 <React.Fragment key={index} >
                     <ListItem >
-                        <ListItemText inset primary={<h2 style={{ color: '#146496' }}>{item.titlu}</h2>} />
+                        <ListItemText className="ListItemText" inset primary={item.titlu} />
                     </ListItem>
                     <Collapse in={true} timeout="auto" unmountOnExit>
                         <ListOfDocs

@@ -1,0 +1,32 @@
+.personalSectie span{
+    font-size: calc(16px + (22 - 16) * ((100vw - 300px) / (1600 - 300)));
+    color: #322d7a;
+    font-weight: bolder;
+}
+
+.personalSubsectii span{
+    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    color: #051035;
+    font-weight: 400;
+    margin-top: 1%;
+    margin-bottom: 0em;
+
+}
+
+.personalAngajat span{
+    font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+    color:black;
+}
+
+.organizareDiv h2{
+    font-size: calc(18px + (25 - 18) * ((100vw - 300px) / (1600 - 300)));
+    padding-top: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #4a63b6;
+    
+}
+.organizareDiv img{
+    max-width: 100%;
+    border-radius: 30px;
+}

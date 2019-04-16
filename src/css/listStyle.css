@@ -1,0 +1,17 @@
+
+.ListItemText span{
+    font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+    color: #142038;
+    font-weight: bold;
+    padding-top: 5px;
+}
+.TextCollapse {
+    text-align: justify;
+    font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+    text-indent: 50px;
+}
+.titleListCompetente{
+    font-size: calc(16px + (22 - 16) * ((100vw - 300px) / (1600 - 300)));
+    color: #322d7a;
+    font-weight: bolder;
+}

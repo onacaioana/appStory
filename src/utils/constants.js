@@ -105,7 +105,7 @@ export const prezentareInstante = [
     {
         src: require('../images/jud-cluj.jpg'),
         title: 'Judecatoria Cluj',
-        content: ' Judecătoria Cluj-Napoca îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria Cluj-Napoca are sediul în Cluj-Napoca, str. Dorobanţilor, nr. 2 în clădirea Palatului de Justiţie Cluj.',
+        content: ' Judecătoria Cluj-Napoca îşi desfăşoară activitatea în baza Legii 304/2005, privind organizarea judecătorească. Judecătoria are sediul pe str. Dorobanţilor, nr.2 în clădirea Palatului de Justiţie.',
         link: "http://portal.just.ro/211/SitePages/acasa_default.aspx?id_inst=211",
     },
     {
@@ -217,7 +217,7 @@ export const informatiiPublice = [
         listOfDocs: [],
     },
     {
-        titlu: "Anunturi Birou de Informare și Relații publice",
+        titlu: "ANUNŢURI Birou de Informare și Relații publice",
         text: "",
         folder: "Anunturi",
         listOfDocs: [],
@@ -275,7 +275,7 @@ export const conducere = [
         sectia: "Conducerea Tribunalul Cluj",
         personal: [
             {
-                title: "Preşedinte",
+                title: "Preşedinte instanţă:",
                 team: ["SELEȘIU Ana Sorina"],
             },
             {

@@ -3,6 +3,7 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import {linksImages} from '../utils/constants';
+import "../css/titleStyle.css";
 
 
 class LinksBar extends Component {
@@ -25,7 +26,7 @@ class LinksBar extends Component {
         });
         return (
             <React.Fragment>
-               <h2 className="pt-5 text-center" style={{ color: '#164164', fontWeight: 'bold' }}>Legături utile</h2>
+               <h2 className="titleClass" >Legături utile</h2>
                 <div className="container py-5 pl-5">
                     <OwlCarousel
                         className="owl-theme"

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Carousel from '../components/Header/HeaderCarousel';
 import LinksBar from '../components/links';
 import InfoLista from '../components/InfoUtile/InfoUtileList';
-import HeaderFormat from '../components/Header/Header';
 import "core-js/modules/es6.promise";
 import "core-js/modules/es6.array.iterator.js";
 import "core-js/modules/es6.array.from.js";
@@ -45,7 +44,7 @@ class HomePage extends Component {
             <React.Fragment>
 
                 <Carousel></Carousel>
-                <HeaderFormat />
+
                 {/* Div's porpose is only for id
                   * Used for redirect 
                   * From HeaderCarousel.js page - header slider
