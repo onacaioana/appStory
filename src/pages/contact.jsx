@@ -7,7 +7,7 @@ import Harta from "../components/Harta/harta";
 import Title from '../components/Header/HeaderTitlePage';
 import {massMedia, faxuri, email, program} from '../utils/constants';
 import PhoneNumber from 'react-phone-number';
-
+import "../css/index.css";
 // import 'mapbox-gl/dist/mapbox-gl.css';
 
 const telefon = [
@@ -30,9 +30,9 @@ class Contact extends Component {
     /* Mapare program de functionare */
     let orar = program.map((item, index) => {
       return (
-        <div className="py-4">
-          <p className="card-text "><b>{item.where}</b></p>
-          <p className="card-text " style={{ color: 'red' }}><b>{item.hours}</b></p>
+        <div className="card-div">
+          <p><b>{item.where}</b></p>
+          <p style={{ color: 'red' }}><b>{item.hours}</b></p>
         </div>
       )
     });
@@ -41,9 +41,9 @@ class Contact extends Component {
     /*Mapare Relatie cu presa / mass-media */
     let presa = massMedia.map((item, index) => {
       return (
-        <div key={index}>
+        <div className="card-div" key={index}>
 
-          <p className="card-text"><b>{item.functie}</b></p>
+          <p><b>{item.functie}</b></p>
           <p>{item.nume}</p>
           <p> E-mail: <a href={"mailto:" + item.email}>{item.email}</a></p>
           <p> Tel. <PhoneNumber number={item.phone} isLinked={true} />, Int. 105</p>
@@ -55,7 +55,7 @@ class Contact extends Component {
     /* Maparea numerelor de telefon din const -------telefon------------ */
     let contactTelefon = telefon.map((tel, index) => {
       return (
-        <div key={index}>
+        <div className="card-div" key={index}>
           <p>
             <b>Tel. Tribunal: </b>
             {tel.phone1} ; {tel.phone2}
@@ -68,7 +68,7 @@ class Contact extends Component {
     /* Maparea numerelor de telefon din const -------email------------ */
     let contactEmail = email.map((mail, index) => {
       return (
-        <div key={index}>
+        <div className="card-div" key={index}>
           <p>
             <b>{mail.locatie} </b>
             <a href={"mailto:" + mail.adresa}>{mail.adresa}</a>
@@ -80,7 +80,7 @@ class Contact extends Component {
     /* Maparea numerelor de telefon din const -------fax------------ */
     let contactFax = faxuri.map((mail, index) => {
       return (
-        <div key={index}>
+        <div className="card-div" key={index}>
           <p>
             <b>{mail.locatie} </b>
             {mail.adresa}

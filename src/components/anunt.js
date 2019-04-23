@@ -32,12 +32,12 @@ class Anunt extends Component {
                   alt="Lista_concursuri_si_anunturi"
                 />
               </ListItemIcon>
-              <ListItemText style={{padding:0}} className="ListItemText" inset primary={this.props.titlu} secondary={this.props.subtitlu}/>
+              <ListItemText style={{padding:0}} className="SublistItemText" inset primary={this.props.titlu} secondary={this.props.subtitlu}/>
               {this.state.open ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
 
             <Collapse in={this.state.open} timeout="auto" unmountOnExit>
-            {this.props.text ? <p className="TextCollapse">{this.props.text}</p> : ""}
+            {this.props.text ? <p className="TextBeforeList">{this.props.text}</p> : ""}
               <ListOfDocs
                 // list={item.listOfDocs}
                 list={this.props.docs}

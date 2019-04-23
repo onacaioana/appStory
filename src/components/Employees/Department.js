@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ListItem from "@material-ui/core/ListItem";
-import Typography from '@material-ui/core/Typography';
 import ListItemText from "@material-ui/core/ListItemText";
 import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from "@material-ui/icons/ExpandLess";

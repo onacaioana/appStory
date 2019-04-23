@@ -1,6 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter} from 'react-router-dom';
 import './css/index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -14,5 +15,8 @@ require('es5-shim');
 require('es5-shim/es5-sham');
 require('console-polyfill');
 
- ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();

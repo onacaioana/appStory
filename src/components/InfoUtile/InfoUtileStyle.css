@@ -4,7 +4,7 @@
 --------------------------------------*/
 
 ul{
-    padding-inline-start:inherit;
+    padding-inline-start: 30px;
 }
 .list-topics-content {
     z-index: 0;

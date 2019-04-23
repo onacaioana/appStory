@@ -3,6 +3,37 @@ import { notepad_remove } from 'react-icons-kit/ikons/notepad_remove'
 import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
 import { mail } from "react-icons-kit/ikons/mail"; */
 
+export const orarInstante = [{
+    nume: "Tribunalul Cluj",
+    refOrar: "http://tribunalulcluj.ro/#/contact"
+},
+{
+    nume: "Judecatoria Cluj-Napoca",
+    refOrar: "http://portal.just.ro/211/SitePages/contact.aspx?id_inst=211"
+},
+{
+    nume: "Judecatoria Dej",
+    refOrar: "http://portal.just.ro/219/SitePages/contact.aspx?id_inst=219"
+},
+{
+    nume: "Judecatoria Gherla",
+    refOrar: "http://portal.just.ro/235/SitePages/contact.aspx?id_inst=235"
+},
+{
+    nume: "Judecatoria Huedin",
+    refOrar: "http://portal.just.ro/242/SitePages/contact.aspx?id_inst=242"
+},
+{
+    nume: "Judecatoria Turda",
+    refOrar: "http://portal.just.ro/328/SitePages/contact.aspx?id_inst=328"
+},
+{
+    nume: "Tribunalul Specializat Cluj",
+    refOrar: "http://portal.just.ro/1285/SitePages/contact.aspx?id_inst=1285"
+},
+
+]
+
 export const detaliiInstante = [
     {
         nume: "Tribunalul Cluj",
@@ -217,7 +248,7 @@ export const informatiiPublice = [
         listOfDocs: [],
     },
     {
-        titlu: "ANUNŢURI Birou de Informare și Relații publice",
+        titlu: "Anunţuri - Birou de Informare și Relații publice",
         text: "",
         folder: "Anunturi",
         listOfDocs: [],
@@ -608,7 +639,7 @@ export const infoUtile = [
     {
         title: ' Legalizare şi definitivare',
         icon: require("../images/icons/notary.png"),
-        locatie: "InfoUtile/Legalizare si investire.pdf",
+        locatie: "/legalizare",
     },
     {
         title: 'Asistenţă judiciară',

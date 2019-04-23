@@ -6,6 +6,8 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import "../css/listStyle.css";
+import { orarInstante } from "../utils/constants";
+
 
 class Competente extends Component {
     state = {
@@ -20,7 +22,7 @@ class Competente extends Component {
         axios
             .get(`/getFiles`, {
                 params: {
-                    folderName: "PDFs/Competente"
+                    folderName: "PDFs/Legalizare"
                 }
             })
             .then(res => {
@@ -32,7 +34,7 @@ class Competente extends Component {
                     let indexStop = res.data[i].indexOf('.pdf');
                     let dataDoc = res.data[i].substring(indexStart + 1, indexStop);
                     let titluDoc = res.data[i].substring(0, indexStop);
-                    const object = Object.assign({ titlu: titluDoc, data: dataDoc, locatie: "Competente/" + res.data[i] });
+                    const object = Object.assign({ titlu: titluDoc, data: dataDoc, locatie: "Legalizare/" + res.data[i] });
                     this.setState({ items: [...this.state.items, object] });
                 }
 
@@ -47,14 +49,13 @@ class Competente extends Component {
         return (
             <React.Fragment>
                 <Title
-                    title="Competenţe şi Circumscripţie"
-                    page="Competenţe şi Circumscripţie"
-                    subpage="Despre instituţie"
+                    title="Legalizare şi definitivare"
+                    page="Legalizare şi definitivare"
                     breadcrumbs={true}
                 />
 
                 <div className="my-5 container">
-                    <h2 className="titleListCompetente">Competenţă materială şi teritorială</h2>
+                    {/* <h2 className="titleListCompetente">Documente</h2> */}
                     <Anunt
                         icon={require("../images/icons/law2.png")}
                         altText={"altText"}
@@ -65,25 +66,29 @@ class Competente extends Component {
                 </div>
 
                 <div className="my-5 container">
-                    <h2 className="titleListCompetente">Circumscripţie</h2>
-                    <ListItem
-                        className="mx-5 px-2"
-                        button
-                        component="a"
-                        href="http://portal.just.ro/117/SitePages/Circumscriptii.aspx?id_inst=117"
-                    >
+                    <h2 className="titleListCompetente">Orar Arhivă şi Registratură </h2>
+                    {orarInstante.map((item, index) => {
+                        return (
+                            <ListItem
+                                className="mx-5 px-2"
+                                button
+                                component="a"
+                                href={item.refOrar}
+                            >
 
-                        <ListItemIcon className="mx-1 px-1">
-                            <img src={require("../images/icons/list.png")} alt="Icon_Document" />
-                        </ListItemIcon> 
+                                <ListItemIcon className="mx-1 px-1">
+                                    <img src={require("../images/icons/institution.png")} alt="Icon_Document" />
+                                </ListItemIcon>
 
-                        <ListItemText
-                            className="TextCollapse"
-                            color="white"
-                            inset
-                            primary="Circumscripţii în raza Tribunalului Cluj"
-                        />
-                    </ListItem >
+                                <ListItemText
+                                    className="TextCollapse"
+                                    color="white"
+                                    inset
+                                    primary={item.nume}
+                                />
+                            </ListItem >
+                        );
+                    })}
                 </div>
 
 

@@ -56,10 +56,13 @@ class Rapoarte extends Component {
                                     const docObject = Object.assign({ titlu: title, locatie: "Rapoarte/" + folder + "/" + file });
 
                                     list.push(docObject);
+                                   
                                     return true;
                                 });
 
                                 /* Create an item from state array and append to state */
+                                list.sort((a, b) => new Date(b.date) - new Date(a.date));
+                                list.reverse();
                                 const itemObject = Object.assign({ titlu: folder, icon: icons[index], listOfDocs: list });
                                 this.setState({ items: [...this.state.items, itemObject] });
                             })

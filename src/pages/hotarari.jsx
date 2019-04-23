@@ -8,7 +8,7 @@ import List from '@material-ui/core/List';
 class Hotarari extends Component {
   state = {
     folders: [],
-};
+  };
   componentDidMount = () => {
     window.scrollTo(0, 0);
 
@@ -59,7 +59,8 @@ class Hotarari extends Component {
                *  
                * Add created object to {this.state.folders}
                */
-              console.log(year);
+              object3.sort((a, b) => new Date(b.date) - new Date(a.date));
+              object3.reverse();
               const object = Object.assign({ folder: year, docs: object3 });
               this.setState({ folders: [...this.state.folders, object] });
             })

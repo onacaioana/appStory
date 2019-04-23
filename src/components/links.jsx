@@ -15,12 +15,16 @@ class LinksBar extends Component {
             marginLeft: 'auto',
             marginRight: 'auto',
         }
+        const stylesTitle = {
 
+            fontSize: 'calc(10px + (16 - 10) * ((100vw - 300px) / (1600 - 300)))',
+
+        }
         const list = linksImages.map((item, index) => {
             return (
                 <div className="item" key={index} style={{ textAlign: 'center' }}>
                     <a href={item.link}><img style={styles} src={item.icon} alt="links"></img></a>
-                    <a href={item.link}>{item.title}</a>
+                    <a href={item.link} style={stylesTitle} >{item.title}</a>
                 </div>
             )
         });

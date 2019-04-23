@@ -136,10 +136,15 @@ class NavBarComp extends Component {
             this.toggleNavbar();
         }
     }
+
+    routeChange = (path) => {
+        this.props.history.push(path);
+    }
+
     render() {
         return (
             <Navbar className="bg-light navbar-light text-black text-nowrap m-auto" expand="lg">
-                <NavbarBrand href={`${process.env.PUBLIC_URL}/#/`}>
+                <NavbarBrand href={`${process.env.PUBLIC_URL}/`}>
                     <img src={require("../../images/mjLogo.png")} alt="mj" />
                 </NavbarBrand>
 
@@ -149,7 +154,7 @@ class NavBarComp extends Component {
 
                     <Nav className="m-auto" navbar >
                         <NavItem className="mr-4">
-                            <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/`} >Acasă</NavLink>
+                            <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/`} >Acasă</NavLink>
                         </NavItem>
 
                         <Dropdown
@@ -159,7 +164,7 @@ class NavBarComp extends Component {
 
                             <DropdownToggle nav caret> Despre Instituţie</DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/prezentare`}>Prezentare</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/prezentare`}>Prezentare</DropdownItem>
                                 <Dropdown
                                     className="px-4"
                                     nav
@@ -171,13 +176,15 @@ class NavBarComp extends Component {
                                     <DropdownToggle nav caret style={{ color: 'black', mrgin: '0px', padding: '0px' }}>Organizare</DropdownToggle>
 
                                     <DropdownMenu style={{ border: 0 }}>
-                                        <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/conducere`}>Conducere</DropdownItem>
-                                        <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/organizare`}>Structură organizatorică</DropdownItem>
+                                        <DropdownItem>
+                                            <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/conducere`} >Conducere</NavLink>
+                                        </DropdownItem>
+                                        <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/organizare`}>Structură organizatorică</DropdownItem>
                                     </DropdownMenu>
                                 </Dropdown>
 
-                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/competente`}>Competenţe şi Circumscripţie</DropdownItem>
-                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/rapoarte`}>Instaţa în cifre</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/competente`}>Competenţe şi Circumscripţie</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/rapoarte`}>Instaţa în cifre</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
@@ -191,10 +198,10 @@ class NavBarComp extends Component {
                                 </DropdownToggle>
                             <DropdownMenu>
                                 <DropdownItem onClick={this.closeNavbar} href="https://www.curteadeapelcluj.ro/anunturi.html">Anunţuri / Concursuri</DropdownItem>
-                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/infoPublice`}>Informaţii publice</DropdownItem>
-                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/declaratii`}>Declaraţii</DropdownItem>
-                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/comunicate`}>Comunicate de presă</DropdownItem>
-                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/hotarari`}>Hotărâri de colegiu</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/infoPublice`}>Informaţii publice</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/declaratii`}>Declaraţii</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/comunicate`}>Comunicate de presă</DropdownItem>
+                                <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/hotarari`}>Hotărâri de colegiu</DropdownItem>
                                 <DropdownItem onClick={this.closeNavbar} href="http://portal.just.ro/117/SitePages/jurisprudenta.aspx?id_inst=117">Jurisprudenţă</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
@@ -220,11 +227,11 @@ class NavBarComp extends Component {
                             </DropdownMenu>
                         </Dropdown>
                         <NavItem className="mr-4">
-                            <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/#/contact`}>Contact</NavLink>
+                            <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/contact`}>Contact</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
-                <img style={{ width: '5%' }} className=" d-none d-lg-block d-xl-block " src={require("../../images/100.png")} alt="100"></img>
+                <img style={{ width: '4%' }} className=" d-none d-lg-block d-xl-block " src={require("../../images/100.png")} alt="100"></img>
             </Navbar>
         );
     }

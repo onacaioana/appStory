@@ -7,7 +7,6 @@ import { androidArrowDroprightCircle } from 'react-icons-kit/ionicons/androidArr
 import { carouselImages } from '../../utils/constants';
 import '../../css/prezentare.css';
 import '../../css/headerArea.css';
-import '../../css/font-awesome.min.css'
 import { HashLink as Link } from 'react-router-hash-link';
 import Zoom from '@material-ui/core/Zoom';
 
@@ -44,14 +43,14 @@ class Carousel extends React.Component {
 
 
                         {/* Used for text and menu over Carousel Header
-                          * css files: headerAdrea.css and font-awesome.min.css
+                          * css files: headerAdrea.css 
                           * js files: 
                           */}
                         <div id="wrapper">
                             <header id="header">
+                                <h2>TRIBUNALUL CLUJ</h2>
                                 <div className="content">
                                     <div className="inner">
-                                        <h2>TRIBUNALUL CLUJ</h2>
                                         <Zoom
                                             in={true}
                                             style={{ transformOrigin: '50% 50% 0' }}

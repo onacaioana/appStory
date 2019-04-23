@@ -54,7 +54,7 @@ class InfoPublice extends Component {
                              *  
                              * Add created object to {this.state.folders}
                              */
-                             
+                            object3.sort((a, b) => new Date(b.date) - new Date(a.date));
                             informatiiPublice.map((item)=>{
                                 
                                 if(item.folder === year){

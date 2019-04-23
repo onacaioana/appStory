@@ -28,7 +28,6 @@
 }
 
 .skill-cover h3{
-  font-family: "hind", sans-serif;
   font-size: 35px;
   margin-bottom: 40px;
 }
@@ -45,7 +44,6 @@
 
 .skill-item h2 {
     color: #fff;
-    font-size: "hind", sans-serif;
     font-size: calc(16px + (30 - 16) * ((100vw - 300px) / (1600 - 300)));
     margin-top: 15px;
     margin-bottom: 1px;
@@ -53,7 +51,6 @@
 
 .skill-item p {
     color: #fff;
-    font-family: "hind", sans-serif;
     /*text-transform: uppercase;*/
     font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
     margin-top: 0;
@@ -73,7 +70,6 @@
 
 .skill-item1 h2 {
     color: #fff;
-    font-size: "hind", sans-serif;
     font-size: 45px;
     font-weight: 700;
     margin-top: 65px;
@@ -82,7 +78,6 @@
 
 .skill-item1 p {
     color: #fff;
-    font-family: "hind", sans-serif;
     /*text-transform: uppercase;*/
     font-weight: 300;
     margin-top: 0;
