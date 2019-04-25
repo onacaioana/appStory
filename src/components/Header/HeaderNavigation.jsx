@@ -136,11 +136,6 @@ class NavBarComp extends Component {
             this.toggleNavbar();
         }
     }
-
-    routeChange = (path) => {
-        this.props.history.push(path);
-    }
-
     render() {
         return (
             <Navbar className="bg-light navbar-light text-black text-nowrap m-auto" expand="lg">
@@ -176,9 +171,7 @@ class NavBarComp extends Component {
                                     <DropdownToggle nav caret style={{ color: 'black', mrgin: '0px', padding: '0px' }}>Organizare</DropdownToggle>
 
                                     <DropdownMenu style={{ border: 0 }}>
-                                        <DropdownItem>
-                                            <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/conducere`} >Conducere</NavLink>
-                                        </DropdownItem>
+                                        <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/conducere`}>Conducere</DropdownItem>
                                         <DropdownItem onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/organizare`}>Structură organizatorică</DropdownItem>
                                     </DropdownMenu>
                                 </Dropdown>

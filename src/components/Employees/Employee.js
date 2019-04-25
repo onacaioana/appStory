@@ -17,7 +17,6 @@ class Employee extends Component {
 
   componentWillMount(){
     this.setState({open: this.props.expended});
-    console.log("expended:", this.props.expended);
   }
 
   render() {

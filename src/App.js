@@ -60,87 +60,39 @@ class App extends Component {
             <Icon style={{ color: '#8c7b75' }} size={40} icon={circleTop} />
           </Tooltip>
         </ScrollToTop>
-        <NavBarComp/>
-{/*           <div>
-            <Switch>
-              <Route
-                exact
-                path={[
-                  "/organizare",
-                  "/conducere",
-                  "/contact",
-                  "/taxe",
-                  "/prezentare",
-                  "/rapoarte",
-                  "/hotarari",
-                  "/concurs",
-                  "/declaratii",
-                  "/infoPublice",
-                  "/comunicate",
-                  "/competente",
-                  "/legalizare",
-                  "/gdpr",
-                  "/",
-                ]}
-                component={NavBarComp}
-              />
-            </Switch>
- */}
-            <Switch>
-              <Route exact path={"/organizare"} component={Organizare} />
-              <Route exact path={"/conducere"} component={Conducere} />
-              <Route exact path={"/contact"} component={Contact} />
-              <Route exact path={"/taxe"} component={TaxeTimbru} />
-              <Route exact path={"/prezentare"} component={Prezentare} />
-              <Route exact path={"/rapoarte"} component={Rapoarte} />
-              <Route exact path={"/hotarari"} component={Hotarari} />
-              <Route exact path={"/concurs"} component={Concursuri} />
-              <Route exact path={"/declaratii"} component={Declaratii} />
-              <Route exact path={"/infoPublice"} component={InfoPublice} />
-              <Route exact path={"/comunicate"} component={Comunicate} />
-              <Route exact path={"/competente"} component={Competente} />
-              <Route exact path={"/legalizare"} component={Legalizare} />
-              <Route exact path={"/gdpr"} component={ProtectiaDatelor} />
-              <Route exact path={"/"} component={HomePage} />
-              <Route component={ErrorPage1} />
-            </Switch>
+        <NavBarComp />
 
-{/*             <Switch>
-              <Route
-                exact
-                path={[
-                  "/organizare",
-                  "/conducere",
-                  "/contact",
-                  "/taxe",
-                  "/prezentare",
-                  "/rapoarte",
-                  "/hotarari",
-                  "/concurs",
-                  "/declaratii",
-                  "/infoPublice",
-                  "/comunicate",
-                  "/comunicate",
-                  "/competente",
-                  "/legalizare",
-                  "/gdpr",
-                  "/",
-                ]}
-                component={Footer}
-              />
-            </Switch>
-          </div> */}
+        <Switch>
+          <Route exact path={"/organizare"} component={Organizare} />
+          <Route exact path={"/conducere"} component={Conducere} />
+          <Route exact path={"/contact"} component={Contact} />
+          <Route exact path={"/taxe"} component={TaxeTimbru} />
+          <Route exact path={"/prezentare"} component={Prezentare} />
+          <Route exact path={"/rapoarte"} component={Rapoarte} />
+          <Route exact path={"/hotarari"} component={Hotarari} />
+          <Route exact path={"/concurs"} component={Concursuri} />
+          <Route exact path={"/declaratii"} component={Declaratii} />
+          <Route exact path={"/infoPublice"} component={InfoPublice} />
+          <Route exact path={"/comunicate"} component={Comunicate} />
+          <Route exact path={"/competente"} component={Competente} />
+          <Route exact path={"/legalizare"} component={Legalizare} />
+          <Route exact path={"/gdpr"} component={ProtectiaDatelor} />
+          <Route exact path={"/"} component={HomePage} />
+          <Route component={ErrorPage1} />
+        </Switch>
+
+        <Footer />
         <CookieConsent
           location="bottom"
           buttonText="Am inteles."
-          cookieName="myAwesomeCookieName2"
+          cookieName="gdprCookie"
           style={{ background: "#2B373B" }}
           buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
           expires={150}
           hideOnAccept={true}
         >
           Acest site folosește cookie-uri. Navigând în continuare vă exprimați acordul pentru folosirea cookie-urilor conform Regulamentului (UE) 2016/679 {" "}
-          <span><a href="#/gdpr"> Vezi detalii.</a></span>
+          <span><a href="/gdpr"> Vezi detalii.</a></span>
         </CookieConsent>
       </React.Fragment>
     );

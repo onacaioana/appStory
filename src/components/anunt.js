@@ -12,7 +12,7 @@ class Anunt extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: true
     };
   }
 
@@ -49,7 +49,6 @@ class Anunt extends Component {
           </div>
           :
           <ListOfDocs
-            // list={item.listOfDocs}
             list={this.props.docs}
             button={true}
             icon1={require("../images/icons/law2.png")}
