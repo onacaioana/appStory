@@ -7,7 +7,7 @@ import List from '@material-ui/core/List';
 
 class Hotarari extends Component {
   state = {
-    folders: [],
+    folders: []
   };
   componentDidMount = () => {
     window.scrollTo(0, 0);

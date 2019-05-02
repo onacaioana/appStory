@@ -69,11 +69,23 @@ app.get("/getFilesRecursive", function (req, res) {
   });
 });
 
+const contact = require('./json/contact.json')
+app.get("/contactJson",function(req,res){
+  res.header("Content-Type",'application/json');
+  res.send(JSON.stringify(contact));
+});
 
-// app.get("/", function(req, res) {
-//   res.sendFile(path.join(__dirname, "build", "index.html"));
-// }
-//);
+const personal = require('./json/personal.json')
+app.get("/personalJson",function(req,res){
+  res.header("Content-Type",'application/json');
+  res.send(JSON.stringify(personal));
+});
+
+const informatiiPublice = require('./json/informatiiPublice.json')
+app.get("/infoPubliceJson",function(req,res){
+  res.header("Content-Type",'application/json');
+  res.send(JSON.stringify(informatiiPublice));
+});
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, '/build/index.html'), function(err) {

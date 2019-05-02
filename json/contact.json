@@ -1,0 +1,54 @@
+{
+    "program": [
+        {
+            "where": "Programul de lucru al instituţiei:",
+            "hours": "Luni - Vineri între orele 08:00 - 16:00;"
+        },
+        {
+            "where": "Registratură(parter, camera 24A) şi Arhivă(parter, camera 24B):",
+            "hours": "Luni - Vineri între orele 8:00 - 12:00;"
+        },
+        {
+            "where": "În perioada vacantei judecatoresti (01.07.-31.08.) program Registratura şi Arhiva:",
+            "hours": "Luni, Miercuri şi Joi între orele 09:00 - 11:00;"
+        }
+    ],
+    "massMedia": [
+        {
+            "functie": "Purtător de cuvânt:",
+            "nume": "Judecător SIMONA TRESTIAN",
+            "email": "simona.sulea@just.ro",
+            "phone": "0264596110"
+        }
+    ],
+    "email": [
+        {
+            "locatie": "Registratură:",
+            "adresa": "tr-cluj-reg@just.ro"
+        },
+        {
+            "locatie": "Biroul Expertize:",
+            "adresa": "tr-cluj-blej@just.ro"
+        }
+    ],
+    "faxuri": [
+        {
+            "locatie": "Cabinet Preşedinte:",
+            "adresa": "0264-595844"
+        },
+        {
+            "locatie": "Serviciu Contabilitate:",
+            "adresa": "0264-431965"
+        }
+    ],
+    "telefon": [
+        {
+        "phone1": "0264596111",
+        "phone2": "0264431057"
+    },
+    {
+        "phone1": "0264431908",
+        "phone2": "0264595812"
+    }
+    ]
+}

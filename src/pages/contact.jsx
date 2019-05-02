@@ -5,41 +5,50 @@ import { phoneSquare } from "react-icons-kit/fa/phoneSquare";
 import { mail } from "react-icons-kit/ikons/mail";
 import Harta from "../components/Harta/harta";
 import Title from '../components/Header/HeaderTitlePage';
-import {massMedia, faxuri, email, program} from '../utils/constants';
 import PhoneNumber from 'react-phone-number';
 import "../css/index.css";
-// import 'mapbox-gl/dist/mapbox-gl.css';
 
-const telefon = [
-  {
-      phone1: <PhoneNumber number="0264596111" isLinked="true" />,
-      phone2: <PhoneNumber number="0264431057" isLinked="true" />
-  },
-  {
-      phone1: <PhoneNumber number="0264431908" isLinked="true" />,
-      phone2: <PhoneNumber number="0264595812" isLinked="true" />
-  }];
+
 
 class Contact extends Component {
+  state = {
+    data: {
+      program: [{ where: "", hours: "" }],
+      massMedia: [{ functie: "", nume: "", email: "", phone: "" }],
+      email: [{ locatie: "", adresa: "" }],
+      faxuri: [{ locatie: "", adresa: "" }],
+      telefon: [{ phone1: "", phone2: "" }]
+    }
+
+  }
+
   componentDidMount() {
+
+    fetch('/contactJson')
+      .then((response) => response.json())
+      .then((findresponse) => {
+        this.setState({
+          data: findresponse,
+        })
+      })
+
     window.scrollTo(0, 0);
   }
 
   render() {
-
+    
     /* Mapare program de functionare */
-    let orar = program.map((item, index) => {
+    let orar = this.state.data.program.map((item, index) => {
       return (
-        <div className="card-div">
+        <div className="card-div" key={index}>
           <p><b>{item.where}</b></p>
           <p style={{ color: 'red' }}><b>{item.hours}</b></p>
         </div>
       )
     });
 
-
     /*Mapare Relatie cu presa / mass-media */
-    let presa = massMedia.map((item, index) => {
+    let presa = this.state.data.massMedia.map((item, index) => {
       return (
         <div className="card-div" key={index}>
 
@@ -53,12 +62,13 @@ class Contact extends Component {
 
 
     /* Maparea numerelor de telefon din const -------telefon------------ */
-    let contactTelefon = telefon.map((tel, index) => {
+    let contactTelefon = this.state.data.telefon.map((tel, index) => {
       return (
         <div className="card-div" key={index}>
           <p>
             <b>Tel. Tribunal: </b>
-            {tel.phone1} ; {tel.phone2}
+            <PhoneNumber number={tel.phone1} isLinked="true" /> ;
+            <PhoneNumber number={tel.phone2} isLinked="true" />
           </p>
         </div>
       )
@@ -66,7 +76,7 @@ class Contact extends Component {
 
 
     /* Maparea numerelor de telefon din const -------email------------ */
-    let contactEmail = email.map((mail, index) => {
+    let contactEmail = this.state.data.email.map((mail, index) => {
       return (
         <div className="card-div" key={index}>
           <p>
@@ -78,7 +88,7 @@ class Contact extends Component {
     });
 
     /* Maparea numerelor de telefon din const -------fax------------ */
-    let contactFax = faxuri.map((mail, index) => {
+    let contactFax = this.state.data.faxuri.map((mail, index) => {
       return (
         <div className="card-div" key={index}>
           <p>
@@ -90,9 +100,9 @@ class Contact extends Component {
     });
 
     const style = { marginLeft: "10%", marginRight: "10%", marginTop: "20px" };
-    
 
-  /* Return's render function */
+
+    /* Return's render function */
     return (
       <React.Fragment>
         <Title title="Contact" page="Contact us" breadcrumbs={true} />
@@ -100,7 +110,7 @@ class Contact extends Component {
 
           {/*********************** BEGIN  Contact Info ******************************/}
           <div className="row mb-2">
-            
+
             {/* Crearea Cardului pentru contact -----TELEFON----- al Tribunalului Cluj */}
             <div className="col-md-4">
               <div className="card mb-4 shadow-lg h-md-250">
@@ -169,10 +179,7 @@ class Contact extends Component {
           {/********************** END Relatie cu mass-media ********************************/}
 
 
-
-          {/********************* Location Map *****************************/}
           <Harta />
-
         </div>
       </React.Fragment>
     );
