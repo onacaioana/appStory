@@ -79,6 +79,9 @@ div {
 		max-width: 100%;
 		text-align: center;
 	}
+	#header h2{
+		color: white;
+	}
 
 		#header > * {
 			-moz-transition: opacity 0.325s ease-in-out;

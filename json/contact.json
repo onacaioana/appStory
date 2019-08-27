@@ -9,8 +9,8 @@
             "hours": "Luni - Vineri între orele 8:00 - 12:00;"
         },
         {
-            "where": "În perioada vacantei judecatoresti (01.07.-31.08.) program Registratura şi Arhiva:",
-            "hours": "Luni, Miercuri şi Joi între orele 09:00 - 11:00;"
+            "where": "În perioada vacantei judecatoresti (01 Iulie - 31 August) program Registratura şi Arhiva:",
+            "hours": "Marţi şi Joi între orele 09:00 - 11:00;"
         }
     ],
     "massMedia": [
@@ -18,7 +18,12 @@
             "functie": "Purtător de cuvânt:",
             "nume": "Judecător SIMONA TRESTIAN",
             "email": "simona.sulea@just.ro",
-            "phone": "0264596110"
+            "phone": "0264596110",
+			"obs1":" In perioada 10 iulie - 1 septembrie 2019, cereriile si petitiile pentru biroul de informare si relatii publice se vor trimite la adresa de e-mail a registraturii: tr-cluj@just.ro !!!​",
+            "obs2":" In această perioadă persoanele de contact sunt:",
+            "obs3":" - în perioada 01.07.2019-19.07.2019, locţiitor purtător de cuvânt – judecător Ioan Gaga, tel. 0264 596110, interior 139;",
+            "obs4":" - în perioada 20.07.2019 – 05.08.2019, locţiitor purtător de cuvânt – judecător Cristi Danileţ, tel. 0264 596110, interior 105; ",
+            "obs5":"- în perioada 05.08.2019 -31.08.2019, purtător de cuvânt – judecător Simona Trestian, tel. 0264 596110, interior 105.​"
         }
     ],
     "email": [

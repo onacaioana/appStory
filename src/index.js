@@ -1,19 +1,14 @@
-
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom';
-import './css/index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import 'babel-polyfill'
+import 'es5-shim'
+import 'es6-shim'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {BrowserRouter} from 'react-router-dom'
+import './css/index.css'
+import App from './App'
+import registerServiceWorker from './registerServiceWorker'
 import 'core-js/es6/map';
 import 'core-js/es6/set';
-/* import "ie-array-find-polyfill";
-import 'core-js/es6/typed';
-*/
-
-require('es5-shim');
-require('es5-shim/es5-sham');
-require('console-polyfill');
 
 ReactDOM.render(
     <BrowserRouter>

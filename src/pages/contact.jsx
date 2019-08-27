@@ -7,6 +7,7 @@ import Harta from "../components/Harta/harta";
 import Title from '../components/Header/HeaderTitlePage';
 import PhoneNumber from 'react-phone-number';
 import "../css/index.css";
+import { red } from "@material-ui/core/colors";
 
 
 
@@ -56,6 +57,11 @@ class Contact extends Component {
           <p>{item.nume}</p>
           <p> E-mail: <a href={"mailto:" + item.email}>{item.email}</a></p>
           <p> Tel. <PhoneNumber number={item.phone} isLinked={true} />, Int. 105</p>
+          <p style={{color: 'red'}}><b>{item.obs1}</b></p>
+          <p style={{color: 'red'}}>{item.obs2}</p>
+          <p style={{color: 'red'}}>{item.obs3}</p>
+          <p style={{color: 'red'}}>{item.obs4}</p>
+          <p style={{color: 'red'}}>{item.obs5}</p>
         </div>
       )
     });

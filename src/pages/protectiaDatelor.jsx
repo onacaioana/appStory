@@ -57,7 +57,7 @@ class ProtectiaDatelor extends Component {
 
           {/* <h2>Aici vin hotararile de colegiu</h2> */}
           <Anunt
-            icon={require("../images/icons/law2.png")}
+            icon={require("../images/icons/list.png")}
             altText={"iconGDPR"}
             docs={this.state.items}
           />

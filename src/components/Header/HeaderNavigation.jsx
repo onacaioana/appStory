@@ -138,24 +138,18 @@ class NavBarComp extends Component {
     }
     render() {
         return (
-            <Navbar className="bg-light navbar-light text-black text-nowrap m-auto" expand="lg">
+            <Navbar className="bg-light navbar-light text-nowrap" expand="lg">
                 <NavbarBrand href={`${process.env.PUBLIC_URL}/`}>
-                    <img src={require("../../images/mjLogo.png")} alt="mj" />
+                    <img style={{ width: '75%' }}src={require("../../images/mjLogo.png")} alt="mj" />
                 </NavbarBrand>
-
                 <NavbarToggler onClick={this.toggleNavbar} ></NavbarToggler>
-
                 <Collapse isOpen={!this.state.collapsed} navbar >
 
                     <Nav className="m-auto" navbar >
-                        <NavItem className="mr-4">
+                        <NavItem className="mr-2">
                             <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/`} >Acasă</NavLink>
                         </NavItem>
-
-                        <Dropdown
-                            isOpen={this.state.dropdownInstanta}
-                            /* onMouseOver={this.onMouseEnterInstanta} onMouseLeave={this.onMouseLeaveInstanta} */
-                            toggle={this.toggleInstanta}>
+                        <Dropdown isOpen={this.state.dropdownInstanta} toggle={this.toggleInstanta}>
 
                             <DropdownToggle nav caret> Despre Instituţie</DropdownToggle>
                             <DropdownMenu>
@@ -198,10 +192,10 @@ class NavBarComp extends Component {
                                 <DropdownItem onClick={this.closeNavbar} href="http://portal.just.ro/117/SitePages/jurisprudenta.aspx?id_inst=117">Jurisprudenţă</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
-                        <NavItem className="mr-4">
+                        <NavItem>
                             <NavLink href="https://www.curteadeapelcluj.ro/Dosare_ecris.aspx">Info-Dosar</NavLink>
                         </NavItem>
-                        <NavItem className="mr-4">
+                        <NavItem >
                             <NavLink href="https://www.curteadeapelcluj.ro/ListeSedinta.aspx">Info-Şedinţe</NavLink>
                         </NavItem>
 
@@ -219,12 +213,11 @@ class NavBarComp extends Component {
                                 <DropdownItem href="http://portal.just.ro/328/SitePages/acasa_default.aspx?id_inst=328">Judecătoria Turda</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
-                        <NavItem className="mr-4">
+                        <NavItem >
                             <NavLink onClick={this.closeNavbar} href={`${process.env.PUBLIC_URL}/contact`}>Contact</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
-                <img style={{ width: '4%' }} className=" d-none d-lg-block d-xl-block " src={require("../../images/100.png")} alt="100"></img>
             </Navbar>
         );
     }

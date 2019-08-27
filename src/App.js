@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Contact from "./pages/contact";
 import Prezentare from "./pages/prezentare";
 import HomePage from "./pages/home";
@@ -16,6 +16,7 @@ import Declaratii from "./pages/declaratii";
 import InfoPublice from "./pages/infoPublice";
 import Comunicate from "./pages/comunicate";
 import ProtectiaDatelor from './pages/protectiaDatelor';
+import ListeExperti from './pages/listeExperti';
 import Legalizare from "./pages/legalizare";
 import ScrollToTop from 'react-scroll-up';
 import ErrorPage1 from "./pages/errorPage";
@@ -52,14 +53,9 @@ class App extends Component {
   }
 
   renderAll() {
-    const baseUrl = process.env.PUBLIC_URL;
     return (
       <React.Fragment>
-        <ScrollToTop showUnder={160}>
-          <Tooltip title="Back to top">
-            <Icon style={{ color: '#8c7b75' }} size={40} icon={circleTop} />
-          </Tooltip>
-        </ScrollToTop>
+
         <NavBarComp />
 
         <Switch>
@@ -77,6 +73,7 @@ class App extends Component {
           <Route exact path={"/competente"} component={Competente} />
           <Route exact path={"/legalizare"} component={Legalizare} />
           <Route exact path={"/gdpr"} component={ProtectiaDatelor} />
+          <Route exact path={"/experti"} component={ListeExperti} />
           <Route exact path={"/"} component={HomePage} />
           <Route component={ErrorPage1} />
         </Switch>
@@ -94,6 +91,11 @@ class App extends Component {
           Acest site folosește cookie-uri. Navigând în continuare vă exprimați acordul pentru folosirea cookie-urilor conform Regulamentului (UE) 2016/679 {" "}
           <span><a href="/gdpr"> Vezi detalii.</a></span>
         </CookieConsent>
+        <ScrollToTop showUnder={160}>
+          <Tooltip title="Back to top">
+            <Icon style={{ color: '#8c7b75' }} size={40} icon={circleTop} />
+          </Tooltip>
+        </ScrollToTop>
       </React.Fragment>
     );
   }

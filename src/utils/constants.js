@@ -276,12 +276,12 @@ export const infoUtile = [
     {
         title: ' Traducători autorizaţi',
         icon: require("../images/icons/language.png"),
-        locatie: "http://old.just.ro/MinisterulJusti%C8%9Biei/Listapersoanelorautorizate/Interpretisitraducatoriautorizati/tabid/129/Default.aspx",
+        locatie: "InfoUtile/Traducatori Autorizati Cluj.pdf",
     },
     {
-        title: 'Liste experţi',
+        title: 'Experţi judiciari',
         icon: require("../images/icons/seo-expert.png"),
-        locatie: "http://old.just.ro/MinisterulJusti%C8%9Biei/Listapersoanelorautorizate/Expertijudiciari/tabid/160/Default.aspx",
+        locatie: "/experti",
     },
     {
         title: 'Tabloul Avocaţilor',
