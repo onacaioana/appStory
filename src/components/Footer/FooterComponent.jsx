@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const FooterContainer = styled.div`
+const Container = styled.section`
     border-top: 1px dashed rgba(255, 255, 255, 0.1);
     background-color: #1f1f1f;
     box-sizing: border-box;
@@ -29,17 +29,15 @@ const FooterDistributed = styled.div`
 
 const FooterPage1 = () => {
     return (
-        <FooterContainer>
+        <Container>
                 <FooterDistributed>
-                    <a href="/home"> 
-                        <img className="image" src={require("../../images/ministerul_justitiei.PNG")} alt="logo-ministerul-justitiei" />
-                    </a>
+                    <a href="/home"> <img className="image" src={require("../../images/ministerul_justitiei.PNG")} alt="logo-ministerul-justitiei" /> </a>
                     <p className="footer-company-name">
                         All Rights Reserved. &copy; 2019. Design By :
                         <a href="http://www.tribunalulcluj.ro/">Compartimentul IT - Tribunalul Cluj</a>
                     </p>      
                 </FooterDistributed>
-        </FooterContainer>
+        </Container>
     );
 }
 
