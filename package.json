@@ -19,7 +19,7 @@
     "es6-shim": "^0.35.5",
     "google-maps-react": "^2.0.2",
     "mapbox-gl": "^0.50.0",
-    "merge": "^1.2.1",
+    "merge": "^2.1.1",
     "raf": "^3.4.1",
     "react": "^16.4.2",
     "react-animated-slider": "^1.1.4",
